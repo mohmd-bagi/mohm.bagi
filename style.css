@@ -1,0 +1,74 @@
+/* Global & reset */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #eef2f5;
+  color: #333;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed; top: 0; width: 100%;
+  background: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 0.5rem 1rem; z-index: 1000;
+}
+.navbar ul { list-style: none; display: flex; gap: 1rem; }
+.navbar a { text-decoration: none; color: #333; font-weight: 500; }
+.lang-switch {
+  background: #ff793f; color: #000; border: none;
+  padding: 0.3rem 0.8rem; border-radius: 5px; cursor: pointer;
+}
+
+/* Container */
+.container {
+  max-width: 800px;
+  margin: 5rem auto 2rem;
+  padding: 0 1rem;
+}
+
+/* Header card */
+.header-card {
+  text-align: center; margin-bottom: 2rem;
+}
+.header-card img {
+  width: 150px; height: 150px;
+  border-radius: 50%; border: 3px solid #0077b6;
+  object-fit: cover;
+}
+.headline { color: #0077b6; margin-top: 0.5rem; font-weight: 600; }
+.header-actions { margin: 1rem 0; display: flex; justify-content: center; flex-wrap: wrap; gap: 0.5rem; }
+
+/* Buttons */
+.btn {
+  background: #0077b6; color: #fff;
+  text-decoration: none; padding: 0.5rem 1rem;
+  border-radius: 5px; transition: background 0.3s;
+}
+.btn:hover { background: #005f8a; }
+
+/* Cards */
+.card {
+  background: #fff; padding: 1.5rem; margin-bottom: 1.5rem;
+  border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.card h2 {
+  margin-bottom: 0.5rem; color: #343a40;
+  border-bottom: 2px solid #0077b6; padding-bottom: 0.3rem;
+}
+.card .description { margin-top: 0.5rem; color: #555; }
+
+/* Forms */
+input, textarea {
+  width: 100%; padding: 0.5rem; border: 1px solid #ccc;
+  border-radius: 5px; margin-bottom: 0.5rem;
+}
+.card form .btn { width: auto; }
+
+/* Utility */
+.hidden { display: none !important; }
+
+/* Print */
+@media print {
+  .navbar, .lang-switch, .header-actions { display: none; }
+}
