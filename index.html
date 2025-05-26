@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mohammed Abdelbagi Elrayah | IT & Systems Engineer</title>
+  <title>Mohammed Abdelbagi Elrayah | Systems & IT Engineer</title>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
@@ -50,27 +50,18 @@
       .cover-banner {height: 105px;}
       img.profile {width: 78px; height: 78px; top: -40px;}
     }
-    .live-bar, .tech-news-bar {margin: 13px 0 0 0; padding: 5px 0 3px 0; background: #f8f5ee; border-radius: 12px; box-shadow: 0 2px 7px #e9be81a0; text-align: center;}
-    .live-bar-title, .tech-news-bar-title {font-weight: bold;}
-    .live-links, .tech-links {display: flex; flex-wrap: wrap; justify-content: center; gap: 5px;}
-    .live-links a, .tech-links a {display: inline-block; padding: 3.5px 13px; border-radius: 7px; color: #fff; font-weight: 600; font-size: 0.93em; text-decoration: none; box-shadow: 0 1px 4px #bdb49e3a; transition: filter 0.18s, transform 0.18s;}
-    .aljazeera {background: #008d36;} .quran {background: #0077b5;} .haram {background: #00b2a9;}
-    .techcrunch {background: #00b088;} .theverge {background: #5a51ff;} .wired {background: #222;}
-    .techwd {background: #0779e4;} .aitnews {background: #1185e4;} .cnet {background: #b40a18;}
-    .headline-anim {display: flex; justify-content: center; align-items: center; gap: 10px;}
-    .headline-svg {width: 38px; height: 38px; vertical-align: middle; animation: rotateAnim 3s linear infinite;}
-    @keyframes rotateAnim {0% {transform: rotate(0deg);}100% {transform: rotate(360deg);}}
-    .top-controls-wrap {
+    .dark-mode-toggle-wrap {
       position: fixed;
       top: 22px;
-      left: 20px;
       z-index: 99;
       display: flex;
       align-items: center;
-      gap: 13px;
+      gap: 7px;
       font-size: 1.04em;
       font-weight: bold;
       background: transparent;
+      left: 20px;
+      right: auto;
       direction: ltr;
     }
     .dark-mode-toggle {
@@ -90,31 +81,55 @@
       justify-content: center;
     }
     body:not(.dark) .dark-mode-toggle {background: #ffe4a1; color: #1a3475;}
-    .lang-switch {
-      background: #555;
+    .lang-switch-btn {
+      background: #445dab;
       color: #fff;
-      border-radius: 9px;
-      padding: 10px 16px;
+      border: none;
+      border-radius: 18px;
+      padding: 11px 19px;
+      margin-left: 7px;
       cursor: pointer;
-      font-weight: 500;
-      font-size: 1.08em;
+      font-weight: bold;
+      font-size: 1em;
+      transition: background 0.22s, color 0.22s;
+      box-shadow: 0 2px 14px #8883;
+    }
+    .lang-switch-btn:hover {background: #0d3e68; color: #ffe4a1;}
+    @media (max-width: 550px) {.dark-mode-toggle-wrap span {display: none;}}
+    .quick-links-sidebar {
+      position: fixed;
+      top: 82px;
+      left: 22px;
+      z-index: 95;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .quick-link {
+      background: #0d3e68;
+      color: #fff;
+      border-radius: 10px;
       display: flex;
       align-items: center;
       gap: 7px;
-      box-shadow: 0 2px 9px #7772;
-      border: none;
-      transition: background 0.25s, color 0.25s;
+      padding: 9px 12px 9px 11px;
+      font-size: 1em;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 1px 5px #0077b555;
+      transition: background 0.22s, color 0.22s, transform 0.18s;
     }
-    .lang-switch:hover, .dark-mode-toggle:hover{transform:scale(1.08);filter:brightness(1.15);}
-    @media (max-width: 550px) {.top-controls-wrap span {display: none;}}
+    .quick-link .fa-solid, .quick-link .fa-brands {font-size: 1.23em;}
+    .quick-link:hover {background: #0077b5; color: #ffe4a1; transform: translateX(4px) scale(1.09);}
+    @media (max-width: 850px) {.quick-links-sidebar {display: none;}}
     .section {margin-bottom: 24px; background: #fff; border-radius: 12px; padding: 13px 11px 11px; box-shadow: 0 1px 4px #bbb2; text-align: left; transition: background 0.3s, color 0.3s;}
     body.dark .section {background: #262f47; color: #f7fbff;}
     h1, h2 {color: #0056b3; border-bottom: 2px solid #eaeaea; padding-bottom: 5px; margin-top: 18px;}
     body.dark h1, body.dark h2 {color: #ffc74b; border-bottom: 2px solid #444c64;}
     .headline {font-weight:bold;font-size:1.08em;margin-bottom:15px;color:#0056b3;text-align:center;}
     .buttons{text-align:center;margin-bottom:18px;}
-    .buttons a, .lang-switch {display:inline-block;padding:8px 14px;margin:6px 2px;color:#fff;text-decoration:none;border-radius:5px;cursor:pointer;font-weight:500;font-size:1em;}
-    .linkedin{background:#0077b5;} .whatsapp{background:#25D366;} .download-ar{background:#b53f00;} .download-en{background:#4CAF50;}
+    .buttons a {display:inline-block;padding:8px 14px;margin:6px 2px;color:#fff;text-decoration:none;border-radius:5px;cursor:pointer;font-weight:500;font-size:1em;}
+    .linkedin{background:#0077b5;} .whatsapp{background:#25D366;} .download-en{background:#4CAF50;} .download-ar{background:#b53f00;}
     .buttons a:hover{transform:scale(1.08);filter:brightness(1.15);}
     .skills-cards {display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; margin-bottom: 20px;}
     .skill-card {background: linear-gradient(120deg,#f3f6ff 60%,#b8e6ff 100%); border-radius: 11px; padding: 16px 10px 12px 10px; text-align: center; box-shadow: 0 1px 7px #aad6fb50; font-weight: bold; font-size: 1.08em; color: #15617a; transition: box-shadow 0.2s, transform 0.2s; border: 1.6px solid #dde8fc; display: flex; flex-direction: column; align-items: center; justify-content: center;}
@@ -132,81 +147,62 @@
     .lang-progress-bar-fill {height: 100%; border-radius: 18px; background: linear-gradient(90deg,#e4c200 40%,#ffe688 100%); width: 0; transition: width 1.1s cubic-bezier(.25,.93,.59,1.01);}
     body.dark .lang-progress-bar-bg {background: #44421e;}
     body.dark .lang-progress-bar-fill {background: linear-gradient(90deg,#ffe773 0%,#b09700 100%);}
-    .date-highlight {
-      color: #e9b700;
-      font-weight: bold;
-      background: #fdf5c7;
-      padding: 2px 7px;
-      border-radius: 7px;
-      margin-right: 7px;
-      font-size: 1em;
-    }
-    body.dark .date-highlight {
-      color: #fff6c8;
-      background: #795400;
-    }
     footer {margin: 40px auto 0 auto; color: #aaa; font-size: 0.95em; text-align: center;}
     body.dark footer {color: #ccc;}
   </style>
 </head>
 <body>
-<div class="top-controls-wrap">
-  <button class="dark-mode-toggle" onclick="toggleDarkMode()" title="Toggle Dark/Light Mode">
+<!-- وضع الوضع الليلي وتبديل اللغة في أعلى يسار الصفحة -->
+<div class="dark-mode-toggle-wrap">
+  <button class="dark-mode-toggle" onclick="toggleDarkMode()" title="Dark/Light Mode">
     <i class="fa-solid fa-moon"></i>
   </button>
-  <span>Dark / Light Mode</span>
-  <div class="lang-switch" onclick="switchLanguage()" style="margin-left:15px;"><i class="fa-solid fa-language"></i> العربية</div>
+  <button class="lang-switch-btn" onclick="switchLanguage()">
+    <i class="fa-solid fa-language"></i> عربي
+  </button>
 </div>
+
+<!-- الشريط الجانبي للروابط السريعة -->
+<div class="quick-links-sidebar">
+  <a class="quick-link" href="https://www.msn.com/ar-sa/sports/saudi_arabian_pro_league/game-center/sp-id-52034897?ocid=msedgdhp&cvid=45f6c31e0ab64f448c046b58940e6289&pc=U531&ei=65" target="_blank">
+    <i class="fa-solid fa-futbol"></i> Saudi League
+  </a>
+  <a class="quick-link" href="https://www.msn.com/ar-sa/weather/forecast/in-%D8%A7%D9%84%D8%AD%D9%85%D8%B1%D8%A7%D8%A1,%D9%85%D9%83%D8%A9?loc=eyJsIjoi2KfZhNit2YXYsdin2KEiLCJyIjoi2YXZg9ipIiwiYyI6Itin2YTYs9i52YjYr9mK2KkiLCJpIjoiU0EiLCJnIjoiYXItc2EiLCJ4IjozOS4xNjEzNjkzMjM3MzA0NywieSI6MjEuNTE2MzQyMTYzMDg1OTM4fQ%3D%3D&weadegreetype=C&ocid=msedgdhp&cvid=45f6c31e0ab64f448c046b58940e6289&content=SevereWeather_wxswywi&pc=U531&ei=72" target="_blank">
+    <i class="fa-solid fa-cloud-sun"></i> Makkah Weather
+  </a>
+  <a class="quick-link" href="https://site.ium.edu.so/" target="_blank">
+    <i class="fa-solid fa-graduation-cap"></i> IUM University
+  </a>
+  <a class="quick-link" href="https://zagzoog.com/english/" target="_blank">
+    <i class="fa-solid fa-building"></i> Zagzoog Co.
+  </a>
+  <a class="quick-link" href="https://www.msn.com/ar-sa?ocid=msedgdhp&pc=U531&cvid=5908de233d5b47ef97d6b2af0f82d14f" target="_blank">
+    <i class="fa-solid fa-globe"></i> MSN Portal
+  </a>
+</div>
+
 <div class="container">
 
-  <!-- Live Channels -->
-  <div class="live-bar" data-aos="fade-down">
-    <div class="live-bar-title"><i class="fa-solid fa-tower-broadcast"></i> Live Channels</div>
-    <div class="live-links">
-      <a href="https://www.youtube.com/channel/UCos52azQNBgW63_9uDJoPDA/live" class="haram" target="_blank"><i class="fa-solid fa-kaaba"></i> Makkah Live</a>
-      <a href="https://www.radio.net/s/egyptquraan" class="quran" target="_blank"><i class="fa-solid fa-mosque"></i> Holy Quran Radio</a>
-      <a href="https://www.aljazeera.net/live/" class="aljazeera" target="_blank"><i class="fa-solid fa-tv"></i> Al Jazeera Live</a>
-    </div>
-  </div>
-  <div class="tech-news-bar" data-aos="zoom-in">
-    <div class="tech-news-bar-title"><i class="fa-solid fa-newspaper"></i> Latest Tech News</div>
-    <div class="tech-links">
-      <a href="https://techcrunch.com/" class="techcrunch" target="_blank"><i class="fa-brands fa-twitter"></i> TechCrunch</a>
-      <a href="https://www.theverge.com/tech" class="theverge" target="_blank"><i class="fa-solid fa-microchip"></i> The Verge</a>
-      <a href="https://www.wired.com/category/tech/" class="wired" target="_blank"><i class="fa-solid fa-bolt"></i> Wired</a>
-      <a href="https://www.tech-wd.com/wd/" class="techwd" target="_blank"><i class="fa-solid fa-globe"></i> Tech WD (Arabic)</a>
-      <a href="https://aitnews.com/" class="aitnews" target="_blank"><i class="fa-solid fa-bullhorn"></i> AIT News (Arabic)</a>
-      <a href="https://www.cnet.com/tech/" class="cnet" target="_blank"><i class="fa-solid fa-rss"></i> CNET</a>
-    </div>
-  </div>
-
-  <!-- Cover image and profile picture -->
+  <!-- Cover Banner and Profile -->
   <div class="cover-banner"></div>
   <img src="1581595177182.jpeg" alt="Mohammed Abdelbagi Elrayah" class="profile" data-aos="zoom-in">
 
-  <div class="headline-anim" data-aos="fade-down" data-aos-delay="150">
-    <svg class="headline-svg" viewBox="0 0 64 64" fill="none">
-      <circle cx="32" cy="32" r="28" stroke="#00b2a9" stroke-width="4" />
-      <circle cx="32" cy="32" r="18" stroke="#ffc74b" stroke-width="3" />
-      <circle cx="32" cy="32" r="6" fill="#0077b5"/>
-    </svg>
-    <h1 style="margin:0;">Mohammed Abdelbagi Elrayah</h1>
-  </div>
-  <p class="headline" data-aos="fade-up" data-aos-delay="250">
+  <h1 style="text-align:center;margin-top:-18px;">Mohammed Abdelbagi Elrayah</h1>
+  <p class="headline" data-aos="fade-up">
     Computer Engineer & IT Expert @Zagzoog For Home Appliances | Systems Administration | Smart Infrastructure Development | MBA in International Business | PhD Student in Cybersecurity at University of Minnesota.
   </p>
   <div class="buttons" data-aos="zoom-in-up" data-aos-delay="350">
     <a class="linkedin" href="https://www.linkedin.com/in/mohmd-elrayah/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
     <a class="whatsapp" href="https://wa.me/966550857011" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-    <a class="download-en" href="Mohammed_Abdalbagi_Elrayah_CV.pdf" download><i class="fa-solid fa-file-arrow-down"></i> Download CV (EN)</a>
-    <a class="download-ar" href="Mohammed_Abdalbagi_Elrayah_CV_AR.pdf" download><i class="fa-solid fa-file-arrow-down"></i> Download CV (AR)</a>
+    <a class="download-en" href="Mohammed_Abdalbagi_Elrayah_CV.pdf" download><i class="fa-solid fa-file-arrow-down"></i> Download CV</a>
+    <a class="download-ar" href="Mohammed_Abdalbagi_Elrayah_CV_AR.pdf" download><i class="fa-solid fa-file-arrow-down"></i> تحميل CV (AR)</a>
   </div>
 
   <!-- Career Objective -->
   <div class="section" data-aos="fade-up" data-aos-delay="400">
     <h2>Career Objective</h2>
     <p>
-      Detail-oriented and highly skilled IT Specialist with a solid background in installing, configuring, and maintaining computer systems and networks. Adept at providing technical support, managing IT infrastructure, and ensuring security and data integrity. Skilled in cross-departmental collaboration to improve operational efficiency and staff training on IT best practices.
+      Detail-oriented and organized IT Specialist with extensive experience in installation, configuration, and maintenance of computer systems and networks. Proficient in providing technical support, IT infrastructure management, and ensuring system security and data integrity. Highly capable of cross-departmental collaboration to improve operational efficiency and staff training.
     </p>
   </div>
 
@@ -216,25 +212,25 @@
     <ul>
       <li>
         <b>IT Specialist</b>
-        <span class="date-highlight">2017–Present</span> - Zagzoog for Home Appliances, Jeddah
+        <span class="date-highlight">2017–Present</span> - Zagzoog for Home Appliances
         <ul>
           <li>Install, configure, and maintain computer hardware and systems.</li>
-          <li>Provide timely and effective technical support.</li>
+          <li>Promptly resolve technical support issues.</li>
           <li>Ensure security through access controls, backups, and firewalls.</li>
           <li>Train employees on systems and applications.</li>
-          <li>Manage office technologies and collaborate with departments.</li>
+          <li>Manage office technologies and coordinate with departments.</li>
         </ul>
       </li>
       <li>
-        <b>Information Technology Lecturer</b>
+        <b>IT Lecturer</b>
         <span class="date-highlight">2016–2017</span> - Sudan University of Science and Technology
         <ul>
           <li>Teach IT courses, prepare exams, and supervise academic research.</li>
-          <li>Participate in conferences and academic activities.</li>
+          <li>Participate in conferences and academic events.</li>
         </ul>
       </li>
       <li>
-        <b>Head of Infrastructure & Technical Support</b>
+        <b>Infrastructure & Technical Support</b>
         <span class="date-highlight">2014–2017</span> - Africa City of Technology
         <ul>
           <li>Lead technical support teams and manage IT infrastructure projects.</li>
@@ -265,9 +261,9 @@
   <div class="section" data-aos="fade-up" data-aos-delay="420">
     <h2>Education</h2>
     <ul>
-      <li>MBA in International Business - Amity University, India <span class="date-highlight">2017</span></li>
-      <li>Bachelor’s in Information Technology - Amity University, India <span class="date-highlight">2013</span></li>
-      <li>Three-year Diploma in Computer Engineering - University of Bahri, Sudan <span class="date-highlight">2006</span></li>
+      <li>MBA in International Business – Amity University, India (2017)</li>
+      <li>Bachelor in Information Technology – Amity University, India (2013)</li>
+      <li>Three-Year Diploma in Computer Engineering – University of Bahri, Sudan (2006)</li>
     </ul>
   </div>
 
@@ -275,21 +271,21 @@
   <div class="section" data-aos="fade-up" data-aos-delay="430">
     <h2>Professional Development</h2>
     <ul>
-      <li>Diploma in Network Design, Administration, Installation & Maintenance - Sudatel Academy</li>
-      <li>CCNA Course - Sudatel Academy</li>
-      <li>IPv6 Training - National Telecommunication Corporation</li>
-      <li>Diploma in Computer & Network Maintenance - Sudan</li>
-      <li>Linux System Administration (RED HAT) - Sudatel Academy</li>
-      <li>Academic Supervision Course - Open University of Sudan</li>
+      <li>Diploma in Network Design, Administration, Installation, & Maintenance – Sudatel Academy</li>
+      <li>CCNA Course – Sudatel Academy</li>
+      <li>IPv6 Training – National Telecommunication Corporation</li>
+      <li>Diploma in Computer & Network Maintenance – Sudan</li>
+      <li>Linux Administration Course (RED HAT) – Sudatel Academy</li>
+      <li>Academic Supervision Course – Open University of Sudan</li>
     </ul>
   </div>
 
-  <!-- Technical Skills -->
+  <!-- Technical Skills Expanded -->
   <div class="section" data-aos="fade-up" data-aos-delay="440">
     <h2>Technical Skills</h2>
     <div class="skills-cards">
       <div class="skill-card"><i class="fa-solid fa-network-wired"></i> Network Engineering</div>
-      <div class="skill-card"><i class="fa-solid fa-server"></i> Infrastructure Management</div>
+      <div class="skill-card"><i class="fa-solid fa-server"></i> IT Infrastructure</div>
       <div class="skill-card"><i class="fa-solid fa-lock"></i> Cybersecurity</div>
       <div class="skill-card"><i class="fa-solid fa-hdd"></i> Hardware Support</div>
       <div class="skill-card"><i class="fa-solid fa-cloud"></i> Cloud Computing</div>
@@ -300,6 +296,17 @@
       <div class="skill-card"><i class="fa-solid fa-video"></i> CCTV Systems</div>
       <div class="skill-card"><i class="fa-solid fa-network-wired"></i> Network Design</div>
       <div class="skill-card"><i class="fa-solid fa-tools"></i> Troubleshooting</div>
+      <div class="skill-card"><i class="fa-solid fa-database"></i> Storage Virtualization</div>
+      <div class="skill-card"><i class="fa-solid fa-id-card"></i> Access Control</div>
+      <div class="skill-card"><i class="fa-solid fa-shield-halved"></i> Network Security</div>
+      <div class="skill-card"><i class="fa-solid fa-headset"></i> Help Desk & Remote Support</div>
+      <div class="skill-card"><i class="fa-solid fa-terminal"></i> Systems Administration</div>
+      <div class="skill-card"><i class="fa-solid fa-sitemap"></i> IT Infrastructure Design</div>
+      <div class="skill-card"><i class="fa-solid fa-user-gear"></i> IT Infrastructure Management</div>
+      <div class="skill-card"><i class="fa-solid fa-list-check"></i> Penetration Testing</div>
+      <div class="skill-card"><i class="fa-brands fa-microsoft"></i> Office 365</div>
+      <div class="skill-card"><i class="fa-solid fa-bug"></i> Firewall & Antivirus</div>
+      <div class="skill-card"><i class="fa-solid fa-globe"></i> Information Technology</div>
     </div>
     <div class="progress-bar-section">
       <div class="progress-title">Networking</div>
@@ -339,11 +346,11 @@
       <label>Message:<br><textarea name="Message" required rows="4" style="width:100%;padding:7px;border-radius:4px;border:1px solid #bbb;"></textarea></label><br>
       <button type="submit" style="background:#0077b5;color:white;padding:10px 24px;border:none;border-radius:5px;cursor:pointer;font-weight:bold;">Send</button>
     </form>
-    <p style="font-size:0.95em;color:#555;margin-top:8px;">* For best results, use your computer or mobile email app to send the message.</p>
+    <p style="font-size:0.95em;color:#555;margin-top:8px;">* For best results, use desktop mail clients like Outlook, Mail, or Gmail app.</p>
   </div>
 
   <footer>
-    &copy; 2025 Mohammed Abdelbagi Elrayah. All Rights Reserved.
+    &copy; 2025 Mohammed Abdelbagi Elrayah. All rights reserved.
   </footer>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
