@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>محمد عبدالباقي الريح | مهندس نظم وتقنية معلومات</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #e9f4fb;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      transition: background 0.4s, color 0.4s;
+    }
+    body.dark {background: #181d29; color: #f3f7fa;}
+    .wrapper {display: flex; flex-direction: row-reverse; justify-content: center;}
+    .sidebar-right, .sidebar-left {
+      position: sticky; top: 0; align-self: flex-start;
+      width: 240px; min-width:170px; max-width:260px;
+      padding: 22px 7px 22px 7px;
+      margin-top: 35px;
+      z-index: 10;
+      display: flex; flex-direction: column; gap: 25px;
+    }
+    .sidebar-right {margin-right: 14px;}
+    .sidebar-left  {margin-left: 14px;}
+    @media (max-width:1150px){
+      .sidebar-right,.sidebar-left{display:none;}
+      .wrapper{flex-direction:column;}
+    }
+    .sidebar-widget, .sidebar-clockbox {
+      background: linear-gradient(120deg,#f9fcf8 60%,#e8f6ff 100%);
+      border-radius: 14px; box-shadow: 0 2px 8px #eee6;
+      padding: 13px 11px 10px 13px;
+      color: #276e37;
+      margin-bottom: 4px;
+      transition: background 0.3s, color 0.3s;
+    }
+    .sidebar-clockbox {background: linear-gradient(120deg,#fff4e1 60%,#d9fff1 100%); color:#2e3157;}
+    .sidebar-widget-title {font-weight:bold;font-size:1.1em; margin-bottom:7px;}
+    .sidebar-links {display:flex;flex-direction:column;gap:8px;}
+    .sidebar-links a {
+      color: #fff; background: #1794cf;
+      border-radius: 8px; padding: 8px 12px;
+      text-decoration: none; font-weight: 500;
+      display: flex; align-items: center; gap: 7px; font-size: 1em;
+      transition: background 0.15s, color 0.15s, box-shadow 0.18s;
+      box-shadow: 0 2px 8px #1bb7cc33;
+    }
+    .sidebar-links a:hover {
+      background: #076b8a;
+      color: #fffdc7; text-decoration: underline;
+      transform:translateY(-1.5px) scale(1.04);
+    }
+    .sidebar-clockbox .sidebar-widget-title {color:#F26B38;}
+    .clock-main{
+      font-size:2em; font-weight:900; letter-spacing:2px; text-align:center;
+      color: #2196F3; background:#fbeedb; border-radius:10px; padding:4px 0 2px 0; margin-bottom:8px;
+      box-shadow: 0 1px 4px #b0e2ffb8;
+    }
+    .prayer-row{display:flex;justify-content:space-between;font-size:1.07em;margin-bottom:2px;}
+    .prayer-name{font-weight:bold;color:#2d7e6a;}
+    .prayer-time{background:#d2f1c4;padding:2px 10px;border-radius:7px;color:#206e0d;font-weight:600;}
+    .weather-box {
+      display:flex; align-items:center; gap:10px; margin-top:5px;
+      background: #e7e8fd;
+      border-radius: 7px;
+      padding: 8px 12px;
+      color: #0b5987;
+      font-weight:bold;
+      box-shadow: 0 2px 10px #bcd7ff44;
+    }
+    .weather-icon {width:48px;vertical-align:middle;}
+    body.dark .sidebar-widget, body.dark .sidebar-clockbox {background: linear-gradient(120deg,#22293d 70%,#23294a 100%); color:#e7f1fc;}
+    body.dark .sidebar-widget-title, body.dark .sidebar-clockbox .sidebar-widget-title {color: #ffd072;}
+    body.dark .clock-main {background: #2d3148; color: #ffc74b;}
+    body.dark .prayer-name{color:#74ffe2;}
+    body.dark .prayer-time{background:#28594a;color:#e3ffef;}
+    body.dark .weather-box {background:#1c1b3b; color:#35e1ff;}
+    /* الشريط العلوي */
+    .main-content {flex: 1 1 600px; max-width: 900px; margin: 24px 0 24px 0; background: #fff; border: 4px solid #0077b5; border-radius: 18px; box-shadow: 0 6px 30px #8cc7e560, 0 2px 8px #c5e2f5b8; padding: 0 5vw 0 5vw; position: relative;}
+    body.dark .main-content {background: #22283b;border-color: #333a6d;box-shadow: 0 8px 30px #24285a60, 0 2px 8px #23274ab8;}
+    .live-bar, .tech-news-bar {margin: 13px 0 0 0; padding: 5px 0 3px 0; background: #f8f5ee; border-radius: 12px; box-shadow: 0 2px 7px #e9be81a0; text-align: center;}
+    .live-bar-title, .tech-news-bar-title {font-weight: bold;}
+    .live-bar-links, .tech-bar-links {display: flex; flex-wrap: wrap; justify-content: center; gap: 7px;}
+    .live-bar-link, .tech-bar-link {display: inline-block; padding: 4px 14px; border-radius: 7px; color: #fff; font-weight: 600; font-size: 0.93em; text-decoration: none; box-shadow: 0 1px 4px #bdb49e3a; transition: filter 0.18s, transform 0.18s;}
+    .haram {background: #008d36;} .quran {background: #0077b5;} .aljazeera {background: #00b2a9;}
+    .techcrunch {background: #00b088;} .theverge {background: #5a51ff;} .wired {background: #222;}
+    .techwd {background: #0779e4;} .aitnews {background: #1185e4;} .cnet {background: #b40a18;}
+    /* باقي تصميمات الصفحة مثل الغلاف والصورة... (نفس كودك السابق) */
+    /* ========== باقي التنسيقات مثل المهارات، البطاقات، السيرة...الخ ========== */
+    .cover-banner {
+      width: 100%;
+      height: 160px;
+      background: url('adi-goldstein-EUsVwEOsblE-unsplash.jpg') center center/cover no-repeat;
+      position: relative;
+      border-radius: 18px 18px 0 0;
+      margin-bottom: -60px;
+      box-shadow: 0 3px 12px #92b5c070;
+      overflow: hidden;
+      border-bottom: 3.5px solid #0d3e68;
+    }
+    img.profile {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+      box-shadow: 0 4px 14px #5ab7f855;
+      border: 4px solid #fff;
+      margin-bottom: 12px;
+      top: -52px;
+      background: #f8fbff;
+    }
+    @media (max-width: 700px) {
+      .cover-banner {height: 85px;}
+      img.profile {width: 78px; height: 78px; top: -32px;}
+    }
+    .headline-anim {display: flex; justify-content: center; align-items: center; gap: 10px;}
+    .headline-svg {width: 38px; height: 38px; vertical-align: middle; animation: rotateAnim 3s linear infinite;}
+    @keyframes rotateAnim {0% {transform: rotate(0deg);}100% {transform: rotate(360deg);}}
+    h1, h2 {color: #0056b3; border-bottom: 2px solid #eaeaea; padding-bottom: 5px; margin-top: 18px;}
+    body.dark h1, body.dark h2 {color: #ffc74b; border-bottom: 2px solid #444c64;}
+    .headline {font-weight:bold;font-size:1.08em;margin-bottom:15px;color:#0056b3;text-align:center;}
+    .buttons{text-align:center;margin-bottom:18px;}
+    .buttons a, .lang-switch {display:inline-block;padding:8px 14px;margin:6px 2px;color:#fff;text-decoration:none;border-radius:5px;cursor:pointer;font-weight:500;font-size:1em;}
+    .linkedin{background:#0077b5;} .whatsapp{background:#25D366;} .download-ar{background:#b53f00;} .download-en{background:#4CAF50;} .lang-switch{background:#555;}
+    .buttons a:hover, .lang-switch:hover{transform:scale(1.08);filter:brightness(1.15);}
+    .skills-cards {display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; margin-bottom: 20px;}
+    .skill-card {background: linear-gradient(120deg,#f3f6ff 60%,#b8e6ff 100%); border-radius: 11px; padding: 16px 10px 12px 10px; text-align: center; box-shadow: 0 1px 7px #aad6fb50; font-weight: bold; font-size: 1.08em; color: #15617a; transition: box-shadow 0.2s, transform 0.2s; border: 1.6px solid #dde8fc; display: flex; flex-direction: column; align-items: center; justify-content: center;}
+    .skill-card i {font-size: 1.5em; margin-bottom: 7px;}
+    body.dark .skill-card {background: linear-gradient(120deg,#22283b 70%,#1e4d70 100%); color: #e7fdff; border-color: #365886; box-shadow: 0 1px 7px #16233190;}
+    .progress-bar-section {margin-bottom: 28px; margin-top: 8px;}
+    .progress-title {font-weight:bold;margin-bottom:4px;}
+    .progress-bar-bg {background: #e2e8f0; border-radius: 18px; overflow: hidden; height: 18px; margin-bottom: 10px; box-shadow: 0 1px 5px #c5e4ff44;}
+    .progress-bar-fill {height: 100%; border-radius: 18px; background: linear-gradient(90deg,#009fe3 40%,#a6e8ff 100%); width: 0; transition: width 1.1s cubic-bezier(.25,.93,.59,1.01);}
+    body.dark .progress-bar-bg {background: #344369;}
+    body.dark .progress-bar-fill {background: linear-gradient(90deg,#1be7ff 0%,#003c74 100%);}
+    .languages-section {margin-bottom: 30px;}
+    .lang-progress-title {font-weight: bold; margin-bottom: 4px;}
+    .lang-progress-bar-bg {background: #f6f3e4; border-radius: 18px; overflow: hidden; height: 16px; margin-bottom: 11px; box-shadow: 0 1px 4px #ffe1c244;}
+    .lang-progress-bar-fill {height: 100%; border-radius: 18px; background: linear-gradient(90deg,#e4c200 40%,#ffe688 100%); width: 0; transition: width 1.1s cubic-bezier(.25,.93,.59,1.01);}
+    body.dark .lang-progress-bar-bg {background: #44421e;}
+    body.dark .lang-progress-bar-fill {background: linear-gradient(90deg,#ffe773 0%,#b09700 100%);}
+    footer {margin: 40px auto 0 auto; color: #aaa; font-size: 0.95em; text-align: center;}
+    body.dark footer {color: #ccc;}
+    /* تنقل سريع عصري */
+    .toc {
+      margin:18px 0 18px 0; background:#e8f6ff;
+      border-radius:8px;box-shadow:0 1px 4px #bbf8;
+      padding:10px 7px;text-align:right;
+      font-size:1.05em;
+      font-weight:500;
+    }
+    .toc a {color:#0077b5;text-decoration:none;margin-left:11px;}
+    .toc a:hover{text-decoration:underline;color:#0b43ae;}
+    body.dark .toc{background:#283e55;}
+    body.dark .toc a{color:#ffed81;}
+    body.dark .toc a:hover{color:#fff;}
+  </style>
+</head>
+<body>
+  <div style="position:fixed;top:18px;left:18px;z-index:100;display:flex;gap:8px;">
+    <button class="dark-mode-toggle" onclick="toggleDarkMode()" title="تبديل الوضع الليلي/النهاري" style="background:#22283b;color:#ffce1a;border:none;border-radius:50%;width:48px;height:48px;cursor:pointer;font-size:1.6em;box-shadow:0 2px 14px #222b6e30;display:flex;align-items:center;justify-content:center;">
+      <i class="fa-solid fa-moon"></i>
+    </button>
+    <button onclick="window.location.href='index.html';" title="English" style="background:#4CAF50;color:white;border:none;border-radius:8px;padding:8px 16px;font-size:1.13em;font-weight:bold;cursor:pointer;">English</button>
+  </div>
+  <div class="wrapper">
+    <!-- الشريط الجانبي الأيسر: روابط سريعة -->
+    <aside class="sidebar-left">
+      <div class="sidebar-widget">
+        <div class="sidebar-widget-title"><i class="fa-solid fa-link"></i> روابط سريعة</div>
+        <div class="sidebar-links">
+          <a href="https://binbaz.org.sa/" target="_blank"><i class="fa-solid fa-mosque"></i> موقع بن باز</a>
+          <a href="https://site.ium.edu.so/" target="_blank"><i class="fa-solid fa-graduation-cap"></i> الجامعة الإسلامية مينيسوتا</a>
+          <a href="https://zagzoog.com/english/" target="_blank"><i class="fa-solid fa-building"></i> الزقزوق للأجهزة المنزلية</a>
+          <a href="https://www.msn.com/ar-sa/weather/forecast/in-%D8%A7%D9%84%D8%AD%D9%85%D8%B1%D8%A7%D8%A1,%D9%85%D9%83%D8%A9" target="_blank"><i class="fa-solid fa-cloud-sun"></i> طقس مكة</a>
+          <a href="https://www.msn.com/ar-sa?ocid=msedgdhp&pc=U531&cvid=5908de233d5b47ef97d6b2af0f82d14f" target="_blank"><i class="fa-brands fa-microsoft"></i> MSN</a>
+          <a href="https://www.msn.com/ar-sa/sports/saudi_arabian_pro_league/game-center/sp-id-52034897?ocid=msedgdhp" target="_blank"><i class="fa-solid fa-futbol"></i> الدوري السعودي</a>
+          <a href="https://www.dw.com/ar/%D8%B9%D9%84%D9%88%D9%85-%D9%88%D8%AA%D9%83%D9%86%D9%88%D9%84%D9%88%D8%AC%D9%8A%D8%A7/s-8411" target="_blank"><i class="fa-solid fa-flask"></i> DW علوم</a>
+          <a href="https://studyfans.com/blogs/what-is-technological-science-department" target="_blank"><i class="fa-solid fa-book"></i> علوم وتقنية</a>
+        </div>
+      </div>
+      <!-- جدول محتويات سريع -->
+      <div class="toc">
+        <span>التنقل السريع:</span>
+        <a href="#career">الهدف</a> |
+        <a href="#exp">الخبرات</a> |
+        <a href="#edu">التعليم</a> |
+        <a href="#skills">المهارات</a> |
+        <a href="#lang">اللغات</a> |
+        <a href="#contact">تواصل</a>
+      </div>
+    </aside>
+    <!-- الشريط الجانبي الأيمن: الساعة/الطقس/الأذان -->
+    <aside class="sidebar-right">
+      <div class="sidebar-clockbox">
+        <div class="sidebar-widget-title"><i class="fa-solid fa-clock"></i> الساعة الآن في جدة</div>
+        <div class="clock-main" id="clock"></div>
+        <div class="sidebar-widget-title"><i class="fa-solid fa-cloud-sun"></i> طقس جدة</div>
+        <div class="weather-box" id="weather-box"><span>تحميل...</span></div>
+        <div class="sidebar-widget-title"><i class="fa-solid fa-mosque"></i> مواقيت الصلاة</div>
+        <div id="prayer-times"></div>
+      </div>
+    </aside>
+    <!-- ======== محتوى الصفحة ======== -->
+    <main class="main-content">
+      <!-- الشريط العلوي: بث مباشر وأخبار تقنية -->
+      <div class="live-bar">
+        <div class="live-bar-title"><i class="fa-solid fa-tower-broadcast"></i> البث المباشر</div>
+        <div class="live-bar-links">
+          <a href="https://www.youtube.com/channel/UCos52azQNBgW63_9uDJoPDA/live" class="live-bar-link haram" target="_blank"><i class="fa-solid fa-kaaba"></i> قناة الحرم المكي</a>
+          <a href="https://www.holyquranradio.com/" class="live-bar-link quran" target="_blank"><i class="fa-solid fa-mosque"></i> إذاعة القرآن الكريم</a>
+          <a href="https://www.aljazeera.net/live/" class="live-bar-link aljazeera" target="_blank"><i class="fa-solid fa-tv"></i> الجزيرة مباشر</a>
+        </div>
+      </div>
+      <div class="tech-news-bar">
+        <div class="tech-news-bar-title"><i class="fa-solid fa-newspaper"></i> أحدث أخبار التقنية</div>
+        <div class="tech-bar-links">
+          <a href="https://techcrunch.com/" class="tech-bar-link techcrunch" target="_blank">TechCrunch</a>
+          <a href="https://www.theverge.com/tech" class="tech-bar-link theverge" target="_blank">The Verge</a>
+          <a href="https://www.wired.com/category/tech/" class="tech-bar-link wired" target="_blank">Wired</a>
+          <a href="https://www.tech-wd.com/wd/" class="tech-bar-link techwd" target="_blank">عالم التقنية</a>
+          <a href="https://aitnews.com/" class="tech-bar-link aitnews" target="_blank">البوابة العربية</a>
+          <a href="https://www.cnet.com/tech/" class="tech-bar-link cnet" target="_blank">CNET</a>
+        </div>
+      </div>
+      <!-- صورة الغلاف وصورة الملف الشخصي -->
+      <div class="cover-banner"></div>
+      <img src="1581595177182.jpeg" alt="محمد عبدالباقي الريح" class="profile" data-aos="zoom-in">
+      <div class="headline-anim" data-aos="fade-down" data-aos-delay="150">
+        <svg class="headline-svg" viewBox="0 0 64 64" fill="none">
+          <circle cx="32" cy="32" r="28" stroke="#00b2a9" stroke-width="4" />
+          <circle cx="32" cy="32" r="18" stroke="#ffc74b" stroke-width="3" />
+          <circle cx="32" cy="32" r="6" fill="#0077b5"/>
+        </svg>
+        <h1 style="margin:0;">محمد عبدالباقي الريح</h1>
+      </div>
+      <p class="headline" data-aos="fade-up" data-aos-delay="250">
+        مهندس حاسوب وخبير تقنية معلومات في شركة الزقزوق للأجهزة المنزلية | إدارة الأنظمة | تطوير البنية التحتية الذكية | ماجستير في الأعمال الدولية | طالب دكتوراه في الأمن السيبراني بجامعة مينيسوتا.
+      </p>
+      <div class="buttons" data-aos="zoom-in-up" data-aos-delay="350">
+        <a class="linkedin" href="https://www.linkedin.com/in/mohmd-elrayah/" target="_blank"><i class="fab fa-linkedin"></i> لينكدإن</a>
+        <a class="whatsapp" href="https://wa.me/966550857011" target="_blank"><i class="fab fa-whatsapp"></i> واتساب</a>
+        <a class="download-en" href="Mohammed_Abdalbagi_Elrayah_CV.pdf" download><i class="fa-solid fa-file-arrow-down"></i> تحميل CV (EN)</a>
+        <a class="download-ar" href="Mohammed_Abdalbagi_Elrayah_CV_AR.pdf" download><i class="fa-solid fa-file-arrow-down"></i> تحميل CV (AR)</a>
+      </div>
+      <!-- ======== أقسام السيرة الذاتية ========= -->
+      <div id="career" class="section" data-aos="fade-up" data-aos-delay="400">
+        <h2>الهدف الوظيفي</h2>
+        <p>
+          اختصاصي تقنية معلومات دقيق ومنظم بخبرة واسعة في تركيب، إعداد وصيانة أنظمة وشبكات الحاسب الآلي. متمكن من تقديم الدعم الفني، إدارة البنية التحتية التقنية وضمان أمان وسلامة البيانات والأنظمة. أتمتع بقدرة عالية على العمل المشترك مع مختلف الأقسام لتحسين الكفاءة التشغيلية وتدريب الموظفين على أفضل الممارسات التقنية.
+        </p>
+      </div>
+      <div id="exp" class="section" data-aos="fade-up" data-aos-delay="410">
+        <h2>الخبرات العملية</h2>
+        <ul>
+          <li>
+            <b>اختصاصي تقنية معلومات</b>
+            <span style="color:#c02f2f;font-weight:700;">(2017-حتى الآن)</span> - شركة الزقزوق للأجهزة المنزلية، جدة
+            <ul>
+              <li>تركيب وإعداد وصيانة أجهزة وأنظمة الحاسب.</li>
+              <li>حل مشاكل الدعم الفني بسرعة وكفاءة.</li>
+              <li>تأمين الأنظمة من خلال التحكم بالصلاحيات، النسخ الاحتياطي، والجدران النارية.</li>
+              <li>تدريب الموظفين على الأنظمة والتطبيقات.</li>
+              <li>إدارة البريد الإلكتروني والأجهزة المكتبية والتنسيق مع باقي الأقسام.</li>
+            </ul>
+          </li>
+          <li>
+            <b>محاضر تقنية معلومات</b>
+            <span style="color:#1956b5;font-weight:700;">(2016-2017)</span> - جامعة السودان للعلوم والتكنولوجيا
+            <ul>
+              <li>تدريس مواد تقنية المعلومات، إعداد الامتحانات والبحوث الأكاديمية.</li>
+              <li>المشاركة في المؤتمرات والأنشطة العلمية.</li>
+            </ul>
+          </li>
+          <li>
+            <b>رئيس قسم البنية التحتية والدعم الفني</b>
+            <span style="color:#d07c11;font-weight:700;">(2014-2017)</span> - مدينة أفريقيا التكنولوجية
+            <ul>
+              <li>قيادة فريق الدعم الفني وإدارة مشاريع البنية التحتية التقنية.</li>
+              <li>تخطيط استمرارية الأعمال والطوارئ.</li>
+              <li>إدارة الميزانيات والمشتريات التقنية.</li>
+            </ul>
+          </li>
+          <li>
+            <b>مهندس شبكات وحواسيب</b>
+            <span style="color:#007b5e;font-weight:700;">(2011-2014)</span> - مدينة أفريقيا التكنولوجية
+            <ul>
+              <li>تصميم وصيانة الشبكات المحلية والواسعة.</li>
+              <li>تطبيق سياسات الأمان وإدارة موارد الشبكة.</li>
+            </ul>
+          </li>
+          <li>
+            <b>مهندس شبكات وحواسيب</b>
+            <span style="color:#2e7cc4;font-weight:700;">(2008-2010)</span> - قرية الخرطوم للشحن الجوي
+            <ul>
+              <li>تركيب وتحديث الأجهزة، الشبكات وأنظمة التشغيل.</li>
+              <li>تقديم الدعم الفني، حل المشكلات وإعداد تقارير دورية.</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div id="edu" class="section" data-aos="fade-up" data-aos-delay="420">
+        <h2>المؤهلات التعليمية</h2>
+        <ul>
+          <li>ماجستير في الأعمال الدولية - جامعة أميتي، الهند (2017)</li>
+          <li>بكالوريوس تقنية المعلومات - جامعة أميتي، الهند (2013)</li>
+          <li>دبلوم ثلاثة سنوات في هندسة الحاسب الآلي - جامعة بحري، السودان (2006)</li>
+        </ul>
+      </div>
+      <div class="section" data-aos="fade-up" data-aos-delay="430">
+        <h2>التطوير المهني</h2>
+        <ul>
+          <li>دبلوم تصميم، إدارة، تركيب وصيانة الشبكات - أكاديمية سوداتل</li>
+          <li>دورة CCNA - أكاديمية سوداتل</li>
+          <li>تدريب IPv6 - الهيئة القومية للاتصالات</li>
+          <li>دبلوم صيانة الحواسيب والشبكات - السودان</li>
+          <li>دورة إدارة لينكس (RED HAT) - أكاديمية سوداتل</li>
+          <li>دورة الإشراف الأكاديمي - الجامعة المفتوحة بالسودان</li>
+        </ul>
+      </div>
+      <div id="skills" class="section" data-aos="fade-up" data-aos-delay="440">
+        <h2>المهارات التقنية</h2>
+        <div class="skills-cards">
+          <div class="skill-card"><i class="fa-solid fa-network-wired"></i> هندسة الشبكات</div>
+          <div class="skill-card"><i class="fa-solid fa-server"></i> إدارة البنية التحتية</div>
+          <div class="skill-card"><i class="fa-solid fa-lock"></i> الأمن السيبراني</div>
+          <div class="skill-card"><i class="fa-solid fa-hdd"></i> دعم الأجهزة</div>
+          <div class="skill-card"><i class="fa-solid fa-cloud"></i> الحوسبة السحابية</div>
+          <div class="skill-card"><i class="fa-solid fa-laptop-code"></i> تركيب أجهزة الحاسب</div>
+          <div class="skill-card"><i class="fa-brands fa-linux"></i> لينوكس و ويندوز</div>
+          <div class="skill-card"><i class="fa-solid fa-key"></i> Active Directory</div>
+          <div class="skill-card"><i class="fa-solid fa-user-shield"></i> VPN و الأنظمة الافتراضية</div>
+          <div class="skill-card"><i class="fa-solid fa-video"></i> أنظمة المراقبة CCTV</div>
+          <div class="skill-card"><i class="fa-solid fa-network-wired"></i> تصميم الشبكات</div>
+          <div class="skill-card"><i class="fa-solid fa-tools"></i> حل المشكلات التقنية</div>
+          <div class="skill-card"><i class="fa-solid fa-plug"></i> Storage Virtualization</div>
+          <div class="skill-card"><i class="fa-solid fa-sitemap"></i> Network Design</div>
+          <div class="skill-card"><i class="fa-solid fa-desktop"></i> Hardware Engineering</div>
+        </div>
+        <div class="progress-bar-section">
+          <div class="progress-title">الشبكات</div>
+          <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:94%"></div></div>
+          <div class="progress-title">الدعم الفني</div>
+          <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:92%"></div></div>
+          <div class="progress-title">الأمن السيبراني</div>
+          <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:85%"></div></div>
+          <div class="progress-title">البنية الذكية</div>
+          <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:84%"></div></div>
+          <div class="progress-title">إدارة الأنظمة</div>
+          <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:80%"></div></div>
+        </div>
+      </div>
+      <div id="lang" class="section languages-section" data-aos="fade-up" data-aos-delay="450">
+        <h2>المهارات اللغوية</h2>
+        <div>
+          <div class="lang-progress-title">العربية (اللغة الأم)</div>
+          <div class="lang-progress-bar-bg"><div class="lang-progress-bar-fill" style="width:100%"></div></div>
+          <div class="lang-progress-title">الإنجليزية (جيد جدًا)</div>
+          <div class="lang-progress-bar-bg"><div class="lang-progress-bar-fill" style="width:88%"></div></div>
+        </div>
+      </div>
+      <div id="contact" class="section" data-aos="fade-up" data-aos-delay="460">
+        <h2>التواصل</h2>
+        <p>
+          <strong>الجوال:</strong> <a href="tel:+966550857011">+966550857011</a><br>
+          <strong>البريد الإلكتروني:</strong> <a href="mailto:mohmd.bagi@hotmail.com">mohmd.bagi@hotmail.com</a>
+        </p>
+        <form style="max-width: 400px; margin: 0 auto; text-align: right; background: #f3f7fa; padding: 20px; border-radius: 8px; box-shadow: 0 1px 3px #ccc; direction:rtl;" method="POST" action="mailto:mohmd.bagi@hotmail.com" enctype="text/plain">
+          <label>الاسم:<br><input type="text" name="Name" required style="width:100%;padding:7px;margin-bottom:10px;border-radius:4px;border:1px solid #bbb;"></label><br>
+          <label>البريد الإلكتروني:<br><input type="email" name="Email" required style="width:100%;padding:7px;margin-bottom:10px;border-radius:4px;border:1px solid #bbb;"></label><br>
+          <label>الرسالة:<br><textarea name="Message" required rows="4" style="width:100%;padding:7px;border-radius:4px;border:1px solid #bbb;"></textarea></label><br>
+          <button type="submit" style="background:#0077b5;color:white;padding:10px 24px;border:none;border-radius:5px;cursor:pointer;font-weight:bold;">إرسال</button>
+        </form>
+        <p style="font-size:0.95em;color:#555;margin-top:8px;">* يفضل استخدام تطبيق البريد على الكمبيوتر أو الجوال لإرسال الرسالة.</p>
+      </div>
+      <footer>
+        &copy; 2025 محمد عبدالباقي الريح. جميع الحقوق محفوظة.
+      </footer>
+    </main>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    // AOS animation
+    AOS.init({ duration: 950, once: true });
+    // Dark mode
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark');
+      localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+    }
+    if (localStorage.getItem('theme') === 'dark') document.body.classList.add('dark');
+    // Progress bars
+    document.addEventListener("DOMContentLoaded", function() {
+      document.querySelectorAll('.progress-bar-fill').forEach(function(bar) {
+        bar.style.width = bar.getAttribute('style').split(':')[1];
+      });
+      document.querySelectorAll('.lang-progress-bar-fill').forEach(function(bar) {
+        bar.style.width = bar.getAttribute('style').split(':')[1];
+      });
+    });
+    // ساعة جدة
+    function updateClock() {
+      let now = new Date();
+      now.setSeconds(now.getSeconds() + (3 * 60 * 60)); // تصحيح توقيت السعودية
+      document.getElementById('clock').textContent = now.toLocaleTimeString('ar-EG', {hour: '2-digit', minute:'2-digit', second:'2-digit'});
+    }
+    setInterval(updateClock, 1000); updateClock();
+    // طقس جدة (OpenWeatherMap API)
+    async function updateWeather() {
+      let box = document.getElementById('weather-box');
+      box.innerHTML = '<span>تحميل...</span>';
+      try {
+        let r = await fetch('https://api.openweathermap.org/data/2.5/weather?q=Jeddah,SA&units=metric&lang=ar&appid=e9104c35d90177af561d43f2cf372d4c');
+        let d = await r.json();
+        let icon = `https://openweathermap.org/img/wn/${d.weather[0].icon}@2x.png`;
+        box.innerHTML = `<img src="${icon}" class="weather-icon" alt=""><span>${d.main.temp.toFixed(1)}°C ${d.weather[0].description}</span>`;
+      } catch { box.innerHTML = 'تعذر جلب الطقس'; }
+    }
+    setInterval(updateWeather, 10*60*1000); updateWeather();
+    // مواقيت الصلاة جدة (api.aladhan.com)
+    async function updatePrayer() {
+      let box = document.getElementById('prayer-times');
+      try {
+        let r = await fetch('https://api.aladhan.com/v1/timingsByCity?city=Jeddah&country=SA&method=4');
+        let d = await r.json();
+        let t = d.data.timings;
+        box.innerHTML = '';
+        let prayers = [
+          ['الفجر', t.Fajr], ['الشروق', t.Sunrise], ['الظهر', t.Dhuhr],
+          ['العصر', t.Asr], ['المغرب', t.Maghrib], ['العشاء', t.Isha]
+        ];
+        prayers.forEach(function(p) {
+          box.innerHTML += `<div class="prayer-row"><span class="prayer-name">${p[0]}</span><span class="prayer-time">${p[1]}</span></div>`;
+        });
+      } catch { box.innerHTML = 'تعذر جلب المواقيت'; }
+    }
+    setInterval(updatePrayer, 15*60*1000); updatePrayer();
+  </script>
+</body>
+</html>
