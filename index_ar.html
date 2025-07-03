@@ -2,132 +2,129 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>محمد عبدالباقي الريح | مهندس نظم وتقنية معلومات</title>
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>محمد عبدالباقي الريح - السيرة الذاتية</title>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f0f2f5;
-      color: #333;
+      font-family: 'Cairo', sans-serif;
+      background: #f7f9fc;
       margin: 0;
       padding: 0;
     }
-    header, .sidebar {
-      background: #0056b3;
-      color: white;
-      padding: 10px 20px;
-    }
     .container {
-      display: flex;
-      flex-direction: row-reverse;
-      flex-wrap: wrap;
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+      background: #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1, h2 {
+      color: #003366;
+    }
+    ul {
+      list-style: square;
+      padding-right: 20px;
     }
     .sidebar {
-      width: 250px;
-      min-height: 100vh;
-    }
-    .content {
-      flex: 1;
+      position: fixed;
+      right: 0;
+      top: 0;
+      width: 240px;
+      background: #003366;
+      color: white;
+      height: 100%;
       padding: 20px;
-    }
-    .card {
-      background: #fff;
-      margin-bottom: 15px;
-      padding: 15px;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      box-shadow: -2px 0 8px rgba(0,0,0,0.1);
     }
     .sidebar a {
-      display: block;
       color: white;
-      text-decoration: none;
+      display: block;
       margin-bottom: 10px;
+      text-decoration: none;
     }
-    .clock, .weather, .prayer {
-      margin: 10px 0;
-      font-weight: bold;
-    }
-    @media (max-width: 768px) {
-      .container {
-        flex-direction: column;
-      }
-      .sidebar {
-        width: 100%;
-      }
+    .clock, .weather, .prayer-times {
+      margin-top: 20px;
+      padding: 10px;
+      background: #e1ecf4;
+      border-radius: 5px;
+      color: #003366;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>محمد عبدالباقي الريح</h1>
-    <p>مهندس نظم وتقنية معلومات</p>
-  </header>
+  <div class="sidebar">
+    <h3>روابط سريعة</h3>
+    <a href="https://binbaz.org.sa/" target="_blank">موقع ابن باز</a>
+    <a href="https://site.ium.edu.so/" target="_blank">الجامعة الإسلامية</a>
+    <a href="https://zagzoog.com/" target="_blank">موقع الزقزوق</a>
+    <a href="https://www.msn.com/ar-sa/weather" target="_blank">طقس مكة</a>
+    <a href="https://www.dw.com/ar/علوم-وتكنولوجيا/s-8411" target="_blank">DW تكنولوجيا</a>
+    <div class="clock" id="clock">الساعة الآن: </div>
+    <div class="prayer-times" id="prayer-times">مواقيت الصلاة: </div>
+    <div class="weather" id="weather">الطقس في جدة: </div>
+  </div>
   <div class="container">
-    <div class="sidebar">
-      <div class="clock" id="clock">00:00:00</div>
-      <div class="prayer" id="prayer">أوقات الصلاة لجدة</div>
-      <div class="weather" id="weather">الطقس في جدة</div>
-      <hr>
-      <a href="https://binbaz.org.sa/" target="_blank">موقع ابن باز</a>
-      <a href="https://site.ium.edu.so/" target="_blank">الجامعة الإسلامية - مينيسوتا</a>
-      <a href="https://zagzoog.com/" target="_blank">موقع الزقزوق</a>
-      <a href="https://www.msn.com/ar-sa/weather" target="_blank">الطقس - MSN</a>
-      <a href="https://www.dw.com/ar/%D8%B9%D9%84%D9%88%D9%85-%D9%88%D8%AA%D9%83%D9%86%D9%88%D9%84%D9%88%D8%AC%D9%8A%D8%A7/s-8411" target="_blank">DW علوم وتقنية</a>
-    </div>
-    <div class="content">
-      <div class="card">
-        <h2>الهدف الوظيفي</h2>
-        <p>اختصاصي تقنية معلومات بخبرة واسعة في إدارة الشبكات والأنظمة وتقديم حلول تكنولوجية متقدمة لضمان كفاءة الأداء.</p>
-      </div>
-      <div class="card">
-        <h2>الخبرات العملية</h2>
+    <h1>محمد عبدالباقي الريح</h1>
+    <h2>الهدف الوظيفي</h2>
+    <p>أسعى لتقديم حلول تقنية فعالة وتحسين الكفاءة التشغيلية من خلال إدارة البنية التحتية التقنية والدعم الفني وضمان أمن الأنظمة. أتمتع بخبرة واسعة في تدريس تقنية المعلومات، وإدارة الشبكات، والدعم الفني، وأمن المعلومات، وأسعى لمواصلة التطور في مجال الأمن السيبراني.</p>
+
+    <h2>الخبرات العملية</h2>
+    <ul>
+      <li><b>اختصاصي تقنية معلومات</b> - شركة الزقزوق (2017-حتى الآن)
         <ul>
-          <li>اختصاصي تقنية معلومات - الزقزوق (2017 - الآن)</li>
-          <li>محاضر تقنية معلومات - جامعة السودان (2016 - 2017)</li>
+          <li>إدارة الشبكات والبنية التحتية.</li>
+          <li>تقديم الدعم الفني والتدريب للموظفين.</li>
+          <li>ضمان أمن البيانات والأنظمة.</li>
         </ul>
-      </div>
-      <div class="card">
-        <h2>المؤهلات الأكاديمية</h2>
-        <ul>
-          <li>ماجستير في الأعمال الدولية - جامعة أميتي</li>
-          <li>بكالوريوس تقنية معلومات - جامعة أميتي</li>
-        </ul>
-      </div>
-    </div>
+      </li>
+    </ul>
+
+    <h2>المؤهلات الأكاديمية</h2>
+    <ul>
+      <li>ماجستير في الأعمال الدولية - جامعة أميتي، الهند (2017)</li>
+      <li>بكالوريوس تقنية معلومات - جامعة أميتي، الهند (2013)</li>
+      <li>دبلوم هندسة الحاسوب - جامعة بحري، السودان (2006)</li>
+    </ul>
+
+    <h2>المهارات التقنية</h2>
+    <ul>
+      <li>إدارة الأنظمة والشبكات</li>
+      <li>الأمن السيبراني</li>
+      <li>الدعم الفني</li>
+      <li>VPN، Active Directory</li>
+      <li>أنظمة التشغيل: Windows, Linux</li>
+      <li>أنظمة المراقبة (CCTV)</li>
+    </ul>
+
+    <h2>المهارات اللغوية</h2>
+    <ul>
+      <li>العربية (اللغة الأم)</li>
+      <li>الإنجليزية (جيد جداً)</li>
+    </ul>
   </div>
 
   <script>
     function updateClock() {
       const now = new Date();
-      document.getElementById("clock").textContent = now.toLocaleTimeString('ar-EG');
+      document.getElementById("clock").innerText = `الساعة الآن: ${now.toLocaleTimeString('ar-EG')}`;
     }
     setInterval(updateClock, 1000);
     updateClock();
 
-    async function getWeather() {
-      try {
-        const response = await fetch('https://api.openweathermap.org/data/2.5/weather?q=Jeddah,SA&appid=e9104c35d90177af561d43f2cf372d4c&units=metric&lang=ar');
-        const data = await response.json();
-        document.getElementById("weather").textContent = `الطقس الآن: ${data.main.temp}°C، ${data.weather[0].description}`;
-      } catch (e) {
-        document.getElementById("weather").textContent = "تعذر جلب الطقس";
-      }
-    }
-    getWeather();
-
-    async function getPrayerTimes() {
-      try {
-        const response = await fetch("https://api.aladhan.com/v1/timingsByCity?city=Jeddah&country=SA&method=4");
-        const data = await response.json();
+    fetch("https://api.aladhan.com/v1/timingsByCity?city=Jeddah&country=SA&method=4")
+      .then(res => res.json())
+      .then(data => {
         const times = data.data.timings;
-        document.getElementById("prayer").innerHTML = `الفجر: ${times.Fajr} | الظهر: ${times.Dhuhr} | العصر: ${times.Asr} | المغرب: ${times.Maghrib} | العشاء: ${times.Isha}`;
-      } catch (e) {
-        document.getElementById("prayer").textContent = "تعذر جلب مواقيت الصلاة";
-      }
-    }
-    getPrayerTimes();
+        document.getElementById("prayer-times").innerHTML = `الفجر: ${times.Fajr}<br>الظهر: ${times.Dhuhr}<br>العصر: ${times.Asr}<br>المغرب: ${times.Maghrib}<br>العشاء: ${times.Isha}`;
+      });
+
+    fetch("https://api.openweathermap.org/data/2.5/weather?q=Jeddah,SA&units=metric&lang=ar&appid=e9104c35d90177af561d43f2cf372d4c")
+      .then(response => response.json())
+      .then(data => {
+        const temp = data.main.temp;
+        const desc = data.weather[0].description;
+        document.getElementById("weather").innerText = `درجة الحرارة: ${temp}°C | ${desc}`;
+      });
   </script>
 </body>
 </html>
