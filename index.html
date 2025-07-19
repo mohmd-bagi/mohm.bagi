@@ -1,275 +1,205 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mohammed Abdelbagi Elrayah | Systems & Network Engineer</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mohammed Abdelbagi Elrayah | IT Specialist</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #e9f4fb;
-      color: #222;
       margin: 0;
       padding: 0;
+      background-color: #eef6fb;
+      display: flex;
+      flex-direction: row;
+    }
+    aside {
+      background: #f9fcff;
+      width: 240px;
       min-height: 100vh;
-      direction: ltr;
-      transition: background 0.4s, color 0.4s;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+      padding: 20px 15px;
+      box-sizing: border-box;
     }
-    body.dark { background: #181d29; color: #f3f7fa; }
-    .container {
-      background: #fff;
-      max-width: 900px;
-      margin: 40px auto 24px auto;
-      padding: 24px 5vw 0 5vw;
-      border: 4px solid #0077b5;
-      border-radius: 18px;
-      box-shadow: 0 6px 30px #8cc7e560, 0 2px 8px #c5e2f5b8;
-      transition: background 0.3s;
+    aside h3 {
+      margin: 15px 0 10px;
+      font-size: 1.1em;
+      color: #0077b5;
+      border-bottom: 1px solid #ddd;
     }
-    body.dark .container {
-      background: #22283b;
-      border-color: #333a6d;
-      box-shadow: 0 8px 30px #24285a60, 0 2px 8px #23274ab8;
-    }
-    .section {
-      margin-bottom: 24px;
-      background: #fff;
-      border-radius: 12px;
-      padding: 13px 11px 11px;
-      box-shadow: 0 1px 4px #bbb2;
-      text-align: left;
-      transition: background 0.3s, color 0.3s;
-    }
-    body.dark .section {
-      background: #262f47;
-      color: #f7fbff;
-    }
-    .section h2 {
-      color: #0056b3;
-      border-bottom: 2px solid #eaeaea;
-      padding-bottom: 5px;
-      margin-top: 18px;
-    }
-    body.dark .section h2 {
-      color: #ffc74b;
-      border-bottom: 2px solid #444c64;
-    }
-    .buttons {
-      text-align: center;
-      margin-top: 15px;
-      flex-wrap: wrap;
-    }
-    .buttons a {
-      display: inline-block;
-      padding: 10px 20px;
-      margin: 6px;
-      border-radius: 5px;
-      font-weight: bold;
-      color: #fff;
+    aside a {
+      display: block;
+      margin: 8px 0;
+      padding: 8px 10px;
+      background: #e4f0fa;
+      border-radius: 6px;
       text-decoration: none;
-      font-size: 1em;
+      color: #003f5c;
+      font-weight: bold;
     }
-    .linkedin { background: #0077b5; }
-    .whatsapp { background: #25D366; }
-    .download-en { background: #4CAF50; }
-    .download-ar { background: #b53f00; }
-    @media (max-width: 600px) {
-      .buttons a {
-        display: block;
-        width: 100%;
-        box-sizing: border-box;
-        text-align: center;
-      }
+    .time-box, .prayer-box, .weather-box {
+      background: #fff9e6;
+      padding: 10px;
+      border-radius: 6px;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+    main {
+      flex: 1;
+      padding: 20px;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .lang-switch, .dark-mode {
+      margin-left: 10px;
+      padding: 8px 12px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .dark-mode {
+      background: #1a1a2e;
+      color: #ffce1a;
+    }
+    .lang-switch {
+      background: #2e86de;
+      color: white;
+    }
+    h1 {
+      margin-top: 20px;
+      font-size: 2em;
+      color: #1c3c6b;
+    }
+    section {
+      background: white;
+      margin-bottom: 20px;
+      padding: 15px 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .date-tag {
+      background: #cce5ff;
+      color: #004085;
+      padding: 3px 7px;
+      font-size: 0.9em;
+      border-radius: 4px;
+      margin-left: 6px;
     }
   </style>
 </head>
 <body>
-  <main class="container">
-    <div class="section" data-aos="fade-up">
-      <h2>Contact & Download Links</h2>
-      <div class="buttons">
-        <a href="https://www.linkedin.com/in/mohmd-elrayah/" class="linkedin" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-        <a href="https://wa.me/966550857011" class="whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-        <a href="Mohammed_Abdalbagi_Elrayah_CV.pdf" class="download-en" download><i class="fa-solid fa-file-arrow-down"></i> Download CV (EN)</a>
-        <a href="Mohammed_Abdalbagi_Elrayah_CV_AR.pdf" class="download-ar" download><i class="fa-solid fa-file-arrow-down"></i> Download CV (AR)</a>
+  <aside>
+    <div class="time-box">
+      <div id="clock">--:--:--</div>
+    </div>
+    <div class="prayer-box">
+      <strong>Prayer Times</strong>
+      <div>Fajr: 04:15</div>
+      <div>Dhuhr: 12:20</div>
+      <div>Asr: 15:35</div>
+      <div>Maghrib: 19:00</div>
+      <div>Isha: 20:30</div>
+    </div>
+    <div class="weather-box">
+      <strong>Weather</strong>
+      <div>Jeddah, 33°C</div>
+      <div>Clear Sky</div>
+    </div>
+    <h3>Useful Links</h3>
+    <a href="https://binbaz.org.sa/" target="_blank">Bin Baz</a>
+    <a href="https://site.ium.edu.so/" target="_blank">IUM University</a>
+    <a href="https://zagzoog.com/english/" target="_blank">Zagzoog</a>
+    <a href="https://www.msn.com/ar-sa?ocid=msedgdhp" target="_blank">MSN</a>
+    <a href="https://www.dw.com/ar/%D8%B9%D9%84%D9%88%D9%85-%D9%88%D8%AA%D9%83%D9%86%D9%88%D9%84%D9%88%D8%AC%D9%8A%D8%A7/s-8411" target="_blank">DW Science</a>
+    <a href="https://studyfans.com/blogs/what-is-technological-science-department" target="_blank">StudyFans</a>
+    <h3>Navigation</h3>
+    <a href="#objective">Objective</a>
+    <a href="#experience">Experience</a>
+    <a href="#education">Education</a>
+    <a href="#skills">Skills</a>
+    <a href="#languages">Languages</a>
+    <a href="#contact">Contact</a>
+  </aside>
+
+  <main>
+    <header>
+      <div>
+        <button class="dark-mode" onclick="toggleDarkMode()">Dark Mode</button>
+        <button class="lang-switch" onclick="switchLanguage()">العربية</button>
       </div>
-    </div>
+    </header>
+    <h1>Mohammed Abdelbagi Elrayah</h1>
+    <p>Computer Engineer & IT Expert at Zagzoog for Home Appliances | Systems Administration | Smart Infrastructure Development | MBA in International Business | PhD Student in Cybersecurity at the University of Minnesota.</p>
 
-    <div class="section" data-aos="fade-up">
-      <h2>Career Objective</h2>
-      <p>IT Specialist with extensive experience in systems and network setup, maintenance, and support. Skilled in infrastructure management, technical troubleshooting, user support, and cybersecurity. Seeking to enhance operational efficiency through innovative solutions and secure systems administration.</p>
-    </div>
+    <section id="objective">
+      <h2>Objective</h2>
+      <p>Detail-oriented IT Specialist with over 14 years of experience in systems, networking, and cybersecurity. Skilled in smart infrastructure management, user support, and implementing secure, efficient IT solutions.</p>
+    </section>
 
-    <div class="section" data-aos="fade-up">
-  <h2>Professional Experience</h2>
-  <ul>
-    <li><strong>IT Specialist</strong> – Zagzoog for Home Appliances, Jeddah <span style="color:#ff6a00; font-weight:bold;">(2017–Present)</span>
+    <section id="experience">
+      <h2>Experience</h2>
       <ul>
-        <li>Installed and maintained systems and devices.</li>
-        <li>Provided technical support to users.</li>
-        <li>Ensured systems and data security.</li>
-        <li>Trained employees on system usage.</li>
-        <li>Managed IT resources and interdepartmental coordination.</li>
+        <li><strong>IT Specialist</strong> – Zagzoog Co., Jeddah <span class="date-tag">2017–Present</span></li>
+        <li><strong>Lecturer</strong> – Sudan Univ. of Science & Tech <span class="date-tag">2016–2017</span></li>
+        <li><strong>Infrastructure Manager</strong> – Africa City of Tech <span class="date-tag">2014–2017</span></li>
+        <li><strong>Network Engineer</strong> – Africa City of Tech <span class="date-tag">2011–2014</span></li>
+        <li><strong>Computer Engineer</strong> – Khartoum Cargo Village <span class="date-tag">2008–2010</span></li>
       </ul>
-    </li>
-    <li><strong>IT Lecturer</strong> – Sudan University of Science and Technology <span style="color:#ff6a00; font-weight:bold;">(2016–2017)</span>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
       <ul>
-        <li>Taught IT-related courses.</li>
-        <li>Supervised research and examinations.</li>
+        <li>PhD in Cybersecurity (in progress) – IUM, USA</li>
+        <li>MBA in International Business – Amity Univ, India (2017)</li>
+        <li>BSc in IT – Amity Univ, India (2013)</li>
+        <li>3-Year Diploma in Computer Engineering – Bahri Univ, Sudan (2006)</li>
       </ul>
-    </li>
-    <li><strong>Head of IT Infrastructure & Support</strong> – Africa City of Technology <span style="color:#ff6a00; font-weight:bold;">(2014–2017)</span>
+    </section>
+
+    <section id="skills">
+      <h2>Technical Skills</h2>
       <ul>
-        <li>Led technical support teams.</li>
-        <li>Planned business continuity and emergency protocols.</li>
-        <li>Managed IT budgeting and procurement.</li>
+        <li>Networks: TCP/IP, DNS, DHCP, LAN/WAN</li>
+        <li>Cybersecurity, CCTV Systems</li>
+        <li>VPN, Active Directory, Windows/Linux</li>
+        <li>System Administration, Virtualization</li>
+        <li>Technical Support, Smart Infrastructure</li>
+        <li>Azure, VMware, Office 365</li>
       </ul>
-    </li>
-    <li><strong>Network & Computer Engineer</strong> – Africa City of Technology <span style="color:#ff6a00; font-weight:bold;">(2011–2014)</span>
+    </section>
+
+    <section id="languages">
+      <h2>Languages</h2>
       <ul>
-        <li>Designed and maintained networks.</li>
-        <li>Implemented security policies and resource management.</li>
+        <li>Arabic – Native</li>
+        <li>English – Very Good</li>
       </ul>
-    </li>
-    <li><strong>Network & Computer Engineer</strong> – Khartoum Cargo Village <span style="color:#ff6a00; font-weight:bold;">(2008–2010)</span>
-      <ul>
-        <li>Installed and upgraded systems and networks.</li>
-        <li>Provided technical support and documentation.</li>
-      </ul>
-    </li>
-  </ul>
-</div>
+    </section>
 
-<div class="section" data-aos="fade-up">
-  <h2>Education</h2>
-  <ul>
-    <li>MBA in International Business – Amity University, India <span style="color:#0056b3;font-weight:bold;">(2017)</span></li>
-    <li>Bachelor in Information Technology – Amity University, India <span style="color:#0056b3;font-weight:bold;">(2013)</span></li>
-    <li>Diploma in Computer Engineering – Bahri University, Sudan <span style="color:#0056b3;font-weight:bold;">(2006)</span></li>
-  </ul>
-</div>
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Phone: <a href="tel:+966550857011">+966550857011</a></p>
+      <p>Email: <a href="mailto:mohmd.bagi@hotmail.com">mohmd.bagi@hotmail.com</a></p>
+    </section>
+  </main>
 
-<div class="section" data-aos="fade-up">
-  <h2>Professional Development</h2>
-  <ul>
-    <li>PhD in Cybersecurity – Islamic University, Minnesota (Ongoing)</li>
-    <li>Various courses in IT Security, Networking, and Operating Systems.</li>
-    <li>Cybersecurity conference participation and public awareness presentations.</li>
-  </ul>
-</div>
-
-<div class="section" data-aos="fade-up">
-  <h2>Technical Skills</h2>
-  <ul>
-    <li>Technical Support, Networking, Systems Management.</li>
-    <li>Troubleshooting and Incident Resolution.</li>
-    <li>Computer, Printer, and Network Maintenance.</li>
-    <li>Operating Systems (Windows, Linux).</li>
-    <li>Information Security and Data Backup.</li>
-  </ul>
-</div>
-
-<div class="section" data-aos="fade-up">
-  <h2>Languages</h2>
-  <ul>
-    <li>Arabic: Native</li>
-    <li>English: Advanced (spoken and written)</li>
-  </ul>
-</div>
-
-<div class="section" data-aos="fade-up">
-  <h2>Contact Info</h2>
-  <ul>
-    <li><i class="fa-solid fa-envelope"></i> mohmd.bagi@hotmail.com</li>
-    <li><i class="fa-solid fa-phone"></i> +966 550857011</li>
-    <li><i class="fa-solid fa-location-dot"></i> Jeddah – Al-Ruwais District</li>
-  </ul>
-</div>
-
-  <div class="section" data-aos="fade-up">
-  <h2>Contact Form</h2>
-  <form id="contactForm" action="https://formspree.io/f/xpzvgzly" method="POST">
-    <input type="hidden" name="_subject" value="New message from CV page">
-    <input type="hidden" name="_cc" value="mohmd.bagi@hotmail.com">
-    <input type="hidden" name="_autoresponse" value="<!DOCTYPE html><html lang='en'><body style='font-family:Tahoma;color:#333'><h2>Thank you for reaching out!</h2><p>Your message has been received.</p><p>We will get back to you shortly.</p><br><p>Best regards,<br>Mohammed Abdelbagi</p></body></html>">
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required style="padding:8px;border-radius:5px;border:1px solid #ccc;">
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required style="padding:8px;border-radius:5px;border:1px solid #ccc;">
-    <label for="message">Message:</label>
-    <textarea id="message" name="message" rows="4" required style="padding:8px;border-radius:5px;border:1px solid #ccc;"></textarea>
-    <button type="submit" style="padding:10px;border:none;background-color:#0077b5;color:#fff;border-radius:5px;font-weight:bold;">Send</button>
-    <p id="formStatus" style="color:green;font-weight:bold;margin-top:10px;"></p>
-  </form>
-</div>
-</main>
-
-<aside id="sidebar" style="position:fixed;top:60px;left:10px;width:240px;background:#fff;border-radius:12px;padding:15px;box-shadow:0 2px 6px rgba(0,0,0,0.2);z-index:999;max-height:80vh;overflow-y:auto;">
-  <h3 style="color:#0077b5;margin-bottom:10px;">Quick Links</h3>
-  <ul style="list-style:none;padding:0;margin:0;line-height:1.8;">
-    <li><a href="https://www.binbaz.org.sa" target="_blank">Bin Baz Website</a></li>
-    <li><a href="https://iu.education" target="_blank">Islamic University</a></li>
-    <li><a href="https://zagzoog.com" target="_blank">Zagzoog Company</a></li>
-  </ul>
-  <hr>
-  <div id="clock" style="font-weight:bold;text-align:center;margin-top:10px;"></div>
-  <div id="weather" style="font-size:13px;text-align:center;margin-top:10px;">Loading weather...</div>
-  <div id="prayer" style="font-size:13px;text-align:center;margin-top:10px;">Prayer times...</div>
-</aside>
-<script>
-function updateClock() {
-  const now = new Date();
-  document.getElementById('clock').textContent = now.toLocaleTimeString('en-US');
-}
-setInterval(updateClock, 1000);
-updateClock();
-fetch('https://api.aladhan.com/v1/timingsByCity?city=Jeddah&country=SA&method=4')
-  .then(r => r.json())
-  .then(data => {
-    const times = data.data.timings;
-    document.getElementById('prayer').innerHTML = `Fajr: ${times.Fajr}<br>Dhuhr: ${times.Dhuhr}<br>Asr: ${times.Asr}<br>Maghrib: ${times.Maghrib}<br>Isha: ${times.Isha}`;
-  });
-fetch('https://wttr.in/Jeddah?format=%t+%w')
-  .then(r => r.text())
-  .then(txt => document.getElementById('weather').textContent = 'Weather: ' + txt);
-document.getElementById('contactForm').addEventListener('submit', async function(e) {
-  e.preventDefault();
-  const form = e.target;
-  const formData = new FormData(form);
-  const status = document.getElementById('formStatus');
-  try {
-    const res = await fetch(form.action, {
-      method: 'POST',
-      body: formData,
-      headers: {
-        'Accept': 'application/json'
-      }
-    });
-    if (res.ok) {
-      status.textContent = '✅ Message sent successfully';
-      form.reset();
-    } else {
-      status.textContent = '❌ Error occurred while sending';
-    }
-  } catch (err) {
-    status.textContent = '⚠️ Server connection failed';
-  }
-});
-</script>
-
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
-    AOS.init({ duration: 950, once: true });
     function toggleDarkMode() {
-      document.body.classList.toggle('dark');
-      localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+      document.body.classList.toggle("dark");
     }
-    if (localStorage.getItem('theme') === 'dark') document.body.classList.add('dark');
     function switchLanguage() {
-      window.location.href = 'index_ar.html';
+      window.location.href = "index_ar.html";
     }
+    function updateClock() {
+      const now = new Date();
+      document.getElementById("clock").innerText = now.toLocaleTimeString();
+    }
+    setInterval(updateClock, 1000);
   </script>
 </body>
 </html>
