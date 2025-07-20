@@ -1,106 +1,130 @@
-<!-- index.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mohammed Abdelbagi Elrayah | CV</title>
-  <link rel="stylesheet" href="enhanced_styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>محمد عبدالباقي الريح - السيرة الذاتية</title>
+  <style>
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: #f7f9fc;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+      background: #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1, h2 {
+      color: #003366;
+    }
+    ul {
+      list-style: square;
+      padding-right: 20px;
+    }
+    .sidebar {
+      position: fixed;
+      right: 0;
+      top: 0;
+      width: 240px;
+      background: #003366;
+      color: white;
+      height: 100%;
+      padding: 20px;
+      box-shadow: -2px 0 8px rgba(0,0,0,0.1);
+    }
+    .sidebar a {
+      color: white;
+      display: block;
+      margin-bottom: 10px;
+      text-decoration: none;
+    }
+    .clock, .weather, .prayer-times {
+      margin-top: 20px;
+      padding: 10px;
+      background: #e1ecf4;
+      border-radius: 5px;
+      color: #003366;
+    }
+  </style>
 </head>
 <body>
-  <!-- Hero Section -->
-  <section id="hero" class="hero">
-    <div class="hero-content">
-      <img src="1581595177182.jpeg" alt="Portrait of Mohammed Abdelbagi Elrayah" class="hero-img" />
-      <h1 class="hero-title">Mohammed Abdelbagi Elrayah</h1>
-      <p class="hero-subtitle">Computer Engineer & IT Expert | MBA in International Business | PhD Candidate in Cybersecurity</p>
-      <div class="hero-contacts">
-        <a href="mailto:mohmd.bagi@hotmail.com" class="hero-icon">📧</a>
-        <a href="https://www.linkedin.com/in/mohmd-elrayah" target="_blank" class="hero-icon">🔗</a>
-        <a href="https://wa.me/966550857011" target="_blank" class="hero-icon">🟢</a>
-      </div>
-      <button class="dark-mode-toggle" onclick="toggleDarkMode()">🌙</button>
-    </div>
-  </section>
+  <div class="sidebar">
+    <h3>روابط سريعة</h3>
+    <a href="https://binbaz.org.sa/" target="_blank">موقع ابن باز</a>
+    <a href="https://site.ium.edu.so/" target="_blank">الجامعة الإسلامية</a>
+    <a href="https://zagzoog.com/" target="_blank">موقع الزقزوق</a>
+    <a href="https://www.msn.com/ar-sa/weather" target="_blank">طقس مكة</a>
+    <a href="https://www.dw.com/ar/علوم-وتكنولوجيا/s-8411" target="_blank">DW تكنولوجيا</a>
+    <div class="clock" id="clock">الساعة الآن: </div>
+    <div class="prayer-times" id="prayer-times">مواقيت الصلاة: </div>
+    <div class="weather" id="weather">الطقس في جدة: </div>
+  </div>
+  <div class="container">
+    <h1>محمد عبدالباقي الريح</h1>
+    <h2>الهدف الوظيفي</h2>
+    <p>أسعى لتقديم حلول تقنية فعالة وتحسين الكفاءة التشغيلية من خلال إدارة البنية التحتية التقنية والدعم الفني وضمان أمن الأنظمة. أتمتع بخبرة واسعة في تدريس تقنية المعلومات، وإدارة الشبكات، والدعم الفني، وأمن المعلومات، وأسعى لمواصلة التطور في مجال الأمن السيبراني.</p>
 
-  <!-- Sidebar Navigation -->
-  <nav id="sidebar" class="sidebar">
+    <h2>الخبرات العملية</h2>
     <ul>
-      <li><a href="#summary">About</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#certifications">Certifications</a></li>
+      <li><b>اختصاصي تقنية معلومات</b> - شركة الزقزوق (2017-حتى الآن)
+        <ul>
+          <li>إدارة الشبكات والبنية التحتية.</li>
+          <li>تقديم الدعم الفني والتدريب للموظفين.</li>
+          <li>ضمان أمن البيانات والأنظمة.</li>
+        </ul>
+      </li>
     </ul>
-  </nav>
 
-  <!-- Main Content -->
-  <main class="main-content">
-    <section id="summary" class="card">
-      <h2>About</h2>
-      <p>Experienced IT Specialist with 14+ years in infrastructure, networks, and cybersecurity. Skilled in leading support operations and strategic IT initiatives.</p>
-    </section>
+    <h2>المؤهلات الأكاديمية</h2>
+    <ul>
+      <li>ماجستير في الأعمال الدولية - جامعة أميتي، الهند (2017)</li>
+      <li>بكالوريوس تقنية معلومات - جامعة أميتي، الهند (2013)</li>
+      <li>دبلوم هندسة الحاسوب - جامعة بحري، السودان (2006)</li>
+    </ul>
 
-    <section id="experience" class="card two-column">
-      <h2>Experience</h2>
-      <div class="timeline">
-        <div class="time-year">2017–Present</div>
-        <div class="time-content"><strong>Zagzoog for Home Appliances</strong>
-          <p>Lead IT systems and support operations.</p>
-        </div>
-      </div>
-      <div class="timeline">
-        <div class="time-year">2016–2017</div>
-        <div class="time-content"><strong>Sudan University of Science & Technology</strong>
-          <p>Lecturer in IT and project supervision.</p>
-        </div>
-      </div>
-      <div class="timeline">
-        <div class="time-year">2014–2017</div>
-        <div class="time-content"><strong>Africa City of Technology</strong>
-          <p>Head of Support & Infrastructure planning.</p>
-        </div>
-      </div>
-    </section>
+    <h2>المهارات التقنية</h2>
+    <ul>
+      <li>إدارة الأنظمة والشبكات</li>
+      <li>الأمن السيبراني</li>
+      <li>الدعم الفني</li>
+      <li>VPN، Active Directory</li>
+      <li>أنظمة التشغيل: Windows, Linux</li>
+      <li>أنظمة المراقبة (CCTV)</li>
+    </ul>
 
-    <section id="education" class="card two-column">
-      <h2>Education</h2>
-      <div class="timeline">
-        <div class="time-year">2017</div>
-        <div class="time-content">MBA in International Business – Amity University</div>
-      </div>
-      <div class="timeline">
-        <div class="time-year">2013</div>
-        <div class="time-content">BSc in Information Technology – Amity University</div>
-      </div>
-      <div class="timeline">
-        <div class="time-year">2006</div>
-        <div class="time-content">Diploma in Computer Engineering – University of Bahri</div>
-      </div>
-    </section>
-
-    <section id="skills" class="card">
-      <h2>Skills</h2>
-      <div class="skill-bar"><span>IT Administration</span><div class="bar"><div style="width:90%"></div></div></div>
-      <div class="skill-bar"><span>Problem Solving</span><div class="bar"><div style="width:85%"></div></div></div>
-      <div class="skill-bar"><span>Leadership</span><div class="bar"><div style="width:80%"></div></div></div>
-      <div class="skill-bar"><span>Communication</span><div class="bar"><div style="width:75%"></div></div></div>
-    </section>
-
-    <section id="certifications" class="card">
-      <h2>Certifications</h2>
-      <ul>
-        <li>CCNA – Sudatel Academy</li>
-        <li>Linux Red Hat – Sudatel</li>
-        <li>IPv6 – National Telecommunication Corporation</li>
-      </ul>
-    </section>
-  </main>
+    <h2>المهارات اللغوية</h2>
+    <ul>
+      <li>العربية (اللغة الأم)</li>
+      <li>الإنجليزية (جيد جداً)</li>
+    </ul>
+  </div>
 
   <script>
-    function toggleDarkMode() {
-      document.body.classList.toggle('dark');
+    function updateClock() {
+      const now = new Date();
+      document.getElementById("clock").innerText = `الساعة الآن: ${now.toLocaleTimeString('ar-EG')}`;
     }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    fetch("https://api.aladhan.com/v1/timingsByCity?city=Jeddah&country=SA&method=4")
+      .then(res => res.json())
+      .then(data => {
+        const times = data.data.timings;
+        document.getElementById("prayer-times").innerHTML = `الفجر: ${times.Fajr}<br>الظهر: ${times.Dhuhr}<br>العصر: ${times.Asr}<br>المغرب: ${times.Maghrib}<br>العشاء: ${times.Isha}`;
+      });
+
+    fetch("https://api.openweathermap.org/data/2.5/weather?q=Jeddah,SA&units=metric&lang=ar&appid=e9104c35d90177af561d43f2cf372d4c")
+      .then(response => response.json())
+      .then(data => {
+        const temp = data.main.temp;
+        const desc = data.weather[0].description;
+        document.getElementById("weather").innerText = `درجة الحرارة: ${temp}°C | ${desc}`;
+      });
   </script>
 </body>
 </html>
