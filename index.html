@@ -1,205 +1,106 @@
+<!-- index.html -->
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mohammed Abdelbagi Elrayah | IT Specialist</title>
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #eef6fb;
-      display: flex;
-      flex-direction: row;
-    }
-    aside {
-      background: #f9fcff;
-      width: 240px;
-      min-height: 100vh;
-      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-      padding: 20px 15px;
-      box-sizing: border-box;
-    }
-    aside h3 {
-      margin: 15px 0 10px;
-      font-size: 1.1em;
-      color: #0077b5;
-      border-bottom: 1px solid #ddd;
-    }
-    aside a {
-      display: block;
-      margin: 8px 0;
-      padding: 8px 10px;
-      background: #e4f0fa;
-      border-radius: 6px;
-      text-decoration: none;
-      color: #003f5c;
-      font-weight: bold;
-    }
-    .time-box, .prayer-box, .weather-box {
-      background: #fff9e6;
-      padding: 10px;
-      border-radius: 6px;
-      margin-bottom: 15px;
-      text-align: center;
-    }
-    main {
-      flex: 1;
-      padding: 20px;
-    }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .lang-switch, .dark-mode {
-      margin-left: 10px;
-      padding: 8px 12px;
-      border: none;
-      cursor: pointer;
-      border-radius: 5px;
-    }
-    .dark-mode {
-      background: #1a1a2e;
-      color: #ffce1a;
-    }
-    .lang-switch {
-      background: #2e86de;
-      color: white;
-    }
-    h1 {
-      margin-top: 20px;
-      font-size: 2em;
-      color: #1c3c6b;
-    }
-    section {
-      background: white;
-      margin-bottom: 20px;
-      padding: 15px 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-    .date-tag {
-      background: #cce5ff;
-      color: #004085;
-      padding: 3px 7px;
-      font-size: 0.9em;
-      border-radius: 4px;
-      margin-left: 6px;
-    }
-  </style>
+  <title>Mohammed Abdelbagi Elrayah | CV</title>
+  <link rel="stylesheet" href="enhanced_styles.css" />
 </head>
 <body>
-  <aside>
-    <div class="time-box">
-      <div id="clock">--:--:--</div>
-    </div>
-    <div class="prayer-box">
-      <strong>Prayer Times</strong>
-      <div>Fajr: 04:15</div>
-      <div>Dhuhr: 12:20</div>
-      <div>Asr: 15:35</div>
-      <div>Maghrib: 19:00</div>
-      <div>Isha: 20:30</div>
-    </div>
-    <div class="weather-box">
-      <strong>Weather</strong>
-      <div>Jeddah, 33°C</div>
-      <div>Clear Sky</div>
-    </div>
-    <h3>Useful Links</h3>
-    <a href="https://binbaz.org.sa/" target="_blank">Bin Baz</a>
-    <a href="https://site.ium.edu.so/" target="_blank">IUM University</a>
-    <a href="https://zagzoog.com/english/" target="_blank">Zagzoog</a>
-    <a href="https://www.msn.com/ar-sa?ocid=msedgdhp" target="_blank">MSN</a>
-    <a href="https://www.dw.com/ar/%D8%B9%D9%84%D9%88%D9%85-%D9%88%D8%AA%D9%83%D9%86%D9%88%D9%84%D9%88%D8%AC%D9%8A%D8%A7/s-8411" target="_blank">DW Science</a>
-    <a href="https://studyfans.com/blogs/what-is-technological-science-department" target="_blank">StudyFans</a>
-    <h3>Navigation</h3>
-    <a href="#objective">Objective</a>
-    <a href="#experience">Experience</a>
-    <a href="#education">Education</a>
-    <a href="#skills">Skills</a>
-    <a href="#languages">Languages</a>
-    <a href="#contact">Contact</a>
-  </aside>
-
-  <main>
-    <header>
-      <div>
-        <button class="dark-mode" onclick="toggleDarkMode()">Dark Mode</button>
-        <button class="lang-switch" onclick="switchLanguage()">العربية</button>
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <div class="hero-content">
+      <img src="1581595177182.jpeg" alt="Portrait of Mohammed Abdelbagi Elrayah" class="hero-img" />
+      <h1 class="hero-title">Mohammed Abdelbagi Elrayah</h1>
+      <p class="hero-subtitle">Computer Engineer & IT Expert | MBA in International Business | PhD Candidate in Cybersecurity</p>
+      <div class="hero-contacts">
+        <a href="mailto:mohmd.bagi@hotmail.com" class="hero-icon">📧</a>
+        <a href="https://www.linkedin.com/in/mohmd-elrayah" target="_blank" class="hero-icon">🔗</a>
+        <a href="https://wa.me/966550857011" target="_blank" class="hero-icon">🟢</a>
       </div>
-    </header>
-    <h1>Mohammed Abdelbagi Elrayah</h1>
-    <p>Computer Engineer & IT Expert at Zagzoog for Home Appliances | Systems Administration | Smart Infrastructure Development | MBA in International Business | PhD Student in Cybersecurity at the University of Minnesota.</p>
+      <button class="dark-mode-toggle" onclick="toggleDarkMode()">🌙</button>
+    </div>
+  </section>
 
-    <section id="objective">
-      <h2>Objective</h2>
-      <p>Detail-oriented IT Specialist with over 14 years of experience in systems, networking, and cybersecurity. Skilled in smart infrastructure management, user support, and implementing secure, efficient IT solutions.</p>
+  <!-- Sidebar Navigation -->
+  <nav id="sidebar" class="sidebar">
+    <ul>
+      <li><a href="#summary">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <section id="summary" class="card">
+      <h2>About</h2>
+      <p>Experienced IT Specialist with 14+ years in infrastructure, networks, and cybersecurity. Skilled in leading support operations and strategic IT initiatives.</p>
     </section>
 
-    <section id="experience">
+    <section id="experience" class="card two-column">
       <h2>Experience</h2>
-      <ul>
-        <li><strong>IT Specialist</strong> – Zagzoog Co., Jeddah <span class="date-tag">2017–Present</span></li>
-        <li><strong>Lecturer</strong> – Sudan Univ. of Science & Tech <span class="date-tag">2016–2017</span></li>
-        <li><strong>Infrastructure Manager</strong> – Africa City of Tech <span class="date-tag">2014–2017</span></li>
-        <li><strong>Network Engineer</strong> – Africa City of Tech <span class="date-tag">2011–2014</span></li>
-        <li><strong>Computer Engineer</strong> – Khartoum Cargo Village <span class="date-tag">2008–2010</span></li>
-      </ul>
+      <div class="timeline">
+        <div class="time-year">2017–Present</div>
+        <div class="time-content"><strong>Zagzoog for Home Appliances</strong>
+          <p>Lead IT systems and support operations.</p>
+        </div>
+      </div>
+      <div class="timeline">
+        <div class="time-year">2016–2017</div>
+        <div class="time-content"><strong>Sudan University of Science & Technology</strong>
+          <p>Lecturer in IT and project supervision.</p>
+        </div>
+      </div>
+      <div class="timeline">
+        <div class="time-year">2014–2017</div>
+        <div class="time-content"><strong>Africa City of Technology</strong>
+          <p>Head of Support & Infrastructure planning.</p>
+        </div>
+      </div>
     </section>
 
-    <section id="education">
+    <section id="education" class="card two-column">
       <h2>Education</h2>
-      <ul>
-        <li>PhD in Cybersecurity (in progress) – IUM, USA</li>
-        <li>MBA in International Business – Amity Univ, India (2017)</li>
-        <li>BSc in IT – Amity Univ, India (2013)</li>
-        <li>3-Year Diploma in Computer Engineering – Bahri Univ, Sudan (2006)</li>
-      </ul>
+      <div class="timeline">
+        <div class="time-year">2017</div>
+        <div class="time-content">MBA in International Business – Amity University</div>
+      </div>
+      <div class="timeline">
+        <div class="time-year">2013</div>
+        <div class="time-content">BSc in Information Technology – Amity University</div>
+      </div>
+      <div class="timeline">
+        <div class="time-year">2006</div>
+        <div class="time-content">Diploma in Computer Engineering – University of Bahri</div>
+      </div>
     </section>
 
-    <section id="skills">
-      <h2>Technical Skills</h2>
-      <ul>
-        <li>Networks: TCP/IP, DNS, DHCP, LAN/WAN</li>
-        <li>Cybersecurity, CCTV Systems</li>
-        <li>VPN, Active Directory, Windows/Linux</li>
-        <li>System Administration, Virtualization</li>
-        <li>Technical Support, Smart Infrastructure</li>
-        <li>Azure, VMware, Office 365</li>
-      </ul>
+    <section id="skills" class="card">
+      <h2>Skills</h2>
+      <div class="skill-bar"><span>IT Administration</span><div class="bar"><div style="width:90%"></div></div></div>
+      <div class="skill-bar"><span>Problem Solving</span><div class="bar"><div style="width:85%"></div></div></div>
+      <div class="skill-bar"><span>Leadership</span><div class="bar"><div style="width:80%"></div></div></div>
+      <div class="skill-bar"><span>Communication</span><div class="bar"><div style="width:75%"></div></div></div>
     </section>
 
-    <section id="languages">
-      <h2>Languages</h2>
+    <section id="certifications" class="card">
+      <h2>Certifications</h2>
       <ul>
-        <li>Arabic – Native</li>
-        <li>English – Very Good</li>
+        <li>CCNA – Sudatel Academy</li>
+        <li>Linux Red Hat – Sudatel</li>
+        <li>IPv6 – National Telecommunication Corporation</li>
       </ul>
-    </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Phone: <a href="tel:+966550857011">+966550857011</a></p>
-      <p>Email: <a href="mailto:mohmd.bagi@hotmail.com">mohmd.bagi@hotmail.com</a></p>
     </section>
   </main>
 
   <script>
     function toggleDarkMode() {
-      document.body.classList.toggle("dark");
+      document.body.classList.toggle('dark');
     }
-    function switchLanguage() {
-      window.location.href = "index_ar.html";
-    }
-    function updateClock() {
-      const now = new Date();
-      document.getElementById("clock").innerText = now.toLocaleTimeString();
-    }
-    setInterval(updateClock, 1000);
   </script>
 </body>
 </html>
