@@ -38,7 +38,13 @@ body.dark-mode .service-request-form input,body.dark-mode .service-request-form 
 body.dark-mode .service-request-success{background:#14532d;color:#dcfce7;border-color:#22c55e}
 @keyframes servicePop{from{opacity:0;transform:translateY(14px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
 @keyframes serviceGlow{0%{box-shadow:0 20px 45px rgba(10,25,60,.28),0 10px 24px rgba(212,166,60,.28)}50%{box-shadow:0 24px 50px rgba(10,25,60,.34),0 14px 30px rgba(212,166,60,.38)}100%{box-shadow:0 20px 45px rgba(10,25,60,.28),0 10px 24px rgba(212,166,60,.28)}}
-@media(max-width:560px){.service-request-open{bottom:152px;right:16px;padding:7px 12px 7px 7px;gap:10px}.service-request-open i{width:50px;height:50px;font-size:21px;flex-basis:50px}.service-request-open span{min-height:40px;padding:0 13px;font-size:14px}.service-request-card{border-radius:18px;padding:20px}.service-request-card h2{font-size:1.35rem}}
+@media(max-width:560px){
+  .service-request-open{bottom:90px;right:16px;width:58px;height:58px;padding:0;border-radius:50%;gap:0;justify-content:center;box-shadow:0 16px 34px rgba(10,25,60,.28),0 8px 20px rgba(212,166,60,.28)}
+  .service-request-open i{width:58px;height:58px;font-size:24px;flex:0 0 58px}
+  .service-request-open span{display:none}
+  .service-request-card{border-radius:18px;padding:20px}
+  .service-request-card h2{font-size:1.35rem}
+}
 /* SERVICE_REQUEST_WIDGET_END */
 
 </style>
