@@ -122,20 +122,26 @@ body.dark-mode .service-request-success{background:#14532d;color:#dcfce7;border-
 /* SERVICE_REQUEST_WIDGET_END */
 
 
+
+
+
 /* EXPERIENCE_CARDS_START */
 #experience{display:block}
-#experience .job-card{background:linear-gradient(135deg,rgba(248,251,255,.98),rgba(255,255,255,.98));border:1px solid var(--line);border-radius:20px;padding:18px 20px;margin:18px 0;box-shadow:0 12px 28px rgba(15,23,42,.07)}
-#experience .job-card:first-of-type{margin-top:12px}
-#experience .job-card h3{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:0 0 6px;color:#12345c}
-#experience .job-card .date{margin:0;font-size:.9rem;padding:4px 12px;background:#eaf1ff;color:var(--blue);border-radius:999px;font-weight:900;white-space:nowrap}
-#experience .job-card .muted{margin:0 0 10px;color:#40516b;font-weight:800}
+#experience .job-card{position:relative;background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(241,247,255,.98));border:1px solid rgba(18,97,216,.18);border-radius:22px;padding:20px 22px;margin:20px 0;box-shadow:0 14px 34px rgba(15,23,42,.09);overflow:hidden;transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease;font-weight:650}
+#experience .job-card::before{content:"";position:absolute;inset:0 0 auto 0;height:5px;background:linear-gradient(90deg,#1261d8,#10a779,#d4a63c)}
+#experience .job-card:hover{transform:translateY(-5px);box-shadow:0 22px 48px rgba(15,23,42,.15);border-color:rgba(18,97,216,.32)}
+#experience .job-card:first-of-type{margin-top:14px}
+#experience .job-card h3{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:0 0 8px;color:#12345c;font-weight:900}
+#experience .job-card .date{margin:0;font-size:.9rem;padding:5px 13px;background:#eaf1ff;color:var(--blue);border-radius:999px;font-weight:900;white-space:nowrap;box-shadow:0 6px 14px rgba(18,97,216,.10)}
+#experience .job-card .muted{margin:0 0 12px;color:#40516b;font-weight:900}
 #experience .job-card ul{margin:10px 0 0}
-#experience .job-card li{margin-bottom:8px}
-body.dark-mode #experience .job-card{background:linear-gradient(135deg,#0f172a,#111827);border-color:#334155;box-shadow:0 14px 32px rgba(0,0,0,.28)}
+#experience .job-card li{margin-bottom:8px;font-weight:650}
+body.dark-mode #experience .job-card{background:linear-gradient(135deg,#0f172a,#111827);border-color:#334155;box-shadow:0 16px 38px rgba(0,0,0,.30)}
+body.dark-mode #experience .job-card:hover{border-color:#475569;box-shadow:0 22px 48px rgba(0,0,0,.42)}
 body.dark-mode #experience .job-card h3{color:#e5e7eb}
 body.dark-mode #experience .job-card .muted{color:#cbd5e1}
 body.dark-mode #experience .job-card .date{background:#1e293b;color:#93c5fd}
-@media(max-width:560px){#experience .job-card{padding:16px;border-radius:18px;margin:14px 0}#experience .job-card h3{gap:8px}#experience .job-card .date{font-size:.82rem}}
+@media(max-width:560px){#experience .job-card{padding:17px;border-radius:18px;margin:15px 0;transform:none!important}#experience .job-card h3{gap:8px}#experience .job-card .date{font-size:.82rem;padding:4px 10px}#experience .job-card li{font-weight:650}}
 /* EXPERIENCE_CARDS_END */
 
 </style>
