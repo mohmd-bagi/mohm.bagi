@@ -39,18 +39,29 @@ body.dark-mode .service-request-success{background:#14532d;color:#dcfce7;border-
 @keyframes servicePop{from{opacity:0;transform:translateY(14px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
 @keyframes serviceGlow{0%{box-shadow:0 22px 48px rgba(10,25,60,.32),0 12px 28px rgba(212,166,60,.32)}50%{box-shadow:0 28px 58px rgba(10,25,60,.40),0 16px 36px rgba(212,166,60,.42)}100%{box-shadow:0 22px 48px rgba(10,25,60,.32),0 12px 28px rgba(212,166,60,.32)}}
 @media(max-width:560px){
-  .top-switch{position:relative!important;z-index:100000!important}
-  .live-bar{margin-top:22px!important;margin-bottom:96px!important}
+  .live-bar{margin-bottom:0!important}
+
+  .mobile-action-row{
+    display:flex!important;
+    justify-content:center!important;
+    align-items:center!important;
+    gap:14px!important;
+    margin:22px auto 26px!important;
+    width:100%!important;
+    position:relative!important;
+    z-index:99998!important;
+  }
 
   .service-request-open{
-    top:455px!important;
+    position:static!important;
+    top:auto!important;
     bottom:auto!important;
-    left:calc(50% - 122px)!important;
+    left:auto!important;
     right:auto!important;
     transform:none!important;
     width:auto!important;
     height:54px!important;
-    min-width:178px!important;
+    min-width:190px!important;
     padding:6px 12px 6px 6px!important;
     gap:8px!important;
     border-radius:999px!important;
@@ -79,13 +90,15 @@ body.dark-mode .service-request-success{background:#14532d;color:#dcfce7;border-
   }
 
   .floating-whatsapp{
-    top:455px!important;
+    position:static!important;
+    top:auto!important;
     bottom:auto!important;
-    left:calc(50% + 72px)!important;
+    left:auto!important;
     right:auto!important;
     width:54px!important;
     height:54px!important;
     font-size:28px!important;
+    flex:0 0 54px!important;
     z-index:99998!important;
     box-shadow:0 12px 28px rgba(10,25,60,.24)!important;
   }
@@ -108,6 +121,11 @@ body.dark-mode .service-request-success{background:#14532d;color:#dcfce7;border-
 <main class="content">
 <div class="top-switch"><button class="btn dark mode-toggle" id="modeToggle" type="button"><i class="fa-solid fa-moon"></i> داكن</button><a class="btn dark" href="../en/"><i class="fa-solid fa-language"></i> English</a></div>
 <div class="live-bar"><a class="makkah" href="https://www.youtube.com/channel/UCos52azQNBgW63_9uDJoPDA/live" target="_blank"><i class="fa-solid fa-kaaba"></i> مكة مباشر</a><a class="quran" href="https://www.holyquranradio.com/" target="_blank"><i class="fa-solid fa-mosque"></i> إذاعة القرآن الكريم</a><a class="aljazeera" href="https://www.aljazeera.net/live/" target="_blank"><i class="fa-solid fa-tv"></i> الجزيرة مباشر</a></div>
+<div class="mobile-action-row">
+<button class="service-request-open" type="button" data-service-open><i class="fa-solid fa-headset"></i><span>طلب خدمة</span></button>
+<a class="floating-whatsapp" href="https://wa.me/966550857011" target="_blank"><i class="fab fa-whatsapp"></i></a>
+</div>
+
 <section class="hero">
 <div class="cover"></div><img class="photo" src="../1581595177182.jpeg" alt="محمد عبدالباقي">
 <h1>محمد عبدالباقي الريح</h1>
@@ -144,7 +162,7 @@ body.dark-mode .service-request-success{background:#14532d;color:#dcfce7;border-
 <div class="side-card quick"><b>تنقل سريع</b><a href="#summary">الملخص</a><a href="#education">التعليم</a><a href="#experience">الخبرات</a><a href="#skills">المهارات</a><a href="#contact">التواصل</a></div>
 </aside>
 </div>
-<a class="floating-whatsapp" href="https://wa.me/966550857011" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
 <script>
 function updateClock(){document.getElementById('clock').textContent=new Date().toLocaleTimeString('ar-SA')}setInterval(updateClock,1000);updateClock();
 async function fetchWeather(){try{const r=await fetch('https://api.openweathermap.org/data/2.5/weather?q=Jeddah,SA&appid=e9104c35d90177af561d43f2cf372d4c&units=metric');const d=await r.json();document.getElementById('weather-desc').innerHTML=d.main?'جدة، '+Math.round(d.main.temp)+'°C<br>('+d.weather[0].description+')':'طقس جدة'}catch(e){document.getElementById('weather-desc').textContent='طقس جدة'}}fetchWeather();
@@ -153,7 +171,7 @@ function showSuccessMessage(){const msg=document.getElementById('success-message
 </script>
 
 <!-- SERVICE_REQUEST_WIDGET_START -->
-<button class="service-request-open" type="button" data-service-open><i class="fa-solid fa-headset"></i><span>طلب خدمة</span></button>
+
 <div class="service-request-modal" aria-hidden="true" dir="rtl">
   <div class="service-request-backdrop" data-service-close></div>
   <div class="service-request-card" role="dialog" aria-modal="true">

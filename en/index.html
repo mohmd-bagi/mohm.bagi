@@ -39,18 +39,29 @@ body.dark-mode .service-request-success{background:#14532d;color:#dcfce7;border-
 @keyframes servicePop{from{opacity:0;transform:translateY(14px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
 @keyframes serviceGlow{0%{box-shadow:0 22px 48px rgba(10,25,60,.32),0 12px 28px rgba(212,166,60,.32)}50%{box-shadow:0 28px 58px rgba(10,25,60,.40),0 16px 36px rgba(212,166,60,.42)}100%{box-shadow:0 22px 48px rgba(10,25,60,.32),0 12px 28px rgba(212,166,60,.32)}}
 @media(max-width:560px){
-  .top-switch{position:relative!important;z-index:100000!important}
-  .live-bar{margin-top:22px!important;margin-bottom:96px!important}
+  .live-bar{margin-bottom:0!important}
+
+  .mobile-action-row{
+    display:flex!important;
+    justify-content:center!important;
+    align-items:center!important;
+    gap:14px!important;
+    margin:22px auto 26px!important;
+    width:100%!important;
+    position:relative!important;
+    z-index:99998!important;
+  }
 
   .service-request-open{
-    top:455px!important;
+    position:static!important;
+    top:auto!important;
     bottom:auto!important;
-    left:calc(50% - 122px)!important;
+    left:auto!important;
     right:auto!important;
     transform:none!important;
     width:auto!important;
     height:54px!important;
-    min-width:178px!important;
+    min-width:190px!important;
     padding:6px 12px 6px 6px!important;
     gap:8px!important;
     border-radius:999px!important;
@@ -79,13 +90,15 @@ body.dark-mode .service-request-success{background:#14532d;color:#dcfce7;border-
   }
 
   .floating-whatsapp{
-    top:455px!important;
+    position:static!important;
+    top:auto!important;
     bottom:auto!important;
-    left:calc(50% + 72px)!important;
+    left:auto!important;
     right:auto!important;
     width:54px!important;
     height:54px!important;
     font-size:28px!important;
+    flex:0 0 54px!important;
     z-index:99998!important;
     box-shadow:0 12px 28px rgba(10,25,60,.24)!important;
   }
@@ -123,6 +136,11 @@ body.dark-mode .service-request-success{background:#14532d;color:#dcfce7;border-
 <main class="content">
 <div class="top-switch"><button class="btn dark mode-toggle" id="modeToggle" type="button"><i class="fa-solid fa-moon"></i> Dark</button><a class="btn dark" href="../ar/"><i class="fa-solid fa-language"></i> العربية</a></div>
 <div class="live-bar"><a class="makkah" href="https://www.youtube.com/channel/UCos52azQNBgW63_9uDJoPDA/live" target="_blank"><i class="fa-solid fa-kaaba"></i> Makkah Live</a><a class="quran" href="https://www.holyquranradio.com/" target="_blank"><i class="fa-solid fa-mosque"></i> Quran Cairo Radio</a><a class="aljazeera" href="https://www.aljazeera.net/live/" target="_blank"><i class="fa-solid fa-tv"></i> Al Jazeera Live</a></div>
+<div class="mobile-action-row">
+<button class="service-request-open" type="button" data-service-open><i class="fa-solid fa-headset"></i><span>Service Request</span></button>
+<a class="floating-whatsapp" href="https://wa.me/966550857011" target="_blank"><i class="fab fa-whatsapp"></i></a>
+</div>
+
 <section class="hero"><div class="cover"></div><img class="photo" src="../1581595177182.jpeg" alt="Mohammed Abdelbagi"><h1>Mohammed Abdelbagi Elrayah</h1><p class="subtitle">Computer Engineer & IT Specialist at Zagzoog for Home Appliances | Systems Administration | Smart Infrastructure | PhD Student in Cybersecurity at Islamic University of Minnesota</p><div class="actions"><a class="btn linkedin" href="https://www.linkedin.com/in/mohmd-elrayah/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a><a class="btn whatsapp" href="https://wa.me/966550857011" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a><a class="btn green" href="../Mohammed_Abdalbagi_Elrayah_CV.pdf" download><i class="fa-solid fa-file-arrow-down"></i> Download CV (EN)</a><a class="btn red" href="../Mohammed_Abdalbagi_Elrayah_CV_AR.pdf" download><i class="fa-solid fa-file-arrow-down"></i> Download CV (AR)</a></div></section>
 <section class="section" id="summary"><h2>Professional Summary</h2><p>Experienced IT Specialist and Computer & Network Engineer with more than 15 years of experience in technical support, IT infrastructure, network administration, systems maintenance, and cybersecurity fundamentals. Skilled in installing, configuring, and maintaining computer systems, networks, servers, operating systems, endpoint protection, backups, firewalls, and user access controls.</p><p>PhD Student in Cybersecurity at Islamic University of Minnesota, 2025 - Present, with a strong interest in cybersecurity, information systems protection, secure infrastructure, and practical security operations.</p><p>Proven ability to troubleshoot complex technical issues, support business users, improve operational efficiency, and coordinate with departments to deliver reliable IT services.</p></section>
 <section class="section"><h2>Career Highlights</h2><ul><li>Over 15 years of professional experience in IT support, infrastructure, network engineering, and systems administration.</li><li>Managed IT infrastructure across multiple branches.</li><li>Improved endpoint security monitoring through practical use of security and monitoring tools.</li><li>Practical knowledge of cybersecurity fundamentals including firewalls, antivirus, endpoint protection, access control, backups, and system hardening.</li><li>Experience in academic teaching, technical training, mentoring, and preparing IT-related academic materials.</li></ul></section>
@@ -139,7 +157,7 @@ body.dark-mode .service-request-success{background:#14532d;color:#dcfce7;border-
 <footer>© 2025 Mohammed Abdelbagi Elrayah. All Rights Reserved.</footer>
 </main>
 </div>
-<a class="floating-whatsapp" href="https://wa.me/966550857011" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
 <script>
 function updateClock(){document.getElementById('clock').textContent=new Date().toLocaleTimeString('en-GB')}setInterval(updateClock,1000);updateClock();
 async function fetchWeather(){try{const r=await fetch('https://api.openweathermap.org/data/2.5/weather?q=Jeddah,SA&appid=e9104c35d90177af561d43f2cf372d4c&units=metric');const d=await r.json();document.getElementById('weather-desc').innerHTML=d.main?'Jeddah, '+Math.round(d.main.temp)+'°C<br>('+d.weather[0].description+')':'Jeddah Weather'}catch(e){document.getElementById('weather-desc').textContent='Jeddah Weather'}}fetchWeather();
@@ -148,7 +166,7 @@ function showSuccessMessage(){const msg=document.getElementById('success-message
 </script>
 
 <!-- SERVICE_REQUEST_WIDGET_START -->
-<button class="service-request-open" type="button" data-service-open><i class="fa-solid fa-headset"></i><span>Service Request</span></button>
+
 <div class="service-request-modal" aria-hidden="true" dir="ltr">
   <div class="service-request-backdrop" data-service-close></div>
   <div class="service-request-card" role="dialog" aria-modal="true">
