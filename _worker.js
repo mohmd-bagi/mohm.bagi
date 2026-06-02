@@ -11,7 +11,7 @@ export default {
     const isArabic = url.pathname.startsWith('/ar');
     const topText = isArabic ? 'للأعلى' : 'Top';
     const bottomText = isArabic ? 'للأسفل' : 'Bottom';
-    const side = isArabic ? 'left:16px;right:auto;' : 'right:16px;left:auto;';
+    const side = isArabic ? 'left:34px;right:auto;' : 'right:34px;left:auto;';
 
     let html = await response.text();
 
@@ -27,10 +27,10 @@ export default {
   <button type="button" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})">▼ <span>${bottomText}</span></button>
 </div>
 <style>
-#scroll-control-buttons{position:fixed;bottom:96px;${side}display:flex;flex-direction:column;gap:8px;z-index:99999}
-#scroll-control-buttons button{border:0;border-radius:999px;background:#121826;color:#fff;padding:10px 14px;font-weight:900;font-family:inherit;box-shadow:0 10px 25px rgba(0,0,0,.25);cursor:pointer;display:flex;align-items:center;gap:7px}
+#scroll-control-buttons{position:fixed;bottom:132px;${side}display:flex;flex-direction:column;gap:10px;z-index:99999}
+#scroll-control-buttons button{border:0;border-radius:999px;background:#121826;color:#fff;padding:13px 18px;font-weight:900;font-family:inherit;box-shadow:0 12px 28px rgba(0,0,0,.28);cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;font-size:16px;min-width:112px}
 #scroll-control-buttons button:hover{transform:translateY(-1px)}
-@media(max-width:560px){#scroll-control-buttons{bottom:84px;${side}}#scroll-control-buttons button{padding:9px 12px;font-size:13px}}
+@media(max-width:560px){#scroll-control-buttons{bottom:84px;${side}}#scroll-control-buttons button{border:0;border-radius:999px;background:#121826;color:#fff;padding:13px 18px;font-weight:900;font-family:inherit;box-shadow:0 12px 28px rgba(0,0,0,.28);cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;font-size:16px;min-width:112px}}
 </style>
 `;
       html = html.replace('</body>', buttons + '</body>');
