@@ -315,6 +315,67 @@ body.dark-mode .hero-service-line{
 }
 /* MOBILE_ACTION_STATIC_END */
 
+
+/* HOME_SERVICES_CTA_START */
+.home-services-cta{
+  flex:0 1 540px;
+  width:min(540px,100%);
+  margin:0 auto 8px;
+  position:relative;
+  overflow:hidden;
+  border:2px solid rgba(235,194,84,.98);
+  border-radius:999px;
+  background:linear-gradient(135deg,#073b9a 0%,#1261d8 45%,#d4a63c 100%);
+  color:#fff!important;
+  padding:15px 24px;
+  font-size:1.08rem;
+  font-weight:950;
+  letter-spacing:.2px;
+  box-shadow:0 18px 42px rgba(18,97,216,.30),0 10px 26px rgba(212,166,60,.32);
+  text-decoration:none;
+  animation:homeServicesGlow 2.4s ease-in-out infinite;
+}
+.home-services-cta::after{
+  content:"";
+  position:absolute;
+  top:-60%;
+  left:-35%;
+  width:32%;
+  height:220%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.55),transparent);
+  transform:rotate(25deg);
+  animation:homeServicesShine 3.2s ease-in-out infinite;
+}
+.home-services-cta:hover{
+  transform:translateY(-3px) scale(1.02);
+  box-shadow:0 24px 52px rgba(18,97,216,.38),0 14px 34px rgba(212,166,60,.40);
+}
+.home-services-cta i{
+  color:#fff4bd;
+  filter:drop-shadow(0 2px 4px rgba(0,0,0,.25));
+}
+@keyframes homeServicesGlow{
+  0%{box-shadow:0 18px 42px rgba(18,97,216,.30),0 10px 26px rgba(212,166,60,.32)}
+  50%{box-shadow:0 24px 54px rgba(18,97,216,.42),0 16px 38px rgba(212,166,60,.46)}
+  100%{box-shadow:0 18px 42px rgba(18,97,216,.30),0 10px 26px rgba(212,166,60,.32)}
+}
+@keyframes homeServicesShine{
+  0%{left:-45%;opacity:0}
+  18%{opacity:1}
+  45%{left:120%;opacity:0}
+  100%{left:120%;opacity:0}
+}
+@media(max-width:560px){
+  .home-services-cta{
+    width:100%!important;
+    flex:1 1 100%!important;
+    font-size:1rem;
+    padding:14px 18px;
+    margin-bottom:8px;
+  }
+}
+/* HOME_SERVICES_CTA_END */
+
 </style>
 </head>
 <body>
@@ -336,7 +397,11 @@ body.dark-mode .hero-service-line{
 <p class="hero-service-line">حلول تقنية، دعم بنية تحتية، أمن سيبراني، حوسبة سحابية وافتراضية، وإصلاح مشكلات تقنية للشركات والمؤسسات والأفراد.</p>
 <!-- HERO_SERVICE_LINE_END -->
 
-<div class="actions"><a class="btn linkedin" href="https://www.linkedin.com/in/mohmd-elrayah/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a><a class="btn whatsapp" href="https://wa.me/966550857011" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a><a class="btn green" href="../Mohammed_Abdalbagi_Elrayah_CV_AR.pdf" download><i class="fa-solid fa-file-arrow-down"></i> تحميل CV عربي</a><a class="btn red" href="../Mohammed_Abdalbagi_Elrayah_CV.pdf" download><i class="fa-solid fa-file-arrow-down"></i> تحميل CV إنجليزي</a></div>
+<div class="actions">
+<!-- HOME_SERVICES_CTA_START -->
+<a class="btn home-services-cta" href="services/"><i class="fa-solid fa-briefcase"></i> الخدمات والحلول التقنية</a>
+<!-- HOME_SERVICES_CTA_END -->
+<a class="btn linkedin" href="https://www.linkedin.com/in/mohmd-elrayah/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a><a class="btn whatsapp" href="https://wa.me/966550857011" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a><a class="btn green" href="../Mohammed_Abdalbagi_Elrayah_CV_AR.pdf" download><i class="fa-solid fa-file-arrow-down"></i> تحميل CV عربي</a><a class="btn red" href="../Mohammed_Abdalbagi_Elrayah_CV.pdf" download><i class="fa-solid fa-file-arrow-down"></i> تحميل CV إنجليزي</a></div>
 </section>
 <section class="section" id="summary"><h2>الملخص المهني</h2><p>اختصاصي تقنية معلومات ومهندس حاسوب وشبكات بخبرة تزيد عن 15 عامًا في الدعم الفني، إدارة البنية التحتية لتقنية المعلومات، إدارة الشبكات، صيانة الأنظمة، وأساسيات الأمن السيبراني. أمتلك خبرة في تركيب، إعداد وصيانة أنظمة الحاسب، الشبكات، الخوادم، أنظمة التشغيل، حماية الأجهزة الطرفية، النسخ الاحتياطي، الجدران النارية، وإدارة صلاحيات المستخدمين.</p><p>طالب دكتوراه في الأمن السيبراني بجامعة Islamic University of Minnesota، 2025 - حتى الآن، مع اهتمام قوي بالأمن السيبراني، حماية أنظمة المعلومات، تأمين البنية التحتية، والعمليات الأمنية العملية.</p><p>أتمتع بقدرة مثبتة على تحليل وحل المشكلات التقنية المعقدة، دعم المستخدمين، تحسين الكفاءة التشغيلية، والتنسيق مع الإدارات المختلفة لتقديم خدمات تقنية موثوقة. لدي خبرة في قيادة الفرق، تخطيط البنية التحتية، تدريب المستخدمين، التوثيق الفني، التنسيق مع الموردين، والحفاظ على بيئات تقنية مستقرة وآمنة.</p></section>
 <section class="section"><h2>أبرز المسارات المهنية</h2><ul><li>أكثر من 15 عامًا من الخبرة المهنية في الدعم الفني، البنية التحتية، هندسة الشبكات، وإدارة الأنظمة.</li><li>إدارة البنية التحتية لتقنية المعلومات عبر عدة فروع.</li><li>تحسين مراقبة أمن الأجهزة الطرفية من خلال الاستخدام العملي لأدوات الأمن والمراقبة.</li><li>معرفة عملية بأساسيات الأمن السيبراني، بما في ذلك الجدران النارية، مضادات الفيروسات، حماية الأجهزة الطرفية، التحكم في الوصول، النسخ الاحتياطي، وتقوية الأنظمة.</li><li>خبرة في التدريس الأكاديمي، التدريب الفني، الإرشاد، وإعداد المواد التعليمية المتعلقة بتقنية المعلومات.</li></ul></section>

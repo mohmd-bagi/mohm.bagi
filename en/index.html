@@ -315,6 +315,67 @@ body.dark-mode .hero-service-line{
 }
 /* MOBILE_ACTION_STATIC_END */
 
+
+/* HOME_SERVICES_CTA_START */
+.home-services-cta{
+  flex:0 1 540px;
+  width:min(540px,100%);
+  margin:0 auto 8px;
+  position:relative;
+  overflow:hidden;
+  border:2px solid rgba(235,194,84,.98);
+  border-radius:999px;
+  background:linear-gradient(135deg,#073b9a 0%,#1261d8 45%,#d4a63c 100%);
+  color:#fff!important;
+  padding:15px 24px;
+  font-size:1.08rem;
+  font-weight:950;
+  letter-spacing:.2px;
+  box-shadow:0 18px 42px rgba(18,97,216,.30),0 10px 26px rgba(212,166,60,.32);
+  text-decoration:none;
+  animation:homeServicesGlow 2.4s ease-in-out infinite;
+}
+.home-services-cta::after{
+  content:"";
+  position:absolute;
+  top:-60%;
+  left:-35%;
+  width:32%;
+  height:220%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.55),transparent);
+  transform:rotate(25deg);
+  animation:homeServicesShine 3.2s ease-in-out infinite;
+}
+.home-services-cta:hover{
+  transform:translateY(-3px) scale(1.02);
+  box-shadow:0 24px 52px rgba(18,97,216,.38),0 14px 34px rgba(212,166,60,.40);
+}
+.home-services-cta i{
+  color:#fff4bd;
+  filter:drop-shadow(0 2px 4px rgba(0,0,0,.25));
+}
+@keyframes homeServicesGlow{
+  0%{box-shadow:0 18px 42px rgba(18,97,216,.30),0 10px 26px rgba(212,166,60,.32)}
+  50%{box-shadow:0 24px 54px rgba(18,97,216,.42),0 16px 38px rgba(212,166,60,.46)}
+  100%{box-shadow:0 18px 42px rgba(18,97,216,.30),0 10px 26px rgba(212,166,60,.32)}
+}
+@keyframes homeServicesShine{
+  0%{left:-45%;opacity:0}
+  18%{opacity:1}
+  45%{left:120%;opacity:0}
+  100%{left:120%;opacity:0}
+}
+@media(max-width:560px){
+  .home-services-cta{
+    width:100%!important;
+    flex:1 1 100%!important;
+    font-size:1rem;
+    padding:14px 18px;
+    margin-bottom:8px;
+  }
+}
+/* HOME_SERVICES_CTA_END */
+
 </style>
 </head>
 <body>
@@ -347,7 +408,11 @@ body.dark-mode .hero-service-line{
 <p class="hero-service-line">Technical solutions, infrastructure support, cybersecurity, cloud, virtualization, and troubleshooting services for companies, organizations, and individuals.</p>
 <!-- HERO_SERVICE_LINE_END -->
 
-<div class="actions"><a class="btn linkedin" href="https://www.linkedin.com/in/mohmd-elrayah/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a><a class="btn whatsapp" href="https://wa.me/966550857011" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a><a class="btn green" href="../Mohammed_Abdalbagi_Elrayah_CV.pdf" download><i class="fa-solid fa-file-arrow-down"></i> Download CV (EN)</a><a class="btn red" href="../Mohammed_Abdalbagi_Elrayah_CV_AR.pdf" download><i class="fa-solid fa-file-arrow-down"></i> Download CV (AR)</a></div></section>
+<div class="actions">
+<!-- HOME_SERVICES_CTA_START -->
+<a class="btn home-services-cta" href="services/"><i class="fa-solid fa-briefcase"></i> Technical Services &amp; Solutions</a>
+<!-- HOME_SERVICES_CTA_END -->
+<a class="btn linkedin" href="https://www.linkedin.com/in/mohmd-elrayah/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a><a class="btn whatsapp" href="https://wa.me/966550857011" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a><a class="btn green" href="../Mohammed_Abdalbagi_Elrayah_CV.pdf" download><i class="fa-solid fa-file-arrow-down"></i> Download CV (EN)</a><a class="btn red" href="../Mohammed_Abdalbagi_Elrayah_CV_AR.pdf" download><i class="fa-solid fa-file-arrow-down"></i> Download CV (AR)</a></div></section>
 <section class="section" id="summary"><h2>Professional Summary</h2><p>Experienced IT Specialist and Computer & Network Engineer with more than 15 years of experience in technical support, IT infrastructure, network administration, systems maintenance, and cybersecurity fundamentals. Skilled in installing, configuring, and maintaining computer systems, networks, servers, operating systems, endpoint protection, backups, firewalls, and user access controls.</p><p>PhD Student in Cybersecurity at Islamic University of Minnesota, 2025 - Present, with a strong interest in cybersecurity, information systems protection, secure infrastructure, and practical security operations.</p><p>Proven ability to troubleshoot complex technical issues, support business users, improve operational efficiency, and coordinate with departments to deliver reliable IT services.</p></section>
 <section class="section"><h2>Career Highlights</h2><ul><li>Over 15 years of professional experience in IT support, infrastructure, network engineering, and systems administration.</li><li>Managed IT infrastructure across multiple branches.</li><li>Improved endpoint security monitoring through practical use of security and monitoring tools.</li><li>Practical knowledge of cybersecurity fundamentals including firewalls, antivirus, endpoint protection, access control, backups, and system hardening.</li><li>Experience in academic teaching, technical training, mentoring, and preparing IT-related academic materials.</li></ul></section>
 <section class="section"><h2>Areas of Expertise</h2><div class="grid"><div class="chip">IT Infrastructure Administration</div><div class="chip">Network Installation and Maintenance</div><div class="chip">Technical Support and Help Desk Operations</div><div class="chip">Systems Administration</div><div class="chip">Endpoint Security and Data Protection</div><div class="chip">Backup and Recovery Support</div><div class="chip">User Account and Access Management</div><div class="chip">IT Asset and Inventory Management</div><div class="chip">Vendor and Department Coordination</div><div class="chip">Business Continuity and Operational Support</div><div class="chip">Network Monitoring and Troubleshooting</div><div class="chip">CCTV and Access Control Systems Support</div></div></section>
