@@ -240,6 +240,81 @@ body.dark-mode .hero-service-line{
 }
 /* HERO_SERVICE_LINE_END */
 
+
+/* MOBILE_ACTION_STATIC_START */
+@media(max-width:560px){
+  .live-bar{
+    margin-bottom:14px!important;
+  }
+
+  .mobile-action-row{
+    position:relative!important;
+    top:auto!important;
+    left:auto!important;
+    right:auto!important;
+    bottom:auto!important;
+    transform:none!important;
+    display:flex!important;
+    justify-content:center!important;
+    align-items:center!important;
+    gap:12px!important;
+    width:100%!important;
+    max-width:calc(100% - 28px)!important;
+    margin:14px auto 22px!important;
+    z-index:5!important;
+    pointer-events:auto!important;
+  }
+
+  .mobile-action-row .service-request-open{
+    position:relative!important;
+    top:auto!important;
+    bottom:auto!important;
+    left:auto!important;
+    right:auto!important;
+    transform:none!important;
+    width:auto!important;
+    height:54px!important;
+    min-width:190px!important;
+    padding:6px 12px 6px 6px!important;
+    gap:8px!important;
+    border-radius:999px!important;
+    font-size:15px!important;
+    box-shadow:0 12px 28px rgba(10,25,60,.26),0 7px 18px rgba(212,166,60,.25)!important;
+    animation:none!important;
+  }
+
+  .mobile-action-row .service-request-open i{
+    width:42px!important;
+    height:42px!important;
+    font-size:20px!important;
+    flex:0 0 42px!important;
+  }
+
+  .mobile-action-row .service-request-open span{
+    display:inline-flex!important;
+    min-height:36px!important;
+    padding:0 10px!important;
+    font-size:15px!important;
+    white-space:nowrap!important;
+  }
+
+  .mobile-action-row .floating-whatsapp{
+    position:relative!important;
+    top:auto!important;
+    bottom:auto!important;
+    left:auto!important;
+    right:auto!important;
+    transform:none!important;
+    width:54px!important;
+    height:54px!important;
+    font-size:28px!important;
+    flex:0 0 54px!important;
+    z-index:5!important;
+    box-shadow:0 12px 28px rgba(10,25,60,.24)!important;
+  }
+}
+/* MOBILE_ACTION_STATIC_END */
+
 </style>
 </head>
 <body>
@@ -466,6 +541,37 @@ function serviceRequestSubmitted(){
   setTimeout(setFloatLine, 300);
 })();
 </script>
+
+
+<!-- MOBILE_ACTION_STATIC_SCRIPT_START -->
+<script>
+(function(){
+  function normalizeMobileActions(){
+    var live = document.querySelector('.live-bar');
+    var service = document.querySelector('.service-request-open');
+    var whatsapp = document.querySelector('.floating-whatsapp');
+    if(!live || !service || !whatsapp) return;
+
+    var row = document.querySelector('.mobile-action-row');
+    if(!row){
+      row = document.createElement('div');
+      row.className = 'mobile-action-row';
+    }
+
+    if(service.parentElement !== row) row.appendChild(service);
+    if(whatsapp.parentElement !== row) row.appendChild(whatsapp);
+
+    if(live.nextElementSibling !== row){
+      live.insertAdjacentElement('afterend', row);
+    }
+  }
+
+  window.addEventListener('load', normalizeMobileActions);
+  window.addEventListener('resize', normalizeMobileActions);
+  setTimeout(normalizeMobileActions, 300);
+})();
+</script>
+<!-- MOBILE_ACTION_STATIC_SCRIPT_END -->
 
 </body>
 </html>
