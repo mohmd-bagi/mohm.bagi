@@ -167,6 +167,21 @@ body.dark-mode .service-card p{color:#cbd5e1}
 @media(max-width:700px){.services-grid{grid-template-columns:1fr}.service-card{padding:16px;border-radius:18px}.service-card:hover{transform:none}}
 /* ADVANCED_SERVICES_END */
 
+/* FAQ_SECTION_START */
+.faq-intro{font-weight:800;color:var(--muted);margin-bottom:16px}
+.faq-list{display:grid;gap:12px;margin-top:14px}
+.faq-item{background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(241,247,255,.98));border:1px solid rgba(18,97,216,.18);border-radius:18px;box-shadow:0 10px 24px rgba(15,23,42,.07);overflow:hidden}
+.faq-item summary{list-style:none;cursor:pointer;padding:16px 18px;font-weight:900;color:#12345c;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:"+";width:28px;height:28px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:#eaf1ff;color:var(--blue);font-weight:900;flex:0 0 28px}
+.faq-item[open] summary::after{content:"-"}
+.faq-item p{margin:0;padding:0 18px 16px;color:#40516b;font-weight:750;line-height:1.8}
+body.dark-mode .faq-item{background:linear-gradient(135deg,#0f172a,#111827);border-color:#334155;box-shadow:0 14px 32px rgba(0,0,0,.28)}
+body.dark-mode .faq-item summary{color:#e5e7eb}
+body.dark-mode .faq-item summary::after{background:#1e293b;color:#93c5fd}
+body.dark-mode .faq-item p{color:#cbd5e1}
+@media(max-width:700px){.faq-item summary{padding:15px 16px}.faq-item p{padding:0 16px 15px}}
+/* FAQ_SECTION_END */
 </style>
 </head>
 <body>
@@ -207,6 +222,17 @@ body.dark-mode .service-card p{color:#cbd5e1}
 <section class="section"><h2>التطوير المهني</h2><ul><li>دبلوم في تصميم وإدارة وتركيب وصيانة الشبكات - يناير 2010</li><li>كورس CCNA طويل المدة - مارس 2010</li><li>دورة تدريبية في IPv6 - أكتوبر 2011</li><li>دبلوم في صيانة الحاسب والشبكات - فبراير 2014</li><li>أساسيات إدارة وتشغيل نظام Linux - Red Hat - مارس 2014</li><li>دورة في الإشراف الأكاديمي - يناير 2017</li></ul></section>
 <section class="section"><h2>اللغات</h2><ul><li>العربية: اللغة الأم</li><li>الإنجليزية: جيد</li></ul></section>
 <section class="section" id="contact"><h2>التواصل</h2><p><b>الجوال:</b> <a href="tel:+966550857011">+966550857011</a><br><b>البريد الإلكتروني:</b> <a href="mailto:mohmd.bagi@hotmail.com">mohmd.bagi@hotmail.com</a></p></section>
+
+<!-- FAQ_SECTION_START -->
+<section class="section" id="faq">
+  <h2>الأسئلة الشائعة</h2>
+  <p class="faq-intro">إجابات مختصرة حول طبيعة الخدمات التقنية، طريقة الطلب، نطاق العمل، الخصوصية، وآلية التنفيذ.</p>
+  <div class="faq-list">
+    <details class="faq-item"><summary>ما نوع الخدمات التي تقدمها؟</summary><p>أقدم حلولًا تقنية واستشارية تشمل البنية التحتية، الشبكات، الأمن السيبراني، الحوسبة السحابية والافتراضية، النسخ الاحتياطي، إدارة الصلاحيات، والتوثيق الفني.</p></details><details class="faq-item"><summary>هل الخدمات للأفراد أم للشركات؟</summary><p>الخدمات مناسبة للشركات والمؤسسات والمكاتب الصغيرة والمتوسطة، وكذلك الأفراد الذين يحتاجون إلى دعم أو استشارة تقنية منظمة.</p></details><details class="faq-item"><summary>هل تقدم دعمًا عن بعد أو زيارة ميدانية؟</summary><p>يمكن تقديم بعض الخدمات عن بعد، بينما تحتاج بعض الأعمال إلى زيارة ميدانية حسب طبيعة الطلب ونطاق العمل.</p></details><details class="faq-item"><summary>كيف يتم طلب الخدمة؟</summary><p>يتم طلب الخدمة من خلال نموذج طلب الخدمة في الصفحة، مع اختيار نوع الخدمة وإرسال التفاصيل الأساسية للمراجعة.</p></details><details class="faq-item"><summary>هل التكلفة ثابتة؟</summary><p>يتم تحديد التكلفة بعد فهم نطاق العمل، نوع الخدمة، مستوى التعقيد، والوقت المتوقع للتنفيذ.</p></details><details class="faq-item"><summary>هل تقدم تقريرًا أو توصيات بعد تنفيذ الخدمة؟</summary><p>نعم، يمكن تقديم ملخص فني أو توصيات عملية حسب نوع الخدمة ونطاق العمل المتفق عليه.</p></details><details class="faq-item"><summary>هل يمكن طلب استشارة فقط بدون تنفيذ؟</summary><p>نعم، يمكن طلب استشارة تقنية لتقييم الوضع الحالي أو اقتراح حلول مناسبة قبل التنفيذ.</p></details><details class="faq-item"><summary>هل تشمل الخدمات الأمن السيبراني؟</summary><p>نعم، تشمل مراجعة أساسيات الحماية، تحسين إعدادات الأجهزة، تنظيم الصلاحيات، وتقليل المخاطر.</p></details><details class="faq-item"><summary>هل تشمل الخدمات الحوسبة السحابية والحوسبة الافتراضية؟</summary><p>نعم، تشمل دعم وتنظيم بيئات السحابة والافتراضية، إدارة الموارد، تحسين الأداء، والنسخ الاحتياطي.</p></details><details class="faq-item"><summary>هل يتم التعامل مع بيانات العميل بسرية؟</summary><p>نعم، يتم التعامل مع المعلومات والبيانات بسرية وضمن نطاق الخدمة المطلوبة فقط.</p></details>
+  </div>
+</section>
+<!-- FAQ_SECTION_END -->
+
 <section class="section" id="contact-form-section"><h2>نموذج المراسلة</h2><form action="https://formsubmit.co/mohmd.bagi@hotmail.com" method="POST" target="hidden_iframe" onsubmit="showSuccessMessage(); this.reset();" class="contact-form"><input type="hidden" name="_captcha" value="false"><input type="hidden" name="_subject" value="New Message From Arabic Website"><input type="text" name="name" placeholder="الاسم" required><input type="email" name="email" placeholder="البريد الإلكتروني" required><textarea name="message" rows="6" placeholder="اكتب رسالتك هنا" required></textarea><button type="submit">إرسال الرسالة</button></form><iframe name="hidden_iframe" style="display:none"></iframe><div id="success-message" class="success-message">تم إرسال الرسالة بنجاح.</div></section>
 <section class="section"><h2>المراجع</h2><p>المراجع متاحة عند الطلب.</p></section>
 <footer>© 2025 محمد عبدالباقي الريح. جميع الحقوق محفوظة.</footer>
