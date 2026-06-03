@@ -351,7 +351,26 @@ body.dark-mode .services-hero p{color:#cbd5e1}
 </section>
 <!-- FAQ_SECTION_END -->
 
-  <footer>&#x645;&#x62d;&#x645;&#x62f; &#x639;&#x628;&#x62f;&#x627;&#x644;&#x628;&#x627;&#x642;&#x64a; &#x627;&#x644;&#x631;&#x64a;&#x62d;</footer>
+  
+<!-- SERVICES_CONTACT_SECTION_START -->
+<section class="section" id="contact">
+  <h2>التواصل</h2>
+  <p class="muted">للاستفسارات العامة أو الرسائل المباشرة، يمكنك استخدام النموذج أدناه.</p>
+  <form action="https://formsubmit.co/mohmd.bagi@hotmail.com" method="POST" target="services_contact_iframe" onsubmit="servicesContactSubmitted()" class="contact-form">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_subject" value="رسالة تواصل جديدة من صفحة الخدمات">
+    <input type="text" name="name" placeholder="الاسم" required>
+    <input type="email" name="email" placeholder="البريد الإلكتروني" required>
+    <input type="tel" name="mobile" placeholder="رقم الجوال">
+    <textarea name="message" rows="5" placeholder="رسالتك" required></textarea>
+    <button type="submit">إرسال الرسالة</button>
+  </form>
+  <iframe name="services_contact_iframe" style="display:none"></iframe>
+  <div id="services-contact-success" class="success-message">تم إرسال رسالتك بنجاح.</div>
+</section>
+<!-- SERVICES_CONTACT_SECTION_END -->
+
+<footer>&#x645;&#x62d;&#x645;&#x62f; &#x639;&#x628;&#x62f;&#x627;&#x644;&#x628;&#x627;&#x642;&#x64a; &#x627;&#x644;&#x631;&#x64a;&#x62d;</footer>
 </div>
 
 <!-- SERVICE_REQUEST_WIDGET_START -->
@@ -430,5 +449,18 @@ function setMode(dark){
 setMode(localStorage.getItem('siteMode')==='dark');
 if(modeToggle){modeToggle.addEventListener('click',()=>setMode(!document.body.classList.contains('dark-mode')));}
 </script>
+
+<!-- SERVICES_CONTACT_SCRIPT_START -->
+<script>
+function servicesContactSubmitted(){
+  const msg=document.getElementById('services-contact-success');
+  if(msg){
+    msg.style.display='block';
+    setTimeout(()=>{msg.style.display='none'},5000);
+  }
+}
+</script>
+<!-- SERVICES_CONTACT_SCRIPT_END -->
+
 </body>
 </html>
