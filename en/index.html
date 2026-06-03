@@ -158,7 +158,7 @@ body.dark-mode #experience .job-card .date{background:#1e293b;color:#93c5fd}
 .service-card h3{margin:0 0 6px;color:#12345c;font-size:1.05rem;font-weight:900}
 .service-card p{margin:0;color:#40516b;font-weight:750;line-height:1.75}
 .service-cta-wrap{margin-top:18px;text-align:center}
-.service-cta-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;color:#fff;background:linear-gradient(135deg,#1261d8,#10a779);padding:12px 18px;border-radius:999px;font-weight:900;box-shadow:0 12px 26px rgba(18,97,216,.20)}
+.service-cta-btn{border:0;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;color:#fff;background:linear-gradient(135deg,#1261d8,#10a779);padding:12px 18px;border-radius:999px;font-weight:900;box-shadow:0 12px 26px rgba(18,97,216,.20)}
 .service-cta-btn:hover{transform:translateY(-2px)}
 body.dark-mode .service-card{background:linear-gradient(135deg,#0f172a,#111827);border-color:#334155;box-shadow:0 16px 36px rgba(0,0,0,.30)}
 body.dark-mode .service-card:hover{border-color:#475569;box-shadow:0 22px 48px rgba(0,0,0,.42)}
@@ -208,7 +208,7 @@ body.dark-mode .service-card p{color:#cbd5e1}
   <div class="services-grid">
     <div class="service-card"><i class="fa-solid fa-screwdriver-wrench"></i><h3>Integrated Technical Solutions & Troubleshooting</h3><p>Structured analysis and resolution of recurring technical issues across devices, networks, systems, and daily IT services.</p></div><div class="service-card"><i class="fa-solid fa-network-wired"></i><h3>Device & Network Environment Organization</h3><p>Organizing and supporting device and network environments for companies, organizations, and individuals, including devices, network settings, users, permissions, printers, and shared folders.</p></div><div class="service-card"><i class="fa-solid fa-sitemap"></i><h3>Network & Infrastructure Solutions</h3><p>Designing, organizing, supporting, and improving internal network environments and technical infrastructure for better stability and performance.</p></div><div class="service-card"><i class="fa-solid fa-shield-halved"></i><h3>Cybersecurity & Data Protection</h3><p>Improving protection for devices and systems, reviewing permissions, reducing risks, and strengthening security practices within the work environment.</p></div><div class="service-card"><i class="fa-solid fa-cloud"></i><h3>Cloud Computing & Virtualization</h3><p>Supporting and organizing cloud computing and virtualization environments, including resource management, performance improvement, and operational stability.</p></div><div class="service-card"><i class="fa-solid fa-database"></i><h3>Backup, Recovery & Business Continuity</h3><p>Preparing backup and recovery plans, protecting important data, and providing practical recovery solutions during failures or data loss.</p></div><div class="service-card"><i class="fa-solid fa-users-gear"></i><h3>Users, Permissions & Access Management</h3><p>Organizing user accounts, reviewing permissions, controlling access, and reducing risks caused by unnecessary privileges.</p></div><div class="service-card"><i class="fa-solid fa-server"></i><h3>Servers, Systems & Work Environments</h3><p>Supporting systems, servers, and technical work environments while maintaining operational stability and resolving issues affecting business continuity.</p></div><div class="service-card"><i class="fa-solid fa-diagram-project"></i><h3>Automation, Forms & Workflow Integration</h3><p>Improving daily operations through electronic forms, email, WhatsApp, and organized workflow processes.</p></div><div class="service-card"><i class="fa-solid fa-file-lines"></i><h3>Technical Documentation & Reports</h3><p>Preparing technical reports, documenting work environments, providing clear recommendations, and organizing IT assets.</p></div><div class="service-card"><i class="fa-solid fa-headset"></i><h3>Advanced Technical Support</h3><p>Analyzing and resolving issues related to devices, networks, email, printers, and daily business systems within a professional support framework.</p></div>
   </div>
-  <div class="service-cta-wrap"><a class="service-cta-btn" href="#contact-form-section"><i class="fa-solid fa-paper-plane"></i> Request a Service</a></div>
+  <div class="service-cta-wrap"><button class="service-cta-btn" type="button" data-service-open><i class="fa-solid fa-paper-plane"></i> Request a Service</button></div>
 </section>
 <!-- ADVANCED_SERVICES_SECTION_END -->
 
@@ -255,12 +255,12 @@ function showSuccessMessage(){const msg=document.getElementById('success-message
 </div>
 <script>
 (function(){
-  const openBtn=document.querySelector('[data-service-open]');
+  const openBtns=document.querySelectorAll('[data-service-open]');
   const modal=document.querySelector('.service-request-modal');
-  if(!openBtn||!modal)return;
+  if(!openBtns.length||!modal)return;
   function openModal(){modal.classList.add('is-open');modal.setAttribute('aria-hidden','false');}
   function closeModal(){modal.classList.remove('is-open');modal.setAttribute('aria-hidden','true');}
-  openBtn.addEventListener('click',openModal);
+  openBtns.forEach(btn=>btn.addEventListener('click',openModal));
   modal.querySelectorAll('[data-service-close]').forEach(el=>el.addEventListener('click',closeModal));
   document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
 })();
