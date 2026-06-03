@@ -118,11 +118,195 @@ body.dark-mode #experience .job-card .date{background:#1e293b;color:#93c5fd}
 /* HOME_SERVICES_CTA_END */
 
 
+
+
+
+/* HOME_GOLD_REQUEST_CTA_START */
+.home-request-cta{
+  flex:0 1 430px;
+  width:min(430px,100%);
+  margin:0 auto 8px;
+  position:relative;
+  overflow:hidden;
+  border:2px solid rgba(255,214,95,.98);
+  border-radius:999px;
+  background:linear-gradient(135deg,#8a5a00 0%,#d4a63c 42%,#ffe08a 100%);
+  color:#111827!important;
+  padding:14px 22px;
+  font-size:1.05rem;
+  font-weight:950;
+  letter-spacing:.2px;
+  box-shadow:0 18px 42px rgba(212,166,60,.34),0 8px 22px rgba(15,23,42,.18);
+  text-decoration:none;
+  cursor:pointer;
+  font-family:inherit;
+  justify-content:center;
+  animation:homeGoldPulse 2.5s ease-in-out infinite;
+}
+.home-request-cta::after{
+  content:"";
+  position:absolute;
+  top:-60%;
+  left:-35%;
+  width:34%;
+  height:220%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.62),transparent);
+  transform:rotate(25deg);
+  animation:homeGoldShine 3s ease-in-out infinite;
+}
+.home-request-cta:hover{
+  transform:translateY(-3px) scale(1.02);
+}
+.home-request-cta i{
+  color:#0b43ad;
+  font-size:1.15em;
+}
+@keyframes homeGoldPulse{
+  0%{box-shadow:0 18px 42px rgba(212,166,60,.34),0 8px 22px rgba(15,23,42,.18)}
+  50%{box-shadow:0 24px 56px rgba(212,166,60,.50),0 12px 30px rgba(15,23,42,.22)}
+  100%{box-shadow:0 18px 42px rgba(212,166,60,.34),0 8px 22px rgba(15,23,42,.18)}
+}
+@keyframes homeGoldShine{
+  0%{left:-45%;opacity:0}
+  18%{opacity:1}
+  45%{left:120%;opacity:0}
+  100%{left:120%;opacity:0}
+}
+@media(max-width:560px){
+  .home-request-cta{
+    width:100%!important;
+    flex:1 1 100%!important;
+    font-size:1rem;
+    padding:14px 18px;
+    margin-bottom:8px;
+  }
+}
+/* HOME_GOLD_REQUEST_CTA_END */
+
 /* HOME_HIDE_FLOATING_WHATSAPP_START */
 .floating-whatsapp{
   display:none!important;
 }
 /* HOME_HIDE_FLOATING_WHATSAPP_END */
+
+
+/* HOME_SERVICE_MODAL_CSS_START */
+.service-request-modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  align-items:center;
+  justify-content:center;
+  padding:18px;
+}
+.service-request-modal.is-open{
+  display:flex;
+}
+.service-request-backdrop{
+  position:absolute;
+  inset:0;
+  background:rgba(15,23,42,.58);
+  backdrop-filter:blur(4px);
+}
+.service-request-card{
+  position:relative;
+  width:min(560px,100%);
+  max-height:90vh;
+  overflow:auto;
+  background:var(--panel,#fff);
+  border:1px solid var(--line,#dbe6f5);
+  border-radius:24px;
+  box-shadow:0 28px 80px rgba(15,23,42,.32);
+  padding:26px;
+}
+.service-request-card h2{
+  margin:0 0 8px;
+  color:var(--blue,#1261d8);
+}
+.service-request-card p{
+  margin:0 0 18px;
+  color:#40516b;
+  font-weight:800;
+}
+.service-request-form{
+  display:grid;
+  gap:12px;
+}
+.service-request-form input,
+.service-request-form select,
+.service-request-form textarea{
+  width:100%;
+  border:1px solid var(--line,#dbe6f5);
+  border-radius:14px;
+  padding:13px 14px;
+  font-family:inherit;
+  font-size:1rem;
+  background:#fff;
+  color:#111827;
+}
+.service-request-form button,
+.service-request-close{
+  border:0;
+  border-radius:14px;
+  padding:13px 16px;
+  font-family:inherit;
+  font-weight:900;
+  cursor:pointer;
+}
+.service-request-form button{
+  background:#1261d8;
+  color:#fff;
+}
+.service-request-close{
+  width:100%;
+  margin-top:12px;
+  background:#111827;
+  color:#fff;
+}
+.service-request-x{
+  position:absolute;
+  top:14px;
+  inset-inline-start:14px;
+  border:0;
+  border-radius:50%;
+  width:36px;
+  height:36px;
+  cursor:pointer;
+  background:#eef5ff;
+  color:#111827;
+  font-size:18px;
+}
+.service-request-success{
+  display:none;
+  margin-top:12px;
+  padding:12px;
+  border-radius:14px;
+  background:#dcfce7;
+  color:#166534;
+  font-weight:900;
+}
+body.dark-mode .service-request-card{
+  background:#0f172a;
+  border-color:#334155;
+}
+body.dark-mode .service-request-card p{
+  color:#cbd5e1;
+}
+body.dark-mode .service-request-form input,
+body.dark-mode .service-request-form select,
+body.dark-mode .service-request-form textarea{
+  background:#111827;
+  color:#e5e7eb;
+  border-color:#334155;
+}
+@media(max-width:560px){
+  .service-request-card{
+    padding:22px;
+    border-radius:20px;
+  }
+}
+/* HOME_SERVICE_MODAL_CSS_END */
 
 </style>
 </head>
@@ -157,6 +341,10 @@ body.dark-mode #experience .job-card .date{background:#1e293b;color:#93c5fd}
 <!-- HOME_SERVICES_CTA_START -->
 <a class="btn home-services-cta" href="services/"><i class="fa-solid fa-briefcase"></i> Technical Services &amp; Solutions</a>
 <!-- HOME_SERVICES_CTA_END -->
+<!-- HOME_GOLD_REQUEST_CTA_START -->
+<button class="btn home-request-cta" type="button" data-service-open><i class="fa-solid fa-headset"></i> Request a Service</button>
+<!-- HOME_GOLD_REQUEST_CTA_END -->
+
 <a class="btn linkedin" href="https://www.linkedin.com/in/mohmd-elrayah/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a><a class="btn whatsapp" href="https://wa.me/966550857011" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a><a class="btn green" href="../Mohammed_Abdalbagi_Elrayah_CV.pdf" download><i class="fa-solid fa-file-arrow-down"></i> Download CV (EN)</a><a class="btn red" href="../Mohammed_Abdalbagi_Elrayah_CV_AR.pdf" download><i class="fa-solid fa-file-arrow-down"></i> Download CV (AR)</a></div></section>
 <section class="section" id="summary"><h2>Professional Summary</h2><p>Experienced IT Specialist and Computer & Network Engineer with more than 15 years of experience in technical support, IT infrastructure, network administration, systems maintenance, and cybersecurity fundamentals. Skilled in installing, configuring, and maintaining computer systems, networks, servers, operating systems, endpoint protection, backups, firewalls, and user access controls.</p><p>PhD Student in Cybersecurity at Islamic University of Minnesota, 2025 - Present, with a strong interest in cybersecurity, information systems protection, secure infrastructure, and practical security operations.</p><p>Proven ability to troubleshoot complex technical issues, support business users, improve operational efficiency, and coordinate with departments to deliver reliable IT services.</p></section>
 <section class="section"><h2>Career Highlights</h2><ul><li>Over 15 years of professional experience in IT support, infrastructure, network engineering, and systems administration.</li><li>Managed IT infrastructure across multiple branches.</li><li>Improved endpoint security monitoring through practical use of security and monitoring tools.</li><li>Practical knowledge of cybersecurity fundamentals including firewalls, antivirus, endpoint protection, access control, backups, and system hardening.</li><li>Experience in academic teaching, technical training, mentoring, and preparing IT-related academic materials.</li></ul></section>
@@ -251,5 +439,70 @@ function showSuccessMessage(){const msg=document.getElementById('success-message
 
 
 
+<!-- SERVICE_REQUEST_WIDGET_START -->
+
+<div class="service-request-modal" aria-hidden="true" dir="ltr">
+  <div class="service-request-backdrop" data-service-close></div>
+  <div class="service-request-card" role="dialog" aria-modal="true">
+    <button class="service-request-x" type="button" data-service-close aria-label="Close">x</button>
+    <h2>Service Request</h2>
+    <p>Select the service you need and I will contact you.</p>
+    <form action="https://formsubmit.co/mohmd.bagi@hotmail.com" method="POST" target="service_request_iframe" onsubmit="serviceRequestSubmitted()" class="service-request-form">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_subject" value="New Service Request From Website">
+      <input type="text" name="name" placeholder="Name" required>
+      <input type="tel" name="mobile" placeholder="Mobile Number" required>
+      <input type="email" name="email" placeholder="Email" required>
+      
+<!-- SERVICE_EXTRA_FIELDS_START -->
+      <select name="client_type" required>
+        <option value="" disabled selected>Client Type</option>
+        <option value="Individual">Individual</option>
+        <option value="Company">Company</option>
+        <option value="Organization">Organization</option>
+        <option value="Office or Small Business">Office or Small Business</option>
+      </select>
+      <select name="service_method" required>
+        <option value="" disabled selected>Service Method</option>
+        <option value="Remote Support">Remote Support</option>
+        <option value="On-site Visit">On-site Visit</option>
+        <option value="Consultation Only">Consultation Only</option>
+        <option value="To be decided after review">To be decided after review</option>
+      </select>
+      <input type="text" name="city" placeholder="City" required>
+      <select name="urgency" required>
+        <option value="" disabled selected>Urgency Level</option>
+        <option value="Normal">Normal</option>
+        <option value="Important">Important</option>
+        <option value="Urgent">Urgent</option>
+      </select>
+<!-- SERVICE_EXTRA_FIELDS_END -->
+
+      <select name="service_type" required><option value="" disabled selected>Select Service Type</option><option value="Technical Support for Devices and Software">Technical Support for Devices and Software</option><option value="Network and Infrastructure Support">Network and Infrastructure Support</option><option value="Current Infrastructure Assessment">Current Infrastructure Assessment</option><option value="Internal Network Setup and Security">Internal Network Setup and Security</option><option value="Wi-Fi Coverage Improvement">Wi-Fi Coverage Improvement</option><option value="Cybersecurity Consultation">Cybersecurity Consultation</option><option value="Endpoint Protection Improvement">Endpoint Protection Improvement</option><option value="Initial Security Assessment">Initial Security Assessment</option><option value="IT Environment Monitoring and Organization">IT Environment Monitoring and Organization</option><option value="Servers and Systems Support">Servers and Systems Support</option><option value="Virtualization and Virtual Environment Support">Virtualization and Virtual Environment Support</option><option value="Server Room or Network Room Organization">Server Room or Network Room Organization</option><option value="Backup and Recovery Setup">Backup and Recovery Setup</option><option value="Workstation Performance Improvement">Workstation Performance Improvement</option><option value="User Accounts and Permissions Setup">User Accounts and Permissions Setup</option><option value="User Permissions Review">User Permissions Review</option><option value="Email Support">Email Support</option><option value="Printers and Office Devices Support">Printers and Office Devices Support</option><option value="CCTV Camera Installation and Maintenance">CCTV Camera Installation and Maintenance</option><option value="Surveillance and Access Control Systems Support">Surveillance and Access Control Systems Support</option><option value="Network Devices Installation and Maintenance">Network Devices Installation and Maintenance</option><option value="Cable Management and Network Points Setup">Cable Management and Network Points Setup</option><option value="Office Internet and Router Setup">Office Internet and Router Setup</option><option value="Network or Internet Slowness Troubleshooting">Network or Internet Slowness Troubleshooting</option><option value="New Computer Setup">New Computer Setup</option><option value="IT Asset Documentation and Organization">IT Asset Documentation and Organization</option><option value="Technical Reports or IT Documentation">Technical Reports or IT Documentation</option><option value="Website Design or Modification">Website Design or Modification</option><option value="Forms Integration with Email or WhatsApp">Forms Integration with Email or WhatsApp</option><option value="General IT Consultation">General IT Consultation</option><option value="Technical Training or Explanation">Technical Training or Explanation</option><option value="On-Site Technical Support Visit">On-Site Technical Support Visit</option><option value="Other">Other</option></select>
+      <textarea name="request_details" rows="5" placeholder="Request Details" required></textarea>
+      <button type="submit">Send Request</button>
+    </form>
+    <iframe name="service_request_iframe" style="display:none"></iframe>
+    <div class="service-request-success">Service request sent successfully.</div>
+    <button class="service-request-close" type="button" data-service-close>Close</button>
+  </div>
+</div>
+<script>
+(function(){
+  const openBtns=document.querySelectorAll('[data-service-open]');
+  const modal=document.querySelector('.service-request-modal');
+  if(!openBtns.length||!modal)return;
+  function openModal(){modal.classList.add('is-open');modal.setAttribute('aria-hidden','false');}
+  function closeModal(){modal.classList.remove('is-open');modal.setAttribute('aria-hidden','true');}
+  openBtns.forEach(btn=>btn.addEventListener('click',openModal));
+  modal.querySelectorAll('[data-service-close]').forEach(el=>el.addEventListener('click',closeModal));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+})();
+function serviceRequestSubmitted(){
+  const msg=document.querySelector('.service-request-success');
+  if(msg){msg.style.display='block';}
+}
+</script>
+<!-- SERVICE_REQUEST_WIDGET_END -->
 </body>
 </html>

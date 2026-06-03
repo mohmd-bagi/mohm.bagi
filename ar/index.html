@@ -118,11 +118,195 @@ body.dark-mode #experience .job-card .date{background:#1e293b;color:#93c5fd}
 /* HOME_SERVICES_CTA_END */
 
 
+
+
+
+/* HOME_GOLD_REQUEST_CTA_START */
+.home-request-cta{
+  flex:0 1 430px;
+  width:min(430px,100%);
+  margin:0 auto 8px;
+  position:relative;
+  overflow:hidden;
+  border:2px solid rgba(255,214,95,.98);
+  border-radius:999px;
+  background:linear-gradient(135deg,#8a5a00 0%,#d4a63c 42%,#ffe08a 100%);
+  color:#111827!important;
+  padding:14px 22px;
+  font-size:1.05rem;
+  font-weight:950;
+  letter-spacing:.2px;
+  box-shadow:0 18px 42px rgba(212,166,60,.34),0 8px 22px rgba(15,23,42,.18);
+  text-decoration:none;
+  cursor:pointer;
+  font-family:inherit;
+  justify-content:center;
+  animation:homeGoldPulse 2.5s ease-in-out infinite;
+}
+.home-request-cta::after{
+  content:"";
+  position:absolute;
+  top:-60%;
+  left:-35%;
+  width:34%;
+  height:220%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.62),transparent);
+  transform:rotate(25deg);
+  animation:homeGoldShine 3s ease-in-out infinite;
+}
+.home-request-cta:hover{
+  transform:translateY(-3px) scale(1.02);
+}
+.home-request-cta i{
+  color:#0b43ad;
+  font-size:1.15em;
+}
+@keyframes homeGoldPulse{
+  0%{box-shadow:0 18px 42px rgba(212,166,60,.34),0 8px 22px rgba(15,23,42,.18)}
+  50%{box-shadow:0 24px 56px rgba(212,166,60,.50),0 12px 30px rgba(15,23,42,.22)}
+  100%{box-shadow:0 18px 42px rgba(212,166,60,.34),0 8px 22px rgba(15,23,42,.18)}
+}
+@keyframes homeGoldShine{
+  0%{left:-45%;opacity:0}
+  18%{opacity:1}
+  45%{left:120%;opacity:0}
+  100%{left:120%;opacity:0}
+}
+@media(max-width:560px){
+  .home-request-cta{
+    width:100%!important;
+    flex:1 1 100%!important;
+    font-size:1rem;
+    padding:14px 18px;
+    margin-bottom:8px;
+  }
+}
+/* HOME_GOLD_REQUEST_CTA_END */
+
 /* HOME_HIDE_FLOATING_WHATSAPP_START */
 .floating-whatsapp{
   display:none!important;
 }
 /* HOME_HIDE_FLOATING_WHATSAPP_END */
+
+
+/* HOME_SERVICE_MODAL_CSS_START */
+.service-request-modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  align-items:center;
+  justify-content:center;
+  padding:18px;
+}
+.service-request-modal.is-open{
+  display:flex;
+}
+.service-request-backdrop{
+  position:absolute;
+  inset:0;
+  background:rgba(15,23,42,.58);
+  backdrop-filter:blur(4px);
+}
+.service-request-card{
+  position:relative;
+  width:min(560px,100%);
+  max-height:90vh;
+  overflow:auto;
+  background:var(--panel,#fff);
+  border:1px solid var(--line,#dbe6f5);
+  border-radius:24px;
+  box-shadow:0 28px 80px rgba(15,23,42,.32);
+  padding:26px;
+}
+.service-request-card h2{
+  margin:0 0 8px;
+  color:var(--blue,#1261d8);
+}
+.service-request-card p{
+  margin:0 0 18px;
+  color:#40516b;
+  font-weight:800;
+}
+.service-request-form{
+  display:grid;
+  gap:12px;
+}
+.service-request-form input,
+.service-request-form select,
+.service-request-form textarea{
+  width:100%;
+  border:1px solid var(--line,#dbe6f5);
+  border-radius:14px;
+  padding:13px 14px;
+  font-family:inherit;
+  font-size:1rem;
+  background:#fff;
+  color:#111827;
+}
+.service-request-form button,
+.service-request-close{
+  border:0;
+  border-radius:14px;
+  padding:13px 16px;
+  font-family:inherit;
+  font-weight:900;
+  cursor:pointer;
+}
+.service-request-form button{
+  background:#1261d8;
+  color:#fff;
+}
+.service-request-close{
+  width:100%;
+  margin-top:12px;
+  background:#111827;
+  color:#fff;
+}
+.service-request-x{
+  position:absolute;
+  top:14px;
+  inset-inline-start:14px;
+  border:0;
+  border-radius:50%;
+  width:36px;
+  height:36px;
+  cursor:pointer;
+  background:#eef5ff;
+  color:#111827;
+  font-size:18px;
+}
+.service-request-success{
+  display:none;
+  margin-top:12px;
+  padding:12px;
+  border-radius:14px;
+  background:#dcfce7;
+  color:#166534;
+  font-weight:900;
+}
+body.dark-mode .service-request-card{
+  background:#0f172a;
+  border-color:#334155;
+}
+body.dark-mode .service-request-card p{
+  color:#cbd5e1;
+}
+body.dark-mode .service-request-form input,
+body.dark-mode .service-request-form select,
+body.dark-mode .service-request-form textarea{
+  background:#111827;
+  color:#e5e7eb;
+  border-color:#334155;
+}
+@media(max-width:560px){
+  .service-request-card{
+    padding:22px;
+    border-radius:20px;
+  }
+}
+/* HOME_SERVICE_MODAL_CSS_END */
 
 </style>
 </head>
@@ -146,6 +330,10 @@ body.dark-mode #experience .job-card .date{background:#1e293b;color:#93c5fd}
 <!-- HOME_SERVICES_CTA_START -->
 <a class="btn home-services-cta" href="services/"><i class="fa-solid fa-briefcase"></i> الخدمات والحلول التقنية</a>
 <!-- HOME_SERVICES_CTA_END -->
+<!-- HOME_GOLD_REQUEST_CTA_START -->
+<button class="btn home-request-cta" type="button" data-service-open><i class="fa-solid fa-headset"></i> &#x637;&#x644;&#x628; &#x62e;&#x62f;&#x645;&#x629; &#x627;&#x644;&#x622;&#x646;</button>
+<!-- HOME_GOLD_REQUEST_CTA_END -->
+
 <a class="btn linkedin" href="https://www.linkedin.com/in/mohmd-elrayah/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a><a class="btn whatsapp" href="https://wa.me/966550857011" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a><a class="btn green" href="../Mohammed_Abdalbagi_Elrayah_CV_AR.pdf" download><i class="fa-solid fa-file-arrow-down"></i> تحميل CV عربي</a><a class="btn red" href="../Mohammed_Abdalbagi_Elrayah_CV.pdf" download><i class="fa-solid fa-file-arrow-down"></i> تحميل CV إنجليزي</a></div>
 </section>
 <section class="section" id="summary"><h2>الملخص المهني</h2><p>اختصاصي تقنية معلومات ومهندس حاسوب وشبكات بخبرة تزيد عن 15 عامًا في الدعم الفني، إدارة البنية التحتية لتقنية المعلومات، إدارة الشبكات، صيانة الأنظمة، وأساسيات الأمن السيبراني. أمتلك خبرة في تركيب، إعداد وصيانة أنظمة الحاسب، الشبكات، الخوادم، أنظمة التشغيل، حماية الأجهزة الطرفية، النسخ الاحتياطي، الجدران النارية، وإدارة صلاحيات المستخدمين.</p><p>طالب دكتوراه في الأمن السيبراني بجامعة Islamic University of Minnesota، 2025 - حتى الآن، مع اهتمام قوي بالأمن السيبراني، حماية أنظمة المعلومات، تأمين البنية التحتية، والعمليات الأمنية العملية.</p><p>أتمتع بقدرة مثبتة على تحليل وحل المشكلات التقنية المعقدة، دعم المستخدمين، تحسين الكفاءة التشغيلية، والتنسيق مع الإدارات المختلفة لتقديم خدمات تقنية موثوقة. لدي خبرة في قيادة الفرق، تخطيط البنية التحتية، تدريب المستخدمين، التوثيق الفني، التنسيق مع الموردين، والحفاظ على بيئات تقنية مستقرة وآمنة.</p></section>
@@ -252,5 +440,70 @@ function showSuccessMessage(){const msg=document.getElementById('success-message
 
 
 
+<!-- SERVICE_REQUEST_WIDGET_START -->
+
+<div class="service-request-modal" aria-hidden="true" dir="rtl">
+  <div class="service-request-backdrop" data-service-close></div>
+  <div class="service-request-card" role="dialog" aria-modal="true">
+    <button class="service-request-x" type="button" data-service-close aria-label="إغلاق">x</button>
+    <h2>طلب خدمة</h2>
+    <p>اختر الخدمة المطلوبة وسأتواصل معك.</p>
+    <form action="https://formsubmit.co/mohmd.bagi@hotmail.com" method="POST" target="service_request_iframe" onsubmit="serviceRequestSubmitted()" class="service-request-form">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_subject" value="طلب خدمة جديد من الموقع">
+      <input type="text" name="name" placeholder="الاسم" required>
+      <input type="tel" name="mobile" placeholder="رقم الجوال" required>
+      <input type="email" name="email" placeholder="البريد الإلكتروني" required>
+      
+<!-- SERVICE_EXTRA_FIELDS_START -->
+      <select name="client_type" required>
+        <option value="" disabled selected>نوع العميل</option>
+        <option value="فرد">فرد</option>
+        <option value="شركة">شركة</option>
+        <option value="مؤسسة">مؤسسة</option>
+        <option value="مكتب أو نشاط صغير">مكتب أو نشاط صغير</option>
+      </select>
+      <select name="service_method" required>
+        <option value="" disabled selected>طريقة الخدمة</option>
+        <option value="دعم عن بعد">دعم عن بعد</option>
+        <option value="زيارة ميدانية">زيارة ميدانية</option>
+        <option value="استشارة فقط">استشارة فقط</option>
+        <option value="يتم تحديدها بعد المراجعة">يتم تحديدها بعد المراجعة</option>
+      </select>
+      <input type="text" name="city" placeholder="المدينة" required>
+      <select name="urgency" required>
+        <option value="" disabled selected>درجة الاستعجال</option>
+        <option value="عادي">عادي</option>
+        <option value="مهم">مهم</option>
+        <option value="عاجل">عاجل</option>
+      </select>
+<!-- SERVICE_EXTRA_FIELDS_END -->
+
+      <select name="service_type" required><option value="" disabled selected>اختر نوع الخدمة</option><option value="دعم فني للأجهزة والبرامج">دعم فني للأجهزة والبرامج</option><option value="دعم الشبكات والبنية التحتية">دعم الشبكات والبنية التحتية</option><option value="تقييم البنية التحتية الحالية">تقييم البنية التحتية الحالية</option><option value="إعداد وتأمين الشبكات الداخلية">إعداد وتأمين الشبكات الداخلية</option><option value="تحسين تغطية الواي فاي">تحسين تغطية الواي فاي</option><option value="استشارة أمن سيبراني">استشارة أمن سيبراني</option><option value="تحسين حماية الأجهزة الطرفية">تحسين حماية الأجهزة الطرفية</option><option value="فحص أمني مبدئي للأنظمة">فحص أمني مبدئي للأنظمة</option><option value="مراقبة وتنظيم بيئة تقنية المعلومات">مراقبة وتنظيم بيئة تقنية المعلومات</option><option value="دعم الخوادم والأنظمة">دعم الخوادم والأنظمة</option><option value="دعم الحوسبة الافتراضية والبيئات الافتراضية">دعم الحوسبة الافتراضية والبيئات الافتراضية</option><option value="تنظيم غرفة السيرفر أو غرفة الشبكة">تنظيم غرفة السيرفر أو غرفة الشبكة</option><option value="إعداد النسخ الاحتياطي والاستعادة">إعداد النسخ الاحتياطي والاستعادة</option><option value="تحسين أداء أجهزة العمل">تحسين أداء أجهزة العمل</option><option value="إعداد حسابات المستخدمين والصلاحيات">إعداد حسابات المستخدمين والصلاحيات</option><option value="تدقيق صلاحيات المستخدمين">تدقيق صلاحيات المستخدمين</option><option value="حل مشاكل البريد الإلكتروني">حل مشاكل البريد الإلكتروني</option><option value="دعم الطابعات وأجهزة المكتب">دعم الطابعات وأجهزة المكتب</option><option value="تركيب وصيانة كاميرات المراقبة">تركيب وصيانة كاميرات المراقبة</option><option value="دعم أنظمة المراقبة والتحكم في الدخول">دعم أنظمة المراقبة والتحكم في الدخول</option><option value="تركيب وصيانة أجهزة الشبكة">تركيب وصيانة أجهزة الشبكة</option><option value="تنظيم الكابلات ونقاط الشبكة">تنظيم الكابلات ونقاط الشبكة</option><option value="إعداد الإنترنت والراوترات داخل المكتب">إعداد الإنترنت والراوترات داخل المكتب</option><option value="حل مشاكل بطء الشبكة أو الإنترنت">حل مشاكل بطء الشبكة أو الإنترنت</option><option value="إعداد أجهزة الكمبيوتر الجديدة">إعداد أجهزة الكمبيوتر الجديدة</option><option value="توثيق وتنظيم أصول تقنية المعلومات">توثيق وتنظيم أصول تقنية المعلومات</option><option value="إعداد تقارير فنية أو توثيق تقني">إعداد تقارير فنية أو توثيق تقني</option><option value="تصميم أو تعديل موقع إلكتروني">تصميم أو تعديل موقع إلكتروني</option><option value="ربط النماذج بالبريد أو واتساب">ربط النماذج بالبريد أو واتساب</option><option value="استشارة تقنية عامة">استشارة تقنية عامة</option><option value="تدريب أو شرح تقني">تدريب أو شرح تقني</option><option value="زيارة ميدانية للدعم الفني">زيارة ميدانية للدعم الفني</option><option value="أخرى">أخرى</option></select>
+      <textarea name="request_details" rows="5" placeholder="تفاصيل الطلب" required></textarea>
+      <button type="submit">إرسال الطلب</button>
+    </form>
+    <iframe name="service_request_iframe" style="display:none"></iframe>
+    <div class="service-request-success">تم إرسال طلب الخدمة بنجاح.</div>
+    <button class="service-request-close" type="button" data-service-close>إغلاق</button>
+  </div>
+</div>
+<script>
+(function(){
+  const openBtns=document.querySelectorAll('[data-service-open]');
+  const modal=document.querySelector('.service-request-modal');
+  if(!openBtns.length||!modal)return;
+  function openModal(){modal.classList.add('is-open');modal.setAttribute('aria-hidden','false');}
+  function closeModal(){modal.classList.remove('is-open');modal.setAttribute('aria-hidden','true');}
+  openBtns.forEach(btn=>btn.addEventListener('click',openModal));
+  modal.querySelectorAll('[data-service-close]').forEach(el=>el.addEventListener('click',closeModal));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+})();
+function serviceRequestSubmitted(){
+  const msg=document.querySelector('.service-request-success');
+  if(msg){msg.style.display='block';}
+}
+</script>
+<!-- SERVICE_REQUEST_WIDGET_END -->
 </body>
 </html>
