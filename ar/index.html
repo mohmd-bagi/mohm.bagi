@@ -292,29 +292,7 @@ body.dark-mode .trust-card p{color:#cbd5e1}
 
 <section class="section" id="contact-form-section"><h2>نموذج المراسلة</h2><form action="https://formsubmit.co/mohmd.bagi@hotmail.com" method="POST" target="hidden_iframe" onsubmit="showSuccessMessage(); this.reset();" class="contact-form"><input type="hidden" name="_captcha" value="false"><input type="hidden" name="_subject" value="New Message From Arabic Website"><input type="text" name="name" placeholder="الاسم" required><input type="email" name="email" placeholder="البريد الإلكتروني" required>
 
-<!-- SERVICE_EXTRA_FIELDS_START -->
-<select name="client_type" required>
-  <option value="" disabled selected>نوع العميل</option>
-  <option value="فرد">فرد</option>
-  <option value="شركة">شركة</option>
-  <option value="مؤسسة">مؤسسة</option>
-  <option value="مكتب أو نشاط صغير">مكتب أو نشاط صغير</option>
-</select>
-<select name="service_method" required>
-  <option value="" disabled selected>طريقة الخدمة</option>
-  <option value="دعم عن بعد">دعم عن بعد</option>
-  <option value="زيارة ميدانية">زيارة ميدانية</option>
-  <option value="استشارة فقط">استشارة فقط</option>
-  <option value="يتم تحديدها بعد المراجعة">يتم تحديدها بعد المراجعة</option>
-</select>
-<input type="text" name="city" placeholder="المدينة" required>
-<select name="urgency" required>
-  <option value="" disabled selected>درجة الاستعجال</option>
-  <option value="عادي">عادي</option>
-  <option value="مهم">مهم</option>
-  <option value="عاجل">عاجل</option>
-</select>
-<!-- SERVICE_EXTRA_FIELDS_END -->
+
 <textarea name="message" rows="6" placeholder="اكتب رسالتك هنا" required></textarea><button type="submit">إرسال الرسالة</button></form><iframe name="hidden_iframe" style="display:none"></iframe><div id="success-message" class="success-message">تم إرسال الرسالة بنجاح.</div></section>
 <section class="section"><h2>المراجع</h2><p>المراجع متاحة عند الطلب.</p></section>
 <footer>© 2025 محمد عبدالباقي الريح. جميع الحقوق محفوظة.</footer>
@@ -357,6 +335,31 @@ function showSuccessMessage(){const msg=document.getElementById('success-message
       <input type="text" name="name" placeholder="الاسم" required>
       <input type="tel" name="mobile" placeholder="رقم الجوال" required>
       <input type="email" name="email" placeholder="البريد الإلكتروني" required>
+      
+<!-- SERVICE_EXTRA_FIELDS_START -->
+      <select name="client_type" required>
+        <option value="" disabled selected>نوع العميل</option>
+        <option value="فرد">فرد</option>
+        <option value="شركة">شركة</option>
+        <option value="مؤسسة">مؤسسة</option>
+        <option value="مكتب أو نشاط صغير">مكتب أو نشاط صغير</option>
+      </select>
+      <select name="service_method" required>
+        <option value="" disabled selected>طريقة الخدمة</option>
+        <option value="دعم عن بعد">دعم عن بعد</option>
+        <option value="زيارة ميدانية">زيارة ميدانية</option>
+        <option value="استشارة فقط">استشارة فقط</option>
+        <option value="يتم تحديدها بعد المراجعة">يتم تحديدها بعد المراجعة</option>
+      </select>
+      <input type="text" name="city" placeholder="المدينة" required>
+      <select name="urgency" required>
+        <option value="" disabled selected>درجة الاستعجال</option>
+        <option value="عادي">عادي</option>
+        <option value="مهم">مهم</option>
+        <option value="عاجل">عاجل</option>
+      </select>
+<!-- SERVICE_EXTRA_FIELDS_END -->
+
       <select name="service_type" required><option value="" disabled selected>اختر نوع الخدمة</option><option value="دعم فني للأجهزة والبرامج">دعم فني للأجهزة والبرامج</option><option value="دعم الشبكات والبنية التحتية">دعم الشبكات والبنية التحتية</option><option value="تقييم البنية التحتية الحالية">تقييم البنية التحتية الحالية</option><option value="إعداد وتأمين الشبكات الداخلية">إعداد وتأمين الشبكات الداخلية</option><option value="تحسين تغطية الواي فاي">تحسين تغطية الواي فاي</option><option value="استشارة أمن سيبراني">استشارة أمن سيبراني</option><option value="تحسين حماية الأجهزة الطرفية">تحسين حماية الأجهزة الطرفية</option><option value="فحص أمني مبدئي للأنظمة">فحص أمني مبدئي للأنظمة</option><option value="مراقبة وتنظيم بيئة تقنية المعلومات">مراقبة وتنظيم بيئة تقنية المعلومات</option><option value="دعم الخوادم والأنظمة">دعم الخوادم والأنظمة</option><option value="دعم الحوسبة الافتراضية والبيئات الافتراضية">دعم الحوسبة الافتراضية والبيئات الافتراضية</option><option value="تنظيم غرفة السيرفر أو غرفة الشبكة">تنظيم غرفة السيرفر أو غرفة الشبكة</option><option value="إعداد النسخ الاحتياطي والاستعادة">إعداد النسخ الاحتياطي والاستعادة</option><option value="تحسين أداء أجهزة العمل">تحسين أداء أجهزة العمل</option><option value="إعداد حسابات المستخدمين والصلاحيات">إعداد حسابات المستخدمين والصلاحيات</option><option value="تدقيق صلاحيات المستخدمين">تدقيق صلاحيات المستخدمين</option><option value="حل مشاكل البريد الإلكتروني">حل مشاكل البريد الإلكتروني</option><option value="دعم الطابعات وأجهزة المكتب">دعم الطابعات وأجهزة المكتب</option><option value="تركيب وصيانة كاميرات المراقبة">تركيب وصيانة كاميرات المراقبة</option><option value="دعم أنظمة المراقبة والتحكم في الدخول">دعم أنظمة المراقبة والتحكم في الدخول</option><option value="تركيب وصيانة أجهزة الشبكة">تركيب وصيانة أجهزة الشبكة</option><option value="تنظيم الكابلات ونقاط الشبكة">تنظيم الكابلات ونقاط الشبكة</option><option value="إعداد الإنترنت والراوترات داخل المكتب">إعداد الإنترنت والراوترات داخل المكتب</option><option value="حل مشاكل بطء الشبكة أو الإنترنت">حل مشاكل بطء الشبكة أو الإنترنت</option><option value="إعداد أجهزة الكمبيوتر الجديدة">إعداد أجهزة الكمبيوتر الجديدة</option><option value="توثيق وتنظيم أصول تقنية المعلومات">توثيق وتنظيم أصول تقنية المعلومات</option><option value="إعداد تقارير فنية أو توثيق تقني">إعداد تقارير فنية أو توثيق تقني</option><option value="تصميم أو تعديل موقع إلكتروني">تصميم أو تعديل موقع إلكتروني</option><option value="ربط النماذج بالبريد أو واتساب">ربط النماذج بالبريد أو واتساب</option><option value="استشارة تقنية عامة">استشارة تقنية عامة</option><option value="تدريب أو شرح تقني">تدريب أو شرح تقني</option><option value="زيارة ميدانية للدعم الفني">زيارة ميدانية للدعم الفني</option><option value="أخرى">أخرى</option></select>
       <textarea name="request_details" rows="5" placeholder="تفاصيل الطلب" required></textarea>
       <button type="submit">إرسال الطلب</button>
