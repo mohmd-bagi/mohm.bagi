@@ -249,38 +249,44 @@ body.dark-mode .service-request-form textarea{
 /* HOME_SERVICE_MODAL_CSS_END */
 
 
+
+
+
 /* HOME_SMALL_REQUEST_CTA_START */
 .mobile-action-row{
   max-width:980px;
-  margin:-6px auto 16px;
+  margin:10px auto 16px;
   display:flex;
-  justify-content:flex-start;
+  justify-content:center!important;
   align-items:center;
   padding:0 2px;
 }
+
 html[dir="rtl"] .mobile-action-row{
-  justify-content:flex-end;
+  justify-content:center!important;
 }
+
 .service-request-open{
   position:relative;
   overflow:hidden;
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  gap:8px;
+  gap:7px;
   border:2px solid rgba(255,214,95,.98);
   border-radius:999px;
   background:linear-gradient(135deg,#9b6800 0%,#d4a63c 45%,#ffe08a 100%);
   color:#111827;
-  padding:8px 14px;
-  min-height:42px;
+  padding:7px 13px;
+  min-height:38px;
   font-family:inherit;
-  font-size:.96rem;
+  font-size:.9rem;
   font-weight:950;
   cursor:pointer;
   box-shadow:0 10px 24px rgba(212,166,60,.34),0 6px 16px rgba(15,23,42,.16);
   animation:smallGoldPulse 2.6s ease-in-out infinite;
 }
+
 .service-request-open::after{
   content:"";
   position:absolute;
@@ -292,39 +298,56 @@ html[dir="rtl"] .mobile-action-row{
   transform:rotate(25deg);
   animation:smallGoldShine 3.2s ease-in-out infinite;
 }
+
 .service-request-open i{
   color:#0b43ad;
-  font-size:1.05rem;
+  font-size:1rem;
   z-index:1;
 }
+
 .service-request-open span{
   position:relative;
   z-index:1;
   white-space:nowrap;
 }
+
 .service-request-open:hover{
   transform:translateY(-2px);
 }
+
 @keyframes smallGoldPulse{
   0%{box-shadow:0 10px 24px rgba(212,166,60,.34),0 6px 16px rgba(15,23,42,.16)}
   50%{box-shadow:0 14px 32px rgba(212,166,60,.48),0 8px 20px rgba(15,23,42,.20)}
   100%{box-shadow:0 10px 24px rgba(212,166,60,.34),0 6px 16px rgba(15,23,42,.16)}
 }
+
 @keyframes smallGoldShine{
   0%{left:-45%;opacity:0}
   18%{opacity:1}
   45%{left:120%;opacity:0}
   100%{left:120%;opacity:0}
 }
+
 @media(max-width:560px){
   .mobile-action-row{
-    margin:10px auto 14px;
-    padding:0 4px;
+    margin:12px auto 14px;
+    padding:0;
+    justify-content:center!important;
   }
+
+  html[dir="rtl"] .mobile-action-row{
+    justify-content:center!important;
+  }
+
   .service-request-open{
-    min-height:40px;
-    padding:7px 13px;
-    font-size:.92rem;
+    min-height:36px;
+    padding:6px 12px;
+    font-size:.86rem;
+    gap:6px;
+  }
+
+  .service-request-open i{
+    font-size:.96rem;
   }
 }
 /* HOME_SMALL_REQUEST_CTA_END */
