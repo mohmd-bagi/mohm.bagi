@@ -200,6 +200,23 @@ body.dark-mode .process-card p{color:#cbd5e1}
 @media(max-width:560px){.process-grid{grid-template-columns:1fr}.process-card{padding:16px;border-radius:16px}.process-card:hover{transform:none}}
 /* WORK_PROCESS_END */
 
+
+/* TRUST_PRIVACY_START */
+.trust-intro{font-weight:800;color:var(--muted);margin-bottom:16px}
+.trust-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:14px}
+.trust-card{position:relative;background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(241,247,255,.98));border:1px solid rgba(18,97,216,.18);border-radius:20px;padding:18px 18px 16px;box-shadow:0 12px 28px rgba(15,23,42,.08);overflow:hidden;transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease;font-weight:750}
+.trust-card::before{content:"";position:absolute;inset:0 0 auto 0;height:4px;background:linear-gradient(90deg,#1261d8,#10a779,#d4a63c)}
+.trust-card:hover{transform:translateY(-4px);box-shadow:0 20px 44px rgba(15,23,42,.14);border-color:rgba(18,97,216,.32)}
+.trust-card i{width:44px;height:44px;border-radius:15px;display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#1261d8,#10a779);color:#fff;font-size:20px;margin-bottom:10px;box-shadow:0 10px 22px rgba(18,97,216,.22)}
+.trust-card h3{margin:0 0 6px;color:#12345c;font-size:1.05rem;font-weight:900}
+.trust-card p{margin:0;color:#40516b;font-weight:750;line-height:1.75}
+body.dark-mode .trust-card{background:linear-gradient(135deg,#0f172a,#111827);border-color:#334155;box-shadow:0 16px 36px rgba(0,0,0,.30)}
+body.dark-mode .trust-card:hover{border-color:#475569;box-shadow:0 22px 48px rgba(0,0,0,.42)}
+body.dark-mode .trust-card h3{color:#e5e7eb}
+body.dark-mode .trust-card p{color:#cbd5e1}
+@media(max-width:700px){.trust-grid{grid-template-columns:1fr}.trust-card{padding:16px;border-radius:18px}.trust-card:hover{transform:none}}
+/* TRUST_PRIVACY_END */
+
 </style>
 </head>
 <body>
@@ -262,6 +279,17 @@ body.dark-mode .process-card p{color:#cbd5e1}
   </div>
 </section>
 <!-- WORK_PROCESS_SECTION_END -->
+
+
+<!-- TRUST_PRIVACY_SECTION_START -->
+<section class="section" id="trust-privacy">
+  <h2>Trust &amp; Privacy</h2>
+  <p class="trust-intro">Technical services may involve systems, devices, access permissions, and business data. For that reason, privacy and clear service scope are treated as part of the work itself.</p>
+  <div class="trust-grid">
+    <div class="trust-card"><i class="fa-solid fa-user-shield"></i><h3>Confidential Handling</h3><p>Any shared information, files, screenshots, access details, or technical notes are handled confidentially and only for the requested service.</p></div><div class="trust-card"><i class="fa-solid fa-lock"></i><h3>Defined Service Scope</h3><p>Work is performed within the agreed scope, with clear boundaries for what will be reviewed, changed, configured, or documented.</p></div><div class="trust-card"><i class="fa-solid fa-key"></i><h3>Access Awareness</h3><p>Access to systems, accounts, devices, or services should be limited to what is necessary for the task and removed when no longer needed.</p></div><div class="trust-card"><i class="fa-solid fa-file-shield"></i><h3>Responsible Documentation</h3><p>Technical notes, recommendations, and reports are prepared in a way that avoids exposing sensitive details unnecessarily.</p></div>
+  </div>
+</section>
+<!-- TRUST_PRIVACY_SECTION_END -->
 
 <section class="section" id="faq">
   <h2>FAQ - Frequently Asked Questions</h2>
