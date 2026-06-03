@@ -12,7 +12,7 @@ export default {
     const topText = isArabic ? '\u0644\u0644\u0623\u0639\u0644\u0649' : 'Top';
     const bottomText = isArabic ? '\u0644\u0644\u0623\u0633\u0641\u0644' : 'Bottom';
 
-    const desktopSide = isArabic ? 'left:44px;right:auto;' : 'right:44px;left:auto;';
+    const desktopSide = isArabic ? 'left:var(--float-line-x, calc(100vw - 120px));right:auto;transform:translateX(-50%);' : 'right:44px;left:auto;';
     const mobileSide = isArabic ? 'left:2px;right:auto;' : 'right:2px;left:auto;';
 
     let html = await response.text();
