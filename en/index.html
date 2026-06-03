@@ -300,7 +300,32 @@ body.dark-mode .trust-card p{color:#cbd5e1}
 </section>
 <!-- FAQ_SECTION_END -->
 
-<section class="section" id="contact-form-section"><h2>Contact Me</h2><form action="https://formsubmit.co/mohmd.bagi@hotmail.com" method="POST" target="hidden_iframe" onsubmit="showSuccessMessage(); this.reset();" class="contact-form"><input type="hidden" name="_captcha" value="false"><input type="hidden" name="_subject" value="New Message From Website"><input type="text" name="name" placeholder="Your Name" required><input type="email" name="email" placeholder="Your Email" required><textarea name="message" rows="6" placeholder="Your Message" required></textarea><button type="submit">Send Message</button></form><iframe name="hidden_iframe" style="display:none"></iframe><div id="success-message" class="success-message">Message sent successfully.</div></section>
+<section class="section" id="contact-form-section"><h2>Contact Me</h2><form action="https://formsubmit.co/mohmd.bagi@hotmail.com" method="POST" target="hidden_iframe" onsubmit="showSuccessMessage(); this.reset();" class="contact-form"><input type="hidden" name="_captcha" value="false"><input type="hidden" name="_subject" value="New Message From Website"><input type="text" name="name" placeholder="Your Name" required><input type="email" name="email" placeholder="Your Email" required>
+
+<!-- SERVICE_EXTRA_FIELDS_START -->
+<select name="client_type" required>
+  <option value="" disabled selected>Client Type</option>
+  <option value="Individual">Individual</option>
+  <option value="Company">Company</option>
+  <option value="Organization">Organization</option>
+  <option value="Office or Small Business">Office or Small Business</option>
+</select>
+<select name="service_method" required>
+  <option value="" disabled selected>Service Method</option>
+  <option value="Remote Support">Remote Support</option>
+  <option value="On-site Visit">On-site Visit</option>
+  <option value="Consultation Only">Consultation Only</option>
+  <option value="To be decided after review">To be decided after review</option>
+</select>
+<input type="text" name="city" placeholder="City" required>
+<select name="urgency" required>
+  <option value="" disabled selected>Urgency Level</option>
+  <option value="Normal">Normal</option>
+  <option value="Important">Important</option>
+  <option value="Urgent">Urgent</option>
+</select>
+<!-- SERVICE_EXTRA_FIELDS_END -->
+<textarea name="message" rows="6" placeholder="Your Message" required></textarea><button type="submit">Send Message</button></form><iframe name="hidden_iframe" style="display:none"></iframe><div id="success-message" class="success-message">Message sent successfully.</div></section>
 <section class="section"><h2>References</h2><p>References available upon request.</p></section>
 <footer>© 2025 Mohammed Abdelbagi Elrayah. All Rights Reserved.</footer>
 </main>

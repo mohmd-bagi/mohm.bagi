@@ -290,7 +290,32 @@ body.dark-mode .trust-card p{color:#cbd5e1}
 </section>
 <!-- FAQ_SECTION_END -->
 
-<section class="section" id="contact-form-section"><h2>نموذج المراسلة</h2><form action="https://formsubmit.co/mohmd.bagi@hotmail.com" method="POST" target="hidden_iframe" onsubmit="showSuccessMessage(); this.reset();" class="contact-form"><input type="hidden" name="_captcha" value="false"><input type="hidden" name="_subject" value="New Message From Arabic Website"><input type="text" name="name" placeholder="الاسم" required><input type="email" name="email" placeholder="البريد الإلكتروني" required><textarea name="message" rows="6" placeholder="اكتب رسالتك هنا" required></textarea><button type="submit">إرسال الرسالة</button></form><iframe name="hidden_iframe" style="display:none"></iframe><div id="success-message" class="success-message">تم إرسال الرسالة بنجاح.</div></section>
+<section class="section" id="contact-form-section"><h2>نموذج المراسلة</h2><form action="https://formsubmit.co/mohmd.bagi@hotmail.com" method="POST" target="hidden_iframe" onsubmit="showSuccessMessage(); this.reset();" class="contact-form"><input type="hidden" name="_captcha" value="false"><input type="hidden" name="_subject" value="New Message From Arabic Website"><input type="text" name="name" placeholder="الاسم" required><input type="email" name="email" placeholder="البريد الإلكتروني" required>
+
+<!-- SERVICE_EXTRA_FIELDS_START -->
+<select name="client_type" required>
+  <option value="" disabled selected>نوع العميل</option>
+  <option value="فرد">فرد</option>
+  <option value="شركة">شركة</option>
+  <option value="مؤسسة">مؤسسة</option>
+  <option value="مكتب أو نشاط صغير">مكتب أو نشاط صغير</option>
+</select>
+<select name="service_method" required>
+  <option value="" disabled selected>طريقة الخدمة</option>
+  <option value="دعم عن بعد">دعم عن بعد</option>
+  <option value="زيارة ميدانية">زيارة ميدانية</option>
+  <option value="استشارة فقط">استشارة فقط</option>
+  <option value="يتم تحديدها بعد المراجعة">يتم تحديدها بعد المراجعة</option>
+</select>
+<input type="text" name="city" placeholder="المدينة" required>
+<select name="urgency" required>
+  <option value="" disabled selected>درجة الاستعجال</option>
+  <option value="عادي">عادي</option>
+  <option value="مهم">مهم</option>
+  <option value="عاجل">عاجل</option>
+</select>
+<!-- SERVICE_EXTRA_FIELDS_END -->
+<textarea name="message" rows="6" placeholder="اكتب رسالتك هنا" required></textarea><button type="submit">إرسال الرسالة</button></form><iframe name="hidden_iframe" style="display:none"></iframe><div id="success-message" class="success-message">تم إرسال الرسالة بنجاح.</div></section>
 <section class="section"><h2>المراجع</h2><p>المراجع متاحة عند الطلب.</p></section>
 <footer>© 2025 محمد عبدالباقي الريح. جميع الحقوق محفوظة.</footer>
 </main>
