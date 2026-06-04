@@ -684,6 +684,243 @@ html[dir="rtl"] .mobile-action-row{
 }
 /* HOME_SIDE_WIDGET_AUTO_ALIGN_END */
 
+
+/* SIDEBAR_GLOW_STYLE_START */
+
+/* Sidebar container */
+.left-sidebar,
+.sidebar,
+.side-column,
+.side-panel,
+aside.sidebar,
+aside.left-sidebar{
+  background: linear-gradient(180deg, rgba(255,255,255,.44), rgba(243,248,255,.62)) !important;
+  border: 1px solid rgba(37,99,235,.10) !important;
+  border-radius: 28px !important;
+  padding: 14px !important;
+  box-shadow:
+    0 18px 40px rgba(15,23,42,.08),
+    inset 0 1px 0 rgba(255,255,255,.65) !important;
+  backdrop-filter: blur(12px) !important;
+}
+
+/* Sidebar cards */
+.left-sidebar > *,
+.sidebar > *,
+.side-column > *,
+.side-panel > *,
+aside.sidebar > *,
+aside.left-sidebar > *{
+  position: relative !important;
+  background: linear-gradient(180deg, rgba(255,255,255,.92), rgba(245,249,255,.96)) !important;
+  border: 1px solid rgba(37,99,235,.14) !important;
+  border-radius: 20px !important;
+  box-shadow:
+    0 10px 24px rgba(15,23,42,.06),
+    inset 0 1px 0 rgba(255,255,255,.82) !important;
+  overflow: hidden !important;
+}
+
+.left-sidebar > *::before,
+.sidebar > *::before,
+.side-column > *::before,
+.side-panel > *::before,
+aside.sidebar > *::before,
+aside.left-sidebar > *::before{
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 0 auto 0 !important;
+  height: 3px !important;
+  background: linear-gradient(90deg, #1f6feb, #18b5c9, #36c96d, #d4af37) !important;
+  opacity: .95 !important;
+}
+
+/* Time / clock blocks */
+.left-sidebar [class*="time"],
+.left-sidebar [class*="clock"],
+.sidebar [class*="time"],
+.sidebar [class*="clock"],
+.side-column [class*="time"],
+.side-column [class*="clock"]{
+  color: #1f5fd5 !important;
+  font-weight: 900 !important;
+  letter-spacing: .5px !important;
+  text-shadow: 0 1px 0 rgba(255,255,255,.75) !important;
+}
+
+/* Prayer / weather accent */
+.left-sidebar [class*="prayer"],
+.sidebar [class*="prayer"],
+.side-column [class*="prayer"],
+.side-panel [class*="prayer"]{
+  background: linear-gradient(180deg, rgba(255,255,255,.96), rgba(247,250,255,.98)) !important;
+}
+
+.left-sidebar [class*="weather"],
+.sidebar [class*="weather"],
+.side-column [class*="weather"],
+.side-panel [class*="weather"]{
+  background: linear-gradient(180deg, rgba(255,250,237,.95), rgba(255,247,228,.98)) !important;
+  border-color: rgba(212,175,55,.22) !important;
+}
+
+/* Sidebar titles */
+.left-sidebar h2,
+.left-sidebar h3,
+.left-sidebar h4,
+.sidebar h2,
+.sidebar h3,
+.sidebar h4,
+.side-column h2,
+.side-column h3,
+.side-column h4,
+.side-panel h2,
+.side-panel h3,
+.side-panel h4{
+  color: #173b7a !important;
+  font-weight: 900 !important;
+  letter-spacing: .2px !important;
+  margin-bottom: 10px !important;
+}
+
+/* Links / buttons inside sidebar */
+.left-sidebar a,
+.left-sidebar button,
+.sidebar a,
+.sidebar button,
+.side-column a,
+.side-column button,
+.side-panel a,
+.side-panel button{
+  border-radius: 14px !important;
+  border: 1px solid rgba(37,99,235,.16) !important;
+  background: linear-gradient(180deg, rgba(255,255,255,.94), rgba(240,246,255,.98)) !important;
+  box-shadow:
+    0 8px 18px rgba(15,23,42,.05),
+    inset 0 1px 0 rgba(255,255,255,.82) !important;
+  transition:
+    transform .18s ease,
+    box-shadow .18s ease,
+    border-color .18s ease,
+    background .18s ease !important;
+  font-weight: 850 !important;
+  color: #183153 !important;
+}
+
+/* Hover only for desktop */
+@media (hover:hover){
+  .left-sidebar a:hover,
+  .left-sidebar button:hover,
+  .sidebar a:hover,
+  .sidebar button:hover,
+  .side-column a:hover,
+  .side-column button:hover,
+  .side-panel a:hover,
+  .side-panel button:hover{
+    transform: translateY(-2px) !important;
+    border-color: rgba(37,99,235,.28) !important;
+    box-shadow:
+      0 12px 24px rgba(15,23,42,.08),
+      0 0 0 3px rgba(37,99,235,.06) !important;
+    background: linear-gradient(180deg, rgba(255,255,255,1), rgba(236,244,255,1)) !important;
+  }
+}
+
+/* Icons inside sidebar links */
+.left-sidebar a i,
+.left-sidebar a svg,
+.left-sidebar a .icon,
+.sidebar a i,
+.sidebar a svg,
+.sidebar a .icon,
+.side-column a i,
+.side-column a svg,
+.side-column a .icon,
+.side-panel a i,
+.side-panel a svg,
+.side-panel a .icon{
+  flex-shrink: 0 !important;
+  filter: drop-shadow(0 2px 6px rgba(37,99,235,.18)) !important;
+}
+
+/* Quick navigation block */
+.left-sidebar [class*="quick"],
+.sidebar [class*="quick"],
+.side-column [class*="quick"],
+.side-panel [class*="quick"]{
+  background: linear-gradient(180deg, rgba(255,255,255,.95), rgba(245,249,255,.99)) !important;
+}
+
+/* Dark mode */
+body.dark-mode .left-sidebar,
+body.dark-mode .sidebar,
+body.dark-mode .side-column,
+body.dark-mode .side-panel,
+body.dark-mode aside.sidebar,
+body.dark-mode aside.left-sidebar{
+  background: linear-gradient(180deg, rgba(15,23,42,.78), rgba(17,24,39,.82)) !important;
+  border-color: rgba(148,163,184,.16) !important;
+  box-shadow:
+    0 18px 40px rgba(0,0,0,.24),
+    inset 0 1px 0 rgba(255,255,255,.04) !important;
+}
+
+body.dark-mode .left-sidebar > *,
+body.dark-mode .sidebar > *,
+body.dark-mode .side-column > *,
+body.dark-mode .side-panel > *,
+body.dark-mode aside.sidebar > *,
+body.dark-mode aside.left-sidebar > *{
+  background: linear-gradient(180deg, rgba(17,24,39,.95), rgba(15,23,42,.96)) !important;
+  border-color: rgba(100,116,139,.26) !important;
+  box-shadow:
+    0 12px 28px rgba(0,0,0,.22),
+    inset 0 1px 0 rgba(255,255,255,.03) !important;
+}
+
+body.dark-mode .left-sidebar h2,
+body.dark-mode .left-sidebar h3,
+body.dark-mode .left-sidebar h4,
+body.dark-mode .sidebar h2,
+body.dark-mode .sidebar h3,
+body.dark-mode .sidebar h4,
+body.dark-mode .side-column h2,
+body.dark-mode .side-column h3,
+body.dark-mode .side-column h4,
+body.dark-mode .side-panel h2,
+body.dark-mode .side-panel h3,
+body.dark-mode .side-panel h4{
+  color: #e5eefc !important;
+}
+
+body.dark-mode .left-sidebar a,
+body.dark-mode .left-sidebar button,
+body.dark-mode .sidebar a,
+body.dark-mode .sidebar button,
+body.dark-mode .side-column a,
+body.dark-mode .side-column button,
+body.dark-mode .side-panel a,
+body.dark-mode .side-panel button{
+  background: linear-gradient(180deg, rgba(30,41,59,.98), rgba(15,23,42,.98)) !important;
+  color: #e5eefc !important;
+  border-color: rgba(96,165,250,.18) !important;
+  box-shadow:
+    0 10px 22px rgba(0,0,0,.20),
+    inset 0 1px 0 rgba(255,255,255,.04) !important;
+}
+
+body.dark-mode .left-sidebar [class*="time"],
+body.dark-mode .left-sidebar [class*="clock"],
+body.dark-mode .sidebar [class*="time"],
+body.dark-mode .sidebar [class*="clock"],
+body.dark-mode .side-column [class*="time"],
+body.dark-mode .side-column [class*="clock"]{
+  color: #6ea8ff !important;
+  text-shadow: none !important;
+}
+
+/* SIDEBAR_GLOW_STYLE_END */
+
 </style>
 </head>
 <body>
