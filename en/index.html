@@ -1186,6 +1186,106 @@ body.dark-mode .quick b{
 }
 /* QUICK_ACCESS_SIZE_UP_MORE_END */
 
+
+/* GLOBAL_BUTTON_SHINE_START */
+.btn,
+.actions .btn,
+.services-cta,
+.service-cta-btn,
+.service-request-open,
+.services-side-action,
+.service-click-hint,
+.card-click-hint,
+.live-bar a{
+  position:relative!important
+  overflow:hidden!important
+  isolation:isolate!important
+}
+
+.btn::after,
+.actions .btn::after,
+.services-cta::after,
+.service-cta-btn::after,
+.service-request-open::after,
+.services-side-action::after,
+.service-click-hint::after,
+.card-click-hint::after,
+.live-bar a::after{
+  content:""!important
+  position:absolute!important
+  inset:-40% auto -40% -70%!important
+  width:55%!important
+  transform:skewX(-22deg)!important
+  background:linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255,255,255,.10) 25%,
+    rgba(255,255,255,.46) 50%,
+    rgba(255,255,255,.10) 75%,
+    transparent 100%
+  )!important
+  animation:buttonShineMove 3.2s ease-in-out infinite!important
+  z-index:0!important
+  pointer-events:none!important
+}
+
+.btn > *,
+.actions .btn > *,
+.services-cta > *,
+.service-cta-btn > *,
+.service-request-open > *,
+.services-side-action > *,
+.service-click-hint > *,
+.card-click-hint > *,
+.live-bar a > *{
+  position:relative!important
+  z-index:1!important
+}
+
+.btn,
+.actions .btn,
+.services-cta,
+.service-cta-btn,
+.services-side-action,
+.live-bar a{
+  box-shadow:
+    0 12px 28px rgba(15,23,42,.14),
+    0 0 0 1px rgba(255,255,255,.10) inset!important
+}
+
+.btn:hover,
+.actions .btn:hover,
+.services-cta:hover,
+.service-cta-btn:hover,
+.services-side-action:hover,
+.live-bar a:hover{
+  filter:brightness(1.04)!important
+  transform:translateY(-2px)!important
+}
+
+@keyframes buttonShineMove{
+  0%{left:-75%opacity:0}
+  12%{opacity:.95}
+  45%{left:125%opacity:.95}
+  55%{left:125%opacity:0}
+  100%{left:125%opacity:0}
+}
+
+@media(max-width:560px){
+  .btn::after,
+  .actions .btn::after,
+  .services-cta::after,
+  .service-cta-btn::after,
+  .service-request-open::after,
+  .services-side-action::after,
+  .service-click-hint::after,
+  .card-click-hint::after,
+  .live-bar a::after{
+    animation-duration:4s!important
+  }
+}
+/* GLOBAL_BUTTON_SHINE_END */
+
 </style>
 
 <!-- JSONLD_SEO_START -->
