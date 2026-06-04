@@ -599,6 +599,46 @@ html[dir="rtl"] .mobile-action-row{
 }
 /* HOME_DESKTOP_SIDE_ENHANCE_END */
 
+
+/* HOME_SIDE_WIDGET_ALIGNMENT_FIX_START */
+@media(min-width:1450px){
+  .home-side-widget{
+    top:210px!important;
+    width:220px!important;
+    right:max(82px, calc((100vw - 980px) / 2 - 245px))!important;
+  }
+
+  .home-side-card{
+    padding:15px!important;
+    border-radius:20px!important;
+  }
+
+  .home-side-card h3{
+    text-align:center!important;
+    margin:8px 0 10px!important;
+  }
+
+  .home-side-card p{
+    text-align:center!important;
+    font-size:.86rem!important;
+    line-height:1.7!important;
+  }
+
+  .home-side-actions a,
+  .home-side-actions button{
+    min-height:42px!important;
+    padding:9px 10px!important;
+    font-size:.86rem!important;
+  }
+}
+
+@media(min-width:1600px){
+  .home-side-widget{
+    right:max(95px, calc((100vw - 980px) / 2 - 255px))!important;
+  }
+}
+/* HOME_SIDE_WIDGET_ALIGNMENT_FIX_END */
+
 </style>
 </head>
 <body>
