@@ -606,81 +606,83 @@ html[dir="rtl"] .mobile-action-row{
 
 
 
-/* HOME_SIDE_WIDGET_COMPACT_START */
+
+
+
+/* HOME_SIDE_WIDGET_AUTO_ALIGN_START */
 @media(min-width:1450px){
   .home-side-widget{
-    position:fixed!important
-    top:185px!important
-    bottom:auto!important
-    right:34px!important
-    left:auto!important
-    width:230px!important
-    height:auto!important
-    z-index:45!important
-    display:block!important
+    position:fixed!important;
+    top:180px!important;
+    left:auto;
+    right:auto;
+    width:205px!important;
+    height:auto!important;
+    z-index:45!important;
+    display:block!important;
   }
 
   .home-side-card{
-    width:100%!important
-    height:auto!important
-    min-height:0!important
-    display:block!important
-    padding:16px!important
-    border-radius:22px!important
-    background:linear-gradient(135deg,rgba(255,255,255,.96),rgba(241,247,255,.96))!important
-    border:1px solid rgba(18,97,216,.18)!important
-    box-shadow:0 18px 42px rgba(15,23,42,.13)!important
-    backdrop-filter:blur(12px)!important
+    width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+    display:block!important;
+    padding:15px!important;
+    border-radius:22px!important;
+    background:linear-gradient(135deg,rgba(255,255,255,.96),rgba(241,247,255,.96))!important;
+    border:1px solid rgba(18,97,216,.18)!important;
+    box-shadow:0 18px 42px rgba(15,23,42,.13)!important;
+    backdrop-filter:blur(12px)!important;
   }
 
   .home-side-card h3{
-    text-align:center!important
-    margin:8px 0 8px!important
-    font-size:1.05rem!important
-    font-weight:950!important
-    color:var(--blue)!important
+    text-align:center!important;
+    margin:8px 0 8px!important;
+    font-size:1rem!important;
+    font-weight:950!important;
+    color:var(--blue)!important;
   }
 
   .home-side-card p{
-    text-align:center!important
-    margin:0 0 12px!important
-    font-size:.84rem!important
-    line-height:1.65!important
-    font-weight:850!important
-    color:#40516b!important
+    text-align:center!important;
+    margin:0 0 12px!important;
+    font-size:.82rem!important;
+    line-height:1.6!important;
+    font-weight:850!important;
+    color:#40516b!important;
   }
 
   .home-side-actions{
-    display:grid!important
-    gap:9px!important
+    display:grid!important;
+    gap:8px!important;
   }
 
   .home-side-actions a,
   .home-side-actions button{
-    min-height:42px!important
-    padding:9px 10px!important
-    border-radius:14px!important
-    font-size:.84rem!important
-    font-weight:950!important
+    min-height:40px!important;
+    padding:8px 10px!important;
+    border-radius:14px!important;
+    font-size:.82rem!important;
+    font-weight:950!important;
   }
 
   body.dark-mode .home-side-card{
-    background:linear-gradient(135deg,#0f172a,#111827)!important
-    border-color:#334155!important
-    box-shadow:0 18px 42px rgba(0,0,0,.32)!important
+    background:linear-gradient(135deg,#0f172a,#111827)!important;
+    border-color:#334155!important;
+    box-shadow:0 18px 42px rgba(0,0,0,.32)!important;
   }
 
   body.dark-mode .home-side-card p{
-    color:#cbd5e1!important
+    color:#cbd5e1!important;
   }
 }
 
 @media(max-width:1449px){
   .home-side-widget{
-    display:none!important
+    display:none!important;
   }
 }
-/* HOME_SIDE_WIDGET_COMPACT_END */
+/* HOME_SIDE_WIDGET_AUTO_ALIGN_END */
 
 </style>
 </head>
@@ -892,5 +894,52 @@ function serviceRequestSubmitted(){
 }
 </script>
 <!-- SERVICE_REQUEST_WIDGET_END -->
+
+<!-- HOME_SIDE_WIDGET_AUTO_ALIGN_SCRIPT_START -->
+<script>
+(function(){
+  function alignHomeSideWidget(){
+    const widget = document.querySelector('.home-side-widget');
+    const cover = document.querySelector('.hero .cover');
+    const topSwitch = document.querySelector('.top-switch');
+
+    if(!widget || !cover) return;
+
+    if(!window.matchMedia('(min-width:1450px)').matches){
+      widget.style.display = 'none';
+      return;
+    }
+
+    widget.style.display = 'block';
+
+    const coverBox = cover.getBoundingClientRect();
+    const topBox = topSwitch ? topSwitch.getBoundingClientRect() : {bottom:90};
+
+    const gapLeft = coverBox.right + 26;
+    const gapRight = window.innerWidth - 42;
+    const available = gapRight - gapLeft;
+
+    if(available < 170){
+      widget.style.display = 'none';
+      return;
+    }
+
+    const width = Math.min(205, available);
+    const left = gapLeft + ((available - width) / 2);
+    const top = Math.max(150, topBox.bottom + 72);
+
+    widget.style.width = width + 'px';
+    widget.style.left = Math.round(left) + 'px';
+    widget.style.right = 'auto';
+    widget.style.top = Math.round(top) + 'px';
+  }
+
+  window.addEventListener('load', alignHomeSideWidget);
+  window.addEventListener('resize', alignHomeSideWidget);
+  setTimeout(alignHomeSideWidget, 300);
+})();
+</script>
+<!-- HOME_SIDE_WIDGET_AUTO_ALIGN_SCRIPT_END -->
+
 </body>
 </html>
