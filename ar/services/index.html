@@ -269,6 +269,147 @@ body.dark-mode .services-hero p{color:#cbd5e1}
   .services-cta{width:100%}
 }
 
+
+/* SERVICE_CARD_EXPAND_DETAILS_START */
+.service-card{
+  cursor:pointer;
+  outline:none;
+}
+
+.service-card:focus{
+  box-shadow:0 0 0 4px rgba(18,97,216,.16),0 12px 28px rgba(15,23,42,.08);
+}
+
+.service-click-hint{
+  margin-top:14px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  padding:10px 12px;
+  border-radius:14px;
+  background:linear-gradient(135deg,rgba(18,97,216,.10),rgba(16,167,121,.10),rgba(212,166,60,.16));
+  border:1px solid rgba(18,97,216,.16);
+  color:#12345c;
+  font-weight:900;
+  font-size:.9rem;
+}
+
+.service-click-hint i{
+  width:28px!important;
+  height:28px!important;
+  margin:0!important;
+  flex:0 0 28px!important;
+  border-radius:50%!important;
+  font-size:14px!important;
+  background:linear-gradient(135deg,#1261d8,#10a779)!important;
+  transition:transform .22s ease;
+}
+
+.service-click-hint .hint-open{
+  display:none;
+}
+
+.service-card.is-open .service-click-hint .hint-closed{
+  display:none;
+}
+
+.service-card.is-open .service-click-hint .hint-open{
+  display:inline;
+}
+
+.service-card.is-open .service-click-hint i{
+  transform:rotate(45deg);
+}
+
+.service-expanded{
+  display:none;
+  margin-top:14px;
+  padding:16px;
+  border-radius:16px;
+  background:linear-gradient(135deg,rgba(234,241,255,.95),rgba(255,250,232,.92));
+  border:1px solid rgba(18,97,216,.14);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.75);
+}
+
+.service-card.is-open .service-expanded{
+  display:block;
+  animation:serviceDetailIn .22s ease-out;
+}
+
+.service-expanded h4{
+  margin:12px 0 6px;
+  color:#0f3f8f;
+  font-size:1rem;
+  font-weight:950;
+}
+
+.service-expanded h4:first-child{
+  margin-top:0;
+}
+
+.service-expanded p{
+  margin:0 0 10px!important;
+  color:#344762!important;
+  line-height:1.9!important;
+  font-weight:750!important;
+}
+
+.service-expanded ul{
+  margin:8px 0 10px!important;
+  padding-inline-start:22px!important;
+}
+
+.service-expanded li{
+  margin-bottom:7px;
+  color:#344762;
+  font-weight:750;
+  line-height:1.7;
+}
+
+.service-result-box{
+  margin-top:12px;
+  padding:12px 14px;
+  border-radius:14px;
+  background:rgba(255,255,255,.70);
+  border:1px solid rgba(212,166,60,.25);
+  color:#12345c;
+  font-weight:900;
+  line-height:1.8;
+}
+
+body.dark-mode .service-click-hint{
+  background:linear-gradient(135deg,rgba(30,41,59,.95),rgba(15,23,42,.95));
+  border-color:#334155;
+  color:#e5e7eb;
+}
+
+body.dark-mode .service-expanded{
+  background:linear-gradient(135deg,#0f172a,#111827);
+  border-color:#334155;
+}
+
+body.dark-mode .service-expanded h4{
+  color:#93c5fd;
+}
+
+body.dark-mode .service-expanded p,
+body.dark-mode .service-expanded li{
+  color:#cbd5e1!important;
+}
+
+body.dark-mode .service-result-box{
+  background:#0f172a;
+  border-color:#475569;
+  color:#e5e7eb;
+}
+
+@keyframes serviceDetailIn{
+  from{opacity:0;transform:translateY(-6px)}
+  to{opacity:1;transform:translateY(0)}
+}
+/* SERVICE_CARD_EXPAND_DETAILS_END */
+
 </style>
 </head>
 <body>
@@ -293,7 +434,260 @@ body.dark-mode .services-hero p{color:#cbd5e1}
   <h2>الخدمات والحلول التقنية المتقدمة</h2>
   <p class="services-intro">أقدم حلولًا تقنية عملية للشركات والمؤسسات والأفراد، تشمل تقييم وتنظيم بيئات تقنية المعلومات، دعم البنية التحتية، الشبكات، الأمن السيبراني، الحوسبة السحابية، الحوسبة الافتراضية، استمرارية الأعمال، حماية البيانات، الأتمتة، والتوثيق الفني.</p>
   <div class="services-grid">
-    <div class="service-card"><i class="fa-solid fa-screwdriver-wrench"></i><h3>حلول تقنية متكاملة وإصلاح المشكلات</h3><p>تحليل المشكلات التقنية المتكررة ومعالجتها بشكل منهجي في الأجهزة، الشبكات، الأنظمة، والخدمات اليومية.</p></div><div class="service-card"><i class="fa-solid fa-network-wired"></i><h3>تنظيم بيئة الأجهزة والشبكات</h3><p>تنظيم ودعم بيئات الأجهزة والشبكات للشركات والمؤسسات والأفراد، بما يشمل الأجهزة، إعدادات الشبكة، المستخدمين، الصلاحيات، الطابعات، والمجلدات المشتركة.</p></div><div class="service-card"><i class="fa-solid fa-sitemap"></i><h3>الشبكات والبنية التحتية</h3><p>تصميم وتنظيم ودعم بيئات الشبكات الداخلية والبنية التحتية التقنية، وتحسين الاستقرار والأداء اليومي.</p></div><div class="service-card"><i class="fa-solid fa-shield-halved"></i><h3>الأمن السيبراني وحماية البيانات</h3><p>تحسين حماية الأجهزة والأنظمة، مراجعة الصلاحيات، تقليل المخاطر، وتعزيز ممارسات الأمان داخل بيئة العمل.</p></div><div class="service-card"><i class="fa-solid fa-cloud"></i><h3>الحوسبة السحابية والحوسبة الافتراضية</h3><p>دعم وتنظيم بيئات الحوسبة السحابية والحوسبة الافتراضية، إدارة الموارد، تحسين الأداء، ودعم الاستقرار التشغيلي.</p></div><div class="service-card"><i class="fa-solid fa-database"></i><h3>النسخ الاحتياطي واستمرارية الأعمال</h3><p>إعداد خطط النسخ الاحتياطي والاستعادة، حماية البيانات المهمة، وتجهيز حلول عملية عند الأعطال أو فقدان الملفات.</p></div><div class="service-card"><i class="fa-solid fa-users-gear"></i><h3>إدارة المستخدمين والصلاحيات</h3><p>تنظيم حسابات المستخدمين، مراجعة الصلاحيات، التحكم في الوصول، وتقليل المخاطر الناتجة عن الصلاحيات الزائدة.</p></div><div class="service-card"><i class="fa-solid fa-server"></i><h3>دعم الخوادم والأنظمة وبيئات العمل</h3><p>دعم الأنظمة والخوادم وبيئات العمل التقنية، ومتابعة الاستقرار التشغيلي ومعالجة الأعطال المؤثرة على العمل.</p></div><div class="service-card"><i class="fa-solid fa-diagram-project"></i><h3>الأتمتة وربط النماذج وسير العمل</h3><p>تحسين الإجراءات اليومية من خلال النماذج الإلكترونية، البريد، واتساب، وسير العمل المنظم.</p></div><div class="service-card"><i class="fa-solid fa-file-lines"></i><h3>التوثيق والتقارير الفنية</h3><p>إعداد تقارير فنية، توثيق بيئات العمل، تقديم توصيات واضحة، وتنظيم الأصول التقنية.</p></div><div class="service-card"><i class="fa-solid fa-headset"></i><h3>الدعم التقني المتقدم</h3><p>تحليل وإصلاح مشكلات الأجهزة، الشبكات، البريد الإلكتروني، الطابعات، وأنظمة العمل اليومية ضمن إطار مهني منظم.</p></div>
+    <div class="service-card" role="button" tabindex="0" aria-expanded="false"><i class="fa-solid fa-screwdriver-wrench"></i><h3>حلول تقنية متكاملة وإصلاح المشكلات</h3><p>تحليل المشكلات التقنية المتكررة ومعالجتها بشكل منهجي في الأجهزة، الشبكات، الأنظمة، والخدمات اليومية.</p>
+<!-- SERVICE_CARD_HINT_START -->
+<div class="service-click-hint"><span class="hint-closed">اضغط لعرض التفاصيل</span><span class="hint-open">إخفاء التفاصيل</span><i class="fa-solid fa-plus"></i></div>
+<!-- SERVICE_CARD_HINT_END -->
+<!-- SERVICE_CARD_DETAILS_START -->
+<div class="service-expanded">
+  <h4>نظرة عملية</h4>
+  <p>تركز هذه الخدمة على <strong>حلول تقنية متكاملة وإصلاح المشكلات</strong>. يتم التعامل معها كحل عملي يبدأ بفهم الوضع الحالي، مراجعة التفاصيل المؤثرة، ثم تحديد خطوات واضحة تساعد على تحسين الاستقرار وتقليل الأعطال.</p>
+  <p>الوصف المختصر لهذا المجال: تحليل المشكلات التقنية المتكررة ومعالجتها بشكل منهجي في الأجهزة، الشبكات، الأنظمة، والخدمات اليومية.</p>
+
+  <h4>ما الذي يتم تنفيذه؟</h4>
+  <ul>
+    <li>مراجعة البيئة الحالية أو المشكلة المطروحة وفهم تأثيرها على العمل اليومي.</li>
+    <li>تحديد الأسباب المحتملة، نقاط الضعف، وفرص التحسين.</li>
+    <li>اقتراح خطوات قابلة للتنفيذ حسب حجم البيئة واحتياج العميل.</li>
+    <li>تنظيم الخطوات وتوضيح الأولويات حتى يكون التنفيذ واضحاً وغير عشوائي.</li>
+  </ul>
+
+  <h4>متى تحتاج هذه الخدمة؟</h4>
+  <p>تكون هذه الخدمة مناسبة عند وجود أعطال متكررة، تشتت في الإعدادات، ضعف في التوثيق، أو الحاجة إلى رأي تقني منظم قبل التنفيذ.</p>
+
+  <div class="service-result-box">النتيجة المتوقعة: الهدف النهائي هو الوصول إلى وضع أكثر تنظيماً واستقراراً، مع توصيات واضحة يمكن الاعتماد عليها لاحقاً في التشغيل أو التطوير أو المتابعة.</div>
+</div>
+<!-- SERVICE_CARD_DETAILS_END --></div><div class="service-card" role="button" tabindex="0" aria-expanded="false"><i class="fa-solid fa-network-wired"></i><h3>تنظيم بيئة الأجهزة والشبكات</h3><p>تنظيم ودعم بيئات الأجهزة والشبكات للشركات والمؤسسات والأفراد، بما يشمل الأجهزة، إعدادات الشبكة، المستخدمين، الصلاحيات، الطابعات، والمجلدات المشتركة.</p>
+<!-- SERVICE_CARD_HINT_START -->
+<div class="service-click-hint"><span class="hint-closed">اضغط لعرض التفاصيل</span><span class="hint-open">إخفاء التفاصيل</span><i class="fa-solid fa-plus"></i></div>
+<!-- SERVICE_CARD_HINT_END -->
+<!-- SERVICE_CARD_DETAILS_START -->
+<div class="service-expanded">
+  <h4>نظرة عملية</h4>
+  <p>تركز هذه الخدمة على <strong>تنظيم بيئة الأجهزة والشبكات</strong>. يتم التعامل معها كحل عملي يبدأ بفهم الوضع الحالي، مراجعة التفاصيل المؤثرة، ثم تحديد خطوات واضحة تساعد على تحسين الاستقرار وتقليل الأعطال.</p>
+  <p>الوصف المختصر لهذا المجال: تنظيم ودعم بيئات الأجهزة والشبكات للشركات والمؤسسات والأفراد، بما يشمل الأجهزة، إعدادات الشبكة، المستخدمين، الصلاحيات، الطابعات، والمجلدات المشتركة.</p>
+
+  <h4>ما الذي يتم تنفيذه؟</h4>
+  <ul>
+    <li>مراجعة البيئة الحالية أو المشكلة المطروحة وفهم تأثيرها على العمل اليومي.</li>
+    <li>تحديد الأسباب المحتملة، نقاط الضعف، وفرص التحسين.</li>
+    <li>اقتراح خطوات قابلة للتنفيذ حسب حجم البيئة واحتياج العميل.</li>
+    <li>تنظيم الخطوات وتوضيح الأولويات حتى يكون التنفيذ واضحاً وغير عشوائي.</li>
+  </ul>
+
+  <h4>متى تحتاج هذه الخدمة؟</h4>
+  <p>تكون هذه الخدمة مناسبة عند وجود أعطال متكررة، تشتت في الإعدادات، ضعف في التوثيق، أو الحاجة إلى رأي تقني منظم قبل التنفيذ.</p>
+
+  <div class="service-result-box">النتيجة المتوقعة: الهدف النهائي هو الوصول إلى وضع أكثر تنظيماً واستقراراً، مع توصيات واضحة يمكن الاعتماد عليها لاحقاً في التشغيل أو التطوير أو المتابعة.</div>
+</div>
+<!-- SERVICE_CARD_DETAILS_END --></div><div class="service-card" role="button" tabindex="0" aria-expanded="false"><i class="fa-solid fa-sitemap"></i><h3>الشبكات والبنية التحتية</h3><p>تصميم وتنظيم ودعم بيئات الشبكات الداخلية والبنية التحتية التقنية، وتحسين الاستقرار والأداء اليومي.</p>
+<!-- SERVICE_CARD_HINT_START -->
+<div class="service-click-hint"><span class="hint-closed">اضغط لعرض التفاصيل</span><span class="hint-open">إخفاء التفاصيل</span><i class="fa-solid fa-plus"></i></div>
+<!-- SERVICE_CARD_HINT_END -->
+<!-- SERVICE_CARD_DETAILS_START -->
+<div class="service-expanded">
+  <h4>نظرة عملية</h4>
+  <p>تركز هذه الخدمة على <strong>الشبكات والبنية التحتية</strong>. يتم التعامل معها كحل عملي يبدأ بفهم الوضع الحالي، مراجعة التفاصيل المؤثرة، ثم تحديد خطوات واضحة تساعد على تحسين الاستقرار وتقليل الأعطال.</p>
+  <p>الوصف المختصر لهذا المجال: تصميم وتنظيم ودعم بيئات الشبكات الداخلية والبنية التحتية التقنية، وتحسين الاستقرار والأداء اليومي.</p>
+
+  <h4>ما الذي يتم تنفيذه؟</h4>
+  <ul>
+    <li>مراجعة البيئة الحالية أو المشكلة المطروحة وفهم تأثيرها على العمل اليومي.</li>
+    <li>تحديد الأسباب المحتملة، نقاط الضعف، وفرص التحسين.</li>
+    <li>اقتراح خطوات قابلة للتنفيذ حسب حجم البيئة واحتياج العميل.</li>
+    <li>تنظيم الخطوات وتوضيح الأولويات حتى يكون التنفيذ واضحاً وغير عشوائي.</li>
+  </ul>
+
+  <h4>متى تحتاج هذه الخدمة؟</h4>
+  <p>تكون هذه الخدمة مناسبة عند وجود أعطال متكررة، تشتت في الإعدادات، ضعف في التوثيق، أو الحاجة إلى رأي تقني منظم قبل التنفيذ.</p>
+
+  <div class="service-result-box">النتيجة المتوقعة: الهدف النهائي هو الوصول إلى وضع أكثر تنظيماً واستقراراً، مع توصيات واضحة يمكن الاعتماد عليها لاحقاً في التشغيل أو التطوير أو المتابعة.</div>
+</div>
+<!-- SERVICE_CARD_DETAILS_END --></div><div class="service-card" role="button" tabindex="0" aria-expanded="false"><i class="fa-solid fa-shield-halved"></i><h3>الأمن السيبراني وحماية البيانات</h3><p>تحسين حماية الأجهزة والأنظمة، مراجعة الصلاحيات، تقليل المخاطر، وتعزيز ممارسات الأمان داخل بيئة العمل.</p>
+<!-- SERVICE_CARD_HINT_START -->
+<div class="service-click-hint"><span class="hint-closed">اضغط لعرض التفاصيل</span><span class="hint-open">إخفاء التفاصيل</span><i class="fa-solid fa-plus"></i></div>
+<!-- SERVICE_CARD_HINT_END -->
+<!-- SERVICE_CARD_DETAILS_START -->
+<div class="service-expanded">
+  <h4>نظرة عملية</h4>
+  <p>تركز هذه الخدمة على <strong>الأمن السيبراني وحماية البيانات</strong>. يتم التعامل معها كحل عملي يبدأ بفهم الوضع الحالي، مراجعة التفاصيل المؤثرة، ثم تحديد خطوات واضحة تساعد على تحسين الاستقرار وتقليل الأعطال.</p>
+  <p>الوصف المختصر لهذا المجال: تحسين حماية الأجهزة والأنظمة، مراجعة الصلاحيات، تقليل المخاطر، وتعزيز ممارسات الأمان داخل بيئة العمل.</p>
+
+  <h4>ما الذي يتم تنفيذه؟</h4>
+  <ul>
+    <li>مراجعة البيئة الحالية أو المشكلة المطروحة وفهم تأثيرها على العمل اليومي.</li>
+    <li>تحديد الأسباب المحتملة، نقاط الضعف، وفرص التحسين.</li>
+    <li>اقتراح خطوات قابلة للتنفيذ حسب حجم البيئة واحتياج العميل.</li>
+    <li>تنظيم الخطوات وتوضيح الأولويات حتى يكون التنفيذ واضحاً وغير عشوائي.</li>
+  </ul>
+
+  <h4>متى تحتاج هذه الخدمة؟</h4>
+  <p>تكون هذه الخدمة مناسبة عند وجود أعطال متكررة، تشتت في الإعدادات، ضعف في التوثيق، أو الحاجة إلى رأي تقني منظم قبل التنفيذ.</p>
+
+  <div class="service-result-box">النتيجة المتوقعة: الهدف النهائي هو الوصول إلى وضع أكثر تنظيماً واستقراراً، مع توصيات واضحة يمكن الاعتماد عليها لاحقاً في التشغيل أو التطوير أو المتابعة.</div>
+</div>
+<!-- SERVICE_CARD_DETAILS_END --></div><div class="service-card" role="button" tabindex="0" aria-expanded="false"><i class="fa-solid fa-cloud"></i><h3>الحوسبة السحابية والحوسبة الافتراضية</h3><p>دعم وتنظيم بيئات الحوسبة السحابية والحوسبة الافتراضية، إدارة الموارد، تحسين الأداء، ودعم الاستقرار التشغيلي.</p>
+<!-- SERVICE_CARD_HINT_START -->
+<div class="service-click-hint"><span class="hint-closed">اضغط لعرض التفاصيل</span><span class="hint-open">إخفاء التفاصيل</span><i class="fa-solid fa-plus"></i></div>
+<!-- SERVICE_CARD_HINT_END -->
+<!-- SERVICE_CARD_DETAILS_START -->
+<div class="service-expanded">
+  <h4>نظرة عملية</h4>
+  <p>تركز هذه الخدمة على <strong>الحوسبة السحابية والحوسبة الافتراضية</strong>. يتم التعامل معها كحل عملي يبدأ بفهم الوضع الحالي، مراجعة التفاصيل المؤثرة، ثم تحديد خطوات واضحة تساعد على تحسين الاستقرار وتقليل الأعطال.</p>
+  <p>الوصف المختصر لهذا المجال: دعم وتنظيم بيئات الحوسبة السحابية والحوسبة الافتراضية، إدارة الموارد، تحسين الأداء، ودعم الاستقرار التشغيلي.</p>
+
+  <h4>ما الذي يتم تنفيذه؟</h4>
+  <ul>
+    <li>مراجعة البيئة الحالية أو المشكلة المطروحة وفهم تأثيرها على العمل اليومي.</li>
+    <li>تحديد الأسباب المحتملة، نقاط الضعف، وفرص التحسين.</li>
+    <li>اقتراح خطوات قابلة للتنفيذ حسب حجم البيئة واحتياج العميل.</li>
+    <li>تنظيم الخطوات وتوضيح الأولويات حتى يكون التنفيذ واضحاً وغير عشوائي.</li>
+  </ul>
+
+  <h4>متى تحتاج هذه الخدمة؟</h4>
+  <p>تكون هذه الخدمة مناسبة عند وجود أعطال متكررة، تشتت في الإعدادات، ضعف في التوثيق، أو الحاجة إلى رأي تقني منظم قبل التنفيذ.</p>
+
+  <div class="service-result-box">النتيجة المتوقعة: الهدف النهائي هو الوصول إلى وضع أكثر تنظيماً واستقراراً، مع توصيات واضحة يمكن الاعتماد عليها لاحقاً في التشغيل أو التطوير أو المتابعة.</div>
+</div>
+<!-- SERVICE_CARD_DETAILS_END --></div><div class="service-card" role="button" tabindex="0" aria-expanded="false"><i class="fa-solid fa-database"></i><h3>النسخ الاحتياطي واستمرارية الأعمال</h3><p>إعداد خطط النسخ الاحتياطي والاستعادة، حماية البيانات المهمة، وتجهيز حلول عملية عند الأعطال أو فقدان الملفات.</p>
+<!-- SERVICE_CARD_HINT_START -->
+<div class="service-click-hint"><span class="hint-closed">اضغط لعرض التفاصيل</span><span class="hint-open">إخفاء التفاصيل</span><i class="fa-solid fa-plus"></i></div>
+<!-- SERVICE_CARD_HINT_END -->
+<!-- SERVICE_CARD_DETAILS_START -->
+<div class="service-expanded">
+  <h4>نظرة عملية</h4>
+  <p>تركز هذه الخدمة على <strong>النسخ الاحتياطي واستمرارية الأعمال</strong>. يتم التعامل معها كحل عملي يبدأ بفهم الوضع الحالي، مراجعة التفاصيل المؤثرة، ثم تحديد خطوات واضحة تساعد على تحسين الاستقرار وتقليل الأعطال.</p>
+  <p>الوصف المختصر لهذا المجال: إعداد خطط النسخ الاحتياطي والاستعادة، حماية البيانات المهمة، وتجهيز حلول عملية عند الأعطال أو فقدان الملفات.</p>
+
+  <h4>ما الذي يتم تنفيذه؟</h4>
+  <ul>
+    <li>مراجعة البيئة الحالية أو المشكلة المطروحة وفهم تأثيرها على العمل اليومي.</li>
+    <li>تحديد الأسباب المحتملة، نقاط الضعف، وفرص التحسين.</li>
+    <li>اقتراح خطوات قابلة للتنفيذ حسب حجم البيئة واحتياج العميل.</li>
+    <li>تنظيم الخطوات وتوضيح الأولويات حتى يكون التنفيذ واضحاً وغير عشوائي.</li>
+  </ul>
+
+  <h4>متى تحتاج هذه الخدمة؟</h4>
+  <p>تكون هذه الخدمة مناسبة عند وجود أعطال متكررة، تشتت في الإعدادات، ضعف في التوثيق، أو الحاجة إلى رأي تقني منظم قبل التنفيذ.</p>
+
+  <div class="service-result-box">النتيجة المتوقعة: الهدف النهائي هو الوصول إلى وضع أكثر تنظيماً واستقراراً، مع توصيات واضحة يمكن الاعتماد عليها لاحقاً في التشغيل أو التطوير أو المتابعة.</div>
+</div>
+<!-- SERVICE_CARD_DETAILS_END --></div><div class="service-card" role="button" tabindex="0" aria-expanded="false"><i class="fa-solid fa-users-gear"></i><h3>إدارة المستخدمين والصلاحيات</h3><p>تنظيم حسابات المستخدمين، مراجعة الصلاحيات، التحكم في الوصول، وتقليل المخاطر الناتجة عن الصلاحيات الزائدة.</p>
+<!-- SERVICE_CARD_HINT_START -->
+<div class="service-click-hint"><span class="hint-closed">اضغط لعرض التفاصيل</span><span class="hint-open">إخفاء التفاصيل</span><i class="fa-solid fa-plus"></i></div>
+<!-- SERVICE_CARD_HINT_END -->
+<!-- SERVICE_CARD_DETAILS_START -->
+<div class="service-expanded">
+  <h4>نظرة عملية</h4>
+  <p>تركز هذه الخدمة على <strong>إدارة المستخدمين والصلاحيات</strong>. يتم التعامل معها كحل عملي يبدأ بفهم الوضع الحالي، مراجعة التفاصيل المؤثرة، ثم تحديد خطوات واضحة تساعد على تحسين الاستقرار وتقليل الأعطال.</p>
+  <p>الوصف المختصر لهذا المجال: تنظيم حسابات المستخدمين، مراجعة الصلاحيات، التحكم في الوصول، وتقليل المخاطر الناتجة عن الصلاحيات الزائدة.</p>
+
+  <h4>ما الذي يتم تنفيذه؟</h4>
+  <ul>
+    <li>مراجعة البيئة الحالية أو المشكلة المطروحة وفهم تأثيرها على العمل اليومي.</li>
+    <li>تحديد الأسباب المحتملة، نقاط الضعف، وفرص التحسين.</li>
+    <li>اقتراح خطوات قابلة للتنفيذ حسب حجم البيئة واحتياج العميل.</li>
+    <li>تنظيم الخطوات وتوضيح الأولويات حتى يكون التنفيذ واضحاً وغير عشوائي.</li>
+  </ul>
+
+  <h4>متى تحتاج هذه الخدمة؟</h4>
+  <p>تكون هذه الخدمة مناسبة عند وجود أعطال متكررة، تشتت في الإعدادات، ضعف في التوثيق، أو الحاجة إلى رأي تقني منظم قبل التنفيذ.</p>
+
+  <div class="service-result-box">النتيجة المتوقعة: الهدف النهائي هو الوصول إلى وضع أكثر تنظيماً واستقراراً، مع توصيات واضحة يمكن الاعتماد عليها لاحقاً في التشغيل أو التطوير أو المتابعة.</div>
+</div>
+<!-- SERVICE_CARD_DETAILS_END --></div><div class="service-card" role="button" tabindex="0" aria-expanded="false"><i class="fa-solid fa-server"></i><h3>دعم الخوادم والأنظمة وبيئات العمل</h3><p>دعم الأنظمة والخوادم وبيئات العمل التقنية، ومتابعة الاستقرار التشغيلي ومعالجة الأعطال المؤثرة على العمل.</p>
+<!-- SERVICE_CARD_HINT_START -->
+<div class="service-click-hint"><span class="hint-closed">اضغط لعرض التفاصيل</span><span class="hint-open">إخفاء التفاصيل</span><i class="fa-solid fa-plus"></i></div>
+<!-- SERVICE_CARD_HINT_END -->
+<!-- SERVICE_CARD_DETAILS_START -->
+<div class="service-expanded">
+  <h4>نظرة عملية</h4>
+  <p>تركز هذه الخدمة على <strong>دعم الخوادم والأنظمة وبيئات العمل</strong>. يتم التعامل معها كحل عملي يبدأ بفهم الوضع الحالي، مراجعة التفاصيل المؤثرة، ثم تحديد خطوات واضحة تساعد على تحسين الاستقرار وتقليل الأعطال.</p>
+  <p>الوصف المختصر لهذا المجال: دعم الأنظمة والخوادم وبيئات العمل التقنية، ومتابعة الاستقرار التشغيلي ومعالجة الأعطال المؤثرة على العمل.</p>
+
+  <h4>ما الذي يتم تنفيذه؟</h4>
+  <ul>
+    <li>مراجعة البيئة الحالية أو المشكلة المطروحة وفهم تأثيرها على العمل اليومي.</li>
+    <li>تحديد الأسباب المحتملة، نقاط الضعف، وفرص التحسين.</li>
+    <li>اقتراح خطوات قابلة للتنفيذ حسب حجم البيئة واحتياج العميل.</li>
+    <li>تنظيم الخطوات وتوضيح الأولويات حتى يكون التنفيذ واضحاً وغير عشوائي.</li>
+  </ul>
+
+  <h4>متى تحتاج هذه الخدمة؟</h4>
+  <p>تكون هذه الخدمة مناسبة عند وجود أعطال متكررة، تشتت في الإعدادات، ضعف في التوثيق، أو الحاجة إلى رأي تقني منظم قبل التنفيذ.</p>
+
+  <div class="service-result-box">النتيجة المتوقعة: الهدف النهائي هو الوصول إلى وضع أكثر تنظيماً واستقراراً، مع توصيات واضحة يمكن الاعتماد عليها لاحقاً في التشغيل أو التطوير أو المتابعة.</div>
+</div>
+<!-- SERVICE_CARD_DETAILS_END --></div><div class="service-card" role="button" tabindex="0" aria-expanded="false"><i class="fa-solid fa-diagram-project"></i><h3>الأتمتة وربط النماذج وسير العمل</h3><p>تحسين الإجراءات اليومية من خلال النماذج الإلكترونية، البريد، واتساب، وسير العمل المنظم.</p>
+<!-- SERVICE_CARD_HINT_START -->
+<div class="service-click-hint"><span class="hint-closed">اضغط لعرض التفاصيل</span><span class="hint-open">إخفاء التفاصيل</span><i class="fa-solid fa-plus"></i></div>
+<!-- SERVICE_CARD_HINT_END -->
+<!-- SERVICE_CARD_DETAILS_START -->
+<div class="service-expanded">
+  <h4>نظرة عملية</h4>
+  <p>تركز هذه الخدمة على <strong>الأتمتة وربط النماذج وسير العمل</strong>. يتم التعامل معها كحل عملي يبدأ بفهم الوضع الحالي، مراجعة التفاصيل المؤثرة، ثم تحديد خطوات واضحة تساعد على تحسين الاستقرار وتقليل الأعطال.</p>
+  <p>الوصف المختصر لهذا المجال: تحسين الإجراءات اليومية من خلال النماذج الإلكترونية، البريد، واتساب، وسير العمل المنظم.</p>
+
+  <h4>ما الذي يتم تنفيذه؟</h4>
+  <ul>
+    <li>مراجعة البيئة الحالية أو المشكلة المطروحة وفهم تأثيرها على العمل اليومي.</li>
+    <li>تحديد الأسباب المحتملة، نقاط الضعف، وفرص التحسين.</li>
+    <li>اقتراح خطوات قابلة للتنفيذ حسب حجم البيئة واحتياج العميل.</li>
+    <li>تنظيم الخطوات وتوضيح الأولويات حتى يكون التنفيذ واضحاً وغير عشوائي.</li>
+  </ul>
+
+  <h4>متى تحتاج هذه الخدمة؟</h4>
+  <p>تكون هذه الخدمة مناسبة عند وجود أعطال متكررة، تشتت في الإعدادات، ضعف في التوثيق، أو الحاجة إلى رأي تقني منظم قبل التنفيذ.</p>
+
+  <div class="service-result-box">النتيجة المتوقعة: الهدف النهائي هو الوصول إلى وضع أكثر تنظيماً واستقراراً، مع توصيات واضحة يمكن الاعتماد عليها لاحقاً في التشغيل أو التطوير أو المتابعة.</div>
+</div>
+<!-- SERVICE_CARD_DETAILS_END --></div><div class="service-card" role="button" tabindex="0" aria-expanded="false"><i class="fa-solid fa-file-lines"></i><h3>التوثيق والتقارير الفنية</h3><p>إعداد تقارير فنية، توثيق بيئات العمل، تقديم توصيات واضحة، وتنظيم الأصول التقنية.</p>
+<!-- SERVICE_CARD_HINT_START -->
+<div class="service-click-hint"><span class="hint-closed">اضغط لعرض التفاصيل</span><span class="hint-open">إخفاء التفاصيل</span><i class="fa-solid fa-plus"></i></div>
+<!-- SERVICE_CARD_HINT_END -->
+<!-- SERVICE_CARD_DETAILS_START -->
+<div class="service-expanded">
+  <h4>نظرة عملية</h4>
+  <p>تركز هذه الخدمة على <strong>التوثيق والتقارير الفنية</strong>. يتم التعامل معها كحل عملي يبدأ بفهم الوضع الحالي، مراجعة التفاصيل المؤثرة، ثم تحديد خطوات واضحة تساعد على تحسين الاستقرار وتقليل الأعطال.</p>
+  <p>الوصف المختصر لهذا المجال: إعداد تقارير فنية، توثيق بيئات العمل، تقديم توصيات واضحة، وتنظيم الأصول التقنية.</p>
+
+  <h4>ما الذي يتم تنفيذه؟</h4>
+  <ul>
+    <li>مراجعة البيئة الحالية أو المشكلة المطروحة وفهم تأثيرها على العمل اليومي.</li>
+    <li>تحديد الأسباب المحتملة، نقاط الضعف، وفرص التحسين.</li>
+    <li>اقتراح خطوات قابلة للتنفيذ حسب حجم البيئة واحتياج العميل.</li>
+    <li>تنظيم الخطوات وتوضيح الأولويات حتى يكون التنفيذ واضحاً وغير عشوائي.</li>
+  </ul>
+
+  <h4>متى تحتاج هذه الخدمة؟</h4>
+  <p>تكون هذه الخدمة مناسبة عند وجود أعطال متكررة، تشتت في الإعدادات، ضعف في التوثيق، أو الحاجة إلى رأي تقني منظم قبل التنفيذ.</p>
+
+  <div class="service-result-box">النتيجة المتوقعة: الهدف النهائي هو الوصول إلى وضع أكثر تنظيماً واستقراراً، مع توصيات واضحة يمكن الاعتماد عليها لاحقاً في التشغيل أو التطوير أو المتابعة.</div>
+</div>
+<!-- SERVICE_CARD_DETAILS_END --></div><div class="service-card" role="button" tabindex="0" aria-expanded="false"><i class="fa-solid fa-headset"></i><h3>الدعم التقني المتقدم</h3><p>تحليل وإصلاح مشكلات الأجهزة، الشبكات، البريد الإلكتروني، الطابعات، وأنظمة العمل اليومية ضمن إطار مهني منظم.</p>
+<!-- SERVICE_CARD_HINT_START -->
+<div class="service-click-hint"><span class="hint-closed">اضغط لعرض التفاصيل</span><span class="hint-open">إخفاء التفاصيل</span><i class="fa-solid fa-plus"></i></div>
+<!-- SERVICE_CARD_HINT_END -->
+<!-- SERVICE_CARD_DETAILS_START -->
+<div class="service-expanded">
+  <h4>نظرة عملية</h4>
+  <p>تركز هذه الخدمة على <strong>الدعم التقني المتقدم</strong>. يتم التعامل معها كحل عملي يبدأ بفهم الوضع الحالي، مراجعة التفاصيل المؤثرة، ثم تحديد خطوات واضحة تساعد على تحسين الاستقرار وتقليل الأعطال.</p>
+  <p>الوصف المختصر لهذا المجال: تحليل وإصلاح مشكلات الأجهزة، الشبكات، البريد الإلكتروني، الطابعات، وأنظمة العمل اليومية ضمن إطار مهني منظم.</p>
+
+  <h4>ما الذي يتم تنفيذه؟</h4>
+  <ul>
+    <li>مراجعة البيئة الحالية أو المشكلة المطروحة وفهم تأثيرها على العمل اليومي.</li>
+    <li>تحديد الأسباب المحتملة، نقاط الضعف، وفرص التحسين.</li>
+    <li>اقتراح خطوات قابلة للتنفيذ حسب حجم البيئة واحتياج العميل.</li>
+    <li>تنظيم الخطوات وتوضيح الأولويات حتى يكون التنفيذ واضحاً وغير عشوائي.</li>
+  </ul>
+
+  <h4>متى تحتاج هذه الخدمة؟</h4>
+  <p>تكون هذه الخدمة مناسبة عند وجود أعطال متكررة، تشتت في الإعدادات، ضعف في التوثيق، أو الحاجة إلى رأي تقني منظم قبل التنفيذ.</p>
+
+  <div class="service-result-box">النتيجة المتوقعة: الهدف النهائي هو الوصول إلى وضع أكثر تنظيماً واستقراراً، مع توصيات واضحة يمكن الاعتماد عليها لاحقاً في التشغيل أو التطوير أو المتابعة.</div>
+</div>
+<!-- SERVICE_CARD_DETAILS_END --></div>
   </div>
   <div class="service-cta-wrap"><button class="service-cta-btn" type="button" data-service-open><i class="fa-solid fa-paper-plane"></i> طلب خدمة الآن</button></div>
 </section>
@@ -461,6 +855,36 @@ function servicesContactSubmitted(){
 }
 </script>
 <!-- SERVICES_CONTACT_SCRIPT_END -->
+
+
+<!-- SERVICE_CARD_EXPAND_DETAILS_SCRIPT_START -->
+<script>
+(function(){
+  function toggleCard(card){
+    const opened = card.classList.toggle('is-open');
+    card.setAttribute('aria-expanded', opened ? 'true' : 'false');
+  }
+
+  document.querySelectorAll('.service-card').forEach(function(card){
+    card.setAttribute('role','button');
+    card.setAttribute('tabindex','0');
+    card.setAttribute('aria-expanded','false');
+
+    card.addEventListener('click', function(e){
+      if(e.target.closest('a, button')) return;
+      toggleCard(card);
+    });
+
+    card.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){
+        e.preventDefault();
+        toggleCard(card);
+      }
+    });
+  });
+})();
+</script>
+<!-- SERVICE_CARD_EXPAND_DETAILS_SCRIPT_END -->
 
 </body>
 </html>

@@ -269,6 +269,147 @@ body.dark-mode .services-hero p{color:#cbd5e1}
   .services-cta{width:100%}
 }
 
+
+/* SERVICE_CARD_EXPAND_DETAILS_START */
+.service-card{
+  cursor:pointer;
+  outline:none;
+}
+
+.service-card:focus{
+  box-shadow:0 0 0 4px rgba(18,97,216,.16),0 12px 28px rgba(15,23,42,.08);
+}
+
+.service-click-hint{
+  margin-top:14px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  padding:10px 12px;
+  border-radius:14px;
+  background:linear-gradient(135deg,rgba(18,97,216,.10),rgba(16,167,121,.10),rgba(212,166,60,.16));
+  border:1px solid rgba(18,97,216,.16);
+  color:#12345c;
+  font-weight:900;
+  font-size:.9rem;
+}
+
+.service-click-hint i{
+  width:28px!important;
+  height:28px!important;
+  margin:0!important;
+  flex:0 0 28px!important;
+  border-radius:50%!important;
+  font-size:14px!important;
+  background:linear-gradient(135deg,#1261d8,#10a779)!important;
+  transition:transform .22s ease;
+}
+
+.service-click-hint .hint-open{
+  display:none;
+}
+
+.service-card.is-open .service-click-hint .hint-closed{
+  display:none;
+}
+
+.service-card.is-open .service-click-hint .hint-open{
+  display:inline;
+}
+
+.service-card.is-open .service-click-hint i{
+  transform:rotate(45deg);
+}
+
+.service-expanded{
+  display:none;
+  margin-top:14px;
+  padding:16px;
+  border-radius:16px;
+  background:linear-gradient(135deg,rgba(234,241,255,.95),rgba(255,250,232,.92));
+  border:1px solid rgba(18,97,216,.14);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.75);
+}
+
+.service-card.is-open .service-expanded{
+  display:block;
+  animation:serviceDetailIn .22s ease-out;
+}
+
+.service-expanded h4{
+  margin:12px 0 6px;
+  color:#0f3f8f;
+  font-size:1rem;
+  font-weight:950;
+}
+
+.service-expanded h4:first-child{
+  margin-top:0;
+}
+
+.service-expanded p{
+  margin:0 0 10px!important;
+  color:#344762!important;
+  line-height:1.9!important;
+  font-weight:750!important;
+}
+
+.service-expanded ul{
+  margin:8px 0 10px!important;
+  padding-inline-start:22px!important;
+}
+
+.service-expanded li{
+  margin-bottom:7px;
+  color:#344762;
+  font-weight:750;
+  line-height:1.7;
+}
+
+.service-result-box{
+  margin-top:12px;
+  padding:12px 14px;
+  border-radius:14px;
+  background:rgba(255,255,255,.70);
+  border:1px solid rgba(212,166,60,.25);
+  color:#12345c;
+  font-weight:900;
+  line-height:1.8;
+}
+
+body.dark-mode .service-click-hint{
+  background:linear-gradient(135deg,rgba(30,41,59,.95),rgba(15,23,42,.95));
+  border-color:#334155;
+  color:#e5e7eb;
+}
+
+body.dark-mode .service-expanded{
+  background:linear-gradient(135deg,#0f172a,#111827);
+  border-color:#334155;
+}
+
+body.dark-mode .service-expanded h4{
+  color:#93c5fd;
+}
+
+body.dark-mode .service-expanded p,
+body.dark-mode .service-expanded li{
+  color:#cbd5e1!important;
+}
+
+body.dark-mode .service-result-box{
+  background:#0f172a;
+  border-color:#475569;
+  color:#e5e7eb;
+}
+
+@keyframes serviceDetailIn{
+  from{opacity:0;transform:translateY(-6px)}
+  to{opacity:1;transform:translateY(0)}
+}
+/* SERVICE_CARD_EXPAND_DETAILS_END */
+
 </style>
 </head>
 <body>
@@ -293,7 +434,260 @@ body.dark-mode .services-hero p{color:#cbd5e1}
   <h2>Advanced Technical Solutions & IT Services</h2>
   <p class="services-intro">Providing practical technical solutions for companies, organizations, and individuals, including IT environment assessment and organization, infrastructure support, networking, cybersecurity, cloud computing, virtualization, business continuity, data protection, automation, and technical documentation.</p>
   <div class="services-grid">
-    <div class="service-card"><i class="fa-solid fa-screwdriver-wrench"></i><h3>Integrated Technical Solutions & Troubleshooting</h3><p>Structured analysis and resolution of recurring technical issues across devices, networks, systems, and daily IT services.</p></div><div class="service-card"><i class="fa-solid fa-network-wired"></i><h3>Device & Network Environment Organization</h3><p>Organizing and supporting device and network environments for companies, organizations, and individuals, including devices, network settings, users, permissions, printers, and shared folders.</p></div><div class="service-card"><i class="fa-solid fa-sitemap"></i><h3>Network & Infrastructure Solutions</h3><p>Designing, organizing, supporting, and improving internal network environments and technical infrastructure for better stability and performance.</p></div><div class="service-card"><i class="fa-solid fa-shield-halved"></i><h3>Cybersecurity & Data Protection</h3><p>Improving protection for devices and systems, reviewing permissions, reducing risks, and strengthening security practices within the work environment.</p></div><div class="service-card"><i class="fa-solid fa-cloud"></i><h3>Cloud Computing & Virtualization</h3><p>Supporting and organizing cloud computing and virtualization environments, including resource management, performance improvement, and operational stability.</p></div><div class="service-card"><i class="fa-solid fa-database"></i><h3>Backup, Recovery & Business Continuity</h3><p>Preparing backup and recovery plans, protecting important data, and providing practical recovery solutions during failures or data loss.</p></div><div class="service-card"><i class="fa-solid fa-users-gear"></i><h3>Users, Permissions & Access Management</h3><p>Organizing user accounts, reviewing permissions, controlling access, and reducing risks caused by unnecessary privileges.</p></div><div class="service-card"><i class="fa-solid fa-server"></i><h3>Servers, Systems & Work Environments</h3><p>Supporting systems, servers, and technical work environments while maintaining operational stability and resolving issues affecting business continuity.</p></div><div class="service-card"><i class="fa-solid fa-diagram-project"></i><h3>Automation, Forms & Workflow Integration</h3><p>Improving daily operations through electronic forms, email, WhatsApp, and organized workflow processes.</p></div><div class="service-card"><i class="fa-solid fa-file-lines"></i><h3>Technical Documentation & Reports</h3><p>Preparing technical reports, documenting work environments, providing clear recommendations, and organizing IT assets.</p></div><div class="service-card"><i class="fa-solid fa-headset"></i><h3>Advanced Technical Support</h3><p>Analyzing and resolving issues related to devices, networks, email, printers, and daily business systems within a professional support framework.</p></div>
+    <div class="service-card" role="button" tabindex="0" aria-expanded="false"><i class="fa-solid fa-screwdriver-wrench"></i><h3>Integrated Technical Solutions & Troubleshooting</h3><p>Structured analysis and resolution of recurring technical issues across devices, networks, systems, and daily IT services.</p>
+<!-- SERVICE_CARD_HINT_START -->
+<div class="service-click-hint"><span class="hint-closed">Click to view details</span><span class="hint-open">Hide details</span><i class="fa-solid fa-plus"></i></div>
+<!-- SERVICE_CARD_HINT_END -->
+<!-- SERVICE_CARD_DETAILS_START -->
+<div class="service-expanded">
+  <h4>Practical overview</h4>
+  <p>This service focuses on <strong>Integrated Technical Solutions & Troubleshooting</strong>. It is designed to go beyond a quick fix by understanding the current situation, reviewing the technical details that affect daily work, and defining clear practical steps to improve stability and reduce repeated issues.</p>
+  <p>Short service scope: Structured analysis and resolution of recurring technical issues across devices, networks, systems, and daily IT services.</p>
+
+  <h4>What is included?</h4>
+  <ul>
+    <li>Review the current environment or reported issue and understand its impact on daily operations.</li>
+    <li>Identify possible causes, weak points, risks, and opportunities for improvement.</li>
+    <li>Suggest practical actions that can be implemented according to the environment size and customer needs.</li>
+    <li>Organize the steps and priorities so implementation is clear, controlled, and not random.</li>
+  </ul>
+
+  <h4>When do you need this service?</h4>
+  <p>This service is useful when there are repeated technical issues, unclear configurations, weak documentation, operational instability, or a need for structured technical advice before implementation.</p>
+
+  <div class="service-result-box">Expected outcome: A more organized and stable technical environment, with clear recommendations that can be used later for operation, improvement, or follow-up.</div>
+</div>
+<!-- SERVICE_CARD_DETAILS_END --></div><div class="service-card" role="button" tabindex="0" aria-expanded="false"><i class="fa-solid fa-network-wired"></i><h3>Device & Network Environment Organization</h3><p>Organizing and supporting device and network environments for companies, organizations, and individuals, including devices, network settings, users, permissions, printers, and shared folders.</p>
+<!-- SERVICE_CARD_HINT_START -->
+<div class="service-click-hint"><span class="hint-closed">Click to view details</span><span class="hint-open">Hide details</span><i class="fa-solid fa-plus"></i></div>
+<!-- SERVICE_CARD_HINT_END -->
+<!-- SERVICE_CARD_DETAILS_START -->
+<div class="service-expanded">
+  <h4>Practical overview</h4>
+  <p>This service focuses on <strong>Device & Network Environment Organization</strong>. It is designed to go beyond a quick fix by understanding the current situation, reviewing the technical details that affect daily work, and defining clear practical steps to improve stability and reduce repeated issues.</p>
+  <p>Short service scope: Organizing and supporting device and network environments for companies, organizations, and individuals, including devices, network settings, users, permissions, printers, and shared folders.</p>
+
+  <h4>What is included?</h4>
+  <ul>
+    <li>Review the current environment or reported issue and understand its impact on daily operations.</li>
+    <li>Identify possible causes, weak points, risks, and opportunities for improvement.</li>
+    <li>Suggest practical actions that can be implemented according to the environment size and customer needs.</li>
+    <li>Organize the steps and priorities so implementation is clear, controlled, and not random.</li>
+  </ul>
+
+  <h4>When do you need this service?</h4>
+  <p>This service is useful when there are repeated technical issues, unclear configurations, weak documentation, operational instability, or a need for structured technical advice before implementation.</p>
+
+  <div class="service-result-box">Expected outcome: A more organized and stable technical environment, with clear recommendations that can be used later for operation, improvement, or follow-up.</div>
+</div>
+<!-- SERVICE_CARD_DETAILS_END --></div><div class="service-card" role="button" tabindex="0" aria-expanded="false"><i class="fa-solid fa-sitemap"></i><h3>Network & Infrastructure Solutions</h3><p>Designing, organizing, supporting, and improving internal network environments and technical infrastructure for better stability and performance.</p>
+<!-- SERVICE_CARD_HINT_START -->
+<div class="service-click-hint"><span class="hint-closed">Click to view details</span><span class="hint-open">Hide details</span><i class="fa-solid fa-plus"></i></div>
+<!-- SERVICE_CARD_HINT_END -->
+<!-- SERVICE_CARD_DETAILS_START -->
+<div class="service-expanded">
+  <h4>Practical overview</h4>
+  <p>This service focuses on <strong>Network & Infrastructure Solutions</strong>. It is designed to go beyond a quick fix by understanding the current situation, reviewing the technical details that affect daily work, and defining clear practical steps to improve stability and reduce repeated issues.</p>
+  <p>Short service scope: Designing, organizing, supporting, and improving internal network environments and technical infrastructure for better stability and performance.</p>
+
+  <h4>What is included?</h4>
+  <ul>
+    <li>Review the current environment or reported issue and understand its impact on daily operations.</li>
+    <li>Identify possible causes, weak points, risks, and opportunities for improvement.</li>
+    <li>Suggest practical actions that can be implemented according to the environment size and customer needs.</li>
+    <li>Organize the steps and priorities so implementation is clear, controlled, and not random.</li>
+  </ul>
+
+  <h4>When do you need this service?</h4>
+  <p>This service is useful when there are repeated technical issues, unclear configurations, weak documentation, operational instability, or a need for structured technical advice before implementation.</p>
+
+  <div class="service-result-box">Expected outcome: A more organized and stable technical environment, with clear recommendations that can be used later for operation, improvement, or follow-up.</div>
+</div>
+<!-- SERVICE_CARD_DETAILS_END --></div><div class="service-card" role="button" tabindex="0" aria-expanded="false"><i class="fa-solid fa-shield-halved"></i><h3>Cybersecurity & Data Protection</h3><p>Improving protection for devices and systems, reviewing permissions, reducing risks, and strengthening security practices within the work environment.</p>
+<!-- SERVICE_CARD_HINT_START -->
+<div class="service-click-hint"><span class="hint-closed">Click to view details</span><span class="hint-open">Hide details</span><i class="fa-solid fa-plus"></i></div>
+<!-- SERVICE_CARD_HINT_END -->
+<!-- SERVICE_CARD_DETAILS_START -->
+<div class="service-expanded">
+  <h4>Practical overview</h4>
+  <p>This service focuses on <strong>Cybersecurity & Data Protection</strong>. It is designed to go beyond a quick fix by understanding the current situation, reviewing the technical details that affect daily work, and defining clear practical steps to improve stability and reduce repeated issues.</p>
+  <p>Short service scope: Improving protection for devices and systems, reviewing permissions, reducing risks, and strengthening security practices within the work environment.</p>
+
+  <h4>What is included?</h4>
+  <ul>
+    <li>Review the current environment or reported issue and understand its impact on daily operations.</li>
+    <li>Identify possible causes, weak points, risks, and opportunities for improvement.</li>
+    <li>Suggest practical actions that can be implemented according to the environment size and customer needs.</li>
+    <li>Organize the steps and priorities so implementation is clear, controlled, and not random.</li>
+  </ul>
+
+  <h4>When do you need this service?</h4>
+  <p>This service is useful when there are repeated technical issues, unclear configurations, weak documentation, operational instability, or a need for structured technical advice before implementation.</p>
+
+  <div class="service-result-box">Expected outcome: A more organized and stable technical environment, with clear recommendations that can be used later for operation, improvement, or follow-up.</div>
+</div>
+<!-- SERVICE_CARD_DETAILS_END --></div><div class="service-card" role="button" tabindex="0" aria-expanded="false"><i class="fa-solid fa-cloud"></i><h3>Cloud Computing & Virtualization</h3><p>Supporting and organizing cloud computing and virtualization environments, including resource management, performance improvement, and operational stability.</p>
+<!-- SERVICE_CARD_HINT_START -->
+<div class="service-click-hint"><span class="hint-closed">Click to view details</span><span class="hint-open">Hide details</span><i class="fa-solid fa-plus"></i></div>
+<!-- SERVICE_CARD_HINT_END -->
+<!-- SERVICE_CARD_DETAILS_START -->
+<div class="service-expanded">
+  <h4>Practical overview</h4>
+  <p>This service focuses on <strong>Cloud Computing & Virtualization</strong>. It is designed to go beyond a quick fix by understanding the current situation, reviewing the technical details that affect daily work, and defining clear practical steps to improve stability and reduce repeated issues.</p>
+  <p>Short service scope: Supporting and organizing cloud computing and virtualization environments, including resource management, performance improvement, and operational stability.</p>
+
+  <h4>What is included?</h4>
+  <ul>
+    <li>Review the current environment or reported issue and understand its impact on daily operations.</li>
+    <li>Identify possible causes, weak points, risks, and opportunities for improvement.</li>
+    <li>Suggest practical actions that can be implemented according to the environment size and customer needs.</li>
+    <li>Organize the steps and priorities so implementation is clear, controlled, and not random.</li>
+  </ul>
+
+  <h4>When do you need this service?</h4>
+  <p>This service is useful when there are repeated technical issues, unclear configurations, weak documentation, operational instability, or a need for structured technical advice before implementation.</p>
+
+  <div class="service-result-box">Expected outcome: A more organized and stable technical environment, with clear recommendations that can be used later for operation, improvement, or follow-up.</div>
+</div>
+<!-- SERVICE_CARD_DETAILS_END --></div><div class="service-card" role="button" tabindex="0" aria-expanded="false"><i class="fa-solid fa-database"></i><h3>Backup, Recovery & Business Continuity</h3><p>Preparing backup and recovery plans, protecting important data, and providing practical recovery solutions during failures or data loss.</p>
+<!-- SERVICE_CARD_HINT_START -->
+<div class="service-click-hint"><span class="hint-closed">Click to view details</span><span class="hint-open">Hide details</span><i class="fa-solid fa-plus"></i></div>
+<!-- SERVICE_CARD_HINT_END -->
+<!-- SERVICE_CARD_DETAILS_START -->
+<div class="service-expanded">
+  <h4>Practical overview</h4>
+  <p>This service focuses on <strong>Backup, Recovery & Business Continuity</strong>. It is designed to go beyond a quick fix by understanding the current situation, reviewing the technical details that affect daily work, and defining clear practical steps to improve stability and reduce repeated issues.</p>
+  <p>Short service scope: Preparing backup and recovery plans, protecting important data, and providing practical recovery solutions during failures or data loss.</p>
+
+  <h4>What is included?</h4>
+  <ul>
+    <li>Review the current environment or reported issue and understand its impact on daily operations.</li>
+    <li>Identify possible causes, weak points, risks, and opportunities for improvement.</li>
+    <li>Suggest practical actions that can be implemented according to the environment size and customer needs.</li>
+    <li>Organize the steps and priorities so implementation is clear, controlled, and not random.</li>
+  </ul>
+
+  <h4>When do you need this service?</h4>
+  <p>This service is useful when there are repeated technical issues, unclear configurations, weak documentation, operational instability, or a need for structured technical advice before implementation.</p>
+
+  <div class="service-result-box">Expected outcome: A more organized and stable technical environment, with clear recommendations that can be used later for operation, improvement, or follow-up.</div>
+</div>
+<!-- SERVICE_CARD_DETAILS_END --></div><div class="service-card" role="button" tabindex="0" aria-expanded="false"><i class="fa-solid fa-users-gear"></i><h3>Users, Permissions & Access Management</h3><p>Organizing user accounts, reviewing permissions, controlling access, and reducing risks caused by unnecessary privileges.</p>
+<!-- SERVICE_CARD_HINT_START -->
+<div class="service-click-hint"><span class="hint-closed">Click to view details</span><span class="hint-open">Hide details</span><i class="fa-solid fa-plus"></i></div>
+<!-- SERVICE_CARD_HINT_END -->
+<!-- SERVICE_CARD_DETAILS_START -->
+<div class="service-expanded">
+  <h4>Practical overview</h4>
+  <p>This service focuses on <strong>Users, Permissions & Access Management</strong>. It is designed to go beyond a quick fix by understanding the current situation, reviewing the technical details that affect daily work, and defining clear practical steps to improve stability and reduce repeated issues.</p>
+  <p>Short service scope: Organizing user accounts, reviewing permissions, controlling access, and reducing risks caused by unnecessary privileges.</p>
+
+  <h4>What is included?</h4>
+  <ul>
+    <li>Review the current environment or reported issue and understand its impact on daily operations.</li>
+    <li>Identify possible causes, weak points, risks, and opportunities for improvement.</li>
+    <li>Suggest practical actions that can be implemented according to the environment size and customer needs.</li>
+    <li>Organize the steps and priorities so implementation is clear, controlled, and not random.</li>
+  </ul>
+
+  <h4>When do you need this service?</h4>
+  <p>This service is useful when there are repeated technical issues, unclear configurations, weak documentation, operational instability, or a need for structured technical advice before implementation.</p>
+
+  <div class="service-result-box">Expected outcome: A more organized and stable technical environment, with clear recommendations that can be used later for operation, improvement, or follow-up.</div>
+</div>
+<!-- SERVICE_CARD_DETAILS_END --></div><div class="service-card" role="button" tabindex="0" aria-expanded="false"><i class="fa-solid fa-server"></i><h3>Servers, Systems & Work Environments</h3><p>Supporting systems, servers, and technical work environments while maintaining operational stability and resolving issues affecting business continuity.</p>
+<!-- SERVICE_CARD_HINT_START -->
+<div class="service-click-hint"><span class="hint-closed">Click to view details</span><span class="hint-open">Hide details</span><i class="fa-solid fa-plus"></i></div>
+<!-- SERVICE_CARD_HINT_END -->
+<!-- SERVICE_CARD_DETAILS_START -->
+<div class="service-expanded">
+  <h4>Practical overview</h4>
+  <p>This service focuses on <strong>Servers, Systems & Work Environments</strong>. It is designed to go beyond a quick fix by understanding the current situation, reviewing the technical details that affect daily work, and defining clear practical steps to improve stability and reduce repeated issues.</p>
+  <p>Short service scope: Supporting systems, servers, and technical work environments while maintaining operational stability and resolving issues affecting business continuity.</p>
+
+  <h4>What is included?</h4>
+  <ul>
+    <li>Review the current environment or reported issue and understand its impact on daily operations.</li>
+    <li>Identify possible causes, weak points, risks, and opportunities for improvement.</li>
+    <li>Suggest practical actions that can be implemented according to the environment size and customer needs.</li>
+    <li>Organize the steps and priorities so implementation is clear, controlled, and not random.</li>
+  </ul>
+
+  <h4>When do you need this service?</h4>
+  <p>This service is useful when there are repeated technical issues, unclear configurations, weak documentation, operational instability, or a need for structured technical advice before implementation.</p>
+
+  <div class="service-result-box">Expected outcome: A more organized and stable technical environment, with clear recommendations that can be used later for operation, improvement, or follow-up.</div>
+</div>
+<!-- SERVICE_CARD_DETAILS_END --></div><div class="service-card" role="button" tabindex="0" aria-expanded="false"><i class="fa-solid fa-diagram-project"></i><h3>Automation, Forms & Workflow Integration</h3><p>Improving daily operations through electronic forms, email, WhatsApp, and organized workflow processes.</p>
+<!-- SERVICE_CARD_HINT_START -->
+<div class="service-click-hint"><span class="hint-closed">Click to view details</span><span class="hint-open">Hide details</span><i class="fa-solid fa-plus"></i></div>
+<!-- SERVICE_CARD_HINT_END -->
+<!-- SERVICE_CARD_DETAILS_START -->
+<div class="service-expanded">
+  <h4>Practical overview</h4>
+  <p>This service focuses on <strong>Automation, Forms & Workflow Integration</strong>. It is designed to go beyond a quick fix by understanding the current situation, reviewing the technical details that affect daily work, and defining clear practical steps to improve stability and reduce repeated issues.</p>
+  <p>Short service scope: Improving daily operations through electronic forms, email, WhatsApp, and organized workflow processes.</p>
+
+  <h4>What is included?</h4>
+  <ul>
+    <li>Review the current environment or reported issue and understand its impact on daily operations.</li>
+    <li>Identify possible causes, weak points, risks, and opportunities for improvement.</li>
+    <li>Suggest practical actions that can be implemented according to the environment size and customer needs.</li>
+    <li>Organize the steps and priorities so implementation is clear, controlled, and not random.</li>
+  </ul>
+
+  <h4>When do you need this service?</h4>
+  <p>This service is useful when there are repeated technical issues, unclear configurations, weak documentation, operational instability, or a need for structured technical advice before implementation.</p>
+
+  <div class="service-result-box">Expected outcome: A more organized and stable technical environment, with clear recommendations that can be used later for operation, improvement, or follow-up.</div>
+</div>
+<!-- SERVICE_CARD_DETAILS_END --></div><div class="service-card" role="button" tabindex="0" aria-expanded="false"><i class="fa-solid fa-file-lines"></i><h3>Technical Documentation & Reports</h3><p>Preparing technical reports, documenting work environments, providing clear recommendations, and organizing IT assets.</p>
+<!-- SERVICE_CARD_HINT_START -->
+<div class="service-click-hint"><span class="hint-closed">Click to view details</span><span class="hint-open">Hide details</span><i class="fa-solid fa-plus"></i></div>
+<!-- SERVICE_CARD_HINT_END -->
+<!-- SERVICE_CARD_DETAILS_START -->
+<div class="service-expanded">
+  <h4>Practical overview</h4>
+  <p>This service focuses on <strong>Technical Documentation & Reports</strong>. It is designed to go beyond a quick fix by understanding the current situation, reviewing the technical details that affect daily work, and defining clear practical steps to improve stability and reduce repeated issues.</p>
+  <p>Short service scope: Preparing technical reports, documenting work environments, providing clear recommendations, and organizing IT assets.</p>
+
+  <h4>What is included?</h4>
+  <ul>
+    <li>Review the current environment or reported issue and understand its impact on daily operations.</li>
+    <li>Identify possible causes, weak points, risks, and opportunities for improvement.</li>
+    <li>Suggest practical actions that can be implemented according to the environment size and customer needs.</li>
+    <li>Organize the steps and priorities so implementation is clear, controlled, and not random.</li>
+  </ul>
+
+  <h4>When do you need this service?</h4>
+  <p>This service is useful when there are repeated technical issues, unclear configurations, weak documentation, operational instability, or a need for structured technical advice before implementation.</p>
+
+  <div class="service-result-box">Expected outcome: A more organized and stable technical environment, with clear recommendations that can be used later for operation, improvement, or follow-up.</div>
+</div>
+<!-- SERVICE_CARD_DETAILS_END --></div><div class="service-card" role="button" tabindex="0" aria-expanded="false"><i class="fa-solid fa-headset"></i><h3>Advanced Technical Support</h3><p>Analyzing and resolving issues related to devices, networks, email, printers, and daily business systems within a professional support framework.</p>
+<!-- SERVICE_CARD_HINT_START -->
+<div class="service-click-hint"><span class="hint-closed">Click to view details</span><span class="hint-open">Hide details</span><i class="fa-solid fa-plus"></i></div>
+<!-- SERVICE_CARD_HINT_END -->
+<!-- SERVICE_CARD_DETAILS_START -->
+<div class="service-expanded">
+  <h4>Practical overview</h4>
+  <p>This service focuses on <strong>Advanced Technical Support</strong>. It is designed to go beyond a quick fix by understanding the current situation, reviewing the technical details that affect daily work, and defining clear practical steps to improve stability and reduce repeated issues.</p>
+  <p>Short service scope: Analyzing and resolving issues related to devices, networks, email, printers, and daily business systems within a professional support framework.</p>
+
+  <h4>What is included?</h4>
+  <ul>
+    <li>Review the current environment or reported issue and understand its impact on daily operations.</li>
+    <li>Identify possible causes, weak points, risks, and opportunities for improvement.</li>
+    <li>Suggest practical actions that can be implemented according to the environment size and customer needs.</li>
+    <li>Organize the steps and priorities so implementation is clear, controlled, and not random.</li>
+  </ul>
+
+  <h4>When do you need this service?</h4>
+  <p>This service is useful when there are repeated technical issues, unclear configurations, weak documentation, operational instability, or a need for structured technical advice before implementation.</p>
+
+  <div class="service-result-box">Expected outcome: A more organized and stable technical environment, with clear recommendations that can be used later for operation, improvement, or follow-up.</div>
+</div>
+<!-- SERVICE_CARD_DETAILS_END --></div>
   </div>
   <div class="service-cta-wrap"><button class="service-cta-btn" type="button" data-service-open><i class="fa-solid fa-paper-plane"></i> Request a Service</button></div>
 </section>
@@ -461,6 +855,36 @@ function servicesContactSubmitted(){
 }
 </script>
 <!-- SERVICES_CONTACT_SCRIPT_END -->
+
+
+<!-- SERVICE_CARD_EXPAND_DETAILS_SCRIPT_START -->
+<script>
+(function(){
+  function toggleCard(card){
+    const opened = card.classList.toggle('is-open');
+    card.setAttribute('aria-expanded', opened ? 'true' : 'false');
+  }
+
+  document.querySelectorAll('.service-card').forEach(function(card){
+    card.setAttribute('role','button');
+    card.setAttribute('tabindex','0');
+    card.setAttribute('aria-expanded','false');
+
+    card.addEventListener('click', function(e){
+      if(e.target.closest('a, button')) return;
+      toggleCard(card);
+    });
+
+    card.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){
+        e.preventDefault();
+        toggleCard(card);
+      }
+    });
+  });
+})();
+</script>
+<!-- SERVICE_CARD_EXPAND_DETAILS_SCRIPT_END -->
 
 </body>
 </html>
