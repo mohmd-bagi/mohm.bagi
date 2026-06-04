@@ -700,150 +700,76 @@ body.dark-mode .services-side-nav a:hover{
 /* SERVICES_SIDE_WIDGETS_END */
 
 
-/* SERVICES_SIDE_CARDS_SIZE_UP_START */
-@media(min-width:1500px){
+
+
+
+
+
+
+/* SERVICES_SIDE_CARDS_FINAL_ALIGN_START */
+@media(min-width:1200px){
   .services-side-widget{
-    width:280px!important;
-  }
-
-  .services-side-left{
-    left:max(24px, calc((100vw - 980px) / 2 - 315px))!important;
-  }
-
-  .services-side-right{
-    right:max(24px, calc((100vw - 980px) / 2 - 315px))!important;
+    display:block!important;
+    width:360px!important;
+    z-index:50!important;
   }
 
   .services-side-card{
-    padding:22px!important;
-    border-radius:26px!important;
-    box-shadow:0 22px 52px rgba(15,23,42,.15)!important;
+    padding:28px!important;
+    border-radius:30px!important;
+    box-shadow:0 26px 64px rgba(15,23,42,.17)!important;
   }
 
   .services-side-card h3{
-    font-size:1.22rem!important;
-    margin:10px 0 16px!important;
+    font-size:1.38rem!important;
+    margin:10px 0 20px!important;
     text-align:center!important;
   }
 
   .services-side-card p{
-    font-size:1rem!important;
-    line-height:1.85!important;
-    margin-bottom:18px!important;
+    font-size:1.08rem!important;
+    line-height:1.95!important;
+    margin-bottom:22px!important;
     text-align:center!important;
-    font-weight:850!important;
+    font-weight:900!important;
   }
 
   .services-side-nav{
-    gap:12px!important;
+    gap:14px!important;
   }
 
   .services-side-nav a,
   .services-side-action{
-    min-height:52px!important;
-    padding:12px 15px!important;
-    border-radius:17px!important;
-    font-size:1rem!important;
+    min-height:58px!important;
+    padding:14px 18px!important;
+    border-radius:19px!important;
+    font-size:1.06rem!important;
     font-weight:950!important;
   }
 
   .services-side-mini{
-    margin-top:14px!important;
-    padding:14px 16px!important;
-    border-radius:17px!important;
-    font-size:.94rem!important;
-    line-height:1.8!important;
+    margin-top:16px!important;
+    padding:16px 18px!important;
+    border-radius:19px!important;
+    font-size:1rem!important;
+    line-height:1.9!important;
     text-align:center!important;
   }
+
+  #scroll-control-buttons{
+    right:auto!important;
+    bottom:auto!important;
+    transform:none!important;
+    z-index:99999!important;
+  }
 }
 
-@media(min-width:1700px){
+@media(max-width:1199px){
   .services-side-widget{
-    width:300px!important;
-  }
-
-  .services-side-left{
-    left:max(30px, calc((100vw - 980px) / 2 - 345px))!important;
-  }
-
-  .services-side-right{
-    right:max(30px, calc((100vw - 980px) / 2 - 345px))!important;
+    display:none!important;
   }
 }
-/* SERVICES_SIDE_CARDS_SIZE_UP_END */
-
-
-/* SERVICES_SIDE_CARDS_SIZE_UP_MORE_START */
-@media(min-width:1500px){
-  .services-side-widget{
-    width:310px!important
-  }
-
-  .services-side-left{
-    left:max(24px, calc((100vw - 980px) / 2 - 345px))!important
-  }
-
-  .services-side-right{
-    right:max(24px, calc((100vw - 980px) / 2 - 345px))!important
-  }
-
-  .services-side-card{
-    padding:24px!important
-    border-radius:28px!important
-    box-shadow:0 24px 56px rgba(15,23,42,.16)!important
-  }
-
-  .services-side-card h3{
-    font-size:1.3rem!important
-    margin:10px 0 18px!important
-    text-align:center!important
-  }
-
-  .services-side-card p{
-    font-size:1.05rem!important
-    line-height:1.9!important
-    margin-bottom:20px!important
-    text-align:center!important
-    font-weight:850!important
-  }
-
-  .services-side-nav{
-    gap:13px!important
-  }
-
-  .services-side-nav a,
-  .services-side-action{
-    min-height:56px!important
-    padding:13px 16px!important
-    border-radius:18px!important
-    font-size:1.04rem!important
-    font-weight:950!important
-  }
-
-  .services-side-mini{
-    margin-top:15px!important
-    padding:15px 17px!important
-    border-radius:18px!important
-    font-size:.98rem!important
-    line-height:1.85!important
-    text-align:center!important
-  }
-}
-
-@media(min-width:1700px){
-  .services-side-widget{
-    width:330px!important
-  }
-
-  .services-side-left{
-    left:max(30px, calc((100vw - 980px) / 2 - 375px))!important
-  }
-
-  .services-side-right{
-    right:max(30px, calc((100vw - 980px) / 2 - 375px))!important
-  }
-}
-/* SERVICES_SIDE_CARDS_SIZE_UP_MORE_END */
+/* SERVICES_SIDE_CARDS_FINAL_ALIGN_END */
 
 </style>
 
@@ -1759,6 +1685,82 @@ function servicesContactSubmitted(){
 })();
 </script>
 <!-- PROCESS_TRUST_EXPAND_DETAILS_SCRIPT_END -->
+
+
+<!-- SERVICES_SIDE_CARDS_FINAL_ALIGN_SCRIPT_START -->
+<script>
+(function(){
+  function alignServicesSideCards(){
+    const wrap = document.querySelector('.services-page-wrap');
+    const leftWidget = document.querySelector('.services-side-left');
+    const rightWidget = document.querySelector('.services-side-right');
+
+    if(!wrap || !leftWidget || !rightWidget) return;
+
+    if(!window.matchMedia('(min-width:1200px)').matches){
+      leftWidget.style.display = 'none';
+      rightWidget.style.display = 'none';
+      return;
+    }
+
+    const wrapBox = wrap.getBoundingClientRect();
+    const edge = 24;
+    const gap = 26;
+
+    const leftStart = edge;
+    const leftEnd = wrapBox.left - gap;
+    const rightStart = wrapBox.right + gap;
+    const rightEnd = window.innerWidth - edge;
+
+    const leftAvailable = leftEnd - leftStart;
+    const rightAvailable = rightEnd - rightStart;
+
+    function placeWidget(widget, start, available){
+      if(available < 280){
+        widget.style.display = 'none';
+        return null;
+      }
+
+      const width = Math.min(380, Math.max(330, available - 18));
+      const left = start + ((available - width) / 2);
+
+      widget.style.display = 'block';
+      widget.style.position = 'fixed';
+      widget.style.width = Math.round(width) + 'px';
+      widget.style.left = Math.round(left) + 'px';
+      widget.style.right = 'auto';
+      widget.style.top = '118px';
+
+      return {left:left, width:width};
+    }
+
+    placeWidget(leftWidget, leftStart, leftAvailable);
+    const rightPos = placeWidget(rightWidget, rightStart, rightAvailable);
+
+    const scrollButtons = document.getElementById('scroll-control-buttons');
+    if(scrollButtons && rightPos && rightWidget.style.display !== 'none'){
+      const cardBox = rightWidget.getBoundingClientRect();
+      const btnBox = scrollButtons.getBoundingClientRect();
+      const left = cardBox.left + (cardBox.width / 2) - (btnBox.width / 2);
+      const top = cardBox.bottom + 26;
+
+      scrollButtons.style.position = 'fixed';
+      scrollButtons.style.left = Math.round(left) + 'px';
+      scrollButtons.style.right = 'auto';
+      scrollButtons.style.top = Math.round(top) + 'px';
+      scrollButtons.style.bottom = 'auto';
+      scrollButtons.style.transform = 'none';
+    }
+  }
+
+  window.addEventListener('load', alignServicesSideCards);
+  window.addEventListener('resize', alignServicesSideCards);
+  setTimeout(alignServicesSideCards, 300);
+  setTimeout(alignServicesSideCards, 900);
+  setTimeout(alignServicesSideCards, 1600);
+})();
+</script>
+<!-- SERVICES_SIDE_CARDS_FINAL_ALIGN_SCRIPT_END -->
 
 </body>
 </html>
