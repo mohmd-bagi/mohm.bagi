@@ -422,10 +422,202 @@ html[dir="rtl"] .mobile-action-row{
 }
 /* UNIFY_DESKTOP_HOME_BUTTONS_END */
 
+
+/* HOME_DESKTOP_SIDE_ENHANCE_START */
+@media(min-width:1450px){
+  .home-side-widget{
+    position:fixed;
+    top:185px;
+    right:max(24px, calc((100vw - 980px) / 2 - 270px));
+    width:235px;
+    z-index:45;
+    display:block;
+  }
+
+  .home-side-card{
+    position:relative;
+    overflow:hidden;
+    background:rgba(255,255,255,.92);
+    border:1px solid rgba(18,97,216,.16);
+    border-radius:22px;
+    padding:16px;
+    box-shadow:0 18px 42px rgba(15,23,42,.12);
+    backdrop-filter:blur(12px);
+  }
+
+  .home-side-card::before{
+    content:"";
+    position:absolute;
+    inset:0 0 auto 0;
+    height:4px;
+    background:linear-gradient(90deg,#1261d8,#10a779,#d4a63c);
+  }
+
+  .home-side-card h3{
+    margin:8px 0 10px;
+    color:var(--blue);
+    font-size:1.02rem;
+    font-weight:950;
+  }
+
+  .home-side-card p{
+    margin:0 0 12px;
+    color:#40516b;
+    font-size:.88rem;
+    font-weight:800;
+    line-height:1.75;
+  }
+
+  .home-side-actions{
+    display:grid;
+    gap:8px;
+  }
+
+  .home-side-actions a,
+  .home-side-actions button{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    border:0;
+    border-radius:14px;
+    padding:10px 12px;
+    text-decoration:none;
+    font-family:inherit;
+    font-weight:900;
+    font-size:.88rem;
+    cursor:pointer;
+    color:#fff;
+    box-shadow:0 10px 22px rgba(15,23,42,.12);
+  }
+
+  .home-side-actions .side-services{
+    background:linear-gradient(135deg,#0b43ad,#1261d8,#d4a63c);
+  }
+
+  .home-side-actions .side-request{
+    background:linear-gradient(135deg,#8a5a00,#d4a63c,#ffe08a);
+    color:#111827;
+  }
+
+  .home-side-actions .side-whatsapp{
+    background:#25D366;
+  }
+
+  .home-side-actions a:hover,
+  .home-side-actions button:hover{
+    transform:translateY(-2px);
+    filter:brightness(1.04);
+  }
+
+  .sidebar .links a{
+    position:relative;
+    overflow:hidden;
+    min-height:52px;
+    border-radius:16px!important;
+    border:1px solid rgba(18,97,216,.16)!important;
+    background:linear-gradient(135deg,rgba(255,255,255,.96),rgba(241,247,255,.96))!important;
+    box-shadow:0 10px 24px rgba(15,23,42,.07)!important;
+    font-weight:950!important;
+    color:#12345c!important;
+    transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  }
+
+  .sidebar .links a::before{
+    content:"";
+    position:absolute;
+    inset:0 0 auto 0;
+    height:3px;
+    background:linear-gradient(90deg,#1261d8,#10a779,#d4a63c);
+    opacity:.9;
+  }
+
+  .sidebar .links a:hover{
+    transform:translateX(4px);
+    border-color:rgba(18,97,216,.32)!important;
+    box-shadow:0 16px 34px rgba(15,23,42,.12)!important;
+    background:linear-gradient(135deg,#ffffff,#edf6ff)!important;
+  }
+
+  html[dir="rtl"] .sidebar .links a:hover{
+    transform:translateX(-4px);
+  }
+
+  .sidebar .links a i{
+    width:32px;
+    height:32px;
+    border-radius:12px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    background:linear-gradient(135deg,#1261d8,#10a779);
+    color:#fff;
+    box-shadow:0 8px 18px rgba(18,97,216,.18);
+    flex:0 0 32px;
+  }
+
+  .sidebar .quick{
+    background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(241,247,255,.98))!important;
+    border:1px solid rgba(18,97,216,.16)!important;
+    box-shadow:0 12px 28px rgba(15,23,42,.08)!important;
+  }
+
+  .sidebar .quick a{
+    border:1px solid rgba(18,97,216,.12);
+    background:#fff;
+    margin-bottom:7px;
+    border-radius:12px;
+  }
+
+  .sidebar .quick a:hover{
+    background:#eaf3ff!important;
+  }
+
+  body.dark-mode .home-side-card,
+  body.dark-mode .sidebar .links a,
+  body.dark-mode .sidebar .quick{
+    background:linear-gradient(135deg,#0f172a,#111827)!important;
+    border-color:#334155!important;
+    box-shadow:0 18px 42px rgba(0,0,0,.32)!important;
+  }
+
+  body.dark-mode .home-side-card p,
+  body.dark-mode .sidebar .links a{
+    color:#e5e7eb!important;
+  }
+
+  body.dark-mode .sidebar .quick a{
+    background:#0f172a!important;
+    border-color:#334155!important;
+  }
+}
+
+@media(max-width:1449px){
+  .home-side-widget{
+    display:none!important;
+  }
+}
+/* HOME_DESKTOP_SIDE_ENHANCE_END */
+
 </style>
 </head>
 <body>
 <div class="layout">
+
+<!-- HOME_DESKTOP_SIDE_WIDGET_START -->
+<aside class="home-side-widget" aria-label="Quick service access">
+  <div class="home-side-card">
+    <h3><i class="fa-solid fa-bolt"></i> Quick Access</h3>
+    <p>Fast access to technical services, service request, and WhatsApp contact.</p>
+    <div class="home-side-actions">
+      <a class="side-services" href="services/"><i class="fa-solid fa-briefcase"></i> Technical Services</a>
+      <button class="side-request" type="button" data-service-open><i class="fa-solid fa-headset"></i> Request Service</button>
+      <a class="side-whatsapp" href="https://wa.me/966550857011" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+    </div>
+  </div>
+</aside>
+<!-- HOME_DESKTOP_SIDE_WIDGET_END -->
+
 <aside class="sidebar">
 <div class="side-card clock" id="clock">--:--:--</div>
 <div class="side-card prayer"><b><i class="fa-solid fa-mosque"></i> Prayer Times</b><br>Fajr 04:15<br>Dhuhr 12:20<br>Asr 15:35<br>Maghrib 19:00<br>Isha 20:30</div>
