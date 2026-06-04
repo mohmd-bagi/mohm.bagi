@@ -1143,6 +1143,43 @@ body.dark-mode .quick b{
 }
 /* SIDEBAR_POLISH_END */
 
+
+/* QUICK_ACCESS_SIZE_UP_START */
+@media(min-width:1450px){
+  .home-side-widget{
+    width:260px!important;
+  }
+
+  .home-side-card{
+    padding:20px!important;
+    border-radius:24px!important;
+  }
+
+  .home-side-card h3{
+    font-size:1.12rem!important;
+    margin-bottom:12px!important;
+  }
+
+  .home-side-card p{
+    font-size:.92rem!important;
+    line-height:1.75!important;
+    margin-bottom:16px!important;
+  }
+
+  .home-side-actions{
+    gap:11px!important;
+  }
+
+  .home-side-actions a,
+  .home-side-actions button{
+    min-height:46px!important;
+    padding:10px 13px!important;
+    font-size:.9rem!important;
+    border-radius:15px!important;
+  }
+}
+/* QUICK_ACCESS_SIZE_UP_END */
+
 </style>
 </head>
 <body>
@@ -1407,6 +1444,46 @@ function serviceRequestSubmitted(){
 })();
 </script>
 <!-- HOME_SIDE_WIDGET_AUTO_ALIGN_SCRIPT_END -->
+
+
+<!-- QUICK_ACCESS_SIZE_UP_SCRIPT_START -->
+<script>
+(function(){
+  function enlargeQuickAccessKeepPosition(){
+    const widget = document.querySelector('.home-side-widget');
+    const cover = document.querySelector('.hero .cover');
+    const topSwitch = document.querySelector('.top-switch');
+
+    if(!widget || !cover) return;
+
+    if(!window.matchMedia('(min-width:1450px)').matches){
+      return;
+    }
+
+    const coverBox = cover.getBoundingClientRect();
+    const topBox = topSwitch ? topSwitch.getBoundingClientRect() : {bottom:90};
+
+    const gapLeft = coverBox.right + 26;
+    const gapRight = window.innerWidth - 42;
+    const available = gapRight - gapLeft;
+
+    const width = Math.min(260, available);
+    const left = gapLeft + ((available - width) / 2);
+    const top = Math.max(150, topBox.bottom + 72);
+
+    widget.style.display = 'block';
+    widget.style.width = Math.round(width) + 'px';
+    widget.style.left = Math.round(left) + 'px';
+    widget.style.right = 'auto';
+    widget.style.top = Math.round(top) + 'px';
+  }
+
+  window.addEventListener('load', enlargeQuickAccessKeepPosition);
+  window.addEventListener('resize', enlargeQuickAccessKeepPosition);
+  setTimeout(enlargeQuickAccessKeepPosition, 350);
+})();
+</script>
+<!-- QUICK_ACCESS_SIZE_UP_SCRIPT_END -->
 
 </body>
 </html>
