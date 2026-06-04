@@ -410,6 +410,158 @@ body.dark-mode .service-result-box{
 }
 /* SERVICE_CARD_EXPAND_DETAILS_END */
 
+
+/* PROCESS_TRUST_EXPAND_DETAILS_START */
+.process-card,
+.trust-card{
+  cursor:pointer;
+  outline:none;
+}
+
+.process-card:focus,
+.trust-card:focus{
+  box-shadow:0 0 0 4px rgba(18,97,216,.16),0 12px 28px rgba(15,23,42,.08);
+}
+
+.card-click-hint{
+  margin-top:14px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  padding:9px 11px;
+  border-radius:14px;
+  background:linear-gradient(135deg,rgba(18,97,216,.10),rgba(16,167,121,.10),rgba(212,166,60,.16));
+  border:1px solid rgba(18,97,216,.16);
+  color:#12345c;
+  font-weight:900;
+  font-size:.86rem;
+}
+
+.card-click-hint i{
+  width:26px!important;
+  height:26px!important;
+  margin:0!important;
+  flex:0 0 26px!important;
+  border-radius:50%!important;
+  font-size:13px!important;
+  background:linear-gradient(135deg,#1261d8,#10a779)!important;
+  color:#fff!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  transition:transform .22s ease;
+}
+
+.card-click-hint .hint-open{
+  display:none;
+}
+
+.process-card.is-open .card-click-hint .hint-closed,
+.trust-card.is-open .card-click-hint .hint-closed{
+  display:none;
+}
+
+.process-card.is-open .card-click-hint .hint-open,
+.trust-card.is-open .card-click-hint .hint-open{
+  display:inline;
+}
+
+.process-card.is-open .card-click-hint i,
+.trust-card.is-open .card-click-hint i{
+  transform:rotate(45deg);
+}
+
+.card-expanded{
+  display:none;
+  margin-top:14px;
+  padding:15px;
+  border-radius:16px;
+  background:linear-gradient(135deg,rgba(234,241,255,.95),rgba(255,250,232,.92));
+  border:1px solid rgba(18,97,216,.14);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.75);
+  text-align:inherit;
+}
+
+.process-card.is-open .card-expanded,
+.trust-card.is-open .card-expanded{
+  display:block;
+  animation:cardDetailIn .22s ease-out;
+}
+
+.card-expanded h4{
+  margin:12px 0 6px;
+  color:#0f3f8f;
+  font-size:.98rem;
+  font-weight:950;
+}
+
+.card-expanded h4:first-child{
+  margin-top:0;
+}
+
+.card-expanded p{
+  margin:0 0 10px!important;
+  color:#344762!important;
+  line-height:1.9!important;
+  font-weight:750!important;
+}
+
+.card-expanded ul{
+  margin:8px 0 10px!important;
+  padding-inline-start:22px!important;
+}
+
+.card-expanded li{
+  margin-bottom:7px;
+  color:#344762;
+  font-weight:750;
+  line-height:1.7;
+}
+
+.card-result-box{
+  margin-top:12px;
+  padding:12px 14px;
+  border-radius:14px;
+  background:rgba(255,255,255,.70);
+  border:1px solid rgba(212,166,60,.25);
+  color:#12345c;
+  font-weight:900;
+  line-height:1.8;
+}
+
+body.dark-mode .card-click-hint{
+  background:linear-gradient(135deg,rgba(30,41,59,.95),rgba(15,23,42,.95));
+  border-color:#334155;
+  color:#e5e7eb;
+}
+
+body.dark-mode .card-expanded{
+  background:linear-gradient(135deg,#0f172a,#111827);
+  border-color:#334155;
+}
+
+body.dark-mode .card-expanded h4{
+  color:#93c5fd;
+}
+
+body.dark-mode .card-expanded p,
+body.dark-mode .card-expanded li{
+  color:#cbd5e1!important;
+}
+
+body.dark-mode .card-result-box{
+  background:#0f172a;
+  border-color:#475569;
+  color:#e5e7eb;
+}
+
+@keyframes cardDetailIn{
+  from{opacity:0;transform:translateY(-6px)}
+  to{opacity:1;transform:translateY(0)}
+}
+/* PROCESS_TRUST_EXPAND_DETAILS_END */
+
 </style>
 </head>
 <body>
@@ -698,7 +850,102 @@ body.dark-mode .service-result-box{
   <h2>طريقة العمل</h2>
   <p class="process-intro">مسار واضح ومنظم لمراجعة الطلبات، تحديد نطاق العمل، وتقديم الدعم أو الاستشارة بشكل مهني.</p>
   <div class="process-grid">
-    <div class="process-card"><div class="process-num">1</div><h3>استلام الطلب</h3><p>مراجعة طلب الخدمة والتفاصيل التقنية الأساسية المرسلة.</p></div><div class="process-card"><div class="process-num">2</div><h3>مراجعة الاحتياج</h3><p>فهم المشكلة، بيئة العمل، النتيجة المطلوبة، ومستوى الدعم المناسب.</p></div><div class="process-card"><div class="process-num">3</div><h3>تحديد نطاق العمل</h3><p>تحديد نطاق الخدمة، طريقة التنفيذ، الجهد المتوقع، والخطوات التالية.</p></div><div class="process-card"><div class="process-num">4</div><h3>التنفيذ أو الاستشارة</h3><p>تقديم الخدمة المتفق عليها، سواء كانت دعمًا فنيًا، تنفيذًا، تحليلًا، أو استشارة.</p></div><div class="process-card"><div class="process-num">5</div><h3>التوصيات أو التقرير</h3><p>تسليم ملخص فني، توصيات عملية، أو ملاحظات تقنية حسب نطاق العمل المتفق عليه.</p></div>
+    <div class="process-card" role="button" tabindex="0" aria-expanded="false"><div class="process-num">1</div><h3>استلام الطلب</h3><p>مراجعة طلب الخدمة والتفاصيل التقنية الأساسية المرسلة.</p><!-- CARD_HINT_START --><div class="card-click-hint"><span class="hint-closed">اضغط لعرض التفاصيل</span><span class="hint-open">إخفاء التفاصيل</span><i class="fa-solid fa-plus"></i></div><!-- CARD_HINT_END --><!-- CARD_DETAILS_START -->
+<div class="card-expanded">
+  <h4>شرح تفصيلي</h4>
+  <p>هذه المرحلة من طريقة العمل تركز على <strong>استلام الطلب</strong>. الهدف هو تجنب العشوائية وتحويل الطلب إلى خطوات واضحة ومنظمة يسهل متابعتها.</p>
+  <p>الوصف المختصر: مراجعة طلب الخدمة والتفاصيل التقنية الأساسية المرسلة.</p>
+
+  <h4>كيف يتم التطبيق؟</h4>
+  <ul>
+    <li>فهم الوضع الحالي والتفاصيل المرسلة من العميل.</li>
+    <li>تحديد الأولويات وتوضيح ما يجب عمله أولاً.</li>
+    <li>تنظيم التنفيذ بطريقة تقلل المخاطر وتحافظ على استقرار العمل.</li>
+    <li>توثيق ما يلزم حسب نطاق الخدمة وتقديم توصيات قابلة للتطبيق.</li>
+  </ul>
+
+  <h4>القيمة المضافة</h4>
+  <p>تساعد هذه الخطوة على جعل الخدمة أكثر وضوحاً ومهنية، وتقلل من سوء الفهم أو التنفيذ غير المنظم.</p>
+
+  <div class="card-result-box">النتيجة: تنفيذ أوضح، تواصل أفضل، وتوصيات عملية يمكن الرجوع إليها لاحقاً.</div>
+</div>
+<!-- CARD_DETAILS_END --></div><div class="process-card" role="button" tabindex="0" aria-expanded="false"><div class="process-num">2</div><h3>مراجعة الاحتياج</h3><p>فهم المشكلة، بيئة العمل، النتيجة المطلوبة، ومستوى الدعم المناسب.</p><!-- CARD_HINT_START --><div class="card-click-hint"><span class="hint-closed">اضغط لعرض التفاصيل</span><span class="hint-open">إخفاء التفاصيل</span><i class="fa-solid fa-plus"></i></div><!-- CARD_HINT_END --><!-- CARD_DETAILS_START -->
+<div class="card-expanded">
+  <h4>شرح تفصيلي</h4>
+  <p>هذه المرحلة من طريقة العمل تركز على <strong>مراجعة الاحتياج</strong>. الهدف هو تجنب العشوائية وتحويل الطلب إلى خطوات واضحة ومنظمة يسهل متابعتها.</p>
+  <p>الوصف المختصر: فهم المشكلة، بيئة العمل، النتيجة المطلوبة، ومستوى الدعم المناسب.</p>
+
+  <h4>كيف يتم التطبيق؟</h4>
+  <ul>
+    <li>فهم الوضع الحالي والتفاصيل المرسلة من العميل.</li>
+    <li>تحديد الأولويات وتوضيح ما يجب عمله أولاً.</li>
+    <li>تنظيم التنفيذ بطريقة تقلل المخاطر وتحافظ على استقرار العمل.</li>
+    <li>توثيق ما يلزم حسب نطاق الخدمة وتقديم توصيات قابلة للتطبيق.</li>
+  </ul>
+
+  <h4>القيمة المضافة</h4>
+  <p>تساعد هذه الخطوة على جعل الخدمة أكثر وضوحاً ومهنية، وتقلل من سوء الفهم أو التنفيذ غير المنظم.</p>
+
+  <div class="card-result-box">النتيجة: تنفيذ أوضح، تواصل أفضل، وتوصيات عملية يمكن الرجوع إليها لاحقاً.</div>
+</div>
+<!-- CARD_DETAILS_END --></div><div class="process-card" role="button" tabindex="0" aria-expanded="false"><div class="process-num">3</div><h3>تحديد نطاق العمل</h3><p>تحديد نطاق الخدمة، طريقة التنفيذ، الجهد المتوقع، والخطوات التالية.</p><!-- CARD_HINT_START --><div class="card-click-hint"><span class="hint-closed">اضغط لعرض التفاصيل</span><span class="hint-open">إخفاء التفاصيل</span><i class="fa-solid fa-plus"></i></div><!-- CARD_HINT_END --><!-- CARD_DETAILS_START -->
+<div class="card-expanded">
+  <h4>شرح تفصيلي</h4>
+  <p>هذه المرحلة من طريقة العمل تركز على <strong>تحديد نطاق العمل</strong>. الهدف هو تجنب العشوائية وتحويل الطلب إلى خطوات واضحة ومنظمة يسهل متابعتها.</p>
+  <p>الوصف المختصر: تحديد نطاق الخدمة، طريقة التنفيذ، الجهد المتوقع، والخطوات التالية.</p>
+
+  <h4>كيف يتم التطبيق؟</h4>
+  <ul>
+    <li>فهم الوضع الحالي والتفاصيل المرسلة من العميل.</li>
+    <li>تحديد الأولويات وتوضيح ما يجب عمله أولاً.</li>
+    <li>تنظيم التنفيذ بطريقة تقلل المخاطر وتحافظ على استقرار العمل.</li>
+    <li>توثيق ما يلزم حسب نطاق الخدمة وتقديم توصيات قابلة للتطبيق.</li>
+  </ul>
+
+  <h4>القيمة المضافة</h4>
+  <p>تساعد هذه الخطوة على جعل الخدمة أكثر وضوحاً ومهنية، وتقلل من سوء الفهم أو التنفيذ غير المنظم.</p>
+
+  <div class="card-result-box">النتيجة: تنفيذ أوضح، تواصل أفضل، وتوصيات عملية يمكن الرجوع إليها لاحقاً.</div>
+</div>
+<!-- CARD_DETAILS_END --></div><div class="process-card" role="button" tabindex="0" aria-expanded="false"><div class="process-num">4</div><h3>التنفيذ أو الاستشارة</h3><p>تقديم الخدمة المتفق عليها، سواء كانت دعمًا فنيًا، تنفيذًا، تحليلًا، أو استشارة.</p><!-- CARD_HINT_START --><div class="card-click-hint"><span class="hint-closed">اضغط لعرض التفاصيل</span><span class="hint-open">إخفاء التفاصيل</span><i class="fa-solid fa-plus"></i></div><!-- CARD_HINT_END --><!-- CARD_DETAILS_START -->
+<div class="card-expanded">
+  <h4>شرح تفصيلي</h4>
+  <p>هذه المرحلة من طريقة العمل تركز على <strong>التنفيذ أو الاستشارة</strong>. الهدف هو تجنب العشوائية وتحويل الطلب إلى خطوات واضحة ومنظمة يسهل متابعتها.</p>
+  <p>الوصف المختصر: تقديم الخدمة المتفق عليها، سواء كانت دعمًا فنيًا، تنفيذًا، تحليلًا، أو استشارة.</p>
+
+  <h4>كيف يتم التطبيق؟</h4>
+  <ul>
+    <li>فهم الوضع الحالي والتفاصيل المرسلة من العميل.</li>
+    <li>تحديد الأولويات وتوضيح ما يجب عمله أولاً.</li>
+    <li>تنظيم التنفيذ بطريقة تقلل المخاطر وتحافظ على استقرار العمل.</li>
+    <li>توثيق ما يلزم حسب نطاق الخدمة وتقديم توصيات قابلة للتطبيق.</li>
+  </ul>
+
+  <h4>القيمة المضافة</h4>
+  <p>تساعد هذه الخطوة على جعل الخدمة أكثر وضوحاً ومهنية، وتقلل من سوء الفهم أو التنفيذ غير المنظم.</p>
+
+  <div class="card-result-box">النتيجة: تنفيذ أوضح، تواصل أفضل، وتوصيات عملية يمكن الرجوع إليها لاحقاً.</div>
+</div>
+<!-- CARD_DETAILS_END --></div><div class="process-card" role="button" tabindex="0" aria-expanded="false"><div class="process-num">5</div><h3>التوصيات أو التقرير</h3><p>تسليم ملخص فني، توصيات عملية، أو ملاحظات تقنية حسب نطاق العمل المتفق عليه.</p><!-- CARD_HINT_START --><div class="card-click-hint"><span class="hint-closed">اضغط لعرض التفاصيل</span><span class="hint-open">إخفاء التفاصيل</span><i class="fa-solid fa-plus"></i></div><!-- CARD_HINT_END --><!-- CARD_DETAILS_START -->
+<div class="card-expanded">
+  <h4>شرح تفصيلي</h4>
+  <p>هذه المرحلة من طريقة العمل تركز على <strong>التوصيات أو التقرير</strong>. الهدف هو تجنب العشوائية وتحويل الطلب إلى خطوات واضحة ومنظمة يسهل متابعتها.</p>
+  <p>الوصف المختصر: تسليم ملخص فني، توصيات عملية، أو ملاحظات تقنية حسب نطاق العمل المتفق عليه.</p>
+
+  <h4>كيف يتم التطبيق؟</h4>
+  <ul>
+    <li>فهم الوضع الحالي والتفاصيل المرسلة من العميل.</li>
+    <li>تحديد الأولويات وتوضيح ما يجب عمله أولاً.</li>
+    <li>تنظيم التنفيذ بطريقة تقلل المخاطر وتحافظ على استقرار العمل.</li>
+    <li>توثيق ما يلزم حسب نطاق الخدمة وتقديم توصيات قابلة للتطبيق.</li>
+  </ul>
+
+  <h4>القيمة المضافة</h4>
+  <p>تساعد هذه الخطوة على جعل الخدمة أكثر وضوحاً ومهنية، وتقلل من سوء الفهم أو التنفيذ غير المنظم.</p>
+
+  <div class="card-result-box">النتيجة: تنفيذ أوضح، تواصل أفضل، وتوصيات عملية يمكن الرجوع إليها لاحقاً.</div>
+</div>
+<!-- CARD_DETAILS_END --></div>
   </div>
 </section>
 <!-- WORK_PROCESS_SECTION_END -->
@@ -708,7 +955,83 @@ body.dark-mode .service-result-box{
   <h2>الثقة والخصوصية</h2>
   <p class="trust-intro">الخدمات التقنية قد ترتبط بالأنظمة، الأجهزة، الصلاحيات، وبيانات العمل؛ لذلك تعد السرية ووضوح نطاق الخدمة جزءًا أساسيًا من العمل.</p>
   <div class="trust-grid">
-    <div class="trust-card"><i class="fa-solid fa-user-shield"></i><h3>التعامل بسرية</h3><p>أي معلومات، ملفات، لقطات شاشة، بيانات وصول، أو ملاحظات تقنية يتم التعامل معها بسرية وضمن نطاق الخدمة فقط.</p></div><div class="trust-card"><i class="fa-solid fa-lock"></i><h3>نطاق خدمة واضح</h3><p>يتم تنفيذ العمل ضمن نطاق متفق عليه، مع توضيح ما سيتم مراجعته، تغييره، إعداده، أو توثيقه.</p></div><div class="trust-card"><i class="fa-solid fa-key"></i><h3>وعي بالوصول والصلاحيات</h3><p>الوصول إلى الأنظمة، الحسابات، الأجهزة، أو الخدمات يكون بحدود ما تحتاجه المهمة فقط.</p></div><div class="trust-card"><i class="fa-solid fa-file-shield"></i><h3>توثيق مسؤول</h3><p>الملاحظات والتوصيات والتقارير الفنية تُعد بطريقة منظمة ودون كشف تفاصيل حساسة بشكل غير ضروري.</p></div>
+    <div class="trust-card" role="button" tabindex="0" aria-expanded="false"><i class="fa-solid fa-user-shield"></i><h3>التعامل بسرية</h3><p>أي معلومات، ملفات، لقطات شاشة، بيانات وصول، أو ملاحظات تقنية يتم التعامل معها بسرية وضمن نطاق الخدمة فقط.</p><!-- CARD_HINT_START --><div class="card-click-hint"><span class="hint-closed">اضغط لعرض التفاصيل</span><span class="hint-open">إخفاء التفاصيل</span><i class="fa-solid fa-plus"></i></div><!-- CARD_HINT_END --><!-- CARD_DETAILS_START -->
+<div class="card-expanded">
+  <h4>شرح تفصيلي</h4>
+  <p>هذا الجانب من الثقة والخصوصية يركز على <strong>التعامل بسرية</strong>. الهدف هو تجنب العشوائية وتحويل الطلب إلى خطوات واضحة ومنظمة يسهل متابعتها.</p>
+  <p>الوصف المختصر: أي معلومات، ملفات، لقطات شاشة، بيانات وصول، أو ملاحظات تقنية يتم التعامل معها بسرية وضمن نطاق الخدمة فقط.</p>
+
+  <h4>كيف يتم التطبيق؟</h4>
+  <ul>
+    <li>فهم الوضع الحالي والتفاصيل المرسلة من العميل.</li>
+    <li>تحديد الأولويات وتوضيح ما يجب عمله أولاً.</li>
+    <li>تنظيم التنفيذ بطريقة تقلل المخاطر وتحافظ على استقرار العمل.</li>
+    <li>توثيق ما يلزم حسب نطاق الخدمة وتقديم توصيات قابلة للتطبيق.</li>
+  </ul>
+
+  <h4>القيمة المضافة</h4>
+  <p>تساعد هذه الخطوة على جعل الخدمة أكثر وضوحاً ومهنية، وتقلل من سوء الفهم أو التنفيذ غير المنظم.</p>
+
+  <div class="card-result-box">النتيجة: تنفيذ أوضح، تواصل أفضل، وتوصيات عملية يمكن الرجوع إليها لاحقاً.</div>
+</div>
+<!-- CARD_DETAILS_END --></div><div class="trust-card" role="button" tabindex="0" aria-expanded="false"><i class="fa-solid fa-lock"></i><h3>نطاق خدمة واضح</h3><p>يتم تنفيذ العمل ضمن نطاق متفق عليه، مع توضيح ما سيتم مراجعته، تغييره، إعداده، أو توثيقه.</p><!-- CARD_HINT_START --><div class="card-click-hint"><span class="hint-closed">اضغط لعرض التفاصيل</span><span class="hint-open">إخفاء التفاصيل</span><i class="fa-solid fa-plus"></i></div><!-- CARD_HINT_END --><!-- CARD_DETAILS_START -->
+<div class="card-expanded">
+  <h4>شرح تفصيلي</h4>
+  <p>هذا الجانب من الثقة والخصوصية يركز على <strong>نطاق خدمة واضح</strong>. الهدف هو تجنب العشوائية وتحويل الطلب إلى خطوات واضحة ومنظمة يسهل متابعتها.</p>
+  <p>الوصف المختصر: يتم تنفيذ العمل ضمن نطاق متفق عليه، مع توضيح ما سيتم مراجعته، تغييره، إعداده، أو توثيقه.</p>
+
+  <h4>كيف يتم التطبيق؟</h4>
+  <ul>
+    <li>فهم الوضع الحالي والتفاصيل المرسلة من العميل.</li>
+    <li>تحديد الأولويات وتوضيح ما يجب عمله أولاً.</li>
+    <li>تنظيم التنفيذ بطريقة تقلل المخاطر وتحافظ على استقرار العمل.</li>
+    <li>توثيق ما يلزم حسب نطاق الخدمة وتقديم توصيات قابلة للتطبيق.</li>
+  </ul>
+
+  <h4>القيمة المضافة</h4>
+  <p>تساعد هذه الخطوة على جعل الخدمة أكثر وضوحاً ومهنية، وتقلل من سوء الفهم أو التنفيذ غير المنظم.</p>
+
+  <div class="card-result-box">النتيجة: تنفيذ أوضح، تواصل أفضل، وتوصيات عملية يمكن الرجوع إليها لاحقاً.</div>
+</div>
+<!-- CARD_DETAILS_END --></div><div class="trust-card" role="button" tabindex="0" aria-expanded="false"><i class="fa-solid fa-key"></i><h3>وعي بالوصول والصلاحيات</h3><p>الوصول إلى الأنظمة، الحسابات، الأجهزة، أو الخدمات يكون بحدود ما تحتاجه المهمة فقط.</p><!-- CARD_HINT_START --><div class="card-click-hint"><span class="hint-closed">اضغط لعرض التفاصيل</span><span class="hint-open">إخفاء التفاصيل</span><i class="fa-solid fa-plus"></i></div><!-- CARD_HINT_END --><!-- CARD_DETAILS_START -->
+<div class="card-expanded">
+  <h4>شرح تفصيلي</h4>
+  <p>هذا الجانب من الثقة والخصوصية يركز على <strong>وعي بالوصول والصلاحيات</strong>. الهدف هو تجنب العشوائية وتحويل الطلب إلى خطوات واضحة ومنظمة يسهل متابعتها.</p>
+  <p>الوصف المختصر: الوصول إلى الأنظمة، الحسابات، الأجهزة، أو الخدمات يكون بحدود ما تحتاجه المهمة فقط.</p>
+
+  <h4>كيف يتم التطبيق؟</h4>
+  <ul>
+    <li>فهم الوضع الحالي والتفاصيل المرسلة من العميل.</li>
+    <li>تحديد الأولويات وتوضيح ما يجب عمله أولاً.</li>
+    <li>تنظيم التنفيذ بطريقة تقلل المخاطر وتحافظ على استقرار العمل.</li>
+    <li>توثيق ما يلزم حسب نطاق الخدمة وتقديم توصيات قابلة للتطبيق.</li>
+  </ul>
+
+  <h4>القيمة المضافة</h4>
+  <p>تساعد هذه الخطوة على جعل الخدمة أكثر وضوحاً ومهنية، وتقلل من سوء الفهم أو التنفيذ غير المنظم.</p>
+
+  <div class="card-result-box">النتيجة: تنفيذ أوضح، تواصل أفضل، وتوصيات عملية يمكن الرجوع إليها لاحقاً.</div>
+</div>
+<!-- CARD_DETAILS_END --></div><div class="trust-card" role="button" tabindex="0" aria-expanded="false"><i class="fa-solid fa-file-shield"></i><h3>توثيق مسؤول</h3><p>الملاحظات والتوصيات والتقارير الفنية تُعد بطريقة منظمة ودون كشف تفاصيل حساسة بشكل غير ضروري.</p><!-- CARD_HINT_START --><div class="card-click-hint"><span class="hint-closed">اضغط لعرض التفاصيل</span><span class="hint-open">إخفاء التفاصيل</span><i class="fa-solid fa-plus"></i></div><!-- CARD_HINT_END --><!-- CARD_DETAILS_START -->
+<div class="card-expanded">
+  <h4>شرح تفصيلي</h4>
+  <p>هذا الجانب من الثقة والخصوصية يركز على <strong>توثيق مسؤول</strong>. الهدف هو تجنب العشوائية وتحويل الطلب إلى خطوات واضحة ومنظمة يسهل متابعتها.</p>
+  <p>الوصف المختصر: الملاحظات والتوصيات والتقارير الفنية تُعد بطريقة منظمة ودون كشف تفاصيل حساسة بشكل غير ضروري.</p>
+
+  <h4>كيف يتم التطبيق؟</h4>
+  <ul>
+    <li>فهم الوضع الحالي والتفاصيل المرسلة من العميل.</li>
+    <li>تحديد الأولويات وتوضيح ما يجب عمله أولاً.</li>
+    <li>تنظيم التنفيذ بطريقة تقلل المخاطر وتحافظ على استقرار العمل.</li>
+    <li>توثيق ما يلزم حسب نطاق الخدمة وتقديم توصيات قابلة للتطبيق.</li>
+  </ul>
+
+  <h4>القيمة المضافة</h4>
+  <p>تساعد هذه الخطوة على جعل الخدمة أكثر وضوحاً ومهنية، وتقلل من سوء الفهم أو التنفيذ غير المنظم.</p>
+
+  <div class="card-result-box">النتيجة: تنفيذ أوضح، تواصل أفضل، وتوصيات عملية يمكن الرجوع إليها لاحقاً.</div>
+</div>
+<!-- CARD_DETAILS_END --></div>
   </div>
 </section>
 <!-- TRUST_PRIVACY_SECTION_END -->
@@ -720,7 +1043,102 @@ body.dark-mode .service-result-box{
   <h2>طريقة العمل</h2>
   <p class="process-intro">مسار واضح ومنظم لمراجعة الطلبات، تحديد نطاق العمل، وتقديم الدعم أو الاستشارة بشكل مهني.</p>
   <div class="process-grid">
-    <div class="process-card"><div class="process-num">1</div><h3>استلام الطلب</h3><p>مراجعة طلب الخدمة والتفاصيل التقنية الأساسية المرسلة.</p></div><div class="process-card"><div class="process-num">2</div><h3>مراجعة الاحتياج</h3><p>فهم المشكلة، بيئة العمل، النتيجة المطلوبة، ومستوى الدعم المناسب.</p></div><div class="process-card"><div class="process-num">3</div><h3>تحديد نطاق العمل</h3><p>تحديد نطاق الخدمة، طريقة التنفيذ، الجهد المتوقع، والخطوات التالية.</p></div><div class="process-card"><div class="process-num">4</div><h3>التنفيذ أو الاستشارة</h3><p>تقديم الخدمة المتفق عليها، سواء كانت دعمًا فنيًا، تنفيذًا، تحليلًا، أو استشارة.</p></div><div class="process-card"><div class="process-num">5</div><h3>التوصيات أو التقرير</h3><p>تسليم ملخص فني، توصيات عملية، أو ملاحظات تقنية حسب نطاق العمل المتفق عليه.</p></div>
+    <div class="process-card" role="button" tabindex="0" aria-expanded="false"><div class="process-num">1</div><h3>استلام الطلب</h3><p>مراجعة طلب الخدمة والتفاصيل التقنية الأساسية المرسلة.</p><!-- CARD_HINT_START --><div class="card-click-hint"><span class="hint-closed">اضغط لعرض التفاصيل</span><span class="hint-open">إخفاء التفاصيل</span><i class="fa-solid fa-plus"></i></div><!-- CARD_HINT_END --><!-- CARD_DETAILS_START -->
+<div class="card-expanded">
+  <h4>شرح تفصيلي</h4>
+  <p>هذه المرحلة من طريقة العمل تركز على <strong>استلام الطلب</strong>. الهدف هو تجنب العشوائية وتحويل الطلب إلى خطوات واضحة ومنظمة يسهل متابعتها.</p>
+  <p>الوصف المختصر: مراجعة طلب الخدمة والتفاصيل التقنية الأساسية المرسلة.</p>
+
+  <h4>كيف يتم التطبيق؟</h4>
+  <ul>
+    <li>فهم الوضع الحالي والتفاصيل المرسلة من العميل.</li>
+    <li>تحديد الأولويات وتوضيح ما يجب عمله أولاً.</li>
+    <li>تنظيم التنفيذ بطريقة تقلل المخاطر وتحافظ على استقرار العمل.</li>
+    <li>توثيق ما يلزم حسب نطاق الخدمة وتقديم توصيات قابلة للتطبيق.</li>
+  </ul>
+
+  <h4>القيمة المضافة</h4>
+  <p>تساعد هذه الخطوة على جعل الخدمة أكثر وضوحاً ومهنية، وتقلل من سوء الفهم أو التنفيذ غير المنظم.</p>
+
+  <div class="card-result-box">النتيجة: تنفيذ أوضح، تواصل أفضل، وتوصيات عملية يمكن الرجوع إليها لاحقاً.</div>
+</div>
+<!-- CARD_DETAILS_END --></div><div class="process-card" role="button" tabindex="0" aria-expanded="false"><div class="process-num">2</div><h3>مراجعة الاحتياج</h3><p>فهم المشكلة، بيئة العمل، النتيجة المطلوبة، ومستوى الدعم المناسب.</p><!-- CARD_HINT_START --><div class="card-click-hint"><span class="hint-closed">اضغط لعرض التفاصيل</span><span class="hint-open">إخفاء التفاصيل</span><i class="fa-solid fa-plus"></i></div><!-- CARD_HINT_END --><!-- CARD_DETAILS_START -->
+<div class="card-expanded">
+  <h4>شرح تفصيلي</h4>
+  <p>هذه المرحلة من طريقة العمل تركز على <strong>مراجعة الاحتياج</strong>. الهدف هو تجنب العشوائية وتحويل الطلب إلى خطوات واضحة ومنظمة يسهل متابعتها.</p>
+  <p>الوصف المختصر: فهم المشكلة، بيئة العمل، النتيجة المطلوبة، ومستوى الدعم المناسب.</p>
+
+  <h4>كيف يتم التطبيق؟</h4>
+  <ul>
+    <li>فهم الوضع الحالي والتفاصيل المرسلة من العميل.</li>
+    <li>تحديد الأولويات وتوضيح ما يجب عمله أولاً.</li>
+    <li>تنظيم التنفيذ بطريقة تقلل المخاطر وتحافظ على استقرار العمل.</li>
+    <li>توثيق ما يلزم حسب نطاق الخدمة وتقديم توصيات قابلة للتطبيق.</li>
+  </ul>
+
+  <h4>القيمة المضافة</h4>
+  <p>تساعد هذه الخطوة على جعل الخدمة أكثر وضوحاً ومهنية، وتقلل من سوء الفهم أو التنفيذ غير المنظم.</p>
+
+  <div class="card-result-box">النتيجة: تنفيذ أوضح، تواصل أفضل، وتوصيات عملية يمكن الرجوع إليها لاحقاً.</div>
+</div>
+<!-- CARD_DETAILS_END --></div><div class="process-card" role="button" tabindex="0" aria-expanded="false"><div class="process-num">3</div><h3>تحديد نطاق العمل</h3><p>تحديد نطاق الخدمة، طريقة التنفيذ، الجهد المتوقع، والخطوات التالية.</p><!-- CARD_HINT_START --><div class="card-click-hint"><span class="hint-closed">اضغط لعرض التفاصيل</span><span class="hint-open">إخفاء التفاصيل</span><i class="fa-solid fa-plus"></i></div><!-- CARD_HINT_END --><!-- CARD_DETAILS_START -->
+<div class="card-expanded">
+  <h4>شرح تفصيلي</h4>
+  <p>هذه المرحلة من طريقة العمل تركز على <strong>تحديد نطاق العمل</strong>. الهدف هو تجنب العشوائية وتحويل الطلب إلى خطوات واضحة ومنظمة يسهل متابعتها.</p>
+  <p>الوصف المختصر: تحديد نطاق الخدمة، طريقة التنفيذ، الجهد المتوقع، والخطوات التالية.</p>
+
+  <h4>كيف يتم التطبيق؟</h4>
+  <ul>
+    <li>فهم الوضع الحالي والتفاصيل المرسلة من العميل.</li>
+    <li>تحديد الأولويات وتوضيح ما يجب عمله أولاً.</li>
+    <li>تنظيم التنفيذ بطريقة تقلل المخاطر وتحافظ على استقرار العمل.</li>
+    <li>توثيق ما يلزم حسب نطاق الخدمة وتقديم توصيات قابلة للتطبيق.</li>
+  </ul>
+
+  <h4>القيمة المضافة</h4>
+  <p>تساعد هذه الخطوة على جعل الخدمة أكثر وضوحاً ومهنية، وتقلل من سوء الفهم أو التنفيذ غير المنظم.</p>
+
+  <div class="card-result-box">النتيجة: تنفيذ أوضح، تواصل أفضل، وتوصيات عملية يمكن الرجوع إليها لاحقاً.</div>
+</div>
+<!-- CARD_DETAILS_END --></div><div class="process-card" role="button" tabindex="0" aria-expanded="false"><div class="process-num">4</div><h3>التنفيذ أو الاستشارة</h3><p>تقديم الخدمة المتفق عليها، سواء كانت دعمًا فنيًا، تنفيذًا، تحليلًا، أو استشارة.</p><!-- CARD_HINT_START --><div class="card-click-hint"><span class="hint-closed">اضغط لعرض التفاصيل</span><span class="hint-open">إخفاء التفاصيل</span><i class="fa-solid fa-plus"></i></div><!-- CARD_HINT_END --><!-- CARD_DETAILS_START -->
+<div class="card-expanded">
+  <h4>شرح تفصيلي</h4>
+  <p>هذه المرحلة من طريقة العمل تركز على <strong>التنفيذ أو الاستشارة</strong>. الهدف هو تجنب العشوائية وتحويل الطلب إلى خطوات واضحة ومنظمة يسهل متابعتها.</p>
+  <p>الوصف المختصر: تقديم الخدمة المتفق عليها، سواء كانت دعمًا فنيًا، تنفيذًا، تحليلًا، أو استشارة.</p>
+
+  <h4>كيف يتم التطبيق؟</h4>
+  <ul>
+    <li>فهم الوضع الحالي والتفاصيل المرسلة من العميل.</li>
+    <li>تحديد الأولويات وتوضيح ما يجب عمله أولاً.</li>
+    <li>تنظيم التنفيذ بطريقة تقلل المخاطر وتحافظ على استقرار العمل.</li>
+    <li>توثيق ما يلزم حسب نطاق الخدمة وتقديم توصيات قابلة للتطبيق.</li>
+  </ul>
+
+  <h4>القيمة المضافة</h4>
+  <p>تساعد هذه الخطوة على جعل الخدمة أكثر وضوحاً ومهنية، وتقلل من سوء الفهم أو التنفيذ غير المنظم.</p>
+
+  <div class="card-result-box">النتيجة: تنفيذ أوضح، تواصل أفضل، وتوصيات عملية يمكن الرجوع إليها لاحقاً.</div>
+</div>
+<!-- CARD_DETAILS_END --></div><div class="process-card" role="button" tabindex="0" aria-expanded="false"><div class="process-num">5</div><h3>التوصيات أو التقرير</h3><p>تسليم ملخص فني، توصيات عملية، أو ملاحظات تقنية حسب نطاق العمل المتفق عليه.</p><!-- CARD_HINT_START --><div class="card-click-hint"><span class="hint-closed">اضغط لعرض التفاصيل</span><span class="hint-open">إخفاء التفاصيل</span><i class="fa-solid fa-plus"></i></div><!-- CARD_HINT_END --><!-- CARD_DETAILS_START -->
+<div class="card-expanded">
+  <h4>شرح تفصيلي</h4>
+  <p>هذه المرحلة من طريقة العمل تركز على <strong>التوصيات أو التقرير</strong>. الهدف هو تجنب العشوائية وتحويل الطلب إلى خطوات واضحة ومنظمة يسهل متابعتها.</p>
+  <p>الوصف المختصر: تسليم ملخص فني، توصيات عملية، أو ملاحظات تقنية حسب نطاق العمل المتفق عليه.</p>
+
+  <h4>كيف يتم التطبيق؟</h4>
+  <ul>
+    <li>فهم الوضع الحالي والتفاصيل المرسلة من العميل.</li>
+    <li>تحديد الأولويات وتوضيح ما يجب عمله أولاً.</li>
+    <li>تنظيم التنفيذ بطريقة تقلل المخاطر وتحافظ على استقرار العمل.</li>
+    <li>توثيق ما يلزم حسب نطاق الخدمة وتقديم توصيات قابلة للتطبيق.</li>
+  </ul>
+
+  <h4>القيمة المضافة</h4>
+  <p>تساعد هذه الخطوة على جعل الخدمة أكثر وضوحاً ومهنية، وتقلل من سوء الفهم أو التنفيذ غير المنظم.</p>
+
+  <div class="card-result-box">النتيجة: تنفيذ أوضح، تواصل أفضل، وتوصيات عملية يمكن الرجوع إليها لاحقاً.</div>
+</div>
+<!-- CARD_DETAILS_END --></div>
   </div>
 </section>
 <!-- WORK_PROCESS_SECTION_END -->
@@ -731,7 +1149,83 @@ body.dark-mode .service-result-box{
   <h2>الثقة والخصوصية</h2>
   <p class="trust-intro">الخدمات التقنية قد ترتبط بالأنظمة، الأجهزة، الصلاحيات، وبيانات العمل؛ لذلك تعد السرية ووضوح نطاق الخدمة جزءًا أساسيًا من العمل.</p>
   <div class="trust-grid">
-    <div class="trust-card"><i class="fa-solid fa-user-shield"></i><h3>التعامل بسرية</h3><p>أي معلومات، ملفات، لقطات شاشة، بيانات وصول، أو ملاحظات تقنية يتم التعامل معها بسرية وضمن نطاق الخدمة فقط.</p></div><div class="trust-card"><i class="fa-solid fa-lock"></i><h3>نطاق خدمة واضح</h3><p>يتم تنفيذ العمل ضمن نطاق متفق عليه، مع توضيح ما سيتم مراجعته، تغييره، إعداده، أو توثيقه.</p></div><div class="trust-card"><i class="fa-solid fa-key"></i><h3>وعي بالوصول والصلاحيات</h3><p>الوصول إلى الأنظمة، الحسابات، الأجهزة، أو الخدمات يكون بحدود ما تحتاجه المهمة فقط.</p></div><div class="trust-card"><i class="fa-solid fa-file-shield"></i><h3>توثيق مسؤول</h3><p>الملاحظات والتوصيات والتقارير الفنية تُعد بطريقة منظمة ودون كشف تفاصيل حساسة بشكل غير ضروري.</p></div>
+    <div class="trust-card" role="button" tabindex="0" aria-expanded="false"><i class="fa-solid fa-user-shield"></i><h3>التعامل بسرية</h3><p>أي معلومات، ملفات، لقطات شاشة، بيانات وصول، أو ملاحظات تقنية يتم التعامل معها بسرية وضمن نطاق الخدمة فقط.</p><!-- CARD_HINT_START --><div class="card-click-hint"><span class="hint-closed">اضغط لعرض التفاصيل</span><span class="hint-open">إخفاء التفاصيل</span><i class="fa-solid fa-plus"></i></div><!-- CARD_HINT_END --><!-- CARD_DETAILS_START -->
+<div class="card-expanded">
+  <h4>شرح تفصيلي</h4>
+  <p>هذا الجانب من الثقة والخصوصية يركز على <strong>التعامل بسرية</strong>. الهدف هو تجنب العشوائية وتحويل الطلب إلى خطوات واضحة ومنظمة يسهل متابعتها.</p>
+  <p>الوصف المختصر: أي معلومات، ملفات، لقطات شاشة، بيانات وصول، أو ملاحظات تقنية يتم التعامل معها بسرية وضمن نطاق الخدمة فقط.</p>
+
+  <h4>كيف يتم التطبيق؟</h4>
+  <ul>
+    <li>فهم الوضع الحالي والتفاصيل المرسلة من العميل.</li>
+    <li>تحديد الأولويات وتوضيح ما يجب عمله أولاً.</li>
+    <li>تنظيم التنفيذ بطريقة تقلل المخاطر وتحافظ على استقرار العمل.</li>
+    <li>توثيق ما يلزم حسب نطاق الخدمة وتقديم توصيات قابلة للتطبيق.</li>
+  </ul>
+
+  <h4>القيمة المضافة</h4>
+  <p>تساعد هذه الخطوة على جعل الخدمة أكثر وضوحاً ومهنية، وتقلل من سوء الفهم أو التنفيذ غير المنظم.</p>
+
+  <div class="card-result-box">النتيجة: تنفيذ أوضح، تواصل أفضل، وتوصيات عملية يمكن الرجوع إليها لاحقاً.</div>
+</div>
+<!-- CARD_DETAILS_END --></div><div class="trust-card" role="button" tabindex="0" aria-expanded="false"><i class="fa-solid fa-lock"></i><h3>نطاق خدمة واضح</h3><p>يتم تنفيذ العمل ضمن نطاق متفق عليه، مع توضيح ما سيتم مراجعته، تغييره، إعداده، أو توثيقه.</p><!-- CARD_HINT_START --><div class="card-click-hint"><span class="hint-closed">اضغط لعرض التفاصيل</span><span class="hint-open">إخفاء التفاصيل</span><i class="fa-solid fa-plus"></i></div><!-- CARD_HINT_END --><!-- CARD_DETAILS_START -->
+<div class="card-expanded">
+  <h4>شرح تفصيلي</h4>
+  <p>هذا الجانب من الثقة والخصوصية يركز على <strong>نطاق خدمة واضح</strong>. الهدف هو تجنب العشوائية وتحويل الطلب إلى خطوات واضحة ومنظمة يسهل متابعتها.</p>
+  <p>الوصف المختصر: يتم تنفيذ العمل ضمن نطاق متفق عليه، مع توضيح ما سيتم مراجعته، تغييره، إعداده، أو توثيقه.</p>
+
+  <h4>كيف يتم التطبيق؟</h4>
+  <ul>
+    <li>فهم الوضع الحالي والتفاصيل المرسلة من العميل.</li>
+    <li>تحديد الأولويات وتوضيح ما يجب عمله أولاً.</li>
+    <li>تنظيم التنفيذ بطريقة تقلل المخاطر وتحافظ على استقرار العمل.</li>
+    <li>توثيق ما يلزم حسب نطاق الخدمة وتقديم توصيات قابلة للتطبيق.</li>
+  </ul>
+
+  <h4>القيمة المضافة</h4>
+  <p>تساعد هذه الخطوة على جعل الخدمة أكثر وضوحاً ومهنية، وتقلل من سوء الفهم أو التنفيذ غير المنظم.</p>
+
+  <div class="card-result-box">النتيجة: تنفيذ أوضح، تواصل أفضل، وتوصيات عملية يمكن الرجوع إليها لاحقاً.</div>
+</div>
+<!-- CARD_DETAILS_END --></div><div class="trust-card" role="button" tabindex="0" aria-expanded="false"><i class="fa-solid fa-key"></i><h3>وعي بالوصول والصلاحيات</h3><p>الوصول إلى الأنظمة، الحسابات، الأجهزة، أو الخدمات يكون بحدود ما تحتاجه المهمة فقط.</p><!-- CARD_HINT_START --><div class="card-click-hint"><span class="hint-closed">اضغط لعرض التفاصيل</span><span class="hint-open">إخفاء التفاصيل</span><i class="fa-solid fa-plus"></i></div><!-- CARD_HINT_END --><!-- CARD_DETAILS_START -->
+<div class="card-expanded">
+  <h4>شرح تفصيلي</h4>
+  <p>هذا الجانب من الثقة والخصوصية يركز على <strong>وعي بالوصول والصلاحيات</strong>. الهدف هو تجنب العشوائية وتحويل الطلب إلى خطوات واضحة ومنظمة يسهل متابعتها.</p>
+  <p>الوصف المختصر: الوصول إلى الأنظمة، الحسابات، الأجهزة، أو الخدمات يكون بحدود ما تحتاجه المهمة فقط.</p>
+
+  <h4>كيف يتم التطبيق؟</h4>
+  <ul>
+    <li>فهم الوضع الحالي والتفاصيل المرسلة من العميل.</li>
+    <li>تحديد الأولويات وتوضيح ما يجب عمله أولاً.</li>
+    <li>تنظيم التنفيذ بطريقة تقلل المخاطر وتحافظ على استقرار العمل.</li>
+    <li>توثيق ما يلزم حسب نطاق الخدمة وتقديم توصيات قابلة للتطبيق.</li>
+  </ul>
+
+  <h4>القيمة المضافة</h4>
+  <p>تساعد هذه الخطوة على جعل الخدمة أكثر وضوحاً ومهنية، وتقلل من سوء الفهم أو التنفيذ غير المنظم.</p>
+
+  <div class="card-result-box">النتيجة: تنفيذ أوضح، تواصل أفضل، وتوصيات عملية يمكن الرجوع إليها لاحقاً.</div>
+</div>
+<!-- CARD_DETAILS_END --></div><div class="trust-card" role="button" tabindex="0" aria-expanded="false"><i class="fa-solid fa-file-shield"></i><h3>توثيق مسؤول</h3><p>الملاحظات والتوصيات والتقارير الفنية تُعد بطريقة منظمة ودون كشف تفاصيل حساسة بشكل غير ضروري.</p><!-- CARD_HINT_START --><div class="card-click-hint"><span class="hint-closed">اضغط لعرض التفاصيل</span><span class="hint-open">إخفاء التفاصيل</span><i class="fa-solid fa-plus"></i></div><!-- CARD_HINT_END --><!-- CARD_DETAILS_START -->
+<div class="card-expanded">
+  <h4>شرح تفصيلي</h4>
+  <p>هذا الجانب من الثقة والخصوصية يركز على <strong>توثيق مسؤول</strong>. الهدف هو تجنب العشوائية وتحويل الطلب إلى خطوات واضحة ومنظمة يسهل متابعتها.</p>
+  <p>الوصف المختصر: الملاحظات والتوصيات والتقارير الفنية تُعد بطريقة منظمة ودون كشف تفاصيل حساسة بشكل غير ضروري.</p>
+
+  <h4>كيف يتم التطبيق؟</h4>
+  <ul>
+    <li>فهم الوضع الحالي والتفاصيل المرسلة من العميل.</li>
+    <li>تحديد الأولويات وتوضيح ما يجب عمله أولاً.</li>
+    <li>تنظيم التنفيذ بطريقة تقلل المخاطر وتحافظ على استقرار العمل.</li>
+    <li>توثيق ما يلزم حسب نطاق الخدمة وتقديم توصيات قابلة للتطبيق.</li>
+  </ul>
+
+  <h4>القيمة المضافة</h4>
+  <p>تساعد هذه الخطوة على جعل الخدمة أكثر وضوحاً ومهنية، وتقلل من سوء الفهم أو التنفيذ غير المنظم.</p>
+
+  <div class="card-result-box">النتيجة: تنفيذ أوضح، تواصل أفضل، وتوصيات عملية يمكن الرجوع إليها لاحقاً.</div>
+</div>
+<!-- CARD_DETAILS_END --></div>
   </div>
 </section>
 <!-- TRUST_PRIVACY_SECTION_END -->
@@ -885,6 +1379,36 @@ function servicesContactSubmitted(){
 })();
 </script>
 <!-- SERVICE_CARD_EXPAND_DETAILS_SCRIPT_END -->
+
+
+<!-- PROCESS_TRUST_EXPAND_DETAILS_SCRIPT_START -->
+<script>
+(function(){
+  function toggleCard(card){
+    const opened = card.classList.toggle('is-open');
+    card.setAttribute('aria-expanded', opened ? 'true' : 'false');
+  }
+
+  document.querySelectorAll('.process-card, .trust-card').forEach(function(card){
+    card.setAttribute('role','button');
+    card.setAttribute('tabindex','0');
+    card.setAttribute('aria-expanded','false');
+
+    card.addEventListener('click', function(e){
+      if(e.target.closest('a, button')) return;
+      toggleCard(card);
+    });
+
+    card.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){
+        e.preventDefault();
+        toggleCard(card);
+      }
+    });
+  });
+})();
+</script>
+<!-- PROCESS_TRUST_EXPAND_DETAILS_SCRIPT_END -->
 
 </body>
 </html>

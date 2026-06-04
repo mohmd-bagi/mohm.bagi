@@ -410,6 +410,158 @@ body.dark-mode .service-result-box{
 }
 /* SERVICE_CARD_EXPAND_DETAILS_END */
 
+
+/* PROCESS_TRUST_EXPAND_DETAILS_START */
+.process-card,
+.trust-card{
+  cursor:pointer;
+  outline:none;
+}
+
+.process-card:focus,
+.trust-card:focus{
+  box-shadow:0 0 0 4px rgba(18,97,216,.16),0 12px 28px rgba(15,23,42,.08);
+}
+
+.card-click-hint{
+  margin-top:14px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  padding:9px 11px;
+  border-radius:14px;
+  background:linear-gradient(135deg,rgba(18,97,216,.10),rgba(16,167,121,.10),rgba(212,166,60,.16));
+  border:1px solid rgba(18,97,216,.16);
+  color:#12345c;
+  font-weight:900;
+  font-size:.86rem;
+}
+
+.card-click-hint i{
+  width:26px!important;
+  height:26px!important;
+  margin:0!important;
+  flex:0 0 26px!important;
+  border-radius:50%!important;
+  font-size:13px!important;
+  background:linear-gradient(135deg,#1261d8,#10a779)!important;
+  color:#fff!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  transition:transform .22s ease;
+}
+
+.card-click-hint .hint-open{
+  display:none;
+}
+
+.process-card.is-open .card-click-hint .hint-closed,
+.trust-card.is-open .card-click-hint .hint-closed{
+  display:none;
+}
+
+.process-card.is-open .card-click-hint .hint-open,
+.trust-card.is-open .card-click-hint .hint-open{
+  display:inline;
+}
+
+.process-card.is-open .card-click-hint i,
+.trust-card.is-open .card-click-hint i{
+  transform:rotate(45deg);
+}
+
+.card-expanded{
+  display:none;
+  margin-top:14px;
+  padding:15px;
+  border-radius:16px;
+  background:linear-gradient(135deg,rgba(234,241,255,.95),rgba(255,250,232,.92));
+  border:1px solid rgba(18,97,216,.14);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.75);
+  text-align:inherit;
+}
+
+.process-card.is-open .card-expanded,
+.trust-card.is-open .card-expanded{
+  display:block;
+  animation:cardDetailIn .22s ease-out;
+}
+
+.card-expanded h4{
+  margin:12px 0 6px;
+  color:#0f3f8f;
+  font-size:.98rem;
+  font-weight:950;
+}
+
+.card-expanded h4:first-child{
+  margin-top:0;
+}
+
+.card-expanded p{
+  margin:0 0 10px!important;
+  color:#344762!important;
+  line-height:1.9!important;
+  font-weight:750!important;
+}
+
+.card-expanded ul{
+  margin:8px 0 10px!important;
+  padding-inline-start:22px!important;
+}
+
+.card-expanded li{
+  margin-bottom:7px;
+  color:#344762;
+  font-weight:750;
+  line-height:1.7;
+}
+
+.card-result-box{
+  margin-top:12px;
+  padding:12px 14px;
+  border-radius:14px;
+  background:rgba(255,255,255,.70);
+  border:1px solid rgba(212,166,60,.25);
+  color:#12345c;
+  font-weight:900;
+  line-height:1.8;
+}
+
+body.dark-mode .card-click-hint{
+  background:linear-gradient(135deg,rgba(30,41,59,.95),rgba(15,23,42,.95));
+  border-color:#334155;
+  color:#e5e7eb;
+}
+
+body.dark-mode .card-expanded{
+  background:linear-gradient(135deg,#0f172a,#111827);
+  border-color:#334155;
+}
+
+body.dark-mode .card-expanded h4{
+  color:#93c5fd;
+}
+
+body.dark-mode .card-expanded p,
+body.dark-mode .card-expanded li{
+  color:#cbd5e1!important;
+}
+
+body.dark-mode .card-result-box{
+  background:#0f172a;
+  border-color:#475569;
+  color:#e5e7eb;
+}
+
+@keyframes cardDetailIn{
+  from{opacity:0;transform:translateY(-6px)}
+  to{opacity:1;transform:translateY(0)}
+}
+/* PROCESS_TRUST_EXPAND_DETAILS_END */
+
 </style>
 </head>
 <body>
@@ -698,7 +850,102 @@ body.dark-mode .service-result-box{
   <h2>Work Process</h2>
   <p class="process-intro">A clear and practical workflow for reviewing requests, defining the scope, and delivering technical support or consultation in an organized way.</p>
   <div class="process-grid">
-    <div class="process-card"><div class="process-num">1</div><h3>Request Received</h3><p>Reviewing the submitted service request and the basic technical details.</p></div><div class="process-card"><div class="process-num">2</div><h3>Needs Review</h3><p>Understanding the issue, environment, expected outcome, and required support level.</p></div><div class="process-card"><div class="process-num">3</div><h3>Scope Definition</h3><p>Defining the service scope, delivery method, expected effort, and next steps.</p></div><div class="process-card"><div class="process-num">4</div><h3>Execution or Consultation</h3><p>Providing the agreed technical service, troubleshooting, implementation, or consultation.</p></div><div class="process-card"><div class="process-num">5</div><h3>Recommendations or Report</h3><p>Delivering a summary, recommendations, or technical notes depending on the agreed scope.</p></div>
+    <div class="process-card" role="button" tabindex="0" aria-expanded="false"><div class="process-num">1</div><h3>Request Received</h3><p>Reviewing the submitted service request and the basic technical details.</p><!-- CARD_HINT_START --><div class="card-click-hint"><span class="hint-closed">Click to view details</span><span class="hint-open">Hide details</span><i class="fa-solid fa-plus"></i></div><!-- CARD_HINT_END --><!-- CARD_DETAILS_START -->
+<div class="card-expanded">
+  <h4>Detailed explanation</h4>
+  <p>This step explains how the service request moves from an initial message into a clear, organized, and manageable scope of work. It focuses on <strong>Request Received</strong> and helps make the work more structured, safer, and easier to follow.</p>
+  <p>Short summary: Reviewing the submitted service request and the basic technical details.</p>
+
+  <h4>How it is handled</h4>
+  <ul>
+    <li>Understand the current situation and the information provided by the client.</li>
+    <li>Identify priorities, risks, and what needs to be handled first.</li>
+    <li>Organize the work in a way that reduces confusion and protects stability.</li>
+    <li>Provide clear notes, recommendations, or documentation based on the agreed scope.</li>
+  </ul>
+
+  <h4>Why it matters</h4>
+  <p>This makes the service more professional, reduces misunderstanding, and keeps the work aligned with the actual need.</p>
+
+  <div class="card-result-box">Expected result: clearer execution, better communication, and practical recommendations that can be reviewed later.</div>
+</div>
+<!-- CARD_DETAILS_END --></div><div class="process-card" role="button" tabindex="0" aria-expanded="false"><div class="process-num">2</div><h3>Needs Review</h3><p>Understanding the issue, environment, expected outcome, and required support level.</p><!-- CARD_HINT_START --><div class="card-click-hint"><span class="hint-closed">Click to view details</span><span class="hint-open">Hide details</span><i class="fa-solid fa-plus"></i></div><!-- CARD_HINT_END --><!-- CARD_DETAILS_START -->
+<div class="card-expanded">
+  <h4>Detailed explanation</h4>
+  <p>This step explains how the service request moves from an initial message into a clear, organized, and manageable scope of work. It focuses on <strong>Needs Review</strong> and helps make the work more structured, safer, and easier to follow.</p>
+  <p>Short summary: Understanding the issue, environment, expected outcome, and required support level.</p>
+
+  <h4>How it is handled</h4>
+  <ul>
+    <li>Understand the current situation and the information provided by the client.</li>
+    <li>Identify priorities, risks, and what needs to be handled first.</li>
+    <li>Organize the work in a way that reduces confusion and protects stability.</li>
+    <li>Provide clear notes, recommendations, or documentation based on the agreed scope.</li>
+  </ul>
+
+  <h4>Why it matters</h4>
+  <p>This makes the service more professional, reduces misunderstanding, and keeps the work aligned with the actual need.</p>
+
+  <div class="card-result-box">Expected result: clearer execution, better communication, and practical recommendations that can be reviewed later.</div>
+</div>
+<!-- CARD_DETAILS_END --></div><div class="process-card" role="button" tabindex="0" aria-expanded="false"><div class="process-num">3</div><h3>Scope Definition</h3><p>Defining the service scope, delivery method, expected effort, and next steps.</p><!-- CARD_HINT_START --><div class="card-click-hint"><span class="hint-closed">Click to view details</span><span class="hint-open">Hide details</span><i class="fa-solid fa-plus"></i></div><!-- CARD_HINT_END --><!-- CARD_DETAILS_START -->
+<div class="card-expanded">
+  <h4>Detailed explanation</h4>
+  <p>This step explains how the service request moves from an initial message into a clear, organized, and manageable scope of work. It focuses on <strong>Scope Definition</strong> and helps make the work more structured, safer, and easier to follow.</p>
+  <p>Short summary: Defining the service scope, delivery method, expected effort, and next steps.</p>
+
+  <h4>How it is handled</h4>
+  <ul>
+    <li>Understand the current situation and the information provided by the client.</li>
+    <li>Identify priorities, risks, and what needs to be handled first.</li>
+    <li>Organize the work in a way that reduces confusion and protects stability.</li>
+    <li>Provide clear notes, recommendations, or documentation based on the agreed scope.</li>
+  </ul>
+
+  <h4>Why it matters</h4>
+  <p>This makes the service more professional, reduces misunderstanding, and keeps the work aligned with the actual need.</p>
+
+  <div class="card-result-box">Expected result: clearer execution, better communication, and practical recommendations that can be reviewed later.</div>
+</div>
+<!-- CARD_DETAILS_END --></div><div class="process-card" role="button" tabindex="0" aria-expanded="false"><div class="process-num">4</div><h3>Execution or Consultation</h3><p>Providing the agreed technical service, troubleshooting, implementation, or consultation.</p><!-- CARD_HINT_START --><div class="card-click-hint"><span class="hint-closed">Click to view details</span><span class="hint-open">Hide details</span><i class="fa-solid fa-plus"></i></div><!-- CARD_HINT_END --><!-- CARD_DETAILS_START -->
+<div class="card-expanded">
+  <h4>Detailed explanation</h4>
+  <p>This step explains how the service request moves from an initial message into a clear, organized, and manageable scope of work. It focuses on <strong>Execution or Consultation</strong> and helps make the work more structured, safer, and easier to follow.</p>
+  <p>Short summary: Providing the agreed technical service, troubleshooting, implementation, or consultation.</p>
+
+  <h4>How it is handled</h4>
+  <ul>
+    <li>Understand the current situation and the information provided by the client.</li>
+    <li>Identify priorities, risks, and what needs to be handled first.</li>
+    <li>Organize the work in a way that reduces confusion and protects stability.</li>
+    <li>Provide clear notes, recommendations, or documentation based on the agreed scope.</li>
+  </ul>
+
+  <h4>Why it matters</h4>
+  <p>This makes the service more professional, reduces misunderstanding, and keeps the work aligned with the actual need.</p>
+
+  <div class="card-result-box">Expected result: clearer execution, better communication, and practical recommendations that can be reviewed later.</div>
+</div>
+<!-- CARD_DETAILS_END --></div><div class="process-card" role="button" tabindex="0" aria-expanded="false"><div class="process-num">5</div><h3>Recommendations or Report</h3><p>Delivering a summary, recommendations, or technical notes depending on the agreed scope.</p><!-- CARD_HINT_START --><div class="card-click-hint"><span class="hint-closed">Click to view details</span><span class="hint-open">Hide details</span><i class="fa-solid fa-plus"></i></div><!-- CARD_HINT_END --><!-- CARD_DETAILS_START -->
+<div class="card-expanded">
+  <h4>Detailed explanation</h4>
+  <p>This step explains how the service request moves from an initial message into a clear, organized, and manageable scope of work. It focuses on <strong>Recommendations or Report</strong> and helps make the work more structured, safer, and easier to follow.</p>
+  <p>Short summary: Delivering a summary, recommendations, or technical notes depending on the agreed scope.</p>
+
+  <h4>How it is handled</h4>
+  <ul>
+    <li>Understand the current situation and the information provided by the client.</li>
+    <li>Identify priorities, risks, and what needs to be handled first.</li>
+    <li>Organize the work in a way that reduces confusion and protects stability.</li>
+    <li>Provide clear notes, recommendations, or documentation based on the agreed scope.</li>
+  </ul>
+
+  <h4>Why it matters</h4>
+  <p>This makes the service more professional, reduces misunderstanding, and keeps the work aligned with the actual need.</p>
+
+  <div class="card-result-box">Expected result: clearer execution, better communication, and practical recommendations that can be reviewed later.</div>
+</div>
+<!-- CARD_DETAILS_END --></div>
   </div>
 </section>
 <!-- WORK_PROCESS_SECTION_END -->
@@ -708,7 +955,83 @@ body.dark-mode .service-result-box{
   <h2>Trust &amp; Privacy</h2>
   <p class="trust-intro">Technical services may involve systems, devices, access permissions, and business data. For that reason, privacy and clear service scope are treated as part of the work itself.</p>
   <div class="trust-grid">
-    <div class="trust-card"><i class="fa-solid fa-user-shield"></i><h3>Confidential Handling</h3><p>Any shared information, files, screenshots, access details, or technical notes are handled confidentially and only for the requested service.</p></div><div class="trust-card"><i class="fa-solid fa-lock"></i><h3>Defined Service Scope</h3><p>Work is performed within the agreed scope, with clear boundaries for what will be reviewed, changed, configured, or documented.</p></div><div class="trust-card"><i class="fa-solid fa-key"></i><h3>Access Awareness</h3><p>Access to systems, accounts, devices, or services should be limited to what is necessary for the task and removed when no longer needed.</p></div><div class="trust-card"><i class="fa-solid fa-file-shield"></i><h3>Responsible Documentation</h3><p>Technical notes, recommendations, and reports are prepared in a way that avoids exposing sensitive details unnecessarily.</p></div>
+    <div class="trust-card" role="button" tabindex="0" aria-expanded="false"><i class="fa-solid fa-user-shield"></i><h3>Confidential Handling</h3><p>Any shared information, files, screenshots, access details, or technical notes are handled confidentially and only for the requested service.</p><!-- CARD_HINT_START --><div class="card-click-hint"><span class="hint-closed">Click to view details</span><span class="hint-open">Hide details</span><i class="fa-solid fa-plus"></i></div><!-- CARD_HINT_END --><!-- CARD_DETAILS_START -->
+<div class="card-expanded">
+  <h4>Detailed explanation</h4>
+  <p>This point explains how trust, confidentiality, access, and responsible handling of information are considered during the service. It focuses on <strong>Confidential Handling</strong> and helps make the work more structured, safer, and easier to follow.</p>
+  <p>Short summary: Any shared information, files, screenshots, access details, or technical notes are handled confidentially and only for the requested service.</p>
+
+  <h4>How it is handled</h4>
+  <ul>
+    <li>Understand the current situation and the information provided by the client.</li>
+    <li>Identify priorities, risks, and what needs to be handled first.</li>
+    <li>Organize the work in a way that reduces confusion and protects stability.</li>
+    <li>Provide clear notes, recommendations, or documentation based on the agreed scope.</li>
+  </ul>
+
+  <h4>Why it matters</h4>
+  <p>This makes the service more professional, reduces misunderstanding, and keeps the work aligned with the actual need.</p>
+
+  <div class="card-result-box">Expected result: clearer execution, better communication, and practical recommendations that can be reviewed later.</div>
+</div>
+<!-- CARD_DETAILS_END --></div><div class="trust-card" role="button" tabindex="0" aria-expanded="false"><i class="fa-solid fa-lock"></i><h3>Defined Service Scope</h3><p>Work is performed within the agreed scope, with clear boundaries for what will be reviewed, changed, configured, or documented.</p><!-- CARD_HINT_START --><div class="card-click-hint"><span class="hint-closed">Click to view details</span><span class="hint-open">Hide details</span><i class="fa-solid fa-plus"></i></div><!-- CARD_HINT_END --><!-- CARD_DETAILS_START -->
+<div class="card-expanded">
+  <h4>Detailed explanation</h4>
+  <p>This point explains how trust, confidentiality, access, and responsible handling of information are considered during the service. It focuses on <strong>Defined Service Scope</strong> and helps make the work more structured, safer, and easier to follow.</p>
+  <p>Short summary: Work is performed within the agreed scope, with clear boundaries for what will be reviewed, changed, configured, or documented.</p>
+
+  <h4>How it is handled</h4>
+  <ul>
+    <li>Understand the current situation and the information provided by the client.</li>
+    <li>Identify priorities, risks, and what needs to be handled first.</li>
+    <li>Organize the work in a way that reduces confusion and protects stability.</li>
+    <li>Provide clear notes, recommendations, or documentation based on the agreed scope.</li>
+  </ul>
+
+  <h4>Why it matters</h4>
+  <p>This makes the service more professional, reduces misunderstanding, and keeps the work aligned with the actual need.</p>
+
+  <div class="card-result-box">Expected result: clearer execution, better communication, and practical recommendations that can be reviewed later.</div>
+</div>
+<!-- CARD_DETAILS_END --></div><div class="trust-card" role="button" tabindex="0" aria-expanded="false"><i class="fa-solid fa-key"></i><h3>Access Awareness</h3><p>Access to systems, accounts, devices, or services should be limited to what is necessary for the task and removed when no longer needed.</p><!-- CARD_HINT_START --><div class="card-click-hint"><span class="hint-closed">Click to view details</span><span class="hint-open">Hide details</span><i class="fa-solid fa-plus"></i></div><!-- CARD_HINT_END --><!-- CARD_DETAILS_START -->
+<div class="card-expanded">
+  <h4>Detailed explanation</h4>
+  <p>This point explains how trust, confidentiality, access, and responsible handling of information are considered during the service. It focuses on <strong>Access Awareness</strong> and helps make the work more structured, safer, and easier to follow.</p>
+  <p>Short summary: Access to systems, accounts, devices, or services should be limited to what is necessary for the task and removed when no longer needed.</p>
+
+  <h4>How it is handled</h4>
+  <ul>
+    <li>Understand the current situation and the information provided by the client.</li>
+    <li>Identify priorities, risks, and what needs to be handled first.</li>
+    <li>Organize the work in a way that reduces confusion and protects stability.</li>
+    <li>Provide clear notes, recommendations, or documentation based on the agreed scope.</li>
+  </ul>
+
+  <h4>Why it matters</h4>
+  <p>This makes the service more professional, reduces misunderstanding, and keeps the work aligned with the actual need.</p>
+
+  <div class="card-result-box">Expected result: clearer execution, better communication, and practical recommendations that can be reviewed later.</div>
+</div>
+<!-- CARD_DETAILS_END --></div><div class="trust-card" role="button" tabindex="0" aria-expanded="false"><i class="fa-solid fa-file-shield"></i><h3>Responsible Documentation</h3><p>Technical notes, recommendations, and reports are prepared in a way that avoids exposing sensitive details unnecessarily.</p><!-- CARD_HINT_START --><div class="card-click-hint"><span class="hint-closed">Click to view details</span><span class="hint-open">Hide details</span><i class="fa-solid fa-plus"></i></div><!-- CARD_HINT_END --><!-- CARD_DETAILS_START -->
+<div class="card-expanded">
+  <h4>Detailed explanation</h4>
+  <p>This point explains how trust, confidentiality, access, and responsible handling of information are considered during the service. It focuses on <strong>Responsible Documentation</strong> and helps make the work more structured, safer, and easier to follow.</p>
+  <p>Short summary: Technical notes, recommendations, and reports are prepared in a way that avoids exposing sensitive details unnecessarily.</p>
+
+  <h4>How it is handled</h4>
+  <ul>
+    <li>Understand the current situation and the information provided by the client.</li>
+    <li>Identify priorities, risks, and what needs to be handled first.</li>
+    <li>Organize the work in a way that reduces confusion and protects stability.</li>
+    <li>Provide clear notes, recommendations, or documentation based on the agreed scope.</li>
+  </ul>
+
+  <h4>Why it matters</h4>
+  <p>This makes the service more professional, reduces misunderstanding, and keeps the work aligned with the actual need.</p>
+
+  <div class="card-result-box">Expected result: clearer execution, better communication, and practical recommendations that can be reviewed later.</div>
+</div>
+<!-- CARD_DETAILS_END --></div>
   </div>
 </section>
 <!-- TRUST_PRIVACY_SECTION_END -->
@@ -720,7 +1043,102 @@ body.dark-mode .service-result-box{
   <h2>Work Process</h2>
   <p class="process-intro">A clear and practical workflow for reviewing requests, defining the scope, and delivering technical support or consultation in an organized way.</p>
   <div class="process-grid">
-    <div class="process-card"><div class="process-num">1</div><h3>Request Received</h3><p>Reviewing the submitted service request and the basic technical details.</p></div><div class="process-card"><div class="process-num">2</div><h3>Needs Review</h3><p>Understanding the issue, environment, expected outcome, and required support level.</p></div><div class="process-card"><div class="process-num">3</div><h3>Scope Definition</h3><p>Defining the service scope, delivery method, expected effort, and next steps.</p></div><div class="process-card"><div class="process-num">4</div><h3>Execution or Consultation</h3><p>Providing the agreed technical service, troubleshooting, implementation, or consultation.</p></div><div class="process-card"><div class="process-num">5</div><h3>Recommendations or Report</h3><p>Delivering a summary, recommendations, or technical notes depending on the agreed scope.</p></div>
+    <div class="process-card" role="button" tabindex="0" aria-expanded="false"><div class="process-num">1</div><h3>Request Received</h3><p>Reviewing the submitted service request and the basic technical details.</p><!-- CARD_HINT_START --><div class="card-click-hint"><span class="hint-closed">Click to view details</span><span class="hint-open">Hide details</span><i class="fa-solid fa-plus"></i></div><!-- CARD_HINT_END --><!-- CARD_DETAILS_START -->
+<div class="card-expanded">
+  <h4>Detailed explanation</h4>
+  <p>This step explains how the service request moves from an initial message into a clear, organized, and manageable scope of work. It focuses on <strong>Request Received</strong> and helps make the work more structured, safer, and easier to follow.</p>
+  <p>Short summary: Reviewing the submitted service request and the basic technical details.</p>
+
+  <h4>How it is handled</h4>
+  <ul>
+    <li>Understand the current situation and the information provided by the client.</li>
+    <li>Identify priorities, risks, and what needs to be handled first.</li>
+    <li>Organize the work in a way that reduces confusion and protects stability.</li>
+    <li>Provide clear notes, recommendations, or documentation based on the agreed scope.</li>
+  </ul>
+
+  <h4>Why it matters</h4>
+  <p>This makes the service more professional, reduces misunderstanding, and keeps the work aligned with the actual need.</p>
+
+  <div class="card-result-box">Expected result: clearer execution, better communication, and practical recommendations that can be reviewed later.</div>
+</div>
+<!-- CARD_DETAILS_END --></div><div class="process-card" role="button" tabindex="0" aria-expanded="false"><div class="process-num">2</div><h3>Needs Review</h3><p>Understanding the issue, environment, expected outcome, and required support level.</p><!-- CARD_HINT_START --><div class="card-click-hint"><span class="hint-closed">Click to view details</span><span class="hint-open">Hide details</span><i class="fa-solid fa-plus"></i></div><!-- CARD_HINT_END --><!-- CARD_DETAILS_START -->
+<div class="card-expanded">
+  <h4>Detailed explanation</h4>
+  <p>This step explains how the service request moves from an initial message into a clear, organized, and manageable scope of work. It focuses on <strong>Needs Review</strong> and helps make the work more structured, safer, and easier to follow.</p>
+  <p>Short summary: Understanding the issue, environment, expected outcome, and required support level.</p>
+
+  <h4>How it is handled</h4>
+  <ul>
+    <li>Understand the current situation and the information provided by the client.</li>
+    <li>Identify priorities, risks, and what needs to be handled first.</li>
+    <li>Organize the work in a way that reduces confusion and protects stability.</li>
+    <li>Provide clear notes, recommendations, or documentation based on the agreed scope.</li>
+  </ul>
+
+  <h4>Why it matters</h4>
+  <p>This makes the service more professional, reduces misunderstanding, and keeps the work aligned with the actual need.</p>
+
+  <div class="card-result-box">Expected result: clearer execution, better communication, and practical recommendations that can be reviewed later.</div>
+</div>
+<!-- CARD_DETAILS_END --></div><div class="process-card" role="button" tabindex="0" aria-expanded="false"><div class="process-num">3</div><h3>Scope Definition</h3><p>Defining the service scope, delivery method, expected effort, and next steps.</p><!-- CARD_HINT_START --><div class="card-click-hint"><span class="hint-closed">Click to view details</span><span class="hint-open">Hide details</span><i class="fa-solid fa-plus"></i></div><!-- CARD_HINT_END --><!-- CARD_DETAILS_START -->
+<div class="card-expanded">
+  <h4>Detailed explanation</h4>
+  <p>This step explains how the service request moves from an initial message into a clear, organized, and manageable scope of work. It focuses on <strong>Scope Definition</strong> and helps make the work more structured, safer, and easier to follow.</p>
+  <p>Short summary: Defining the service scope, delivery method, expected effort, and next steps.</p>
+
+  <h4>How it is handled</h4>
+  <ul>
+    <li>Understand the current situation and the information provided by the client.</li>
+    <li>Identify priorities, risks, and what needs to be handled first.</li>
+    <li>Organize the work in a way that reduces confusion and protects stability.</li>
+    <li>Provide clear notes, recommendations, or documentation based on the agreed scope.</li>
+  </ul>
+
+  <h4>Why it matters</h4>
+  <p>This makes the service more professional, reduces misunderstanding, and keeps the work aligned with the actual need.</p>
+
+  <div class="card-result-box">Expected result: clearer execution, better communication, and practical recommendations that can be reviewed later.</div>
+</div>
+<!-- CARD_DETAILS_END --></div><div class="process-card" role="button" tabindex="0" aria-expanded="false"><div class="process-num">4</div><h3>Execution or Consultation</h3><p>Providing the agreed technical service, troubleshooting, implementation, or consultation.</p><!-- CARD_HINT_START --><div class="card-click-hint"><span class="hint-closed">Click to view details</span><span class="hint-open">Hide details</span><i class="fa-solid fa-plus"></i></div><!-- CARD_HINT_END --><!-- CARD_DETAILS_START -->
+<div class="card-expanded">
+  <h4>Detailed explanation</h4>
+  <p>This step explains how the service request moves from an initial message into a clear, organized, and manageable scope of work. It focuses on <strong>Execution or Consultation</strong> and helps make the work more structured, safer, and easier to follow.</p>
+  <p>Short summary: Providing the agreed technical service, troubleshooting, implementation, or consultation.</p>
+
+  <h4>How it is handled</h4>
+  <ul>
+    <li>Understand the current situation and the information provided by the client.</li>
+    <li>Identify priorities, risks, and what needs to be handled first.</li>
+    <li>Organize the work in a way that reduces confusion and protects stability.</li>
+    <li>Provide clear notes, recommendations, or documentation based on the agreed scope.</li>
+  </ul>
+
+  <h4>Why it matters</h4>
+  <p>This makes the service more professional, reduces misunderstanding, and keeps the work aligned with the actual need.</p>
+
+  <div class="card-result-box">Expected result: clearer execution, better communication, and practical recommendations that can be reviewed later.</div>
+</div>
+<!-- CARD_DETAILS_END --></div><div class="process-card" role="button" tabindex="0" aria-expanded="false"><div class="process-num">5</div><h3>Recommendations or Report</h3><p>Delivering a summary, recommendations, or technical notes depending on the agreed scope.</p><!-- CARD_HINT_START --><div class="card-click-hint"><span class="hint-closed">Click to view details</span><span class="hint-open">Hide details</span><i class="fa-solid fa-plus"></i></div><!-- CARD_HINT_END --><!-- CARD_DETAILS_START -->
+<div class="card-expanded">
+  <h4>Detailed explanation</h4>
+  <p>This step explains how the service request moves from an initial message into a clear, organized, and manageable scope of work. It focuses on <strong>Recommendations or Report</strong> and helps make the work more structured, safer, and easier to follow.</p>
+  <p>Short summary: Delivering a summary, recommendations, or technical notes depending on the agreed scope.</p>
+
+  <h4>How it is handled</h4>
+  <ul>
+    <li>Understand the current situation and the information provided by the client.</li>
+    <li>Identify priorities, risks, and what needs to be handled first.</li>
+    <li>Organize the work in a way that reduces confusion and protects stability.</li>
+    <li>Provide clear notes, recommendations, or documentation based on the agreed scope.</li>
+  </ul>
+
+  <h4>Why it matters</h4>
+  <p>This makes the service more professional, reduces misunderstanding, and keeps the work aligned with the actual need.</p>
+
+  <div class="card-result-box">Expected result: clearer execution, better communication, and practical recommendations that can be reviewed later.</div>
+</div>
+<!-- CARD_DETAILS_END --></div>
   </div>
 </section>
 <!-- WORK_PROCESS_SECTION_END -->
@@ -731,7 +1149,83 @@ body.dark-mode .service-result-box{
   <h2>Trust &amp; Privacy</h2>
   <p class="trust-intro">Technical services may involve systems, devices, access permissions, and business data. For that reason, privacy and clear service scope are treated as part of the work itself.</p>
   <div class="trust-grid">
-    <div class="trust-card"><i class="fa-solid fa-user-shield"></i><h3>Confidential Handling</h3><p>Any shared information, files, screenshots, access details, or technical notes are handled confidentially and only for the requested service.</p></div><div class="trust-card"><i class="fa-solid fa-lock"></i><h3>Defined Service Scope</h3><p>Work is performed within the agreed scope, with clear boundaries for what will be reviewed, changed, configured, or documented.</p></div><div class="trust-card"><i class="fa-solid fa-key"></i><h3>Access Awareness</h3><p>Access to systems, accounts, devices, or services should be limited to what is necessary for the task and removed when no longer needed.</p></div><div class="trust-card"><i class="fa-solid fa-file-shield"></i><h3>Responsible Documentation</h3><p>Technical notes, recommendations, and reports are prepared in a way that avoids exposing sensitive details unnecessarily.</p></div>
+    <div class="trust-card" role="button" tabindex="0" aria-expanded="false"><i class="fa-solid fa-user-shield"></i><h3>Confidential Handling</h3><p>Any shared information, files, screenshots, access details, or technical notes are handled confidentially and only for the requested service.</p><!-- CARD_HINT_START --><div class="card-click-hint"><span class="hint-closed">Click to view details</span><span class="hint-open">Hide details</span><i class="fa-solid fa-plus"></i></div><!-- CARD_HINT_END --><!-- CARD_DETAILS_START -->
+<div class="card-expanded">
+  <h4>Detailed explanation</h4>
+  <p>This point explains how trust, confidentiality, access, and responsible handling of information are considered during the service. It focuses on <strong>Confidential Handling</strong> and helps make the work more structured, safer, and easier to follow.</p>
+  <p>Short summary: Any shared information, files, screenshots, access details, or technical notes are handled confidentially and only for the requested service.</p>
+
+  <h4>How it is handled</h4>
+  <ul>
+    <li>Understand the current situation and the information provided by the client.</li>
+    <li>Identify priorities, risks, and what needs to be handled first.</li>
+    <li>Organize the work in a way that reduces confusion and protects stability.</li>
+    <li>Provide clear notes, recommendations, or documentation based on the agreed scope.</li>
+  </ul>
+
+  <h4>Why it matters</h4>
+  <p>This makes the service more professional, reduces misunderstanding, and keeps the work aligned with the actual need.</p>
+
+  <div class="card-result-box">Expected result: clearer execution, better communication, and practical recommendations that can be reviewed later.</div>
+</div>
+<!-- CARD_DETAILS_END --></div><div class="trust-card" role="button" tabindex="0" aria-expanded="false"><i class="fa-solid fa-lock"></i><h3>Defined Service Scope</h3><p>Work is performed within the agreed scope, with clear boundaries for what will be reviewed, changed, configured, or documented.</p><!-- CARD_HINT_START --><div class="card-click-hint"><span class="hint-closed">Click to view details</span><span class="hint-open">Hide details</span><i class="fa-solid fa-plus"></i></div><!-- CARD_HINT_END --><!-- CARD_DETAILS_START -->
+<div class="card-expanded">
+  <h4>Detailed explanation</h4>
+  <p>This point explains how trust, confidentiality, access, and responsible handling of information are considered during the service. It focuses on <strong>Defined Service Scope</strong> and helps make the work more structured, safer, and easier to follow.</p>
+  <p>Short summary: Work is performed within the agreed scope, with clear boundaries for what will be reviewed, changed, configured, or documented.</p>
+
+  <h4>How it is handled</h4>
+  <ul>
+    <li>Understand the current situation and the information provided by the client.</li>
+    <li>Identify priorities, risks, and what needs to be handled first.</li>
+    <li>Organize the work in a way that reduces confusion and protects stability.</li>
+    <li>Provide clear notes, recommendations, or documentation based on the agreed scope.</li>
+  </ul>
+
+  <h4>Why it matters</h4>
+  <p>This makes the service more professional, reduces misunderstanding, and keeps the work aligned with the actual need.</p>
+
+  <div class="card-result-box">Expected result: clearer execution, better communication, and practical recommendations that can be reviewed later.</div>
+</div>
+<!-- CARD_DETAILS_END --></div><div class="trust-card" role="button" tabindex="0" aria-expanded="false"><i class="fa-solid fa-key"></i><h3>Access Awareness</h3><p>Access to systems, accounts, devices, or services should be limited to what is necessary for the task and removed when no longer needed.</p><!-- CARD_HINT_START --><div class="card-click-hint"><span class="hint-closed">Click to view details</span><span class="hint-open">Hide details</span><i class="fa-solid fa-plus"></i></div><!-- CARD_HINT_END --><!-- CARD_DETAILS_START -->
+<div class="card-expanded">
+  <h4>Detailed explanation</h4>
+  <p>This point explains how trust, confidentiality, access, and responsible handling of information are considered during the service. It focuses on <strong>Access Awareness</strong> and helps make the work more structured, safer, and easier to follow.</p>
+  <p>Short summary: Access to systems, accounts, devices, or services should be limited to what is necessary for the task and removed when no longer needed.</p>
+
+  <h4>How it is handled</h4>
+  <ul>
+    <li>Understand the current situation and the information provided by the client.</li>
+    <li>Identify priorities, risks, and what needs to be handled first.</li>
+    <li>Organize the work in a way that reduces confusion and protects stability.</li>
+    <li>Provide clear notes, recommendations, or documentation based on the agreed scope.</li>
+  </ul>
+
+  <h4>Why it matters</h4>
+  <p>This makes the service more professional, reduces misunderstanding, and keeps the work aligned with the actual need.</p>
+
+  <div class="card-result-box">Expected result: clearer execution, better communication, and practical recommendations that can be reviewed later.</div>
+</div>
+<!-- CARD_DETAILS_END --></div><div class="trust-card" role="button" tabindex="0" aria-expanded="false"><i class="fa-solid fa-file-shield"></i><h3>Responsible Documentation</h3><p>Technical notes, recommendations, and reports are prepared in a way that avoids exposing sensitive details unnecessarily.</p><!-- CARD_HINT_START --><div class="card-click-hint"><span class="hint-closed">Click to view details</span><span class="hint-open">Hide details</span><i class="fa-solid fa-plus"></i></div><!-- CARD_HINT_END --><!-- CARD_DETAILS_START -->
+<div class="card-expanded">
+  <h4>Detailed explanation</h4>
+  <p>This point explains how trust, confidentiality, access, and responsible handling of information are considered during the service. It focuses on <strong>Responsible Documentation</strong> and helps make the work more structured, safer, and easier to follow.</p>
+  <p>Short summary: Technical notes, recommendations, and reports are prepared in a way that avoids exposing sensitive details unnecessarily.</p>
+
+  <h4>How it is handled</h4>
+  <ul>
+    <li>Understand the current situation and the information provided by the client.</li>
+    <li>Identify priorities, risks, and what needs to be handled first.</li>
+    <li>Organize the work in a way that reduces confusion and protects stability.</li>
+    <li>Provide clear notes, recommendations, or documentation based on the agreed scope.</li>
+  </ul>
+
+  <h4>Why it matters</h4>
+  <p>This makes the service more professional, reduces misunderstanding, and keeps the work aligned with the actual need.</p>
+
+  <div class="card-result-box">Expected result: clearer execution, better communication, and practical recommendations that can be reviewed later.</div>
+</div>
+<!-- CARD_DETAILS_END --></div>
   </div>
 </section>
 <!-- TRUST_PRIVACY_SECTION_END -->
@@ -885,6 +1379,36 @@ function servicesContactSubmitted(){
 })();
 </script>
 <!-- SERVICE_CARD_EXPAND_DETAILS_SCRIPT_END -->
+
+
+<!-- PROCESS_TRUST_EXPAND_DETAILS_SCRIPT_START -->
+<script>
+(function(){
+  function toggleCard(card){
+    const opened = card.classList.toggle('is-open');
+    card.setAttribute('aria-expanded', opened ? 'true' : 'false');
+  }
+
+  document.querySelectorAll('.process-card, .trust-card').forEach(function(card){
+    card.setAttribute('role','button');
+    card.setAttribute('tabindex','0');
+    card.setAttribute('aria-expanded','false');
+
+    card.addEventListener('click', function(e){
+      if(e.target.closest('a, button')) return;
+      toggleCard(card);
+    });
+
+    card.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){
+        e.preventDefault();
+        toggleCard(card);
+      }
+    });
+  });
+})();
+</script>
+<!-- PROCESS_TRUST_EXPAND_DETAILS_SCRIPT_END -->
 
 </body>
 </html>
