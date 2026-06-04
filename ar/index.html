@@ -921,6 +921,228 @@ body.dark-mode .side-column [class*="clock"]{
 
 /* SIDEBAR_GLOW_STYLE_END */
 
+
+/* SIDEBAR_POLISH_START */
+.side-card.clock{
+  border-radius:20px;
+  border:1px solid rgba(37,99,235,.14);
+  box-shadow:0 12px 28px rgba(37,99,235,.10);
+  background:linear-gradient(135deg,#eef6ff 0%,#ffffff 55%,#f2f9ff 100%);
+  color:#1d63d8;
+  text-shadow:0 0 10px rgba(37,99,235,.12);
+}
+
+.side-card.prayer{
+  position:relative;
+  overflow:hidden;
+  border-radius:22px;
+  border:1px solid rgba(37,99,235,.16);
+  box-shadow:0 16px 34px rgba(15,23,42,.08);
+  background:
+    linear-gradient(135deg,rgba(236,245,255,.96),rgba(255,255,255,.98)),
+    linear-gradient(90deg,#2563eb,#14b8a6,#eab308);
+  padding:16px 16px 14px;
+}
+
+.side-card.prayer::before{
+  content:"";
+  position:absolute;
+  inset:0 0 auto 0;
+  height:4px;
+  background:linear-gradient(90deg,#2563eb 0%,#14b8a6 55%,#eab308 100%);
+}
+
+.prayer-title{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:12px;
+  font-weight:900;
+  font-size:1.08rem;
+  color:#173b6c;
+  text-shadow:0 1px 0 rgba(255,255,255,.65), 0 0 12px rgba(37,99,235,.08);
+}
+
+.prayer-title i{
+  color:#173b6c;
+  font-size:1rem;
+}
+
+.prayer-list{
+  display:grid;
+  gap:8px;
+}
+
+.prayer-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  padding:8px 10px;
+  border-radius:14px;
+  background:linear-gradient(135deg,#ffffff,#f8fbff);
+  border:1px solid rgba(37,99,235,.10);
+  box-shadow:0 8px 18px rgba(15,23,42,.04);
+  color:#233a58;
+  font-weight:850;
+}
+
+.prayer-row span{
+  font-weight:900;
+}
+
+.prayer-row strong{
+  color:#1d63d8;
+  font-weight:950;
+  letter-spacing:.2px;
+}
+
+.links{
+  background:transparent;
+  border:0;
+  padding:0;
+  box-shadow:none;
+}
+
+.links a{
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  min-height:62px;
+  margin-bottom:10px;
+  padding:10px 14px;
+  border-radius:18px;
+  text-decoration:none;
+  color:#17365b;
+  font-weight:900;
+  background:linear-gradient(135deg,#ffffff 0%,#f6fbff 100%);
+  border:1px solid rgba(37,99,235,.14);
+  box-shadow:0 12px 24px rgba(15,23,42,.06);
+  transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+
+.links a::before{
+  content:"";
+  position:absolute;
+  inset:0 0 auto 0;
+  height:3px;
+  background:linear-gradient(90deg,#2563eb 0%,#14b8a6 55%,#eab308 100%);
+}
+
+.links a:hover{
+  transform:translateY(-2px);
+  border-color:rgba(37,99,235,.28);
+  box-shadow:0 18px 34px rgba(15,23,42,.10);
+  color:#1257c9;
+}
+
+.links a i{
+  width:40px;
+  height:40px;
+  min-width:40px;
+  border-radius:50%;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  font-size:1rem;
+  box-shadow:0 10px 22px rgba(37,99,235,.18);
+  background:linear-gradient(135deg,#2563eb,#14b8a6);
+}
+
+.links a:nth-child(1) i{background:linear-gradient(135deg,#0ea5e9,#14b8a6);}
+.links a:nth-child(2) i{background:linear-gradient(135deg,#2563eb,#06b6d4);}
+.links a:nth-child(3) i{background:linear-gradient(135deg,#0284c7,#10b981);}
+.links a:nth-child(4) i{background:linear-gradient(135deg,#0f766e,#2563eb);}
+.links a:nth-child(5) i{background:linear-gradient(135deg,#2563eb,#14b8a6);}
+.links a:nth-child(6) i{background:linear-gradient(135deg,#0891b2,#22c55e);}
+.links a:nth-child(7) i{background:linear-gradient(135deg,#1d4ed8,#14b8a6);}
+
+.quick{
+  border-radius:22px;
+  border:1px solid rgba(37,99,235,.14);
+  background:linear-gradient(135deg,#f8fbff,#ffffff);
+  box-shadow:0 14px 28px rgba(15,23,42,.06);
+}
+
+.quick b{
+  display:block;
+  margin-bottom:10px;
+  color:#173b6c;
+  font-size:1.02rem;
+}
+
+.quick a{
+  display:block;
+  text-decoration:none;
+  color:#2563eb;
+  font-weight:900;
+  padding:9px 10px;
+  margin-bottom:8px;
+  border-radius:12px;
+  background:#ffffff;
+  border:1px solid rgba(37,99,235,.10);
+}
+
+.quick a:hover{
+  background:#eef6ff;
+}
+
+body.dark-mode .side-card.clock{
+  background:linear-gradient(135deg,#0f172a,#111827);
+  border-color:#334155;
+  color:#7db4ff;
+  text-shadow:0 0 14px rgba(125,180,255,.12);
+}
+
+body.dark-mode .side-card.prayer{
+  background:linear-gradient(135deg,#0f172a,#111827);
+  border-color:#334155;
+  box-shadow:0 18px 36px rgba(0,0,0,.30);
+}
+
+body.dark-mode .prayer-title{
+  color:#e2e8f0;
+  text-shadow:none;
+}
+
+body.dark-mode .prayer-row{
+  background:linear-gradient(135deg,#0b1322,#111827);
+  border-color:#334155;
+  color:#dbeafe;
+  box-shadow:none;
+}
+
+body.dark-mode .prayer-row strong{
+  color:#7db4ff;
+}
+
+body.dark-mode .links a,
+body.dark-mode .quick{
+  background:linear-gradient(135deg,#0f172a,#111827);
+  border-color:#334155;
+  color:#e5e7eb;
+  box-shadow:0 16px 30px rgba(0,0,0,.24);
+}
+
+body.dark-mode .links a:hover{
+  color:#93c5fd;
+  border-color:#475569;
+}
+
+body.dark-mode .quick a{
+  background:#0b1322;
+  border-color:#334155;
+  color:#93c5fd;
+}
+
+body.dark-mode .quick b{
+  color:#e2e8f0;
+}
+/* SIDEBAR_POLISH_END */
+
 </style>
 </head>
 <body>
@@ -987,7 +1209,16 @@ body.dark-mode .side-column [class*="clock"]{
 </main>
 <aside class="sidebar">
 <div class="side-card clock" id="clock">--:--:--</div>
-<div class="side-card prayer"><b><i class="fa-solid fa-mosque"></i> مواقيت الصلاة</b><br>الفجر 04:15<br>الظهر 12:20<br>العصر 15:35<br>المغرب 19:00<br>العشاء 20:30</div>
+<div class="side-card prayer">
+  <div class="prayer-title"><i class="fa-solid fa-mosque"></i><span>مواقيت الصلاة</span></div>
+  <div class="prayer-list">
+    <div class="prayer-row"><span>الفجر</span><strong>04:15</strong></div>
+    <div class="prayer-row"><span>الظهر</span><strong>12:20</strong></div>
+    <div class="prayer-row"><span>العصر</span><strong>15:35</strong></div>
+    <div class="prayer-row"><span>المغرب</span><strong>19:00</strong></div>
+    <div class="prayer-row"><span>العشاء</span><strong>20:30</strong></div>
+  </div>
+</div>
 <div class="side-card weather"><b><i class="fa-solid fa-cloud-sun"></i> طقس جدة</b><div id="weather-desc">جار التحميل...</div></div>
 <div class="side-card links">
 <a href="https://binbaz.org.sa/" target="_blank"><i class="fa-solid fa-book-quran"></i> ابن باز</a>
