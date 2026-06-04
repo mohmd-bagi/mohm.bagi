@@ -562,9 +562,174 @@ body.dark-mode .card-result-box{
 }
 /* PROCESS_TRUST_EXPAND_DETAILS_END */
 
+
+/* SERVICES_SIDE_WIDGETS_START */
+.services-side-widget{
+  position:fixed;
+  top:160px;
+  width:230px;
+  z-index:50;
+  display:none;
+}
+
+.services-side-left{
+  left:max(18px, calc((100vw - 980px) / 2 - 270px));
+}
+
+.services-side-right{
+  right:max(18px, calc((100vw - 980px) / 2 - 270px));
+}
+
+.services-side-card{
+  background:rgba(255,255,255,.92);
+  border:1px solid var(--line);
+  border-radius:22px;
+  padding:16px;
+  box-shadow:0 18px 42px rgba(15,23,42,.12);
+  backdrop-filter:blur(12px);
+  margin-bottom:14px;
+  overflow:hidden;
+  position:relative;
+}
+
+.services-side-card::before{
+  content:"";
+  position:absolute;
+  inset:0 0 auto 0;
+  height:4px;
+  background:linear-gradient(90deg,#1261d8,#10a779,#d4a63c);
+}
+
+.services-side-card h3{
+  margin:8px 0 10px;
+  color:var(--blue);
+  font-size:1.02rem;
+  font-weight:950;
+}
+
+.services-side-card p{
+  margin:0 0 12px;
+  color:#40516b;
+  font-size:.88rem;
+  font-weight:800;
+  line-height:1.75;
+}
+
+.services-side-nav{
+  display:grid;
+  gap:8px;
+}
+
+.services-side-nav a,
+.services-side-action{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  text-decoration:none;
+  border:0;
+  border-radius:14px;
+  padding:10px 12px;
+  font-family:inherit;
+  font-weight:900;
+  font-size:.88rem;
+  cursor:pointer;
+  color:#12345c;
+  background:#f3f8ff;
+  border:1px solid rgba(18,97,216,.14);
+}
+
+.services-side-nav a:hover,
+.services-side-action:hover{
+  transform:translateY(-2px);
+  background:#eaf3ff;
+}
+
+.services-side-action.primary{
+  color:#fff;
+  background:linear-gradient(135deg,#1261d8,#10a779);
+  border:0;
+  box-shadow:0 12px 26px rgba(18,97,216,.22);
+}
+
+.services-side-action.whatsapp{
+  color:#fff;
+  background:#25D366;
+  border:0;
+  box-shadow:0 12px 26px rgba(37,211,102,.22);
+}
+
+.services-side-mini{
+  margin-top:10px;
+  padding:10px 12px;
+  border-radius:14px;
+  background:linear-gradient(135deg,rgba(18,97,216,.08),rgba(212,166,60,.12));
+  color:#12345c;
+  font-size:.82rem;
+  font-weight:850;
+  line-height:1.65;
+}
+
+body.dark-mode .services-side-card{
+  background:rgba(15,23,42,.92);
+  border-color:#334155;
+  box-shadow:0 18px 42px rgba(0,0,0,.32);
+}
+
+body.dark-mode .services-side-card p,
+body.dark-mode .services-side-mini{
+  color:#cbd5e1;
+}
+
+body.dark-mode .services-side-nav a,
+body.dark-mode .services-side-action{
+  background:#0f172a;
+  color:#e5e7eb;
+  border-color:#334155;
+}
+
+body.dark-mode .services-side-nav a:hover{
+  background:#1e293b;
+}
+
+@media(min-width:1500px){
+  .services-side-widget{
+    display:block;
+  }
+}
+/* SERVICES_SIDE_WIDGETS_END */
+
 </style>
 </head>
 <body>
+
+<!-- SERVICES_SIDE_WIDGETS_START -->
+<aside class="services-side-widget services-side-left" aria-label="Quick navigation">
+  <div class="services-side-card">
+    <h3><i class="fa-solid fa-list"></i> &#x62a;&#x646;&#x642;&#x644; &#x633;&#x631;&#x64a;&#x639;</h3>
+    <div class="services-side-nav">
+      <a href="#advanced-services"><i class="fa-solid fa-screwdriver-wrench"></i> &#x627;&#x644;&#x62e;&#x62f;&#x645;&#x627;&#x62a;</a>
+      <a href="#work-process"><i class="fa-solid fa-route"></i> &#x637;&#x631;&#x64a;&#x642;&#x629; &#x627;&#x644;&#x639;&#x645;&#x644;</a>
+      <a href="#trust-privacy"><i class="fa-solid fa-shield-halved"></i> &#x627;&#x644;&#x62b;&#x642;&#x629; &#x648;&#x627;&#x644;&#x62e;&#x635;&#x648;&#x635;&#x64a;&#x629;</a>
+      <a href="#faq"><i class="fa-solid fa-circle-question"></i> &#x627;&#x644;&#x623;&#x633;&#x626;&#x644;&#x629; &#x627;&#x644;&#x634;&#x627;&#x626;&#x639;&#x629;</a>
+      <a href="#contact"><i class="fa-solid fa-envelope"></i> &#x627;&#x644;&#x62a;&#x648;&#x627;&#x635;&#x644;</a>
+    </div>
+  </div>
+</aside>
+
+<aside class="services-side-widget services-side-right" aria-label="Quick service request">
+  <div class="services-side-card">
+    <h3><i class="fa-solid fa-headset"></i> &#x637;&#x644;&#x628; &#x62e;&#x62f;&#x645;&#x629; &#x633;&#x631;&#x64a;&#x639;</h3>
+    <p>&#x623;&#x631;&#x633;&#x644; &#x62a;&#x641;&#x627;&#x635;&#x64a;&#x644; &#x637;&#x644;&#x628;&#x643; &#x648;&#x633;&#x623;&#x631;&#x627;&#x62c;&#x639; &#x627;&#x644;&#x627;&#x62d;&#x62a;&#x64a;&#x627;&#x62c; &#x627;&#x644;&#x62a;&#x642;&#x646;&#x64a; &#x645;&#x639;&#x643;.</p>
+    <div class="services-side-nav">
+      <button class="services-side-action primary" type="button" data-service-open><i class="fa-solid fa-paper-plane"></i> &#x637;&#x644;&#x628; &#x62e;&#x62f;&#x645;&#x629;</button>
+      <a class="services-side-action whatsapp" href="https://wa.me/966531689598" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+    </div>
+    <div class="services-side-mini">&#x645;&#x646;&#x627;&#x633;&#x628; &#x644;&#x644;&#x627;&#x633;&#x62a;&#x641;&#x633;&#x627;&#x631;&#x627;&#x62a; &#x627;&#x644;&#x633;&#x631;&#x64a;&#x639;&#x629;&#x60c; &#x637;&#x644;&#x628;&#x627;&#x62a; &#x627;&#x644;&#x62e;&#x62f;&#x645;&#x629;&#x60c; &#x623;&#x648; &#x627;&#x644;&#x627;&#x633;&#x62a;&#x634;&#x627;&#x631;&#x627;&#x62a; &#x627;&#x644;&#x62a;&#x642;&#x646;&#x64a;&#x629;.</div>
+  </div>
+</aside>
+<!-- SERVICES_SIDE_WIDGETS_END -->
+
 <div class="services-page-wrap">
   <div class="services-top-actions">
     <a class="btn dark" href="../">&#x2190; &#x627;&#x644;&#x631;&#x62c;&#x648;&#x639; &#x625;&#x644;&#x649; &#x627;&#x644;&#x633;&#x64a;&#x631;&#x629;</a>
