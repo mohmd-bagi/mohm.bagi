@@ -771,6 +771,50 @@ body.dark-mode .services-side-nav a:hover{
 }
 /* SERVICES_SIDE_CARDS_FINAL_ALIGN_END */
 
+
+/* SERVICES_SCROLL_BUTTONS_RESTORE_START */
+@media(min-width:1200px){
+  #scroll-control-buttons{
+    position:fixed!important;
+    display:flex!important;
+    flex-direction:column!important;
+    gap:10px!important;
+    z-index:99999!important;
+    right:auto!important;
+    bottom:auto!important;
+    transform:none!important;
+  }
+
+  #scroll-control-buttons button{
+    border:0!important;
+    border-radius:999px!important;
+    background:#121826!important;
+    color:#fff!important;
+    padding:12px 18px!important;
+    font-weight:900!important;
+    font-family:inherit!important;
+    box-shadow:0 12px 28px rgba(0,0,0,.25)!important;
+    cursor:pointer!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    gap:8px!important;
+    font-size:15px!important;
+    min-width:118px!important;
+  }
+
+  #scroll-control-buttons button:hover{
+    transform:translateY(-1px)!important;
+  }
+}
+
+@media(max-width:1199px){
+  #scroll-control-buttons{
+    display:none!important;
+  }
+}
+/* SERVICES_SCROLL_BUTTONS_RESTORE_END */
+
 </style>
 
 
@@ -1761,6 +1805,58 @@ function servicesContactSubmitted(){
 })();
 </script>
 <!-- SERVICES_SIDE_CARDS_FINAL_ALIGN_SCRIPT_END -->
+
+
+<!-- SERVICES_SCROLL_BUTTONS_RESTORE_HTML_START -->
+<div id="scroll-control-buttons">
+  <button type="button" onclick="window.scrollTo({top:0,behavior:'smooth'})">▲ <span>Top</span></button>
+  <button type="button" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})">▼ <span>Bottom</span></button>
+</div>
+<!-- SERVICES_SCROLL_BUTTONS_RESTORE_HTML_END -->
+
+
+<!-- SERVICES_SCROLL_BUTTONS_RESTORE_SCRIPT_START -->
+<script>
+(function(){
+  function alignServiceScrollButtons(){
+    const rightWidget = document.querySelector('.services-side-right');
+    const scrollButtons = document.getElementById('scroll-control-buttons');
+
+    if(!rightWidget || !scrollButtons) return;
+
+    if(!window.matchMedia('(min-width:1200px)').matches){
+      scrollButtons.style.display = 'none';
+      return;
+    }
+
+    const cardBox = rightWidget.getBoundingClientRect();
+
+    if(cardBox.width < 50){
+      scrollButtons.style.display = 'none';
+      return;
+    }
+
+    scrollButtons.style.display = 'flex';
+
+    const btnBox = scrollButtons.getBoundingClientRect();
+    const left = cardBox.left + (cardBox.width / 2) - (btnBox.width / 2);
+    const top = cardBox.bottom + 24;
+
+    scrollButtons.style.left = Math.round(left) + 'px';
+    scrollButtons.style.right = 'auto';
+    scrollButtons.style.top = Math.round(top) + 'px';
+    scrollButtons.style.bottom = 'auto';
+    scrollButtons.style.transform = 'none';
+  }
+
+  window.addEventListener('load', alignServiceScrollButtons);
+  window.addEventListener('resize', alignServiceScrollButtons);
+  setTimeout(alignServiceScrollButtons, 300);
+  setTimeout(alignServiceScrollButtons, 900);
+  setTimeout(alignServiceScrollButtons, 1600);
+})();
+</script>
+<!-- SERVICES_SCROLL_BUTTONS_RESTORE_SCRIPT_END -->
 
 </body>
 </html>
