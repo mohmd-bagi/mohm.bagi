@@ -356,32 +356,71 @@ html[dir="rtl"] .mobile-action-row{
 
 
 
-/* FORCE_DESKTOP_SERVICES_CTA_COMPACT_START */
+
+
+
+/* UNIFY_DESKTOP_HOME_BUTTONS_START */
 @media(min-width:901px){
   .hero .actions{
+    display:flex!important;
     flex-wrap:nowrap!important;
-    gap:10px!important;
-    align-items:center!important;
     justify-content:center!important;
+    align-items:center!important;
+    gap:10px!important;
   }
 
-  .hero .actions .home-services-cta{
-    flex:0 0 300px!important;
-    width:300px!important;
-    min-width:300px!important;
-    max-width:300px!important;
-    padding:10px 14px!important;
-    font-size:.86rem!important;
-    line-height:1.2!important;
+  .hero .actions .btn{
+    height:52px!important;
+    min-height:52px!important;
+    max-height:52px!important;
+    padding:0 18px!important;
+    display:inline-flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    gap:8px!important;
+    border-radius:14px!important;
+    font-size:.98rem!important;
+    font-weight:900!important;
+    line-height:1!important;
     white-space:nowrap!important;
+    text-align:center!important;
+    box-sizing:border-box!important;
     margin:0!important;
   }
 
-  .hero .actions .home-services-cta i{
-    font-size:.92rem!important;
+  .hero .actions .btn i{
+    font-size:.95rem!important;
+    line-height:1!important;
+    flex:0 0 auto!important;
+  }
+
+  .hero .actions .home-services-cta{
+    flex:0 0 330px!important;
+    width:330px!important;
+    min-width:330px!important;
+    max-width:330px!important;
+    height:52px!important;
+    min-height:52px!important;
+    max-height:52px!important;
+    padding:0 20px!important;
+    font-size:.98rem!important;
+    border-radius:999px!important;
+  }
+
+  .hero .actions .linkedin{
+    min-width:118px!important;
+  }
+
+  .hero .actions .whatsapp{
+    min-width:132px!important;
+  }
+
+  .hero .actions .green,
+  .hero .actions .red{
+    min-width:158px!important;
   }
 }
-/* FORCE_DESKTOP_SERVICES_CTA_COMPACT_END */
+/* UNIFY_DESKTOP_HOME_BUTTONS_END */
 
 </style>
 </head>
