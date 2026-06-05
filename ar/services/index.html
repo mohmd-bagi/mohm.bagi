@@ -956,6 +956,9 @@ body.dark-mode .services-side-nav a:hover{
 </script>
 <!-- JSONLD_SEO_END -->
 
+
+
+
 <style id="mobile-services-top-quick-nav-style">
 @media(max-width:700px){
   .services-top-actions{
@@ -991,7 +994,6 @@ body.dark-mode .services-side-nav a:hover{
     grid-column:1!important;
     grid-row:2!important;
     min-height:58px!important;
-    align-self:start!important;
   }
 
   html[dir="rtl"] .services-top-actions > .btn,
@@ -1003,13 +1005,14 @@ body.dark-mode .services-side-nav a:hover{
     grid-column:2!important;
     grid-row:2!important;
     display:block!important;
-    background:linear-gradient(135deg,rgba(255,255,255,.96),rgba(238,246,255,.98))!important;
+    background:linear-gradient(135deg,rgba(255,255,255,.97),rgba(238,246,255,.98))!important;
     border:1px solid rgba(18,97,216,.16)!important;
     border-radius:20px!important;
-    padding:12px!important;
-    box-shadow:0 14px 32px rgba(15,23,42,.10)!important;
+    padding:10px 10px 11px!important;
+    box-shadow:0 14px 30px rgba(15,23,42,.10)!important;
     overflow:hidden!important;
     position:relative!important;
+    min-height:92px!important;
   }
 
   #mobile-services-quick-card:before{
@@ -1021,37 +1024,53 @@ body.dark-mode .services-side-nav a:hover{
   }
 
   #mobile-services-quick-card h3{
-    margin:4px 0 10px!important;
+    margin:3px 0 8px!important;
     color:#1261d8!important;
-    font-size:1rem!important;
+    font-size:.92rem!important;
     font-weight:950!important;
     text-align:center!important;
+    line-height:1.25!important;
   }
 
   .mobile-services-quick-links{
-    display:grid!important;
+    display:flex!important;
     gap:7px!important;
+    overflow-x:auto!important;
+    overflow-y:hidden!important;
+    padding:0 2px 2px!important;
+    scroll-snap-type:x proximity!important;
+    -webkit-overflow-scrolling:touch!important;
+  }
+
+  .mobile-services-quick-links::-webkit-scrollbar{
+    height:0!important;
   }
 
   .mobile-services-quick-links a{
+    flex:0 0 70px!important;
+    min-height:48px!important;
     display:flex!important;
+    flex-direction:column!important;
     align-items:center!important;
     justify-content:center!important;
-    gap:7px!important;
+    gap:3px!important;
     text-decoration:none!important;
     color:#12345c!important;
     background:#f3f8ff!important;
     border:1px solid rgba(18,97,216,.14)!important;
-    border-radius:13px!important;
-    min-height:38px!important;
-    padding:8px 9px!important;
-    font-size:.86rem!important;
-    font-weight:900!important;
-    box-shadow:0 7px 16px rgba(15,23,42,.05)!important;
+    border-radius:14px!important;
+    padding:6px 4px!important;
+    font-size:.72rem!important;
+    line-height:1.2!important;
+    font-weight:950!important;
+    white-space:nowrap!important;
+    box-shadow:0 7px 15px rgba(15,23,42,.05)!important;
+    scroll-snap-align:start!important;
   }
 
-  .mobile-services-quick-links a:hover{
-    background:#eaf3ff!important;
+  .mobile-services-quick-links a i{
+    font-size:.95rem!important;
+    color:#1261d8!important;
   }
 
   body.dark-mode #mobile-services-quick-card{
@@ -1067,6 +1086,10 @@ body.dark-mode .services-side-nav a:hover{
     background:#0f172a!important;
     color:#e5e7eb!important;
     border-color:#334155!important;
+  }
+
+  body.dark-mode .mobile-services-quick-links a i{
+    color:#93c5fd!important;
   }
 }
 
@@ -1116,11 +1139,11 @@ body.dark-mode .services-side-nav a:hover{
 <nav id="mobile-services-quick-card" aria-label="تنقل سريع للخدمات">
   <h3><i class="fa-solid fa-bolt"></i> تنقل سريع</h3>
   <div class="mobile-services-quick-links">
-    <a href="#advanced-services"><i class="fa-solid fa-screwdriver-wrench"></i> الخدمات</a>
-    <a href="#work-process"><i class="fa-solid fa-route"></i> طريقة العمل</a>
-    <a href="#trust-privacy"><i class="fa-solid fa-shield-halved"></i> الثقة والخصوصية</a>
-    <a href="#faq"><i class="fa-solid fa-circle-question"></i> الأسئلة</a>
-    <a href="#contact"><i class="fa-solid fa-envelope"></i> التواصل</a>
+    <a href="#advanced-services"><i class="fa-solid fa-screwdriver-wrench"></i><span>الخدمات</span></a>
+    <a href="#work-process"><i class="fa-solid fa-route"></i><span>العمل</span></a>
+    <a href="#trust-privacy"><i class="fa-solid fa-shield-halved"></i><span>الثقة</span></a>
+    <a href="#faq"><i class="fa-solid fa-circle-question"></i><span>الأسئلة</span></a>
+    <a href="#contact"><i class="fa-solid fa-envelope"></i><span>التواصل</span></a>
   </div>
 </nav>
 
