@@ -955,6 +955,128 @@ body.dark-mode .services-side-nav a:hover{
 }
 </script>
 <!-- JSONLD_SEO_END -->
+
+<style id="mobile-services-top-quick-nav-style">
+@media(max-width:700px){
+  .services-top-actions{
+    display:grid!important;
+    grid-template-columns:minmax(105px,1fr) minmax(0,1.85fr)!important;
+    gap:12px!important;
+    align-items:start!important;
+    justify-content:center!important;
+    margin:0 auto 16px!important;
+    direction:ltr!important;
+  }
+
+  .services-top-actions > .btn{
+    width:100%!important;
+    min-height:64px!important;
+    margin:0!important;
+    border-radius:18px!important;
+    font-size:1rem!important;
+    padding:12px 10px!important;
+  }
+
+  .services-top-actions > .btn:nth-child(1){
+    grid-column:2!important;
+    grid-row:1!important;
+  }
+
+  .services-top-actions > .btn:nth-child(2){
+    grid-column:1!important;
+    grid-row:1!important;
+  }
+
+  .services-top-actions > .mode-toggle{
+    grid-column:1!important;
+    grid-row:2!important;
+    min-height:58px!important;
+    align-self:start!important;
+  }
+
+  html[dir="rtl"] .services-top-actions > .btn,
+  html[dir="rtl"] #mobile-services-quick-card{
+    direction:rtl!important;
+  }
+
+  #mobile-services-quick-card{
+    grid-column:2!important;
+    grid-row:2!important;
+    display:block!important;
+    background:linear-gradient(135deg,rgba(255,255,255,.96),rgba(238,246,255,.98))!important;
+    border:1px solid rgba(18,97,216,.16)!important;
+    border-radius:20px!important;
+    padding:12px!important;
+    box-shadow:0 14px 32px rgba(15,23,42,.10)!important;
+    overflow:hidden!important;
+    position:relative!important;
+  }
+
+  #mobile-services-quick-card:before{
+    content:""!important;
+    position:absolute!important;
+    inset:0 0 auto 0!important;
+    height:4px!important;
+    background:linear-gradient(90deg,#1261d8,#10a779,#d4a63c)!important;
+  }
+
+  #mobile-services-quick-card h3{
+    margin:4px 0 10px!important;
+    color:#1261d8!important;
+    font-size:1rem!important;
+    font-weight:950!important;
+    text-align:center!important;
+  }
+
+  .mobile-services-quick-links{
+    display:grid!important;
+    gap:7px!important;
+  }
+
+  .mobile-services-quick-links a{
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    gap:7px!important;
+    text-decoration:none!important;
+    color:#12345c!important;
+    background:#f3f8ff!important;
+    border:1px solid rgba(18,97,216,.14)!important;
+    border-radius:13px!important;
+    min-height:38px!important;
+    padding:8px 9px!important;
+    font-size:.86rem!important;
+    font-weight:900!important;
+    box-shadow:0 7px 16px rgba(15,23,42,.05)!important;
+  }
+
+  .mobile-services-quick-links a:hover{
+    background:#eaf3ff!important;
+  }
+
+  body.dark-mode #mobile-services-quick-card{
+    background:linear-gradient(135deg,#0f172a,#111827)!important;
+    border-color:#334155!important;
+  }
+
+  body.dark-mode #mobile-services-quick-card h3{
+    color:#93c5fd!important;
+  }
+
+  body.dark-mode .mobile-services-quick-links a{
+    background:#0f172a!important;
+    color:#e5e7eb!important;
+    border-color:#334155!important;
+  }
+}
+
+@media(min-width:701px){
+  #mobile-services-quick-card{
+    display:none!important;
+  }
+}
+</style>
+
 </head>
 <body>
 
@@ -990,7 +1112,19 @@ body.dark-mode .services-side-nav a:hover{
     <a class="btn dark" href="../">&#x2190; Back to CV</a>
     <a class="btn" href="../../ar/services/">Arabic</a>
     <button class="btn mode-toggle" id="modeToggle" type="button"><i class="fa-solid fa-moon"></i> Dark</button>
+
+<nav id="mobile-services-quick-card" aria-label="Quick services navigation">
+  <h3><i class="fa-solid fa-bolt"></i> Quick Navigation</h3>
+  <div class="mobile-services-quick-links">
+    <a href="#advanced-services"><i class="fa-solid fa-screwdriver-wrench"></i> Services</a>
+    <a href="#work-process"><i class="fa-solid fa-route"></i> Work Process</a>
+    <a href="#trust-privacy"><i class="fa-solid fa-shield-halved"></i> Trust</a>
+    <a href="#faq"><i class="fa-solid fa-circle-question"></i> FAQ</a>
+    <a href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a>
   </div>
+</nav>
+
+</div>
 
   <section class="services-hero">
     <h1>&#x1f4bc; Technical Services & Solutions</h1>
