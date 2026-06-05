@@ -1128,6 +1128,44 @@ body.dark-mode .services-side-nav a:hover{
 }
 </style>
 
+<style id="mobile-edge-nav-style">
+@media (max-width: 768px){
+  #mobile-edge-nav{
+    position:fixed;
+    left:0;
+    top:58%;
+    transform:translateY(-50%);
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    z-index:9999;
+  }
+  #mobile-edge-nav button{
+    width:34px;
+    height:34px;
+    border:none;
+    border-radius:0 14px 14px 0;
+    background:#0b132b;
+    color:#ffffff;
+    font-size:18px;
+    font-weight:800;
+    cursor:pointer;
+    box-shadow:0 10px 24px rgba(0,0,0,.22);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:0;
+  }
+  #mobile-edge-nav button:active{
+    transform:scale(.97);
+  }
+}
+@media (min-width: 769px){
+  #mobile-edge-nav{
+    display:none !important;
+  }
+}
+</style>
 </head>
 <body>
 
@@ -2144,5 +2182,25 @@ function servicesContactSubmitted(){
 </script>
 <!-- SERVICES_SCROLL_BUTTONS_RESTORE_SCRIPT_END -->
 
+<div id="mobile-edge-nav" aria-label="Quick Scroll">
+  <button id="mobile-scroll-top" type="button" aria-label="Top">▲</button>
+  <button id="mobile-scroll-bottom" type="button" aria-label="Bottom">▼</button>
+</div>
+<script id="mobile-edge-nav-script">
+(function(){
+  var topBtn = document.getElementById('mobile-scroll-top');
+  var bottomBtn = document.getElementById('mobile-scroll-bottom');
+  if(topBtn){
+    topBtn.addEventListener('click', function(){
+      window.scrollTo({top:0, behavior:'smooth'});
+    });
+  }
+  if(bottomBtn){
+    bottomBtn.addEventListener('click', function(){
+      window.scrollTo({top:document.body.scrollHeight, behavior:'smooth'});
+    });
+  }
+})();
+</script>
 </body>
 </html>
