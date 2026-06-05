@@ -1329,7 +1329,7 @@ body.dark-mode .quick b{
 <style id="home-quick-access-final-position-style">
 @media(min-width:1450px){
   .home-side-widget{
-    transform:translate(-46px,38px)!important;
+    transform:translate(-46px,62px)!important;
   }
 }
 @media(max-width:1449px){
@@ -1655,7 +1655,7 @@ function serviceRequestSubmitted(){
     var widget=document.querySelector('.home-side-widget');
     if(!widget) return;
     if(!window.matchMedia('(min-width:1450px)').matches) return;
-    widget.style.transform='translate(-46px,38px)';
+    widget.style.transform='translate(-46px,62px)';
   }
   window.addEventListener('load',moveQuickAccess);
   window.addEventListener('resize',moveQuickAccess);
