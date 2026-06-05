@@ -962,6 +962,9 @@ body.dark-mode .services-side-nav a:hover{
 
 
 
+
+
+
 <style id="mobile-services-top-quick-nav-style">
 @media(max-width:700px){
   .services-top-actions{
@@ -1011,11 +1014,11 @@ body.dark-mode .services-side-nav a:hover{
     background:linear-gradient(135deg,rgba(255,255,255,.97),rgba(238,246,255,.98))!important;
     border:1px solid rgba(18,97,216,.16)!important;
     border-radius:20px!important;
-    padding:10px 10px 11px!important;
+    padding:10px!important;
     box-shadow:0 14px 30px rgba(15,23,42,.10)!important;
     overflow:hidden!important;
     position:relative!important;
-    min-height:92px!important;
+    min-height:auto!important;
   }
 
   #mobile-services-quick-card:before{
@@ -1029,29 +1032,25 @@ body.dark-mode .services-side-nav a:hover{
   #mobile-services-quick-card h3{
     margin:3px 0 8px!important;
     color:#1261d8!important;
-    font-size:.92rem!important;
+    font-size:.9rem!important;
     font-weight:950!important;
     text-align:center!important;
     line-height:1.25!important;
   }
 
   .mobile-services-quick-links{
-    display:flex!important;
+    display:grid!important;
+    grid-template-columns:repeat(3,1fr)!important;
     gap:7px!important;
-    overflow-x:auto!important;
-    overflow-y:hidden!important;
-    padding:0 2px 2px!important;
-    scroll-snap-type:x proximity!important;
-    -webkit-overflow-scrolling:touch!important;
+    overflow:visible!important;
+    padding:0!important;
   }
 
-  .mobile-services-quick-links::-webkit-scrollbar{
-    height:0!important;
-  }
-
-  .mobile-services-quick-links a{
-    flex:0 0 70px!important;
-    min-height:48px!important;
+  .mobile-services-quick-links a,
+  .mobile-services-quick-links button{
+    min-width:0!important;
+    width:100%!important;
+    min-height:43px!important;
     display:flex!important;
     flex-direction:column!important;
     align-items:center!important;
@@ -1061,19 +1060,34 @@ body.dark-mode .services-side-nav a:hover{
     color:#12345c!important;
     background:#f3f8ff!important;
     border:1px solid rgba(18,97,216,.14)!important;
-    border-radius:14px!important;
-    padding:6px 4px!important;
-    font-size:.72rem!important;
-    line-height:1.2!important;
+    border-radius:13px!important;
+    padding:5px 3px!important;
+    font-family:inherit!important;
+    font-size:.66rem!important;
+    line-height:1.15!important;
     font-weight:950!important;
     white-space:nowrap!important;
     box-shadow:0 7px 15px rgba(15,23,42,.05)!important;
-    scroll-snap-align:start!important;
   }
 
-  .mobile-services-quick-links a i{
-    font-size:.95rem!important;
+  .mobile-services-quick-links button{
+    cursor:pointer!important;
+  }
+
+  .mobile-services-quick-links a i,
+  .mobile-services-quick-links button i{
+    font-size:.9rem!important;
     color:#1261d8!important;
+  }
+
+  .mobile-services-quick-links .quick-request{
+    color:#fff!important;
+    background:linear-gradient(135deg,#1261d8,#10a779)!important;
+    border:0!important;
+  }
+
+  .mobile-services-quick-links .quick-request i{
+    color:#fff!important;
   }
 
   body.dark-mode #mobile-services-quick-card{
@@ -1085,14 +1099,25 @@ body.dark-mode .services-side-nav a:hover{
     color:#93c5fd!important;
   }
 
-  body.dark-mode .mobile-services-quick-links a{
+  body.dark-mode .mobile-services-quick-links a,
+  body.dark-mode .mobile-services-quick-links button{
     background:#0f172a!important;
     color:#e5e7eb!important;
     border-color:#334155!important;
   }
 
-  body.dark-mode .mobile-services-quick-links a i{
+  body.dark-mode .mobile-services-quick-links a i,
+  body.dark-mode .mobile-services-quick-links button i{
     color:#93c5fd!important;
+  }
+
+  body.dark-mode .mobile-services-quick-links .quick-request{
+    background:linear-gradient(135deg,#1261d8,#10a779)!important;
+    color:#fff!important;
+  }
+
+  body.dark-mode .mobile-services-quick-links .quick-request i{
+    color:#fff!important;
   }
 }
 
@@ -1146,7 +1171,8 @@ body.dark-mode .services-side-nav a:hover{
     <a href="#work-process"><i class="fa-solid fa-route"></i><span>العمل</span></a>
     <a href="#trust-privacy"><i class="fa-solid fa-shield-halved"></i><span>الثقة</span></a>
     <a href="#faq"><i class="fa-solid fa-circle-question"></i><span>الأسئلة</span></a>
-    <a href="#contact"><i class="fa-solid fa-envelope"></i><span>التواصل</span></a>
+    <button class="quick-request" type="button" data-service-open><i class="fa-solid fa-paper-plane"></i><span>طلب</span></button>
+    <a href="#contact"><i class="fa-solid fa-envelope"></i><span>النموذج</span></a>
   </div>
 </nav>
 
