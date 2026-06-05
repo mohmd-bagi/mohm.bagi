@@ -1325,6 +1325,20 @@ body.dark-mode .quick b{
 }
 </script>
 <!-- JSONLD_SEO_END -->
+
+<style id="home-quick-access-final-position-style">
+@media(min-width:1450px){
+  .home-side-widget{
+    transform:translate(-46px,38px)!important;
+  }
+}
+@media(max-width:1449px){
+  .home-side-widget{
+    transform:none!important;
+  }
+}
+</style>
+
 </head>
 <body>
 <div class="layout">
@@ -1632,6 +1646,23 @@ function serviceRequestSubmitted(){
 })()
 </script>
 <!-- QUICK_ACCESS_SIZE_UP_MORE_SCRIPT_END -->
+
+
+<script id="home-quick-access-final-position-script">
+(function(){
+  function moveQuickAccess(){
+    var widget=document.querySelector('.home-side-widget');
+    if(!widget) return;
+    if(!window.matchMedia('(min-width:1450px)').matches) return;
+    widget.style.transform='translate(-46px,38px)';
+  }
+  window.addEventListener('load',moveQuickAccess);
+  window.addEventListener('resize',moveQuickAccess);
+  setTimeout(moveQuickAccess,300);
+  setTimeout(moveQuickAccess,900);
+  setTimeout(moveQuickAccess,1800);
+})();
+</script>
 
 </body>
 </html>
