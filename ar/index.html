@@ -2165,6 +2165,75 @@ body.dark-mode .section b{
 }
 </style>
 
+
+<style id="force-main-services-link-button-desktop-only-style">
+@media(min-width:901px){
+  .force-main-services-link{
+    position:relative!important;
+    display:inline-flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    gap:10px!important;
+    min-height:52px!important;
+    min-width:260px!important;
+    padding:0 24px!important;
+    border-radius:999px!important;
+    text-decoration:none!important;
+    color:#ffffff!important;
+    font-weight:950!important;
+    font-size:1rem!important;
+    line-height:1.1!important;
+    background:linear-gradient(135deg,#073b9a 0%,#1261d8 54%,#d4a63c 100%)!important;
+    border:2px solid rgba(235,194,84,.95)!important;
+    box-shadow:
+      0 14px 30px rgba(15,23,42,.18),
+      0 8px 18px rgba(18,97,216,.14)!important;
+    overflow:hidden!important;
+    vertical-align:middle!important;
+  }
+
+  .force-main-services-link,
+  .force-main-services-link:visited,
+  .force-main-services-link:hover,
+  .force-main-services-link:active{
+    color:#ffffff!important;
+    text-decoration:none!important;
+  }
+
+  .force-main-services-link i,
+  .force-main-services-link svg{
+    color:#ffffff!important;
+    fill:#ffffff!important;
+  }
+
+  .force-main-services-link::after{
+    content:""!important;
+    position:absolute!important;
+    top:-75%!important;
+    left:-75%!important;
+    width:45%!important;
+    height:270%!important;
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,.55),transparent)!important;
+    transform:rotate(24deg)!important;
+    animation:forceMainServicesLinkShineDesktop 3.2s ease-in-out infinite!important;
+    pointer-events:none!important;
+  }
+
+  .force-main-services-link > *{
+    position:relative!important;
+    z-index:1!important;
+  }
+}
+
+@keyframes forceMainServicesLinkShineDesktop{
+  0%{left:-80%;opacity:0}
+  14%{opacity:1}
+  45%{left:135%;opacity:1}
+  56%{left:135%;opacity:0}
+  100%{left:135%;opacity:0}
+}
+</style>
+
 </head>
 <body>
 <div class="layout">
@@ -2862,6 +2931,51 @@ function serviceRequestSubmitted(){
   window.addEventListener("orientationchange", sync, {passive:true});
 
   sync();
+})();
+</script>
+
+
+<script id="force-main-services-link-button-desktop-only-script">
+(function(){
+  function normalizeText(value){
+    return (value || "").replace(/\s+/g," ").trim();
+  }
+
+  function apply(){
+    var isDesktop = window.matchMedia("(min-width:901px)").matches;
+    var arText = "\u0627\u0644\u062e\u062f\u0645\u0627\u062a \u0648\u0627\u0644\u062d\u0644\u0648\u0644 \u0627\u0644\u062a\u0642\u0646\u064a\u0629";
+    var enText = "Technical Services";
+    var links = Array.from(document.querySelectorAll("a"));
+
+    links.forEach(function(a){
+      var txt = normalizeText(a.textContent);
+      var href = (a.getAttribute("href") || "").toLowerCase();
+
+      var target =
+        txt.indexOf(arText) !== -1 ||
+        txt.indexOf(enText) !== -1 ||
+        (href.indexOf("/services") !== -1 && txt.length > 10 && txt.length < 90);
+
+      if(target && isDesktop){
+        a.classList.add("force-main-services-link");
+      }
+
+      if(target && !isDesktop){
+        a.classList.remove("force-main-services-link");
+      }
+    });
+  }
+
+  if(document.readyState === "loading"){
+    document.addEventListener("DOMContentLoaded", apply);
+  }else{
+    apply();
+  }
+
+  window.addEventListener("load", apply);
+  window.addEventListener("resize", apply);
+  setTimeout(apply,300);
+  setTimeout(apply,1000);
 })();
 </script>
 
