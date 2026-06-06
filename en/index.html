@@ -1400,6 +1400,75 @@ body.dark-mode .quick b{
 }
 </style>
 
+
+<style id="mobile-services-request-row-style">
+@media(max-width:900px){
+  .mobile-action-row{
+    width:min(92%,620px)!important;
+    margin:12px auto 14px!important;
+    display:grid!important;
+    grid-template-columns:1fr 1fr!important;
+    gap:10px!important;
+    align-items:center!important;
+    justify-content:center!important;
+    padding:0!important;
+  }
+
+  .mobile-services-top-link,
+  .mobile-action-row .service-request-open{
+    width:100%!important;
+    min-width:0!important;
+    min-height:54px!important;
+    border-radius:999px!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    gap:7px!important;
+    padding:10px 9px!important;
+    font-family:inherit!important;
+    font-size:.88rem!important;
+    font-weight:950!important;
+    line-height:1.15!important;
+    white-space:nowrap!important;
+    text-decoration:none!important;
+    box-shadow:0 12px 26px rgba(15,23,42,.15)!important;
+  }
+
+  .mobile-services-top-link{
+    color:#fff!important;
+    border:2px solid rgba(235,194,84,.95)!important;
+    background:linear-gradient(135deg,#073b9a 0%,#1261d8 48%,#d4a63c 100%)!important;
+  }
+
+  .mobile-action-row .service-request-open{
+    color:#111827!important;
+  }
+
+  .mobile-services-top-link i,
+  .mobile-action-row .service-request-open i{
+    font-size:1rem!important;
+  }
+
+  .actions .home-services-cta{
+    display:none!important;
+  }
+}
+
+@media(max-width:390px){
+  .mobile-action-row{
+    width:94%!important;
+    gap:8px!important;
+  }
+
+  .mobile-services-top-link,
+  .mobile-action-row .service-request-open{
+    min-height:50px!important;
+    font-size:.80rem!important;
+    padding:9px 6px!important;
+  }
+}
+</style>
+
 </head>
 <body>
 <div class="layout">
@@ -1445,9 +1514,12 @@ body.dark-mode .quick b{
 <main class="content">
 <div class="top-switch"><button class="btn dark mode-toggle" id="modeToggle" type="button"><i class="fa-solid fa-moon"></i> Dark</button><a class="btn dark" href="../ar/"><i class="fa-solid fa-language"></i> العربية</a></div>
 <div class="live-bar"><a class="makkah" href="https://www.youtube.com/channel/UCos52azQNBgW63_9uDJoPDA/live" target="_blank"><i class="fa-solid fa-kaaba"></i> Makkah Live</a><a class="quran" href="https://www.holyquranradio.com/" target="_blank"><i class="fa-solid fa-mosque"></i> Quran Cairo Radio</a><a class="aljazeera" href="https://www.aljazeera.net/live/" target="_blank"><i class="fa-solid fa-tv"></i> Al Jazeera Live</a></div>
+
 <div class="mobile-action-row">
-<button class="service-request-open" type="button" data-service-open><i class="fa-solid fa-headset"></i><span>Service Request</span></button>
+<a class="mobile-services-top-link" href="services/"><i class="fa-solid fa-briefcase"></i><span>Services</span></a>
+<button class="service-request-open" type="button" data-service-open><i class="fa-solid fa-headset"></i><span>Request</span></button>
 </div>
+
 
 <section class="hero"><div class="cover"></div><img class="photo" src="../1581595177182.jpeg" alt="Mohammed Abdelbagi"><h1>Mohammed Abdelbagi Elrayah</h1><p class="subtitle">Computer Engineer, IT Specialist & Cybersecurity Specialist</p>
 
