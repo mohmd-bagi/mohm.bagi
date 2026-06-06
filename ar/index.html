@@ -2235,185 +2235,77 @@ body.dark-mode .section b{
 </style>
 
 
-<style id="mobile-services-button-text-balance-style">
-@media(max-width:900px){
-  .mobile-services-top-link,
-  .hero .actions .home-services-cta,
-  .hero .actions a[href*="services"]{
-    display:grid!important;
-    grid-template-columns:42px 1fr 42px!important;
-    align-items:center!important;
-    justify-items:center!important;
-    min-height:62px!important;
-    padding:9px 10px!important;
-    gap:0!important;
-    text-align:center!important;
-    overflow:hidden!important;
-  }
 
-  html[dir="rtl"] .mobile-services-top-link,
-  html[dir="rtl"] .hero .actions .home-services-cta,
-  html[dir="rtl"] .hero .actions a[href*="services"]{
-    grid-template-columns:42px 1fr 42px!important;
-  }
-
-  .mobile-services-top-link i,
-  .hero .actions .home-services-cta i,
-  .hero .actions a[href*="services"] i{
-    grid-column:3!important;
-    font-size:1.22rem!important;
-    line-height:1!important;
-    margin:0!important;
-    justify-self:center!important;
-  }
-
-  html[dir="ltr"] .mobile-services-top-link i,
-  html[dir="ltr"] .hero .actions .home-services-cta i,
-  html[dir="ltr"] .hero .actions a[href*="services"] i{
-    grid-column:1!important;
-  }
-
-  .mobile-services-top-link span,
-  .hero .actions .home-services-cta span,
-  .hero .actions a[href*="services"] span{
-    grid-column:2!important;
-    display:block!important;
-    width:100%!important;
-    max-width:100%!important;
-    text-align:center!important;
-    white-space:normal!important;
-    line-height:1.08!important;
-    font-size:1rem!important;
-    font-weight:950!important;
-    letter-spacing:0!important;
-    word-break:normal!important;
-    overflow-wrap:normal!important;
-  }
-
-  html[dir="ltr"] .mobile-services-top-link span,
-  html[dir="ltr"] .hero .actions .home-services-cta span,
-  html[dir="ltr"] .hero .actions a[href*="services"] span{
-    font-size:.94rem!important;
-    line-height:1.05!important;
-  }
-}
-
-@media(max-width:390px){
-  .mobile-services-top-link,
-  .hero .actions .home-services-cta,
-  .hero .actions a[href*="services"]{
-    grid-template-columns:36px 1fr 36px!important;
-    min-height:58px!important;
-    padding:8px 8px!important;
-  }
-
-  .mobile-services-top-link span,
-  .hero .actions .home-services-cta span,
-  .hero .actions a[href*="services"] span{
-    font-size:.92rem!important;
-  }
-
-  html[dir="ltr"] .mobile-services-top-link span,
-  html[dir="ltr"] .hero .actions .home-services-cta span,
-  html[dir="ltr"] .hero .actions a[href*="services"] span{
-    font-size:.86rem!important;
-  }
-
-  .mobile-services-top-link i,
-  .hero .actions .home-services-cta i,
-  .hero .actions a[href*="services"] i{
-    font-size:1.08rem!important;
-  }
-}
-</style>
-
-
-<style id="arabic-mobile-services-button-text-final-style">
+<style id="ar-mobile-services-button-like-image-style">
 @media(max-width:900px){
   html[lang="ar"] .mobile-services-top-link,
   html[lang="ar"] .hero .actions .home-services-cta,
   html[lang="ar"] .hero .actions a[href*="services"]{
-    position:relative!important;
     display:flex!important;
     align-items:center!important;
     justify-content:center!important;
-    min-height:64px!important;
-    padding:10px 64px!important;
     text-align:center!important;
+    white-space:nowrap!important;
     overflow:hidden!important;
   }
 
-  html[lang="ar"] .mobile-services-top-link i,
-  html[lang="ar"] .hero .actions .home-services-cta i,
-  html[lang="ar"] .hero .actions a[href*="services"] i{
-    position:absolute!important;
-    left:26px!important;
-    right:auto!important;
-    top:50%!important;
-    transform:translateY(-50%)!important;
-    font-size:1.22rem!important;
+  html[lang="ar"] .ar-services-inline-fix{
+    display:inline-flex!important;
+    direction:rtl!important;
+    flex-direction:row!important;
+    align-items:center!important;
+    justify-content:center!important;
+    gap:10px!important;
+    white-space:nowrap!important;
+    width:auto!important;
+    max-width:100%!important;
     line-height:1!important;
-    margin:0!important;
   }
 
-  html[lang="ar"] .mobile-services-top-link span,
-  html[lang="ar"] .hero .actions .home-services-cta span,
-  html[lang="ar"] .hero .actions a[href*="services"] span{
-    display:block!important;
-    width:100%!important;
-    max-width:100%!important;
-    text-align:center!important;
-    white-space:normal!important;
-    line-height:1.12!important;
-    font-size:1.02rem!important;
-    font-weight:950!important;
-    letter-spacing:0!important;
+  html[lang="ar"] .ar-services-inline-fix i{
+    position:static!important;
+    inset:auto!important;
+    left:auto!important;
+    right:auto!important;
+    top:auto!important;
+    transform:none!important;
     margin:0!important;
     padding:0!important;
-    transform:translateX(0)!important;
+    flex:0 0 auto!important;
+    font-size:1.05rem!important;
+    line-height:1!important;
+  }
+
+  html[lang="ar"] .ar-services-inline-fix span{
+    display:inline-block!important;
+    width:auto!important;
+    max-width:none!important;
+    margin:0!important;
+    padding:0!important;
+    transform:none!important;
+    white-space:nowrap!important;
+    line-height:1!important;
+    text-align:center!important;
+    font-size:.92rem!important;
+    font-weight:950!important;
+    letter-spacing:-.35px!important;
+    word-break:keep-all!important;
+    overflow-wrap:normal!important;
   }
 }
 
 @media(max-width:390px){
-  html[lang="ar"] .mobile-services-top-link,
-  html[lang="ar"] .hero .actions .home-services-cta,
-  html[lang="ar"] .hero .actions a[href*="services"]{
-    min-height:60px!important;
-    padding:9px 56px!important;
+  html[lang="ar"] .ar-services-inline-fix{
+    gap:8px!important;
   }
 
-  html[lang="ar"] .mobile-services-top-link i,
-  html[lang="ar"] .hero .actions .home-services-cta i,
-  html[lang="ar"] .hero .actions a[href*="services"] i{
-    left:22px!important;
-    right:auto!important;
-    font-size:1.1rem!important;
+  html[lang="ar"] .ar-services-inline-fix span{
+    font-size:.86rem!important;
+    letter-spacing:-.45px!important;
   }
 
-  html[lang="ar"] .mobile-services-top-link span,
-  html[lang="ar"] .hero .actions .home-services-cta span,
-  html[lang="ar"] .hero .actions a[href*="services"] span{
-    font-size:.96rem!important;
-    line-height:1.08!important;
-  }
-}
-</style>
-
-
-<style id="arabic-services-button-text-vertical-fix-style">
-@media(max-width:900px){
-  html[lang="ar"] .mobile-services-top-link span,
-  html[lang="ar"] .hero .actions .home-services-cta span,
-  html[lang="ar"] .hero .actions a[href*="services"] span{
-    transform:translateY(-4px)!important;
-  }
-}
-
-@media(max-width:390px){
-  html[lang="ar"] .mobile-services-top-link span,
-  html[lang="ar"] .hero .actions .home-services-cta span,
-  html[lang="ar"] .hero .actions a[href*="services"] span{
-    transform:translateY(-3px)!important;
+  html[lang="ar"] .ar-services-inline-fix i{
+    font-size:.98rem!important;
   }
 }
 </style>
@@ -3164,50 +3056,49 @@ function serviceRequestSubmitted(){
 </script>
 
 
-<script id="mobile-services-button-text-balance-script">
-(function(){
-  function apply(){
-    var links = Array.from(document.querySelectorAll('.mobile-services-top-link,.hero .actions .home-services-cta,.hero .actions a[href*="services"]'));
 
-    links.forEach(function(link){
-      if(link.dataset.textBalanced === "1"){
+<script id="ar-mobile-services-button-like-image-script">
+(function(){
+  function isServicesButton(el){
+    var href = (el.getAttribute("href") || "").toLowerCase();
+    var txt = (el.textContent || "").replace(/\s+/g," ").trim();
+
+    return el.classList.contains("mobile-services-top-link") ||
+           el.classList.contains("home-services-cta") ||
+           href.indexOf("services") !== -1 ||
+           txt.indexOf("الخدمات") !== -1;
+  }
+
+  function apply(){
+    if(document.documentElement.lang !== "ar"){
+      return;
+    }
+
+    var items = Array.from(document.querySelectorAll("a,button")).filter(isServicesButton);
+
+    items.forEach(function(btn){
+      var href = (btn.getAttribute("href") || "").toLowerCase();
+      var text = (btn.textContent || "").replace(/\s+/g," ").trim();
+
+      if(text.indexOf("الخدمات") === -1 && href.indexOf("services") === -1){
         return;
       }
 
-      var icon = link.querySelector("i");
-      var textNodes = [];
+      btn.innerHTML = "";
 
-      Array.from(link.childNodes).forEach(function(node){
-        if(node.nodeType === 3 && node.textContent.trim()){
-          textNodes.push(node);
-        }
-      });
+      var wrap = document.createElement("span");
+      wrap.className = "ar-services-inline-fix";
 
-      if(textNodes.length){
-        var span = document.createElement("span");
-        span.textContent = textNodes.map(function(n){ return n.textContent.trim(); }).join(" ");
-        textNodes.forEach(function(n){ n.remove(); });
+      var icon = document.createElement("i");
+      icon.className = "fa-solid fa-briefcase";
+      icon.setAttribute("aria-hidden","true");
 
-        if(icon && icon.nextSibling){
-          link.insertBefore(span, icon.nextSibling);
-        }else{
-          link.appendChild(span);
-        }
-      }
+      var label = document.createElement("span");
+      label.textContent = "الخدمات والحلول التقنية";
 
-      if(!link.querySelector("span")){
-        var currentText = link.textContent.trim();
-        Array.from(link.childNodes).forEach(function(node){
-          if(node.nodeType === 3){
-            node.remove();
-          }
-        });
-        var newSpan = document.createElement("span");
-        newSpan.textContent = currentText;
-        link.appendChild(newSpan);
-      }
-
-      link.dataset.textBalanced = "1";
+      wrap.appendChild(icon);
+      wrap.appendChild(label);
+      btn.appendChild(wrap);
     });
   }
 
