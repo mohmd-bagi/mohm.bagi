@@ -1896,7 +1896,7 @@ function showSuccessMessage(){const msg=document.getElementById('success-message
     <button class="service-request-x" type="button" data-service-close aria-label="إغلاق">x</button>
     <h2>طلب خدمة</h2>
     <p>اختر الخدمة المطلوبة وسأتواصل معك.</p>
-    <form action="https://formsubmit.co/mohmd.bagi@hotmail.com" method="POST" target="service_request_iframe" onsubmit="serviceRequestSubmitted()" class="service-request-form">
+    <form action="https://formsubmit.co/mohmd.bagi@hotmail.com" method="POST" target="service_request_iframe" onsubmit="return serviceRequestSubmitted(this)" class="service-request-form">
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_subject" value="طلب خدمة جديد من الموقع">
       <input type="text" name="name" placeholder="الاسم" required>
@@ -1911,7 +1911,8 @@ function showSuccessMessage(){const msg=document.getElementById('success-message
         <option value="مؤسسة">مؤسسة</option>
         <option value="مكتب أو نشاط صغير">مكتب أو نشاط صغير</option>
       </select>
-      <select name="service_method" required>
+            <input type="text" name="company_name" placeholder="اسم الجهة أو الشركة (اختياري)">
+<select name="service_method" required>
         <option value="" disabled selected>طريقة الخدمة</option>
         <option value="دعم عن بعد">دعم عن بعد</option>
         <option value="زيارة ميدانية">زيارة ميدانية</option>
@@ -1919,7 +1920,8 @@ function showSuccessMessage(){const msg=document.getElementById('success-message
         <option value="يتم تحديدها بعد المراجعة">يتم تحديدها بعد المراجعة</option>
       </select>
       <input type="text" name="city" placeholder="المدينة" required>
-      <select name="urgency" required>
+            <input type="text" name="location_area" placeholder="الموقع أو الحي في حال الزيارة (اختياري)">
+<select name="urgency" required>
         <option value="" disabled selected>درجة الاستعجال</option>
         <option value="عادي">عادي</option>
         <option value="مهم">مهم</option>
@@ -1927,7 +1929,8 @@ function showSuccessMessage(){const msg=document.getElementById('success-message
       </select>
 <!-- SERVICE_EXTRA_FIELDS_END -->
 
-      <select name="service_type" required><option value="" disabled selected>اختر نوع الخدمة</option><option value="دعم فني للأجهزة والبرامج">دعم فني للأجهزة والبرامج</option><option value="دعم الشبكات والبنية التحتية">دعم الشبكات والبنية التحتية</option><option value="تقييم البنية التحتية الحالية">تقييم البنية التحتية الحالية</option><option value="إعداد وتأمين الشبكات الداخلية">إعداد وتأمين الشبكات الداخلية</option><option value="تحسين تغطية الواي فاي">تحسين تغطية الواي فاي</option><option value="استشارة أمن سيبراني">استشارة أمن سيبراني</option><option value="تحسين حماية الأجهزة الطرفية">تحسين حماية الأجهزة الطرفية</option><option value="فحص أمني مبدئي للأنظمة">فحص أمني مبدئي للأنظمة</option><option value="مراقبة وتنظيم بيئة تقنية المعلومات">مراقبة وتنظيم بيئة تقنية المعلومات</option><option value="دعم الخوادم والأنظمة">دعم الخوادم والأنظمة</option><option value="دعم الحوسبة الافتراضية والبيئات الافتراضية">دعم الحوسبة الافتراضية والبيئات الافتراضية</option><option value="تنظيم غرفة السيرفر أو غرفة الشبكة">تنظيم غرفة السيرفر أو غرفة الشبكة</option><option value="إعداد النسخ الاحتياطي والاستعادة">إعداد النسخ الاحتياطي والاستعادة</option><option value="تحسين أداء أجهزة العمل">تحسين أداء أجهزة العمل</option><option value="إعداد حسابات المستخدمين والصلاحيات">إعداد حسابات المستخدمين والصلاحيات</option><option value="تدقيق صلاحيات المستخدمين">تدقيق صلاحيات المستخدمين</option><option value="حل مشاكل البريد الإلكتروني">حل مشاكل البريد الإلكتروني</option><option value="دعم الطابعات وأجهزة المكتب">دعم الطابعات وأجهزة المكتب</option><option value="تركيب وصيانة كاميرات المراقبة">تركيب وصيانة كاميرات المراقبة</option><option value="دعم أنظمة المراقبة والتحكم في الدخول">دعم أنظمة المراقبة والتحكم في الدخول</option><option value="تركيب وصيانة أجهزة الشبكة">تركيب وصيانة أجهزة الشبكة</option><option value="تنظيم الكابلات ونقاط الشبكة">تنظيم الكابلات ونقاط الشبكة</option><option value="إعداد الإنترنت والراوترات داخل المكتب">إعداد الإنترنت والراوترات داخل المكتب</option><option value="حل مشاكل بطء الشبكة أو الإنترنت">حل مشاكل بطء الشبكة أو الإنترنت</option><option value="إعداد أجهزة الكمبيوتر الجديدة">إعداد أجهزة الكمبيوتر الجديدة</option><option value="توثيق وتنظيم أصول تقنية المعلومات">توثيق وتنظيم أصول تقنية المعلومات</option><option value="إعداد تقارير فنية أو توثيق تقني">إعداد تقارير فنية أو توثيق تقني</option><option value="تصميم أو تعديل موقع إلكتروني">تصميم أو تعديل موقع إلكتروني</option><option value="ربط النماذج بالبريد أو واتساب">ربط النماذج بالبريد أو واتساب</option><option value="استشارة تقنية عامة">استشارة تقنية عامة</option><option value="تدريب أو شرح تقني">تدريب أو شرح تقني</option><option value="زيارة ميدانية للدعم الفني">زيارة ميدانية للدعم الفني</option><option value="أخرى">أخرى</option></select>
+            <input type="text" name="preferred_time" placeholder="الوقت المناسب للتواصل" required>
+<select name="service_type" required><option value="" disabled selected>اختر نوع الخدمة</option><option value="دعم فني للأجهزة والبرامج">دعم فني للأجهزة والبرامج</option><option value="دعم الشبكات والبنية التحتية">دعم الشبكات والبنية التحتية</option><option value="تقييم البنية التحتية الحالية">تقييم البنية التحتية الحالية</option><option value="إعداد وتأمين الشبكات الداخلية">إعداد وتأمين الشبكات الداخلية</option><option value="تحسين تغطية الواي فاي">تحسين تغطية الواي فاي</option><option value="استشارة أمن سيبراني">استشارة أمن سيبراني</option><option value="تحسين حماية الأجهزة الطرفية">تحسين حماية الأجهزة الطرفية</option><option value="فحص أمني مبدئي للأنظمة">فحص أمني مبدئي للأنظمة</option><option value="مراقبة وتنظيم بيئة تقنية المعلومات">مراقبة وتنظيم بيئة تقنية المعلومات</option><option value="دعم الخوادم والأنظمة">دعم الخوادم والأنظمة</option><option value="دعم الحوسبة الافتراضية والبيئات الافتراضية">دعم الحوسبة الافتراضية والبيئات الافتراضية</option><option value="تنظيم غرفة السيرفر أو غرفة الشبكة">تنظيم غرفة السيرفر أو غرفة الشبكة</option><option value="إعداد النسخ الاحتياطي والاستعادة">إعداد النسخ الاحتياطي والاستعادة</option><option value="تحسين أداء أجهزة العمل">تحسين أداء أجهزة العمل</option><option value="إعداد حسابات المستخدمين والصلاحيات">إعداد حسابات المستخدمين والصلاحيات</option><option value="تدقيق صلاحيات المستخدمين">تدقيق صلاحيات المستخدمين</option><option value="حل مشاكل البريد الإلكتروني">حل مشاكل البريد الإلكتروني</option><option value="دعم الطابعات وأجهزة المكتب">دعم الطابعات وأجهزة المكتب</option><option value="تركيب وصيانة كاميرات المراقبة">تركيب وصيانة كاميرات المراقبة</option><option value="دعم أنظمة المراقبة والتحكم في الدخول">دعم أنظمة المراقبة والتحكم في الدخول</option><option value="تركيب وصيانة أجهزة الشبكة">تركيب وصيانة أجهزة الشبكة</option><option value="تنظيم الكابلات ونقاط الشبكة">تنظيم الكابلات ونقاط الشبكة</option><option value="إعداد الإنترنت والراوترات داخل المكتب">إعداد الإنترنت والراوترات داخل المكتب</option><option value="حل مشاكل بطء الشبكة أو الإنترنت">حل مشاكل بطء الشبكة أو الإنترنت</option><option value="إعداد أجهزة الكمبيوتر الجديدة">إعداد أجهزة الكمبيوتر الجديدة</option><option value="توثيق وتنظيم أصول تقنية المعلومات">توثيق وتنظيم أصول تقنية المعلومات</option><option value="إعداد تقارير فنية أو توثيق تقني">إعداد تقارير فنية أو توثيق تقني</option><option value="تصميم أو تعديل موقع إلكتروني">تصميم أو تعديل موقع إلكتروني</option><option value="ربط النماذج بالبريد أو واتساب">ربط النماذج بالبريد أو واتساب</option><option value="استشارة تقنية عامة">استشارة تقنية عامة</option><option value="تدريب أو شرح تقني">تدريب أو شرح تقني</option><option value="زيارة ميدانية للدعم الفني">زيارة ميدانية للدعم الفني</option><option value="أخرى">أخرى</option></select>
       <textarea name="request_details" rows="5" placeholder="تفاصيل الطلب" required></textarea>
       <button type="submit">إرسال الطلب</button>
     </form>
@@ -1952,6 +1955,98 @@ function serviceRequestSubmitted(){
   if(msg){msg.style.display='block';}
 }
 </script>
+
+<script id="service-request-whatsapp-script">
+(function(){
+  const phone = "966550857011";
+
+  function isArabicPage(){
+    return document.documentElement.lang === "ar" || document.documentElement.dir === "rtl";
+  }
+
+  function labels(){
+    if(isArabicPage()){
+      return {
+        name:"\u0627\u0644\u0627\u0633\u0645 \u0627\u0644\u0643\u0627\u0645\u0644",
+        mobile:"\u0631\u0642\u0645 \u0627\u0644\u062c\u0648\u0627\u0644",
+        email:"\u0627\u0644\u0628\u0631\u064a\u062f \u0627\u0644\u0625\u0644\u0643\u062a\u0631\u0648\u0646\u064a",
+        city:"\u0627\u0644\u0645\u062f\u064a\u0646\u0629",
+        client_type:"\u0646\u0648\u0639 \u0645\u0642\u062f\u0645 \u0627\u0644\u0637\u0644\u0628",
+        company_name:"\u0627\u0633\u0645 \u0627\u0644\u062c\u0647\u0629 \u0623\u0648 \u0627\u0644\u0634\u0631\u0643\u0629",
+        service_method:"\u0637\u0631\u064a\u0642\u0629 \u062a\u0642\u062f\u064a\u0645 \u0627\u0644\u062e\u062f\u0645\u0629",
+        location_area:"\u0627\u0644\u0645\u0648\u0642\u0639 \u0623\u0648 \u0627\u0644\u062d\u064a",
+        urgency:"\u062f\u0631\u062c\u0629 \u0627\u0644\u0623\u0647\u0645\u064a\u0629",
+        preferred_time:"\u0627\u0644\u0648\u0642\u062a \u0627\u0644\u0645\u0646\u0627\u0633\u0628 \u0644\u0644\u062a\u0648\u0627\u0635\u0644",
+        service_type:"\u0646\u0648\u0639 \u0627\u0644\u062e\u062f\u0645\u0629 \u0627\u0644\u0645\u0637\u0644\u0648\u0628\u0629",
+        request_details:"\u062a\u0641\u0627\u0635\u064a\u0644 \u0627\u0644\u0637\u0644\u0628"
+      };
+    }
+
+    return {
+      name:"Full name",
+      mobile:"Mobile number",
+      email:"Email",
+      city:"City",
+      client_type:"Requester type",
+      company_name:"Company or organization",
+      service_method:"Service delivery method",
+      location_area:"Location / district",
+      urgency:"Priority",
+      preferred_time:"Preferred contact time",
+      service_type:"Requested service",
+      request_details:"Request details"
+    };
+  }
+
+  window.serviceRequestSubmitted = function(form){
+    if(!form){
+      form = document.querySelector(".service-request-form");
+    }
+
+    const card = form ? form.closest(".service-request-card") : null;
+    const msg = card ? card.querySelector(".service-request-success") : document.querySelector(".service-request-success");
+
+    if(msg){
+      msg.style.display = "block";
+    }
+
+    const map = labels();
+    const title = isArabicPage() ? "\u0637\u0644\u0628 \u062e\u062f\u0645\u0629 \u062c\u062f\u064a\u062f" : "New Service Request";
+    const pageLabel = isArabicPage() ? "\u0627\u0644\u0635\u0641\u062d\u0629" : "Page";
+    const lines = [title, ""];
+
+    Array.from(form.elements).forEach(function(el){
+      if(!el.name || el.type === "hidden" || el.name.charAt(0) === "_"){
+        return;
+      }
+
+      const value = (el.value || "").trim();
+
+      if(!value){
+        return;
+      }
+
+      const label = el.getAttribute("data-label") || map[el.name] || el.name;
+
+      lines.push(label + ":");
+      lines.push(value);
+      lines.push("");
+    });
+
+    lines.push(pageLabel + ":");
+    lines.push(window.location.href.split("?")[0]);
+
+    const whatsappUrl = "https://wa.me/" + phone + "?text=" + encodeURIComponent(lines.join("\n"));
+
+    setTimeout(function(){
+      window.open(whatsappUrl, "_blank");
+    }, 150);
+
+    return true;
+  };
+})();
+</script>
+
 <!-- SERVICE_REQUEST_WIDGET_END -->
 
 <!-- HOME_SIDE_WIDGET_AUTO_ALIGN_SCRIPT_START -->
