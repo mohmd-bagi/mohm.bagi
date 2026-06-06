@@ -1339,6 +1339,67 @@ body.dark-mode .quick b{
 }
 </style>
 
+
+<style id="mobile-live-bar-horizontal-style">
+@media(max-width:900px){
+  .live-bar{
+    display:grid!important;
+    grid-template-columns:repeat(3,minmax(0,1fr))!important;
+    gap:7px!important;
+    max-width:100%!important;
+    margin:0 auto 14px!important;
+  }
+
+  .live-bar a{
+    min-width:0!important;
+    min-height:62px!important;
+    padding:8px 4px!important;
+    border-radius:17px!important;
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:center!important;
+    justify-content:center!important;
+    gap:4px!important;
+    font-size:.72rem!important;
+    line-height:1.15!important;
+    font-weight:950!important;
+    white-space:normal!important;
+    text-align:center!important;
+    box-shadow:0 10px 24px rgba(15,23,42,.12)!important;
+  }
+
+  .live-bar a i{
+    font-size:1.05rem!important;
+    line-height:1!important;
+    margin:0!important;
+  }
+
+  .service-request-pill,
+  .small-service-request,
+  .service-request-open{
+    margin-top:8px!important;
+    margin-bottom:12px!important;
+  }
+}
+
+@media(max-width:390px){
+  .live-bar{
+    gap:6px!important;
+  }
+
+  .live-bar a{
+    min-height:58px!important;
+    padding:7px 3px!important;
+    border-radius:15px!important;
+    font-size:.66rem!important;
+  }
+
+  .live-bar a i{
+    font-size:1rem!important;
+  }
+}
+</style>
+
 </head>
 <body>
 <div class="layout">
