@@ -1469,6 +1469,66 @@ body.dark-mode .quick b{
 }
 </style>
 
+
+<style id="mobile-services-request-size-tweak">
+@media(max-width:900px){
+  .mobile-action-row{
+    width:min(92%,620px)!important;
+    margin:14px auto 16px!important;
+    display:grid!important;
+    grid-template-columns:1fr 1fr!important;
+    gap:10px!important;
+    align-items:center!important;
+    justify-content:center!important;
+    padding:0!important;
+  }
+
+  .mobile-services-top-link,
+  .mobile-action-row .service-request-open{
+    width:100%!important;
+    min-width:0!important;
+    min-height:62px!important;
+    border-radius:999px!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    gap:9px!important;
+    padding:12px 10px!important;
+    font-family:inherit!important;
+    font-size:1rem!important;
+    font-weight:950!important;
+    line-height:1.15!important;
+    white-space:nowrap!important;
+    text-decoration:none!important;
+    box-shadow:0 14px 30px rgba(15,23,42,.18)!important;
+  }
+
+  .mobile-services-top-link i,
+  .mobile-action-row .service-request-open i{
+    font-size:1.18rem!important;
+  }
+}
+
+@media(max-width:390px){
+  .mobile-action-row{
+    width:94%!important;
+    gap:8px!important;
+  }
+
+  .mobile-services-top-link,
+  .mobile-action-row .service-request-open{
+    min-height:58px!important;
+    font-size:.92rem!important;
+    padding:10px 7px!important;
+  }
+
+  .mobile-services-top-link i,
+  .mobile-action-row .service-request-open i{
+    font-size:1.08rem!important;
+  }
+}
+</style>
+
 </head>
 <body>
 <div class="layout">
