@@ -1166,6 +1166,60 @@ body.dark-mode .services-side-nav a:hover{
   }
 }
 </style>
+
+<style id="services-side-extra-trust-style">
+@media(min-width:1200px){
+  .services-side-trust-card{
+    margin-top:16px!important;
+    padding:22px!important;
+  }
+
+  .services-side-trust-card h3{
+    font-size:1.18rem!important;
+    margin:8px 0 16px!important;
+    text-align:center!important;
+  }
+
+  .services-side-trust-list{
+    display:grid!important;
+    gap:11px!important;
+  }
+
+  .services-side-trust-item{
+    display:flex!important;
+    align-items:center!important;
+    gap:10px!important;
+    padding:12px 13px!important;
+    border-radius:16px!important;
+    background:linear-gradient(135deg,rgba(18,97,216,.08),rgba(16,167,121,.08),rgba(212,166,60,.12))!important;
+    border:1px solid rgba(18,97,216,.12)!important;
+    color:#12345c!important;
+    font-weight:900!important;
+    line-height:1.55!important;
+    font-size:.93rem!important;
+  }
+
+  .services-side-trust-item i{
+    width:34px!important;
+    height:34px!important;
+    border-radius:13px!important;
+    display:inline-flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    flex:0 0 34px!important;
+    color:#fff!important;
+    background:linear-gradient(135deg,#1261d8,#10a779)!important;
+    box-shadow:0 8px 18px rgba(18,97,216,.20)!important;
+  }
+
+  body.dark-mode .services-side-trust-item{
+    background:linear-gradient(135deg,rgba(30,41,59,.95),rgba(15,23,42,.95))!important;
+    border-color:#334155!important;
+    color:#e5e7eb!important;
+  }
+}
+</style>
+
 </head>
 <body>
 
@@ -1181,6 +1235,16 @@ body.dark-mode .services-side-nav a:hover{
       <a href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a>
     </div>
   </div>
+
+  <div class="services-side-card services-side-trust-card">
+    <h3><i class="fa-solid fa-star"></i> Why choose these services?</h3>
+    <div class="services-side-trust-list">
+      <div class="services-side-trust-item"><i class="fa-solid fa-screwdriver-wrench"></i><span>Practical technical experience</span></div>
+      <div class="services-side-trust-item"><i class="fa-solid fa-compass"></i><span>Clear planning before execution</span></div>
+      <div class="services-side-trust-item"><i class="fa-solid fa-lock"></i><span>Privacy and trust in handling</span></div>
+    </div>
+  </div>
+
 </aside>
 
 <aside class="services-side-widget services-side-right" aria-label="Quick service request">
