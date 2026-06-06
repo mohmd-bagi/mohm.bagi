@@ -1391,6 +1391,154 @@ body.dark-mode .service-request-form textarea{
 }
 </style>
 
+
+<style id="service-request-scroll-final-style">
+html.service-request-lock,
+body.service-request-lock{
+  overflow:hidden!important;
+}
+
+body.service-request-lock{
+  position:fixed!important;
+  left:0!important;
+  right:0!important;
+  width:100%!important;
+}
+
+.service-request-modal.is-open{
+  position:fixed!important;
+  inset:0!important;
+  z-index:99999!important;
+  display:flex!important;
+  align-items:flex-start!important;
+  justify-content:center!important;
+  overflow:hidden!important;
+  padding:18px 12px!important;
+}
+
+.service-request-backdrop{
+  position:fixed!important;
+  inset:0!important;
+}
+
+.service-request-card{
+  width:min(720px,calc(100vw - 22px))!important;
+  max-height:calc(100dvh - 36px)!important;
+  height:auto!important;
+  margin:0 auto!important;
+  display:flex!important;
+  flex-direction:column!important;
+  overflow:hidden!important;
+  border-radius:34px!important;
+  border:3px solid transparent!important;
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.99),rgba(252,254,255,.99)) padding-box,
+    linear-gradient(135deg,#1261d8,#10a779,#d4a63c) border-box!important;
+  box-shadow:
+    0 28px 75px rgba(15,23,42,.34),
+    0 12px 30px rgba(18,97,216,.18)!important;
+}
+
+.service-request-card h2,
+.service-request-card p{
+  flex:0 0 auto!important;
+}
+
+.service-request-form{
+  flex:1 1 auto!important;
+  min-height:0!important;
+  overflow-y:auto!important;
+  overflow-x:hidden!important;
+  overscroll-behavior:contain!important;
+  -webkit-overflow-scrolling:touch!important;
+  padding:4px 4px 26px!important;
+  margin-top:12px!important;
+}
+
+.service-request-form input,
+.service-request-form select,
+.service-request-form textarea{
+  border:2px solid rgba(108,128,160,.42)!important;
+  border-radius:22px!important;
+  background:rgba(255,255,255,.98)!important;
+  box-shadow:
+    0 8px 20px rgba(15,23,42,.045),
+    inset 0 1px 0 rgba(255,255,255,.9)!important;
+}
+
+.service-request-form input:focus,
+.service-request-form select:focus,
+.service-request-form textarea:focus{
+  border-color:rgba(18,97,216,.75)!important;
+  box-shadow:
+    0 0 0 4px rgba(18,97,216,.13),
+    0 12px 26px rgba(18,97,216,.10)!important;
+  outline:none!important;
+}
+
+.service-request-form input:required:invalid,
+.service-request-form select:required:invalid,
+.service-request-form textarea:required:invalid{
+  border-color:rgba(220,38,38,.30)!important;
+}
+
+.service-request-form input:required:valid,
+.service-request-form select:required:valid,
+.service-request-form textarea:required:valid{
+  border-color:rgba(22,163,74,.38)!important;
+}
+
+.service-request-success,
+.service-request-close{
+  flex:0 0 auto!important;
+}
+
+@media(min-width:901px){
+  .service-request-modal.is-open{
+    padding-top:24px!important;
+  }
+
+  .service-request-card{
+    max-height:calc(100dvh - 48px)!important;
+  }
+
+  .service-request-form{
+    max-height:none!important;
+  }
+}
+
+@media(max-width:900px){
+  .service-request-modal.is-open{
+    padding-top:8px!important;
+    padding-bottom:8px!important;
+  }
+
+  .service-request-card{
+    width:calc(100vw - 18px)!important;
+    max-height:calc(100dvh - 16px)!important;
+    border-radius:30px!important;
+  }
+
+  .service-request-form{
+    padding-bottom:46px!important;
+  }
+}
+
+body.dark-mode .service-request-card{
+  background:
+    linear-gradient(180deg,rgba(15,23,42,.97),rgba(17,24,39,.97)) padding-box,
+    linear-gradient(135deg,#60a5fa,#10a779,#d4a63c) border-box!important;
+}
+
+body.dark-mode .service-request-form input,
+body.dark-mode .service-request-form select,
+body.dark-mode .service-request-form textarea{
+  color:#e5e7eb!important;
+  background:rgba(15,23,42,.94)!important;
+  border-color:rgba(148,163,184,.32)!important;
+}
+</style>
+
 </head>
 <body>
 
@@ -2605,5 +2753,154 @@ function servicesContactSubmitted(){
   }
 })();
 </script>
+
+<script id="service-request-scroll-final-script">
+(function(){
+  let savedY = 0;
+
+  function optionalField(el){
+    const text = [
+      el.name || "",
+      el.placeholder || "",
+      el.getAttribute("data-label") || "",
+      el.getAttribute("aria-label") || ""
+    ].join(" ").toLowerCase();
+
+    const optionalWords = [
+      "company",
+      "organization",
+      "organisation",
+      "entity",
+      "workplace",
+      "employer",
+      "location",
+      "map",
+      "gps",
+      "coordinate",
+      "اسم الجهة",
+      "الجهة",
+      "الشركة",
+      "المؤسسة",
+      "مكان العمل",
+      "الموقع",
+      "الخريطة",
+      "اختياري"
+    ];
+
+    return optionalWords.some(function(w){
+      return text.indexOf(w.toLowerCase()) !== -1;
+    });
+  }
+
+  function applyRequired(card){
+    const form = card.querySelector(".service-request-form");
+    if(!form) return;
+
+    form.querySelectorAll("input, select, textarea").forEach(function(el){
+      const type = (el.type || "").toLowerCase();
+
+      if(["hidden","button","submit","reset"].includes(type)){
+        return;
+      }
+
+      if(optionalField(el)){
+        el.required = false;
+        el.removeAttribute("required");
+        el.removeAttribute("aria-required");
+      }else{
+        el.required = true;
+        el.setAttribute("required","required");
+        el.setAttribute("aria-required","true");
+      }
+    });
+
+    if(!form.dataset.finalValidation){
+      form.dataset.finalValidation = "1";
+
+      form.addEventListener("submit", function(e){
+        const invalid = form.querySelector(":invalid");
+
+        if(invalid){
+          e.preventDefault();
+          invalid.focus({preventScroll:true});
+          invalid.scrollIntoView({behavior:"smooth",block:"center"});
+        }
+      }, true);
+    }
+  }
+
+  function lockPage(){
+    if(document.body.classList.contains("service-request-lock")) return;
+
+    savedY = window.scrollY || window.pageYOffset || 0;
+
+    document.documentElement.classList.add("service-request-lock");
+    document.body.classList.add("service-request-lock");
+    document.body.style.top = "-" + savedY + "px";
+  }
+
+  function unlockPage(){
+    if(!document.body.classList.contains("service-request-lock")) return;
+
+    document.documentElement.classList.remove("service-request-lock");
+    document.body.classList.remove("service-request-lock");
+    document.body.style.top = "";
+
+    window.scrollTo(0, savedY);
+  }
+
+  function activeModal(){
+    return document.querySelector(".service-request-modal.is-open");
+  }
+
+  function sync(){
+    const modal = activeModal();
+
+    if(modal){
+      const card = modal.querySelector(".service-request-card");
+      if(card){
+        applyRequired(card);
+      }
+      lockPage();
+    }else{
+      unlockPage();
+    }
+  }
+
+  document.addEventListener("click", function(){
+    setTimeout(sync, 40);
+  }, true);
+
+  document.addEventListener("keydown", function(e){
+    if(e.key === "Escape"){
+      setTimeout(sync, 40);
+    }
+  }, true);
+
+  document.addEventListener("focusin", function(e){
+    const modal = activeModal();
+
+    if(!modal || !modal.contains(e.target)) return;
+
+    setTimeout(function(){
+      e.target.scrollIntoView({behavior:"smooth",block:"center"});
+    }, 180);
+  }, true);
+
+  const mo = new MutationObserver(sync);
+  mo.observe(document.documentElement,{
+    childList:true,
+    subtree:true,
+    attributes:true,
+    attributeFilter:["class","style","aria-hidden"]
+  });
+
+  window.addEventListener("resize", sync, {passive:true});
+  window.addEventListener("orientationchange", sync, {passive:true});
+
+  sync();
+})();
+</script>
+
 </body>
 </html>
