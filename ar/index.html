@@ -2236,33 +2236,22 @@ body.dark-mode .section b{
 
 
 
-<style id="ar-mobile-services-button-like-image-style">
+
+<style id="ar-top-services-button-only-fix-style">
 @media(max-width:900px){
-  html[lang="ar"] .mobile-services-top-link,
-  html[lang="ar"] .hero .actions .home-services-cta,
-  html[lang="ar"] .hero .actions a[href*="services"]{
+  html[lang="ar"] .mobile-action-row .mobile-services-top-link{
     display:flex!important;
+    flex-direction:row!important;
+    direction:rtl!important;
     align-items:center!important;
     justify-content:center!important;
-    text-align:center!important;
+    gap:7px!important;
     white-space:nowrap!important;
     overflow:hidden!important;
+    text-align:center!important;
   }
 
-  html[lang="ar"] .ar-services-inline-fix{
-    display:inline-flex!important;
-    direction:rtl!important;
-    flex-direction:row!important;
-    align-items:center!important;
-    justify-content:center!important;
-    gap:10px!important;
-    white-space:nowrap!important;
-    width:auto!important;
-    max-width:100%!important;
-    line-height:1!important;
-  }
-
-  html[lang="ar"] .ar-services-inline-fix i{
+  html[lang="ar"] .mobile-action-row .mobile-services-top-link i{
     position:static!important;
     inset:auto!important;
     left:auto!important;
@@ -2272,65 +2261,42 @@ body.dark-mode .section b{
     margin:0!important;
     padding:0!important;
     flex:0 0 auto!important;
-    font-size:1.05rem!important;
     line-height:1!important;
+    font-size:1rem!important;
   }
 
-  html[lang="ar"] .ar-services-inline-fix span{
+  html[lang="ar"] .mobile-action-row .mobile-services-top-link span{
     display:inline-block!important;
     width:auto!important;
-    max-width:none!important;
-    margin:0!important;
-    padding:0!important;
-    transform:none!important;
+    max-width:calc(100% - 34px)!important;
     white-space:nowrap!important;
     line-height:1!important;
     text-align:center!important;
-    font-size:.92rem!important;
+    margin:0!important;
+    padding:0!important;
+    transform:none!important;
+    font-size:.72rem!important;
     font-weight:950!important;
-    letter-spacing:-.35px!important;
+    letter-spacing:-.8px!important;
     word-break:keep-all!important;
     overflow-wrap:normal!important;
   }
-}
 
-@media(max-width:390px){
-  html[lang="ar"] .ar-services-inline-fix{
-    gap:8px!important;
-  }
-
-  html[lang="ar"] .ar-services-inline-fix span{
-    font-size:.86rem!important;
-    letter-spacing:-.45px!important;
-  }
-
-  html[lang="ar"] .ar-services-inline-fix i{
-    font-size:.98rem!important;
-  }
-}
-</style>
-
-
-<style id="ar-mobile-services-button-text-size-only-style">
-@media(max-width:900px){
-  html[lang="ar"] .ar-services-inline-fix span,
-  html[lang="ar"] .mobile-services-top-link span,
-  html[lang="ar"] .hero .actions .home-services-cta span,
-  html[lang="ar"] .hero .actions a[href*="services"] span{
-    font-size:.74rem!important;
-    letter-spacing:-.9px!important;
-    white-space:nowrap!important;
-    line-height:1!important;
+  html[lang="ar"] .hero .actions .home-services-cta span{
+    font-size:inherit!important;
+    letter-spacing:inherit!important;
+    line-height:inherit!important;
   }
 }
 
 @media(max-width:390px){
-  html[lang="ar"] .ar-services-inline-fix span,
-  html[lang="ar"] .mobile-services-top-link span,
-  html[lang="ar"] .hero .actions .home-services-cta span,
-  html[lang="ar"] .hero .actions a[href*="services"] span{
-    font-size:.68rem!important;
+  html[lang="ar"] .mobile-action-row .mobile-services-top-link span{
+    font-size:.66rem!important;
     letter-spacing:-1px!important;
+  }
+
+  html[lang="ar"] .mobile-action-row .mobile-services-top-link i{
+    font-size:.92rem!important;
   }
 }
 </style>
@@ -3082,48 +3048,28 @@ function serviceRequestSubmitted(){
 
 
 
-<script id="ar-mobile-services-button-like-image-script">
+
+<script id="ar-top-services-button-only-fix-script">
 (function(){
-  function isServicesButton(el){
-    var href = (el.getAttribute("href") || "").toLowerCase();
-    var txt = (el.textContent || "").replace(/\s+/g," ").trim();
-
-    return el.classList.contains("mobile-services-top-link") ||
-           el.classList.contains("home-services-cta") ||
-           href.indexOf("services") !== -1 ||
-           txt.indexOf("الخدمات") !== -1;
-  }
-
   function apply(){
     if(document.documentElement.lang !== "ar"){
       return;
     }
 
-    var items = Array.from(document.querySelectorAll("a,button")).filter(isServicesButton);
+    var buttons = Array.from(document.querySelectorAll(".mobile-action-row .mobile-services-top-link"));
 
-    items.forEach(function(btn){
-      var href = (btn.getAttribute("href") || "").toLowerCase();
-      var text = (btn.textContent || "").replace(/\s+/g," ").trim();
-
-      if(text.indexOf("الخدمات") === -1 && href.indexOf("services") === -1){
-        return;
-      }
-
+    buttons.forEach(function(btn){
       btn.innerHTML = "";
-
-      var wrap = document.createElement("span");
-      wrap.className = "ar-services-inline-fix";
 
       var icon = document.createElement("i");
       icon.className = "fa-solid fa-briefcase";
       icon.setAttribute("aria-hidden","true");
 
       var label = document.createElement("span");
-      label.textContent = "الخدمات والحلول التقنية";
+      label.textContent = "\u0627\u0644\u062e\u062f\u0645\u0627\u062a \u0648\u0627\u0644\u062d\u0644\u0648\u0644 \u0627\u0644\u062a\u0642\u0646\u064a\u0629";
 
-      wrap.appendChild(icon);
-      wrap.appendChild(label);
-      btn.appendChild(wrap);
+      btn.appendChild(icon);
+      btn.appendChild(label);
     });
   }
 
