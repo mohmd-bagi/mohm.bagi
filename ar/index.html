@@ -2074,6 +2074,97 @@ body.dark-mode .section b{
 }
 </style>
 
+
+<style id="home-services-link-button-fix-style">
+.hero .actions{
+  display:flex!important;
+  flex-wrap:wrap!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:12px!important;
+}
+
+.hero .actions a[href*="services"],
+.hero .actions .home-services-cta{
+  position:relative!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:9px!important;
+  min-height:54px!important;
+  min-width:260px!important;
+  padding:0 24px!important;
+  border-radius:999px!important;
+  text-decoration:none!important;
+  color:#ffffff!important;
+  font-weight:950!important;
+  font-size:1rem!important;
+  line-height:1.1!important;
+  background:linear-gradient(135deg,#073b9a 0%,#1261d8 52%,#d4a63c 100%)!important;
+  border:2px solid rgba(235,194,84,.95)!important;
+  box-shadow:
+    0 14px 30px rgba(15,23,42,.16),
+    0 8px 18px rgba(18,97,216,.12)!important;
+  overflow:hidden!important;
+}
+
+.hero .actions a[href*="services"] i,
+.hero .actions .home-services-cta i{
+  color:#ffffff!important;
+  font-size:1rem!important;
+}
+
+.hero .actions a[href*="services"]::after,
+.hero .actions .home-services-cta::after{
+  content:""!important;
+  position:absolute!important;
+  top:-70%!important;
+  left:-70%!important;
+  width:42%!important;
+  height:260%!important;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.50),transparent)!important;
+  transform:rotate(24deg)!important;
+  animation:homeServicesButtonShine 3.2s ease-in-out infinite!important;
+  pointer-events:none!important;
+}
+
+.hero .actions a[href*="services"] > *,
+.hero .actions .home-services-cta > *{
+  position:relative!important;
+  z-index:1!important;
+}
+
+.hero .actions .service-request-open,
+.hero .actions [data-service-open]{
+  position:relative!important;
+  top:auto!important;
+  left:auto!important;
+  right:auto!important;
+  bottom:auto!important;
+  transform:none!important;
+  z-index:1!important;
+  text-decoration:none!important;
+}
+
+@keyframes homeServicesButtonShine{
+  0%{left:-75%;opacity:0}
+  14%{opacity:1}
+  45%{left:130%;opacity:1}
+  56%{left:130%;opacity:0}
+  100%{left:130%;opacity:0}
+}
+
+@media(max-width:900px){
+  .hero .actions a[href*="services"],
+  .hero .actions .home-services-cta{
+    min-width:0!important;
+    width:100%!important;
+    min-height:58px!important;
+    font-size:1rem!important;
+  }
+}
+</style>
+
 </head>
 <body>
 <div class="layout">
