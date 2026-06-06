@@ -1738,7 +1738,94 @@ body.dark-mode .service-request-form textarea{
 }
 </style>
 
-</head>
+
+<style id="services-hero-buttons-real-upgrade-style">
+@media (min-width: 992px){
+  .real-services-hero-card{
+    background:
+      radial-gradient(circle at 12% 12%, rgba(18,97,216,.10), transparent 30%),
+      radial-gradient(circle at 88% 18%, rgba(16,167,121,.10), transparent 32%),
+      radial-gradient(circle at 50% 90%, rgba(212,166,60,.08), transparent 34%),
+      linear-gradient(135deg, rgba(255,255,255,.98), rgba(247,252,255,.96) 48%, rgba(241,252,248,.94))!important;
+    border:2px solid transparent!important;
+    background-clip:padding-box!important;
+    box-shadow:
+      0 20px 55px rgba(15,23,42,.10),
+      0 8px 22px rgba(18,97,216,.07),
+      inset 0 1px 0 rgba(255,255,255,.90)!important;
+  }
+
+  .real-services-hero-actions{
+    display:flex!important;
+    justify-content:center!important;
+    align-items:center!important;
+    gap:20px!important;
+    margin-top:24px!important;
+    padding:18px 26px!important;
+    border-radius:999px!important;
+    width:max-content!important;
+    max-width:100%!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+    background:
+      radial-gradient(circle at 15% 50%, rgba(18,97,216,.12), transparent 34%),
+      radial-gradient(circle at 85% 50%, rgba(16,167,121,.12), transparent 34%),
+      linear-gradient(135deg, rgba(255,255,255,.78), rgba(240,248,255,.72), rgba(241,252,248,.70))!important;
+    border:1px solid rgba(148,163,184,.18)!important;
+    box-shadow:
+      0 14px 34px rgba(15,23,42,.08),
+      inset 0 1px 0 rgba(255,255,255,.92)!important;
+    backdrop-filter:blur(10px)!important;
+    -webkit-backdrop-filter:blur(10px)!important;
+  }
+
+  .real-services-hero-actions .real-services-hero-btn{
+    position:relative!important;
+    min-width:185px!important;
+    min-height:64px!important;
+    padding:15px 30px!important;
+    border-radius:999px!important;
+    font-size:1.12rem!important;
+    font-weight:950!important;
+    display:inline-flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    gap:10px!important;
+    line-height:1.1!important;
+    box-shadow:
+      0 13px 28px rgba(15,23,42,.15),
+      0 5px 14px rgba(15,23,42,.08)!important;
+    transform:none!important;
+  }
+
+  .real-services-hero-actions .real-services-hero-btn i{
+    font-size:1.1rem!important;
+  }
+
+  .real-services-hero-actions .real-services-hero-btn:hover{
+    transform:translateY(-2px) scale(1.02)!important;
+    box-shadow:
+      0 18px 36px rgba(15,23,42,.18),
+      0 8px 18px rgba(15,23,42,.10)!important;
+  }
+
+  body.dark-mode .real-services-hero-card{
+    background:
+      radial-gradient(circle at 12% 12%, rgba(96,165,250,.16), transparent 30%),
+      radial-gradient(circle at 88% 18%, rgba(16,167,121,.12), transparent 32%),
+      linear-gradient(135deg, rgba(15,23,42,.95), rgba(17,24,39,.92))!important;
+  }
+
+  body.dark-mode .real-services-hero-actions{
+    background:
+      radial-gradient(circle at 15% 50%, rgba(96,165,250,.16), transparent 34%),
+      radial-gradient(circle at 85% 50%, rgba(16,167,121,.13), transparent 34%),
+      linear-gradient(135deg, rgba(15,23,42,.78), rgba(17,24,39,.72))!important;
+    border-color:rgba(148,163,184,.20)!important;
+  }
+}
+</style>
+\n</head>
 <body>
 
 <!-- SERVICES_SIDE_WIDGETS_START -->
@@ -3156,5 +3243,88 @@ function servicesContactSubmitted(){
 })();
 </script>
 
-</body>
+
+<script id="services-hero-buttons-real-upgrade-script">
+(function(){
+  function visible(el){
+    if(!el) return false;
+    var r = el.getBoundingClientRect();
+    return r.width > 0 && r.height > 0;
+  }
+
+  function textOf(el){
+    return (el.textContent || '').replace(/\s+/g,' ').trim().toLowerCase();
+  }
+
+  function isHeroButton(el){
+    var href = (el.getAttribute('href') || '').toLowerCase();
+    var txt = textOf(el);
+    return href.indexOf('whatsapp') !== -1 ||
+           href.indexOf('wa.me') !== -1 ||
+           el.hasAttribute('data-service-open') ||
+           el.classList.contains('service-request-open') ||
+           txt.indexOf('whatsapp') !== -1 ||
+           txt.indexOf('طلب خدمة') !== -1 ||
+           txt.indexOf('request') !== -1;
+  }
+
+  function findHeroCard(){
+    var headings = Array.from(document.querySelectorAll('h1,h2')).filter(function(h){
+      var t = textOf(h);
+      return t.indexOf('الخدمات') !== -1 || t.indexOf('services') !== -1;
+    });
+
+    for(var i=0;i<headings.length;i++){
+      var n = headings[i];
+      while(n && n !== document.body){
+        var btns = Array.from(n.querySelectorAll('a,button')).filter(function(x){
+          return visible(x) && isHeroButton(x);
+        });
+        if(btns.length >= 2){
+          return n;
+        }
+        n = n.parentElement;
+      }
+    }
+
+    return document.querySelector('.services-hero,.hero,.section');
+  }
+
+  function upgrade(){
+    if(!window.matchMedia('(min-width: 992px)').matches) return;
+
+    var card = findHeroCard();
+    if(!card) return;
+
+    var buttons = Array.from(card.querySelectorAll('a,button')).filter(function(x){
+      return visible(x) && isHeroButton(x);
+    }).slice(0,2);
+
+    if(buttons.length < 2) return;
+
+    card.classList.add('real-services-hero-card');
+
+    var row = buttons[0].parentElement;
+    if(row && row.contains(buttons[1])){
+      row.classList.add('real-services-hero-actions');
+    }
+
+    buttons.forEach(function(btn){
+      btn.classList.add('real-services-hero-btn');
+    });
+  }
+
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', upgrade);
+  }else{
+    upgrade();
+  }
+
+  window.addEventListener('load', upgrade);
+  window.addEventListener('resize', upgrade);
+  setTimeout(upgrade,300);
+  setTimeout(upgrade,1000);
+})();
+</script>
+\n</body>
 </html>
