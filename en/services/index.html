@@ -1220,6 +1220,76 @@ body.dark-mode .services-side-nav a:hover{
 }
 </style>
 
+
+<style id="services-premium-background-style">
+body{
+  background:
+    radial-gradient(circle at 15% 18%, rgba(255,255,255,.90) 0%, rgba(255,255,255,0) 24%),
+    radial-gradient(circle at 86% 16%, rgba(18,97,216,.13) 0%, rgba(18,97,216,0) 25%),
+    radial-gradient(circle at 18% 82%, rgba(16,167,121,.10) 0%, rgba(16,167,121,0) 23%),
+    radial-gradient(circle at 88% 82%, rgba(212,166,60,.12) 0%, rgba(212,166,60,0) 22%),
+    linear-gradient(180deg,#edf5ff 0%,#eaf3ff 46%,#f2f7ff 100%)!important;
+  background-attachment:fixed!important;
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background-image:
+    linear-gradient(rgba(18,97,216,.040) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(16,167,121,.034) 1px, transparent 1px);
+  background-size:42px 42px;
+  opacity:.42;
+  z-index:0;
+  mask-image:radial-gradient(circle at center, black 42%, transparent 100%);
+  -webkit-mask-image:radial-gradient(circle at center, black 42%, transparent 100%);
+}
+
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255,255,255,.52), transparent 36%),
+    radial-gradient(circle at 50% 100%, rgba(255,255,255,.24), transparent 34%);
+  opacity:.85;
+  z-index:0;
+}
+
+.services-page-wrap{
+  position:relative!important;
+  z-index:1!important;
+}
+
+.services-side-widget{
+  z-index:60!important;
+}
+
+body.dark-mode{
+  background:
+    radial-gradient(circle at 15% 18%, rgba(30,64,175,.22) 0%, rgba(30,64,175,0) 26%),
+    radial-gradient(circle at 86% 16%, rgba(16,167,121,.15) 0%, rgba(16,167,121,0) 25%),
+    radial-gradient(circle at 18% 82%, rgba(212,166,60,.12) 0%, rgba(212,166,60,0) 24%),
+    linear-gradient(180deg,#07111f 0%,#0f172a 46%,#020617 100%)!important;
+}
+
+body.dark-mode::before{
+  background-image:
+    linear-gradient(rgba(147,197,253,.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(45,212,191,.040) 1px, transparent 1px);
+  opacity:.34;
+}
+
+body.dark-mode::after{
+  background:
+    radial-gradient(circle at 50% 0%, rgba(96,165,250,.15), transparent 36%),
+    radial-gradient(circle at 50% 100%, rgba(16,167,121,.08), transparent 34%);
+}
+</style>
+
 </head>
 <body>
 
