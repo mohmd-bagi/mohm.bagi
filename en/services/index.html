@@ -1221,77 +1221,101 @@ body.dark-mode .services-side-nav a:hover{
 </style>
 
 
+
+
+
 <style id="services-premium-background-style">
 body{
   background:
-    radial-gradient(circle at 15% 18%, rgba(255,255,255,.90) 0%, rgba(255,255,255,0) 24%),
-    radial-gradient(circle at 86% 16%, rgba(18,97,216,.13) 0%, rgba(18,97,216,0) 25%),
-    radial-gradient(circle at 18% 82%, rgba(16,167,121,.10) 0%, rgba(16,167,121,0) 23%),
-    radial-gradient(circle at 88% 82%, rgba(212,166,60,.12) 0%, rgba(212,166,60,0) 22%),
-    linear-gradient(180deg,#edf5ff 0%,#eaf3ff 46%,#f2f7ff 100%)!important;
+    radial-gradient(circle at 10% 14%, rgba(18,97,216,.18) 0%, rgba(18,97,216,0) 28%),
+    radial-gradient(circle at 90% 16%, rgba(16,167,121,.17) 0%, rgba(16,167,121,0) 28%),
+    radial-gradient(circle at 18% 88%, rgba(212,166,60,.15) 0%, rgba(212,166,60,0) 25%),
+    radial-gradient(circle at 82% 86%, rgba(18,97,216,.13) 0%, rgba(18,97,216,0) 26%),
+    linear-gradient(135deg,#eaf3ff 0%,#f7fbff 42%,#e8f3ff 100%)!important;
   background-attachment:fixed!important;
 }
 
-body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  pointer-events:none;
+#services-bg-effects{
+  position:fixed!important;
+  inset:0!important;
+  pointer-events:none!important;
+  z-index:0!important;
+  overflow:hidden!important;
+}
+
+#services-bg-effects::before{
+  content:""!important;
+  position:absolute!important;
+  inset:0!important;
   background-image:
-    linear-gradient(rgba(18,97,216,.040) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(16,167,121,.034) 1px, transparent 1px);
-  background-size:42px 42px;
-  opacity:.42;
-  z-index:0;
-  mask-image:radial-gradient(circle at center, black 42%, transparent 100%);
-  -webkit-mask-image:radial-gradient(circle at center, black 42%, transparent 100%);
+    linear-gradient(rgba(18,97,216,.070) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(16,167,121,.058) 1px, transparent 1px);
+  background-size:38px 38px!important;
+  opacity:.55!important;
+  mask-image:radial-gradient(circle at center, black 42%, transparent 92%)!important;
+  -webkit-mask-image:radial-gradient(circle at center, black 42%, transparent 92%)!important;
 }
 
-body::after{
-  content:"";
-  position:fixed;
-  inset:0;
-  pointer-events:none;
+#services-bg-effects::after{
+  content:""!important;
+  position:absolute!important;
+  inset:-20%!important;
   background:
-    radial-gradient(circle at 50% 0%, rgba(255,255,255,.52), transparent 36%),
-    radial-gradient(circle at 50% 100%, rgba(255,255,255,.24), transparent 34%);
-  opacity:.85;
-  z-index:0;
+    linear-gradient(115deg, transparent 0%, transparent 38%, rgba(255,255,255,.55) 45%, transparent 53%, transparent 100%),
+    radial-gradient(circle at 22% 30%, rgba(18,97,216,.20), transparent 24%),
+    radial-gradient(circle at 82% 24%, rgba(16,167,121,.18), transparent 24%),
+    radial-gradient(circle at 50% 90%, rgba(212,166,60,.16), transparent 28%);
+  opacity:.75!important;
 }
 
-.services-page-wrap{
-  position:relative!important;
-  z-index:1!important;
+.services-page-wrap,
+.services-side-widget,
+#scroll-control-buttons,
+#mobile-edge-nav{
+  position:relative;
+  z-index:2!important;
 }
 
-.services-side-widget{
-  z-index:60!important;
+.services-hero,
+.section,
+.services-side-card{
+  background:rgba(255,255,255,.88)!important;
+  backdrop-filter:blur(12px)!important;
 }
 
 body.dark-mode{
   background:
-    radial-gradient(circle at 15% 18%, rgba(30,64,175,.22) 0%, rgba(30,64,175,0) 26%),
-    radial-gradient(circle at 86% 16%, rgba(16,167,121,.15) 0%, rgba(16,167,121,0) 25%),
-    radial-gradient(circle at 18% 82%, rgba(212,166,60,.12) 0%, rgba(212,166,60,0) 24%),
-    linear-gradient(180deg,#07111f 0%,#0f172a 46%,#020617 100%)!important;
+    radial-gradient(circle at 10% 14%, rgba(59,130,246,.22) 0%, rgba(59,130,246,0) 28%),
+    radial-gradient(circle at 90% 16%, rgba(16,167,121,.17) 0%, rgba(16,167,121,0) 28%),
+    radial-gradient(circle at 18% 88%, rgba(212,166,60,.13) 0%, rgba(212,166,60,0) 25%),
+    linear-gradient(135deg,#06101f 0%,#0f172a 48%,#020617 100%)!important;
 }
 
-body.dark-mode::before{
+body.dark-mode #services-bg-effects::before{
   background-image:
-    linear-gradient(rgba(147,197,253,.045) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(45,212,191,.040) 1px, transparent 1px);
-  opacity:.34;
+    linear-gradient(rgba(147,197,253,.060) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(45,212,191,.052) 1px, transparent 1px);
+  opacity:.38!important;
 }
 
-body.dark-mode::after{
+body.dark-mode #services-bg-effects::after{
   background:
-    radial-gradient(circle at 50% 0%, rgba(96,165,250,.15), transparent 36%),
-    radial-gradient(circle at 50% 100%, rgba(16,167,121,.08), transparent 34%);
+    linear-gradient(115deg, transparent 0%, transparent 38%, rgba(147,197,253,.13) 45%, transparent 53%, transparent 100%),
+    radial-gradient(circle at 22% 30%, rgba(59,130,246,.18), transparent 24%),
+    radial-gradient(circle at 82% 24%, rgba(16,167,121,.14), transparent 24%),
+    radial-gradient(circle at 50% 90%, rgba(212,166,60,.10), transparent 28%);
+}
+
+body.dark-mode .services-hero,
+body.dark-mode .section,
+body.dark-mode .services-side-card{
+  background:rgba(17,24,39,.88)!important;
 }
 </style>
 
 </head>
 <body>
+<div id="services-bg-effects" aria-hidden="true"></div>
 
 <!-- SERVICES_SIDE_WIDGETS_START -->
 <aside class="services-side-widget services-side-left" aria-label="Quick navigation">
