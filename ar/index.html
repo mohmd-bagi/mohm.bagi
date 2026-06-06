@@ -2237,55 +2237,53 @@ body.dark-mode .section b{
 
 
 
-<style id="ar-top-services-button-only-fix-style">
+
+<style id="ar-top-mobile-services-clean-only-style">
 @media(max-width:900px){
   html[lang="ar"] .mobile-action-row .mobile-services-top-link{
     display:flex!important;
-    flex-direction:row!important;
-    direction:rtl!important;
     align-items:center!important;
     justify-content:center!important;
-    gap:7px!important;
+    text-align:center!important;
     white-space:nowrap!important;
     overflow:hidden!important;
-    text-align:center!important;
+    gap:0!important;
   }
 
-  html[lang="ar"] .mobile-action-row .mobile-services-top-link i{
-    position:static!important;
-    inset:auto!important;
-    left:auto!important;
-    right:auto!important;
-    top:auto!important;
-    transform:none!important;
-    margin:0!important;
-    padding:0!important;
-    flex:0 0 auto!important;
-    line-height:1!important;
-    font-size:1rem!important;
+  html[lang="ar"] .mobile-action-row .mobile-services-top-link i,
+  html[lang="ar"] .mobile-action-row .mobile-services-top-link svg{
+    display:none!important;
   }
 
   html[lang="ar"] .mobile-action-row .mobile-services-top-link span{
-    display:inline-block!important;
-    width:auto!important;
-    max-width:calc(100% - 34px)!important;
+    display:block!important;
+    width:100%!important;
+    max-width:100%!important;
+    min-width:0!important;
     white-space:nowrap!important;
-    line-height:1!important;
+    overflow:hidden!important;
+    text-overflow:clip!important;
     text-align:center!important;
+    line-height:1!important;
+    font-size:.72rem!important;
+    font-weight:950!important;
+    letter-spacing:-.85px!important;
     margin:0!important;
     padding:0!important;
     transform:none!important;
-    font-size:.72rem!important;
-    font-weight:950!important;
-    letter-spacing:-.8px!important;
-    word-break:keep-all!important;
-    overflow-wrap:normal!important;
   }
 
-  html[lang="ar"] .hero .actions .home-services-cta span{
-    font-size:inherit!important;
-    letter-spacing:inherit!important;
-    line-height:inherit!important;
+  html[lang="ar"] .hero .actions .home-services-cta,
+  html[lang="ar"] .hero .actions a.home-services-cta{
+    display:inline-flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    gap:12px!important;
+  }
+
+  html[lang="ar"] .hero .actions .home-services-cta i,
+  html[lang="ar"] .hero .actions a.home-services-cta i{
+    display:inline-flex!important;
   }
 }
 
@@ -2293,10 +2291,6 @@ body.dark-mode .section b{
   html[lang="ar"] .mobile-action-row .mobile-services-top-link span{
     font-size:.66rem!important;
     letter-spacing:-1px!important;
-  }
-
-  html[lang="ar"] .mobile-action-row .mobile-services-top-link i{
-    font-size:.92rem!important;
   }
 }
 </style>
@@ -3048,43 +3042,6 @@ function serviceRequestSubmitted(){
 
 
 
-
-<script id="ar-top-services-button-only-fix-script">
-(function(){
-  function apply(){
-    if(document.documentElement.lang !== "ar"){
-      return;
-    }
-
-    var buttons = Array.from(document.querySelectorAll(".mobile-action-row .mobile-services-top-link"));
-
-    buttons.forEach(function(btn){
-      btn.innerHTML = "";
-
-      var icon = document.createElement("i");
-      icon.className = "fa-solid fa-briefcase";
-      icon.setAttribute("aria-hidden","true");
-
-      var label = document.createElement("span");
-      label.textContent = "\u0627\u0644\u062e\u062f\u0645\u0627\u062a \u0648\u0627\u0644\u062d\u0644\u0648\u0644 \u0627\u0644\u062a\u0642\u0646\u064a\u0629";
-
-      btn.appendChild(icon);
-      btn.appendChild(label);
-    });
-  }
-
-  if(document.readyState === "loading"){
-    document.addEventListener("DOMContentLoaded", apply);
-  }else{
-    apply();
-  }
-
-  window.addEventListener("load", apply);
-  window.addEventListener("resize", apply);
-  setTimeout(apply,300);
-  setTimeout(apply,1000);
-})();
-</script>
 
 </body>
 </html>
