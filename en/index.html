@@ -1725,62 +1725,6 @@ body.dark-mode .quick b{
 </style>
 
 
-<style id="all-home-buttons-shine-style">
-.top-switch .btn,
-.live-bar a,
-.mobile-services-top-link,
-.service-request-open,
-.actions .btn{
-  position:relative!important;
-  overflow:hidden!important;
-}
-
-.top-switch .btn::after,
-.live-bar a::after,
-.mobile-services-top-link::after,
-.service-request-open::after,
-.actions .btn::after{
-  content:""!important;
-  position:absolute!important;
-  top:-70%!important;
-  left:-55%!important;
-  width:38%!important;
-  height:250%!important;
-  background:linear-gradient(90deg,transparent,rgba(255,255,255,.58),transparent)!important;
-  transform:rotate(25deg)!important;
-  animation:allButtonsShineMove 3.2s ease-in-out infinite!important;
-  pointer-events:none!important;
-  z-index:1!important;
-}
-
-.top-switch .btn > *,
-.live-bar a > *,
-.mobile-services-top-link > *,
-.service-request-open > *,
-.actions .btn > *{
-  position:relative!important;
-  z-index:2!important;
-}
-
-@keyframes allButtonsShineMove{
-  0%{left:-60%;opacity:0}
-  15%{opacity:1}
-  48%{left:125%;opacity:.95}
-  58%{left:125%;opacity:0}
-  100%{left:125%;opacity:0}
-}
-
-@media(max-width:560px){
-  .top-switch .btn::after,
-  .live-bar a::after,
-  .mobile-services-top-link::after,
-  .service-request-open::after,
-  .actions .btn::after{
-    animation-duration:3.6s!important;
-  }
-}
-</style>
-
 </head>
 <body>
 <div class="layout">
@@ -2108,6 +2052,65 @@ function serviceRequestSubmitted(){
   setTimeout(moveQuickAccess,1800);
 })();
 </script>
+
+
+<style id="force-home-button-shine-final">
+.btn,
+.top-switch .btn,
+.live-bar a,
+.mobile-services-top-link,
+.service-request-open,
+.actions .btn,
+.actions a{
+  position:relative!important;
+  overflow:hidden!important;
+  isolation:isolate!important;
+}
+
+.btn::before,
+.top-switch .btn::before,
+.live-bar a::before,
+.mobile-services-top-link::before,
+.service-request-open::before,
+.actions .btn::before,
+.actions a::before{
+  content:""!important;
+  position:absolute!important;
+  top:-80%!important;
+  left:-70%!important;
+  width:42%!important;
+  height:260%!important;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.78),transparent)!important;
+  transform:rotate(24deg)!important;
+  animation:forceButtonShineFinal 2.8s ease-in-out infinite!important;
+  pointer-events:none!important;
+  z-index:1!important;
+}
+
+.btn i,
+.btn span,
+.live-bar a i,
+.live-bar a span,
+.mobile-services-top-link i,
+.mobile-services-top-link span,
+.service-request-open i,
+.service-request-open span,
+.actions .btn i,
+.actions .btn span,
+.actions a i,
+.actions a span{
+  position:relative!important;
+  z-index:2!important;
+}
+
+@keyframes forceButtonShineFinal{
+  0%{left:-75%;opacity:0}
+  12%{opacity:1}
+  42%{left:125%;opacity:1}
+  55%{left:125%;opacity:0}
+  100%{left:125%;opacity:0}
+}
+</style>
 
 </body>
 </html>
