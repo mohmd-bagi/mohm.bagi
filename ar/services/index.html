@@ -1539,6 +1539,69 @@ body.dark-mode .service-request-form textarea{
 }
 </style>
 
+
+<style id="desktop-hero-cta-upgrade-style">
+@media (min-width: 992px) {
+  .hero-cta-row-upgraded {
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 18px !important;
+    flex-wrap: wrap !important;
+    margin-top: 18px !important;
+    padding: 18px 22px !important;
+    border-radius: 28px !important;
+    isolation: isolate !important;
+  }
+
+  .hero-cta-row-upgraded::before {
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 !important;
+    border-radius: 28px !important;
+    background:
+      radial-gradient(circle at 18% 35%, rgba(37,99,235,.16), transparent 42%),
+      radial-gradient(circle at 82% 30%, rgba(16,185,129,.14), transparent 42%),
+      radial-gradient(circle at 50% 85%, rgba(245,158,11,.12), transparent 38%),
+      linear-gradient(135deg, rgba(255,255,255,.82), rgba(247,250,255,.70)) !important;
+    border: 1px solid rgba(148,163,184,.18) !important;
+    box-shadow:
+      0 16px 40px rgba(15,23,42,.08),
+      inset 0 1px 0 rgba(255,255,255,.75) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    z-index: -1 !important;
+  }
+
+  .hero-cta-row-upgraded > a,
+  .hero-cta-row-upgraded > button,
+  .hero-cta-button-upgraded {
+    min-width: 180px !important;
+    min-height: 62px !important;
+    padding: 14px 28px !important;
+    font-size: 1.14rem !important;
+    font-weight: 800 !important;
+    border-radius: 999px !important;
+    box-shadow:
+      0 10px 24px rgba(15,23,42,.14),
+      0 3px 10px rgba(15,23,42,.08) !important;
+    transition: transform .18s ease, box-shadow .18s ease !important;
+    position: relative !important;
+    z-index: 1 !important;
+  }
+
+  .hero-cta-row-upgraded > a:hover,
+  .hero-cta-row-upgraded > button:hover,
+  .hero-cta-button-upgraded:hover {
+    transform: translateY(-2px) scale(1.02) !important;
+    box-shadow:
+      0 16px 30px rgba(15,23,42,.18),
+      0 6px 16px rgba(15,23,42,.10) !important;
+  }
+}
+</style>
+
 </head>
 <body>
 
@@ -2899,6 +2962,61 @@ function servicesContactSubmitted(){
   window.addEventListener("orientationchange", sync, {passive:true});
 
   sync();
+})();
+</script>
+
+
+<script id="desktop-hero-cta-upgrade-script">
+(function(){
+  function isVisible(el){
+    if(!el) return false;
+    const r = el.getBoundingClientRect();
+    return r.width > 0 && r.height > 0;
+  }
+
+  function findWhatsAppButton(root){
+    const items = Array.from(root.querySelectorAll('a[href], button, [role="button"]'));
+    return items.find(function(el){
+      const href = (el.getAttribute('href') || '').toLowerCase();
+      const txt = (el.textContent || '').toLowerCase();
+      return href.includes('wa.me') || href.includes('whatsapp') || txt.includes('whatsapp');
+    });
+  }
+
+  function findActionRow(btn){
+    let node = btn;
+    while (node && node !== document.body) {
+      const actions = Array.from(node.querySelectorAll(':scope > a[href], :scope > button, :scope > [role="button"]')).filter(isVisible);
+      const top = node.getBoundingClientRect().top + window.scrollY;
+      if (actions.length >= 2 && actions.length <= 5 && top < 1400) {
+        return { row: node, actions: actions };
+      }
+      node = node.parentElement;
+    }
+    return null;
+  }
+
+  function upgradeHeroRow(){
+    const root = document.querySelector('main') || document.body;
+    const wa = findWhatsAppButton(root);
+    if(!wa) return;
+
+    const found = findActionRow(wa);
+    if(!found) return;
+
+    found.row.classList.add('hero-cta-row-upgraded');
+    found.actions.forEach(function(el){
+      el.classList.add('hero-cta-button-upgraded');
+    });
+  }
+
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', upgradeHeroRow);
+  } else {
+    upgradeHeroRow();
+  }
+
+  window.addEventListener('load', upgradeHeroRow);
 })();
 </script>
 
