@@ -1224,98 +1224,178 @@ body.dark-mode .services-side-nav a:hover{
 
 
 
-<style id="services-premium-background-style">
+
+
+
+<style id="services-full-page-bg-style">
+html{
+  background:#eaf3ff!important;
+}
+
 body{
+  min-height:100vh!important;
+  position:relative!important;
+  overflow-x:hidden!important;
   background:
-    radial-gradient(circle at 10% 14%, rgba(18,97,216,.18) 0%, rgba(18,97,216,0) 28%),
-    radial-gradient(circle at 90% 16%, rgba(16,167,121,.17) 0%, rgba(16,167,121,0) 28%),
-    radial-gradient(circle at 18% 88%, rgba(212,166,60,.15) 0%, rgba(212,166,60,0) 25%),
-    radial-gradient(circle at 82% 86%, rgba(18,97,216,.13) 0%, rgba(18,97,216,0) 26%),
-    linear-gradient(135deg,#eaf3ff 0%,#f7fbff 42%,#e8f3ff 100%)!important;
+    radial-gradient(circle at 12% 12%, rgba(18,97,216,.32) 0%, rgba(18,97,216,.10) 22%, transparent 42%),
+    radial-gradient(circle at 88% 10%, rgba(16,167,121,.30) 0%, rgba(16,167,121,.10) 24%, transparent 44%),
+    radial-gradient(circle at 20% 88%, rgba(212,166,60,.22) 0%, rgba(212,166,60,.08) 22%, transparent 42%),
+    radial-gradient(circle at 85% 88%, rgba(18,97,216,.24) 0%, rgba(18,97,216,.08) 24%, transparent 44%),
+    linear-gradient(135deg,#d9ebff 0%,#f8fbff 42%,#dff1ff 100%)!important;
   background-attachment:fixed!important;
 }
 
-#services-bg-effects{
+#services-full-bg{
   position:fixed!important;
   inset:0!important;
-  pointer-events:none!important;
   z-index:0!important;
+  pointer-events:none!important;
   overflow:hidden!important;
 }
 
-#services-bg-effects::before{
-  content:""!important;
+#services-full-bg .mesh{
   position:absolute!important;
   inset:0!important;
   background-image:
-    linear-gradient(rgba(18,97,216,.070) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(16,167,121,.058) 1px, transparent 1px);
-  background-size:38px 38px!important;
+    linear-gradient(rgba(18,97,216,.10) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(16,167,121,.08) 1px, transparent 1px)!important;
+  background-size:34px 34px!important;
   opacity:.55!important;
-  mask-image:radial-gradient(circle at center, black 42%, transparent 92%)!important;
-  -webkit-mask-image:radial-gradient(circle at center, black 42%, transparent 92%)!important;
 }
 
-#services-bg-effects::after{
-  content:""!important;
+#services-full-bg .dots{
   position:absolute!important;
-  inset:-20%!important;
+  inset:0!important;
+  background-image:radial-gradient(rgba(18,97,216,.20) 1.2px, transparent 1.2px)!important;
+  background-size:26px 26px!important;
+  opacity:.22!important;
+}
+
+#services-full-bg .beam{
+  position:absolute!important;
+  inset:-30%!important;
   background:
-    linear-gradient(115deg, transparent 0%, transparent 38%, rgba(255,255,255,.55) 45%, transparent 53%, transparent 100%),
-    radial-gradient(circle at 22% 30%, rgba(18,97,216,.20), transparent 24%),
-    radial-gradient(circle at 82% 24%, rgba(16,167,121,.18), transparent 24%),
-    radial-gradient(circle at 50% 90%, rgba(212,166,60,.16), transparent 28%);
-  opacity:.75!important;
+    linear-gradient(118deg, transparent 0%, transparent 38%, rgba(255,255,255,.72) 47%, transparent 57%, transparent 100%),
+    linear-gradient(64deg, transparent 0%, transparent 47%, rgba(18,97,216,.12) 51%, transparent 58%, transparent 100%)!important;
+  opacity:.55!important;
+}
+
+#services-full-bg .orb{
+  position:absolute!important;
+  border-radius:999px!important;
+  filter:blur(16px)!important;
+}
+
+#services-full-bg .orb1{
+  width:520px!important;
+  height:520px!important;
+  left:-210px!important;
+  top:70px!important;
+  background:radial-gradient(circle, rgba(18,97,216,.34), transparent 68%)!important;
+}
+
+#services-full-bg .orb2{
+  width:520px!important;
+  height:520px!important;
+  right:-210px!important;
+  top:70px!important;
+  background:radial-gradient(circle, rgba(16,167,121,.32), transparent 68%)!important;
+}
+
+#services-full-bg .orb3{
+  width:430px!important;
+  height:430px!important;
+  left:20%!important;
+  bottom:-190px!important;
+  background:radial-gradient(circle, rgba(212,166,60,.22), transparent 70%)!important;
+}
+
+#services-full-bg .orb4{
+  width:430px!important;
+  height:430px!important;
+  right:18%!important;
+  bottom:-190px!important;
+  background:radial-gradient(circle, rgba(18,97,216,.22), transparent 70%)!important;
 }
 
 .services-page-wrap,
 .services-side-widget,
+.services-top-actions,
 #scroll-control-buttons,
 #mobile-edge-nav{
-  position:relative;
-  z-index:2!important;
+  position:relative!important;
+  z-index:3!important;
 }
 
 .services-hero,
 .section,
-.services-side-card{
-  background:rgba(255,255,255,.88)!important;
-  backdrop-filter:blur(12px)!important;
+.services-side-card,
+.service-card,
+.process-card,
+.trust-card,
+.faq-item{
+  background:rgba(255,255,255,.82)!important;
+  backdrop-filter:blur(16px)!important;
+  -webkit-backdrop-filter:blur(16px)!important;
+  border-color:rgba(18,97,216,.18)!important;
+}
+
+.services-hero,
+.section{
+  box-shadow:0 24px 70px rgba(15,23,42,.12)!important;
 }
 
 body.dark-mode{
   background:
-    radial-gradient(circle at 10% 14%, rgba(59,130,246,.22) 0%, rgba(59,130,246,0) 28%),
-    radial-gradient(circle at 90% 16%, rgba(16,167,121,.17) 0%, rgba(16,167,121,0) 28%),
-    radial-gradient(circle at 18% 88%, rgba(212,166,60,.13) 0%, rgba(212,166,60,0) 25%),
-    linear-gradient(135deg,#06101f 0%,#0f172a 48%,#020617 100%)!important;
+    radial-gradient(circle at 12% 12%, rgba(59,130,246,.30) 0%, rgba(59,130,246,.10) 24%, transparent 44%),
+    radial-gradient(circle at 88% 10%, rgba(16,167,121,.24) 0%, rgba(16,167,121,.08) 24%, transparent 44%),
+    radial-gradient(circle at 20% 88%, rgba(212,166,60,.16) 0%, rgba(212,166,60,.06) 24%, transparent 44%),
+    linear-gradient(135deg,#06101f 0%,#0f172a 50%,#020617 100%)!important;
 }
 
-body.dark-mode #services-bg-effects::before{
+body.dark-mode #services-full-bg .mesh{
   background-image:
-    linear-gradient(rgba(147,197,253,.060) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(45,212,191,.052) 1px, transparent 1px);
-  opacity:.38!important;
+    linear-gradient(rgba(147,197,253,.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(45,212,191,.06) 1px, transparent 1px)!important;
+  opacity:.40!important;
 }
 
-body.dark-mode #services-bg-effects::after{
+body.dark-mode #services-full-bg .dots{
+  background-image:radial-gradient(rgba(147,197,253,.18) 1.2px, transparent 1.2px)!important;
+  opacity:.16!important;
+}
+
+body.dark-mode #services-full-bg .beam{
   background:
-    linear-gradient(115deg, transparent 0%, transparent 38%, rgba(147,197,253,.13) 45%, transparent 53%, transparent 100%),
-    radial-gradient(circle at 22% 30%, rgba(59,130,246,.18), transparent 24%),
-    radial-gradient(circle at 82% 24%, rgba(16,167,121,.14), transparent 24%),
-    radial-gradient(circle at 50% 90%, rgba(212,166,60,.10), transparent 28%);
+    linear-gradient(118deg, transparent 0%, transparent 38%, rgba(147,197,253,.18) 47%, transparent 57%, transparent 100%),
+    linear-gradient(64deg, transparent 0%, transparent 47%, rgba(16,167,121,.12) 51%, transparent 58%, transparent 100%)!important;
+  opacity:.45!important;
 }
 
 body.dark-mode .services-hero,
 body.dark-mode .section,
-body.dark-mode .services-side-card{
-  background:rgba(17,24,39,.88)!important;
+body.dark-mode .services-side-card,
+body.dark-mode .service-card,
+body.dark-mode .process-card,
+body.dark-mode .trust-card,
+body.dark-mode .faq-item{
+  background:rgba(17,24,39,.82)!important;
+  border-color:rgba(148,163,184,.22)!important;
 }
 </style>
 
 </head>
 <body>
-<div id="services-bg-effects" aria-hidden="true"></div>
+
+<div id="services-full-bg" aria-hidden="true">
+  <span class="mesh"></span>
+  <span class="dots"></span>
+  <span class="beam"></span>
+  <span class="orb orb1"></span>
+  <span class="orb orb2"></span>
+  <span class="orb orb3"></span>
+  <span class="orb orb4"></span>
+</div>
 
 <!-- SERVICES_SIDE_WIDGETS_START -->
 <aside class="services-side-widget services-side-left" aria-label="Quick navigation">
