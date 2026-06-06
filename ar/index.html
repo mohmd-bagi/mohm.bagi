@@ -1732,6 +1732,37 @@ body.dark-mode .quick b{
 }
 </style>
 
+
+<style id="service-location-picker-style">
+.service-location-box{
+  display:grid;
+  gap:10px;
+}
+
+.service-location-btn{
+  border:0;
+  border-radius:14px;
+  padding:12px 14px;
+  font-family:inherit;
+  font-weight:900;
+  cursor:pointer;
+  color:#fff;
+  background:linear-gradient(135deg,#1261d8,#10a779);
+  box-shadow:0 10px 24px rgba(18,97,216,.18);
+}
+
+.service-location-note{
+  font-size:.86rem;
+  font-weight:800;
+  color:#55657a;
+  line-height:1.6;
+}
+
+body.dark-mode .service-location-note{
+  color:#cbd5e1;
+}
+</style>
+
 </head>
 <body>
 <div class="layout">
@@ -1920,6 +1951,13 @@ function showSuccessMessage(){const msg=document.getElementById('success-message
         <option value="يتم تحديدها بعد المراجعة">يتم تحديدها بعد المراجعة</option>
       </select>
       <input type="text" name="city" placeholder="المدينة" required>
+
+      <div class="service-location-box">
+        <button class="service-location-btn" type="button" data-get-location data-loading="جاري تحديد الموقع..." data-done="تم إضافة الموقع" data-error="لم يتم تحديد الموقع. اسمح بالموقع أو الصق رابط الخريطة يدويا." data-no-location="المتصفح لا يدعم تحديد الموقع."><i class="fa-solid fa-location-dot"></i> تحديد موقعي الآن</button>
+        <input type="url" name="location_map" data-label="رابط الموقع على الخريطة" placeholder="رابط موقعك على Google Maps" inputmode="url">
+        <div class="service-location-note">يمكنك الضغط على تحديد موقعي أو لصق رابط الموقع يدويا.</div>
+      </div>
+
             <input type="text" name="location_area" placeholder="الموقع أو الحي في حال الزيارة (اختياري)">
 <select name="urgency" required>
         <option value="" disabled selected>درجة الاستعجال</option>
@@ -2044,6 +2082,72 @@ function serviceRequestSubmitted(){
 
     return true;
   };
+})();
+</script>
+
+
+<script id="service-location-picker-script">
+(function(){
+  function setupLocationButtons(){
+    document.querySelectorAll("[data-get-location]").forEach(function(btn){
+      if(btn.dataset.locationReady === "1"){
+        return;
+      }
+
+      btn.dataset.locationReady = "1";
+
+      btn.addEventListener("click", function(){
+        var form = btn.closest("form");
+        if(!form){
+          return;
+        }
+
+        var input = form.querySelector('input[name="location_map"]');
+        if(!input){
+          return;
+        }
+
+        var originalText = btn.textContent;
+
+        if(!navigator.geolocation){
+          alert(btn.getAttribute("data-no-location") || "Location is not supported on this device.");
+          return;
+        }
+
+        btn.disabled = true;
+        btn.textContent = btn.getAttribute("data-loading") || "Getting location...";
+
+        navigator.geolocation.getCurrentPosition(
+          function(pos){
+            var lat = pos.coords.latitude.toFixed(6);
+            var lng = pos.coords.longitude.toFixed(6);
+            input.value = "https://www.google.com/maps?q=" + lat + "," + lng;
+            btn.textContent = btn.getAttribute("data-done") || "Location added";
+            setTimeout(function(){
+              btn.disabled = false;
+              btn.textContent = originalText;
+            }, 1800);
+          },
+          function(){
+            alert(btn.getAttribute("data-error") || "Could not get location. Please allow location access or paste the map link manually.");
+            btn.disabled = false;
+            btn.textContent = originalText;
+          },
+          {
+            enableHighAccuracy:true,
+            timeout:12000,
+            maximumAge:0
+          }
+        );
+      });
+    });
+  }
+
+  if(document.readyState === "loading"){
+    document.addEventListener("DOMContentLoaded", setupLocationButtons);
+  }else{
+    setupLocationButtons();
+  }
 })();
 </script>
 
