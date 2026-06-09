@@ -2074,6 +2074,44 @@ body.dark-mode .service-rating-form textarea{
 }
 </style>
 
+
+<style id="mobile-rating-top-button-style">
+.mobile-rating-top{
+  display:none;
+}
+@media (max-width:900px){
+  .services-top-actions{
+    display:grid!important;
+    grid-template-columns:minmax(0,1fr) minmax(0,1.6fr)!important;
+    align-items:start!important;
+  }
+  .services-top-actions #mobile-services-quick-card{
+    grid-column:2!important;
+    grid-row:2 / span 2!important;
+  }
+  .services-top-actions .mobile-rating-top{
+    grid-column:1!important;
+    grid-row:3!important;
+    display:inline-flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    gap:8px!important;
+    min-height:58px!important;
+    padding:0 14px!important;
+    border-radius:18px!important;
+    text-decoration:none!important;
+    color:#fff!important;
+    font-weight:900!important;
+    font-size:1rem!important;
+    background:linear-gradient(135deg,#d39d21,#1261d8)!important;
+    box-shadow:0 14px 30px rgba(18,97,216,.20)!important;
+  }
+  .services-top-actions .mobile-rating-top i{
+    color:#fff!important;
+  }
+}
+</style>
+
 </head>
 <body>
 
@@ -2121,6 +2159,7 @@ body.dark-mode .service-rating-form textarea{
     <a class="btn" href="../../en/services/">English</a>
     <button class="btn mode-toggle" id="modeToggle" type="button"><i class="fa-solid fa-moon"></i> Dark</button>
 
+<a class="mobile-rating-top" href="#service-rating"><i class="fa-solid fa-star"></i> قيّم الخدمة</a>
 <nav id="mobile-services-quick-card" aria-label="تنقل سريع للخدمات">
   <h3><i class="fa-solid fa-bolt"></i> تنقل سريع</h3>
   <div class="mobile-services-quick-links">
