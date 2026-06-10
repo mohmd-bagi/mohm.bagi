@@ -2563,23 +2563,16 @@ body.dark-mode .floating-whatsapp i{
   color:#ffffff!important;
 }
 </style>
-
-
-<style id="en-cv-desktop-match-ar-position">
+<style id="cv-desktop-show-summary-on-load">
 @media (min-width:901px){
   main.content{
-    position:relative!important;
     padding-top:6px!important;
   }
   main.content .top-switch{
-    position:absolute!important;
-    top:22px!important;
-    right:clamp(14px,2vw,32px)!important;
-    z-index:20!important;
-    margin:0!important;
+    margin-bottom:6px!important;
   }
   main.content .live-bar{
-    margin-top:24px!important;
+    margin-top:-28px!important;
     margin-bottom:8px!important;
     gap:8px!important;
   }
@@ -2621,7 +2614,13 @@ body.dark-mode .floating-whatsapp i{
   }
 }
 </style>
-
+<style id="cv-desktop-align-language-buttons">
+@media (min-width:901px){
+  main.content .top-switch{
+    transform:translateY(32px)!important;
+  }
+}
+</style>
 </head>
 <body>
 <div class="layout">
