@@ -3749,5 +3749,43 @@ function servicesContactSubmitted(){
   setTimeout(upgrade,1000);
 })();
 </script>
-\n</body>
+\n
+<style id="services-quick-title-final-fix">
+html body.dark-mode nav#mobile-services-quick-card > h3,
+html body.dark-mode nav#mobile-services-quick-card > h3 *,
+html body.dark-mode #mobile-services-quick-card > h3,
+html body.dark-mode #mobile-services-quick-card > h3 *{
+  color:#1261d8!important;
+  -webkit-text-fill-color:#1261d8!important;
+  opacity:1!important;
+  visibility:visible!important;
+  filter:none!important;
+  text-shadow:none!important;
+  background:transparent!important;
+  background-image:none!important;
+}
+</style>
+<script id="services-quick-title-final-fix-script">
+(function(){
+  function fixQuickTitle(){
+    var h=document.querySelector('#mobile-services-quick-card > h3');
+    if(!h) return;
+    h.style.setProperty('color','#1261d8','important');
+    h.style.setProperty('-webkit-text-fill-color','#1261d8','important');
+    h.style.setProperty('opacity','1','important');
+    h.style.setProperty('filter','none','important');
+    h.style.setProperty('text-shadow','none','important');
+    h.querySelectorAll('*').forEach(function(x){
+      x.style.setProperty('color','#1261d8','important');
+      x.style.setProperty('-webkit-text-fill-color','#1261d8','important');
+      x.style.setProperty('opacity','1','important');
+    });
+  }
+  fixQuickTitle();
+  setTimeout(fixQuickTitle,300);
+  document.addEventListener('click',function(){setTimeout(fixQuickTitle,100);});
+})();
+</script>
+
+</body>
 </html>
