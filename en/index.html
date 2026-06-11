@@ -3469,5 +3469,33 @@ function serviceRequestSubmitted(){
 })();
 </script>
 
+
+<script id="en-cv-scroll-buttons-under-quick-access">
+(function(){
+  function placeButtons(){
+    if(window.innerWidth < 901) return;
+    var card = document.querySelector('.home-side-widget .home-side-card');
+    var box = document.getElementById('scroll-control-buttons');
+    if(!card || !box) return;
+
+    var r = card.getBoundingClientRect();
+    box.style.setProperty('position','fixed','important');
+    box.style.setProperty('left',(r.left + (r.width / 2) - (box.offsetWidth / 2)) + 'px','important');
+    box.style.setProperty('right','auto','important');
+    box.style.setProperty('top',(r.bottom + 34) + 'px','important');
+    box.style.setProperty('bottom','auto','important');
+    box.style.setProperty('transform','none','important');
+  }
+
+  window.addEventListener('load', function(){
+    placeButtons();
+    setTimeout(placeButtons, 300);
+    setTimeout(placeButtons, 900);
+  });
+  window.addEventListener('resize', placeButtons);
+  window.addEventListener('scroll', placeButtons);
+})();
+</script>
+
 </body>
 </html>
