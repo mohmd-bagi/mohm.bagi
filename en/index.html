@@ -3468,5 +3468,42 @@ function serviceRequestSubmitted(){
   setTimeout(apply,1000);
 })();
 </script>
+
+<script id="en-cv-place-top-bottom-under-quick-access">
+(function(){
+  function place(){
+    if(window.innerWidth < 901) return;
+
+    var card = document.querySelector('.home-side-widget .home-side-card');
+    var box = document.getElementById('scroll-' + 'control-' + 'buttons');
+
+    if(!card || !box) return;
+
+    var r = card.getBoundingClientRect();
+
+    box.style.setProperty('position','fixed','important');
+    box.style.setProperty('left',(r.left + (r.width / 2)) + 'px','important');
+    box.style.setProperty('right','auto','important');
+    box.style.setProperty('top',(r.bottom + 34) + 'px','important');
+    box.style.setProperty('bottom','auto','important');
+    box.style.setProperty('transform','translateX(-50%)','important');
+    box.style.setProperty('display','flex','important');
+    box.style.setProperty('flex-direction','column','important');
+    box.style.setProperty('align-items','center','important');
+    box.style.setProperty('gap','10px','important');
+  }
+
+  window.addEventListener('load', function(){
+    place();
+    setTimeout(place, 300);
+    setTimeout(place, 900);
+    setTimeout(place, 1600);
+  });
+
+  window.addEventListener('resize', place);
+  window.addEventListener('scroll', place);
+})();
+</script>
+
 </body>
 </html>
